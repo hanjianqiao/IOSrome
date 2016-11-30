@@ -14,8 +14,38 @@ import JavaScriptCore
     func test1(_ para: String ) -> String
     func test2(_ para0:String,_ para1:String) -> String
     func have(_ a: String,_ b:String)->String
+    func getDataFromUrl(_ urlString: String, _ callBack: String)
+    func getDataFromUrlWithCookie(_ urlString: String, _ callBack: String, _ cookieFor: String)
 }
 @objc class SwiftJavaScriptModel: NSObject, SwiftJavaScriptDelegate{
+    internal func getDataFromUrlWithCookie(_ urlString: String, _ callBack: String, _ cookieFor: String) {
+        let url:URL = URL(string: urlString)!
+        let task = URLSession.shared.dataTask(with: url){
+            (data, response, error) in
+            if let data = data, let html = String(data: data, encoding: String.Encoding.utf8){
+                let function = self.jsContext?.objectForKeyedSubscript(callBack)
+                let result = function?.call(withArguments: [html])
+                print(result ?? "No result!")
+            }
+        }
+        task.resume()
+    }
+
+    internal func getDataFromUrl(_ urlString: String, _ callBack: String){
+        let url:URL = URL(string: urlString)!
+        var html: String? = nil
+        let semaphore = DispatchSemaphore(value: 0)
+        let task = URLSession.shared.dataTask(with: url){
+            (data, response, error) in
+                html = String(data: data!, encoding: String.Encoding.utf8)
+                semaphore.signal()
+        }
+        task.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
+        let function = jsContext?.objectForKeyedSubscript(callBack)
+        _ = function?.call(withArguments: [html ?? ""])
+    }
+
     internal func have(_ a: String,_ b: String) -> String {
         print(a+b)
         return "have"
@@ -45,10 +75,29 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var webView: UIWebView!
+    
+    var jsString: String?
+    var jsContext: JSContext?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let url:URL = URL(string: "http://www.baidu.com")!
+        
+        //let path = Bundle.main.path(forResource: "lanjs.js", ofType: "txt")
+        do{
+            let filePath = Bundle.main.path(forResource: "lanjs", ofType: "js")
+            try jsString = String(contentsOfFile: filePath!)
+        }catch let err as NSError{
+            print(err)
+        }
+        //print(jsString ?? "no js")
+        
+        let instanceOfCustomObject: CustomObject = CustomObject()
+        instanceOfCustomObject.someMethod()
+        
+        
+        let url:URL = URL(string: "http://zhushou3.taokezhushou.com/api/v1/coupons_base/725677994")!
+        
         let request:URLRequest = URLRequest(url: url)
         
         webView.loadRequest(request)
@@ -69,17 +118,17 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         self.view.endEditing(true)
         
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
+    
+    /**
+     ** Buttons
+     **
+     **/
     @IBAction func homeButton(_ sender: UIButton) {
         let url:URL = URL(string: "http://www.baidu.com")!
         let request:URLRequest = URLRequest(url: url)
         webView.loadRequest(request)
     }
-    
     @IBAction func taobaoButton(_ sender: UIButton) {
         let url:URL = URL(string: "http://m.taobao.com")!
         let request:URLRequest = URLRequest(url: url)
@@ -87,42 +136,75 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
     }
     
 
+    
+    /**
+     **
+     ** Called when start to load a page
+     **
+     **/
     func webViewDidStartLoad(_ webView: UIWebView) {
         searchBar.text = webView.request?.url?.absoluteString
         print("Start loading...")
     }
+    
+    
+    /**
+     **
+     ** Called when finish loading a page
+     **
+     **
+     **/
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        let js = "function imgAutoFit(a, b){WebViewJavaScriptBridge1.test0();WebViewJavaScriptBridge1.test1('a');WebViewJavaScriptBridge1.have('a','b');return b;}"
-        webView.stringByEvaluatingJavaScript(from: js)
         
-        let jsContext:JSContext = webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext
+        webView.stringByEvaluatingJavaScript(from: jsString!)
         
+        /* 
+         * 
+         * Setup bridge to let swift and javascript communicate
+         *
+         */
+        jsContext = (webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext)
         let model = SwiftJavaScriptModel()
         model.controller = self
+        jsContext?.setObject(model, forKeyedSubscript: "LanJsBridge" as (NSCopying & NSObjectProtocol)!)
         model.jsContext = jsContext
-        jsContext.setObject(model, forKeyedSubscript: "WebViewJavaScriptBridge1" as (NSCopying & NSObjectProtocol)!)
-        
-        
-        jsContext.exceptionHandler = {
+        jsContext?.exceptionHandler = {
             (context, exception) in
             print("exception: ", exception ?? "No")
         }
+
+        webView.stringByEvaluatingJavaScript(from: "doWork()")
+        /*
+         * Ways to call birdge functions
+         let result0 = webView.stringByEvaluatingJavaScript(from: "imgAutoFit(\"Java\", \"webview\")")
+         let result1 = jsContext.evaluateScript("imgAutoFit('Java', 'context')")
+         let function = jsContext.objectForKeyedSubscript("imgAutoFit")
+         let result2 = function?.call(withArguments: ["Hello", "forfunction"])
+         NSLog(result0!)
+         NSLog((result1?.toString())!)
+         NSLog((result2?.toString())!)
+        */
         
-        let result0 = webView.stringByEvaluatingJavaScript(from: "imgAutoFit(\"Java\", \"webview\")")
-        let result1 = jsContext.evaluateScript("imgAutoFit('Java', 'context')")
-        let function = jsContext.objectForKeyedSubscript("imgAutoFit")
-        let result2 = function?.call(withArguments: ["Hello", "forfunction"])
-        
-        
-        NSLog(result0!)
-        NSLog((result1?.toString())!)
-        NSLog((result2?.toString())!)
         
         print("Finish loading...")
     }
+    
+    
+    /**
+     **
+     ** When failed to load a requested url
+     **
+     **
+     **/
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         print("Failed in loading...")
     }
+    
+    /**
+     ** Filter request url
+     **
+     **
+     **/
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if(request.url?.scheme?.hasPrefix("ios"))!{
             let url:String = (request.url?.absoluteString)!
@@ -144,6 +226,16 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
     func hello() -> String{
         NSLog("Hello without patameter");
         return "Hello JavaScript no parameter"
+    }
+    
+    /**
+     ** Other functions
+     **
+     **
+     **/
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 }
 

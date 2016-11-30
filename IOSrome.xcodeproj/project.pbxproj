@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C44630711DEC1A990052E83F /* lanjs.js in Resources */ = {isa = PBXBuildFile; fileRef = C44630701DEC1A990052E83F /* lanjs.js */; };
+		C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C44630B21DEDD96E0052E83F /* OCFunction.m */; };
 		DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045161DDF40280014D479 /* AppDelegate.swift */; };
 		DCB045191DDF40280014D479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045181DDF40280014D479 /* ViewController.swift */; };
 		DCB0451C1DDF40280014D479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCB0451A1DDF40280014D479 /* Main.storyboard */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C44630701DEC1A990052E83F /* lanjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs.js; sourceTree = "<group>"; };
+		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
+		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
+		C44630B41DEDDA840052E83F /* CustomeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomeObject.h; sourceTree = "<group>"; };
 		DCB045131DDF40280014D479 /* IOSrome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSrome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB045161DDF40280014D479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCB045181DDF40280014D479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +69,10 @@
 				DCB045221DDF40280014D479 /* LaunchScreen.storyboard */,
 				DCB045251DDF40280014D479 /* Info.plist */,
 				DCB0451D1DDF40280014D479 /* IOSrome.xcdatamodeld */,
+				C44630701DEC1A990052E83F /* lanjs.js */,
+				C44630B21DEDD96E0052E83F /* OCFunction.m */,
+				C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */,
+				C44630B41DEDDA840052E83F /* CustomeObject.h */,
 			);
 			path = IOSrome;
 			sourceTree = "<group>";
@@ -100,6 +110,7 @@
 					DCB045121DDF40280014D479 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 32XMGVLSBF;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -130,6 +141,7 @@
 				DCB045241DDF40280014D479 /* LaunchScreen.storyboard in Resources */,
 				DCB045211DDF40280014D479 /* Assets.xcassets in Resources */,
 				DCB0451C1DDF40280014D479 /* Main.storyboard in Resources */,
+				C44630711DEC1A990052E83F /* lanjs.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +155,7 @@
 				DCB0451F1DDF40280014D479 /* IOSrome.xcdatamodeld in Sources */,
 				DCB045191DDF40280014D479 /* ViewController.swift in Sources */,
 				DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */,
+				C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,11 +276,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 32XMGVLSBF;
 				INFOPLIST_FILE = IOSrome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lan.IOSrome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IOSrome/IOSrome-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -276,11 +292,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 32XMGVLSBF;
 				INFOPLIST_FILE = IOSrome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lan.IOSrome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IOSrome/IOSrome-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
