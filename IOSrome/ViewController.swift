@@ -83,20 +83,31 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //let path = Bundle.main.path(forResource: "lanjs.js", ofType: "txt")
+        /*
+         * Inject javaScript
+         *
+         *
+         */
         do{
             let filePath = Bundle.main.path(forResource: "lanjs", ofType: "js")
             try jsString = String(contentsOfFile: filePath!)
         }catch let err as NSError{
             print(err)
         }
-        //print(jsString ?? "no js")
         
+        /*
+         * Do cookie manipulation
+         *
+         */
         let instanceOfCustomObject: CustomObject = CustomObject()
         instanceOfCustomObject.someMethod()
         
         
-        let url:URL = URL(string: "http://zhushou3.taokezhushou.com/api/v1/coupons_base/725677994")!
+        /*
+         * Main web page
+         *
+         */
+        let url:URL = URL(string: "http://m.taobao.com")!
         
         let request:URLRequest = URLRequest(url: url)
         
@@ -108,7 +119,6 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         var str = searchBar.text!
         if !str.hasPrefix("http://"){
-            
             str = str.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
             str = "http://www.baidu.com/s?word="+str
         }
@@ -145,6 +155,14 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
     func webViewDidStartLoad(_ webView: UIWebView) {
         searchBar.text = webView.request?.url?.absoluteString
         print("Start loading...")
+        /*
+        let url = URL(string: "http://zhushou3.taokezhushou.com")
+        let cookies = HTTPCookieStorage.shared.cookies(for: url!)
+        for cookie in cookies!{
+            print(cookie)
+        }
+        print("end cookies")
+        */
     }
     
     
@@ -172,8 +190,8 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             (context, exception) in
             print("exception: ", exception ?? "No")
         }
-
-        webView.stringByEvaluatingJavaScript(from: "doWork()")
+        
+        
         /*
          * Ways to call birdge functions
          let result0 = webView.stringByEvaluatingJavaScript(from: "imgAutoFit(\"Java\", \"webview\")")
@@ -187,6 +205,11 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         
         
         print("Finish loading...")
+        /*
+         * Do main work
+         *
+         */
+        webView.stringByEvaluatingJavaScript(from: "doWork()")
     }
     
     
