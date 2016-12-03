@@ -17,6 +17,8 @@
 @property (strong, nonatomic) id someProperty;
 
 -(void) someMethod;
+-(void) httpsRequest;
+-(void) readHttp;
 
 @end
 

@@ -16,26 +16,29 @@ import JavaScriptCore
     func have(_ a: String,_ b:String)->String
     func getDataFromUrl(_ urlString: String, _ callBack: String)
     func getDataFromUrlWithCookie(_ urlString: String, _ callBack: String, _ cookieFor: String)
+    func getClipBoart(_ string: String)
 }
 @objc class SwiftJavaScriptModel: NSObject, SwiftJavaScriptDelegate{
+    internal func getClipBoart(_ string: String) {
+        UIPasteboard.general.string = string;
+    }
+
     internal func getDataFromUrlWithCookie(_ urlString: String, _ callBack: String, _ cookieFor: String) {
-        let url:URL = URL(string: urlString)!
-        let task = URLSession.shared.dataTask(with: url){
-            (data, response, error) in
-            if let data = data, let html = String(data: data, encoding: String.Encoding.utf8){
-                let function = self.jsContext?.objectForKeyedSubscript(callBack)
-                let result = function?.call(withArguments: [html])
-                print(result ?? "No result!")
-            }
-        }
-        task.resume()
     }
 
     internal func getDataFromUrl(_ urlString: String, _ callBack: String){
         let url:URL = URL(string: urlString)!
         var html: String? = nil
         let semaphore = DispatchSemaphore(value: 0)
-        let task = URLSession.shared.dataTask(with: url){
+        var request:URLRequest = URLRequest(url: url)
+ 
+        //request.addValue("textml,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8", forHTTPHeaderField: "Accept")
+        //request.addValue("gzip, deflate, sdch", forHTTPHeaderField: "Accept-Encoding")
+        //request.addValue("en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4,zh-TW;q=0.2,ko;q=0.2", forHTTPHeaderField: "Accept-Language")
+        //request.addValue("max-age=0", forHTTPHeaderField: "Cache-Control")
+        //request.addValue("keep-alive", forHTTPHeaderField: "Connection")
+        request.addValue("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36", forHTTPHeaderField: "User-Agent")
+        let task = URLSession.shared.dataTask(with: request){
             (data, response, error) in
                 html = String(data: data!, encoding: String.Encoding.utf8)
                 semaphore.signal()
@@ -43,7 +46,7 @@ import JavaScriptCore
         task.resume()
         _ = semaphore.wait(timeout: .distantFuture)
         let function = jsContext?.objectForKeyedSubscript(callBack)
-        _ = function?.call(withArguments: [html ?? ""])
+        _ = function?.call(withArguments: [html ?? "", urlString])
     }
 
     internal func have(_ a: String,_ b: String) -> String {
@@ -99,8 +102,8 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
          * Do cookie manipulation
          *
          */
-        let instanceOfCustomObject: CustomObject = CustomObject()
-        instanceOfCustomObject.someMethod()
+        //let instanceOfCustomObject: CustomObject = CustomObject()
+        //instanceOfCustomObject.readHttp();
         
         
         /*
@@ -110,7 +113,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         let url:URL = URL(string: "http://m.taobao.com")!
         
         let request:URLRequest = URLRequest(url: url)
-        
+        webView.scalesPageToFit = true
         webView.loadRequest(request)
         searchBar.delegate = self
         webView.delegate = self
@@ -135,7 +138,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     @IBAction func homeButton(_ sender: UIButton) {
-        let url:URL = URL(string: "http://www.baidu.com")!
+        let url:URL = URL(string: "http://www.alimama.com")!
         let request:URLRequest = URLRequest(url: url)
         webView.loadRequest(request)
     }
@@ -145,6 +148,9 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         webView.loadRequest(request)
     }
     
+    @IBAction func reDoButton(_ sender: UIButton) {
+        webViewDidFinishLoad(webView)
+    }
 
     
     /**
@@ -209,6 +215,9 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
          * Do main work
          *
          */
+        if(webView.request?.url?.absoluteString.contains("pub.alimama.com"))!{
+            webView.stringByEvaluatingJavaScript(from: "var element = document.createElement('meta');  element.name = \"viewport\";  element.content = \"width=device-width,initial-scale=1.0,minimum-scale=0.5,maximum-scale=3,user-scalable=1\"; var head = document.getElementsByTagName('head')[0]; head.appendChild(element);")
+        }
         webView.stringByEvaluatingJavaScript(from: "doWork()")
     }
     
@@ -243,7 +252,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             NSLog("IOS call")
             return false
         }
-        print(request.url?.scheme ?? "Error request url");
+        //print(request.url?.scheme ?? "Error request url");
         return true
     }
     func hello() -> String{
