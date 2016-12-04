@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UKf-gh-SZ0">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--taobao-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,55 +22,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z4K-rc-MKF">
-                                <rect key="frame" x="0.0" y="72" width="320" height="449"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="402"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T14-A1-Ufq">
-                                <rect key="frame" x="16" y="529" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="home"/>
-                                <connections>
-                                    <action selector="homeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tzD-Bz-Qvd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOo-fQ-tbB">
-                                <rect key="frame" x="130" y="529" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="refresh"/>
-                                <connections>
-                                    <action selector="reload" destination="z4K-rc-MKF" eventType="touchUpInside" id="PI2-tN-E48"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8v-Do-9uD">
-                                <rect key="frame" x="187" y="529" width="53" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="forward"/>
-                                <connections>
-                                    <action selector="goForward" destination="z4K-rc-MKF" eventType="touchUpInside" id="7Pd-aW-AOK"/>
-                                </connections>
-                            </button>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25J-3J-k5B">
                                 <rect key="frame" x="0.0" y="28" width="274" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-tY-6Hm">
-                                <rect key="frame" x="256" y="529" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="taobao"/>
-                                <connections>
-                                    <action selector="taobaoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpC-RS-se3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-DP-FR7">
-                                <rect key="frame" x="80" y="529" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="back"/>
-                                <connections>
-                                    <action selector="goBack" destination="z4K-rc-MKF" eventType="touchUpInside" id="PAz-7j-4Nv"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKb-Vc-Qdg">
                                 <rect key="frame" x="274" y="35" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
@@ -79,9 +39,50 @@
                                     <action selector="reDoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ikV-Z0-zbL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T14-A1-Ufq">
+                                <rect key="frame" x="16" y="482" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="home"/>
+                                <connections>
+                                    <action selector="homeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tzD-Bz-Qvd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOo-fQ-tbB">
+                                <rect key="frame" x="130" y="482" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="refresh"/>
+                                <connections>
+                                    <action selector="reload" destination="z4K-rc-MKF" eventType="touchUpInside" id="PI2-tN-E48"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8v-Do-9uD">
+                                <rect key="frame" x="187" y="482" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="forward"/>
+                                <connections>
+                                    <action selector="goForward" destination="z4K-rc-MKF" eventType="touchUpInside" id="7Pd-aW-AOK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-tY-6Hm">
+                                <rect key="frame" x="256" y="482" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="taobao"/>
+                                <connections>
+                                    <action selector="taobaoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpC-RS-se3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-DP-FR7">
+                                <rect key="frame" x="80" y="482" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <action selector="goBack" destination="z4K-rc-MKF" eventType="touchUpInside" id="PAz-7j-4Nv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="taobao" id="QEW-4f-pd3"/>
                     <connections>
                         <outlet property="searchBar" destination="25J-3J-k5B" id="TP4-3C-3pw"/>
                         <outlet property="webView" destination="z4K-rc-MKF" id="fhM-bg-bQb"/>
@@ -89,7 +90,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="138.38028169014083"/>
+            <point key="canvasLocation" x="1070.625" y="-720.42253521126759"/>
+        </scene>
+        <!--sell-->
+        <scene sceneID="1am-oV-R4O">
+            <objects>
+                <navigationController id="24E-rb-Z1K" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="sell" id="nhf-lL-tHC"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZCK-5n-Qh5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="k0j-if-Iti" kind="relationship" relationship="rootViewController" id="J4b-KV-tWR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CYk-Z1-SwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="-43"/>
+        </scene>
+        <!--user-->
+        <scene sceneID="AbA-EL-u3B">
+            <objects>
+                <viewController id="YEq-1U-1vr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="61c-eL-J7z"/>
+                        <viewControllerLayoutGuide type="bottom" id="Po6-N0-2j3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pJD-Eb-ZXN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="user" id="VRa-eq-BRm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I9e-0o-EwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070.625" y="616.90140845070425"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="T5E-cW-RwO">
+            <objects>
+                <viewController id="k0j-if-Iti" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T14-Xl-nQF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hog-b5-KJ9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C39-Ux-7v5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QJC-UJ-7sa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="v0M-qG-Tk9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aa3-xr-6gM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2212.5" y="-43.309859154929576"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ZkY-mP-5Zl">
+            <objects>
+                <tabBarController id="UKf-gh-SZ0" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="kEI-aW-Zt0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Wi2-U2-JC0"/>
+                        <segue destination="24E-rb-Z1K" kind="relationship" relationship="viewControllers" id="db5-KL-No0"/>
+                        <segue destination="YEq-1U-1vr" kind="relationship" relationship="viewControllers" id="mfb-gO-llh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JtN-dr-1tB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-129" y="617"/>
         </scene>
     </scenes>
 </document>
