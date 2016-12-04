@@ -151,6 +151,9 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
     @IBAction func reDoButton(_ sender: UIButton) {
         webViewDidFinishLoad(webView)
     }
+    @IBAction func shareUrl(_ sender: UIButton) {
+        UIPasteboard.general.string = webView.request?.url?.absoluteString
+    }
 
     
     /**

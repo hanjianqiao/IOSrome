@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C422AF241DF4007400DD2AF1 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422AF231DF4007400DD2AF1 /* SellViewController.swift */; };
 		C44630711DEC1A990052E83F /* lanjs.js in Resources */ = {isa = PBXBuildFile; fileRef = C44630701DEC1A990052E83F /* lanjs.js */; };
 		C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C44630B21DEDD96E0052E83F /* OCFunction.m */; };
 		DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045161DDF40280014D479 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C422AF231DF4007400DD2AF1 /* SellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		C44630701DEC1A990052E83F /* lanjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs.js; sourceTree = "<group>"; };
 		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
 		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C422AF221DF4002300DD2AF1 /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				C422AF231DF4007400DD2AF1 /* SellViewController.swift */,
+			);
+			name = viewcontroller;
+			sourceTree = "<group>";
+		};
 		DCB0450A1DDF40280014D479 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +72,7 @@
 		DCB045151DDF40280014D479 /* IOSrome */ = {
 			isa = PBXGroup;
 			children = (
+				C422AF221DF4002300DD2AF1 /* viewcontroller */,
 				DCB045161DDF40280014D479 /* AppDelegate.swift */,
 				DCB045181DDF40280014D479 /* ViewController.swift */,
 				DCB0451A1DDF40280014D479 /* Main.storyboard */,
@@ -153,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCB0451F1DDF40280014D479 /* IOSrome.xcdatamodeld in Sources */,
+				C422AF241DF4007400DD2AF1 /* SellViewController.swift in Sources */,
 				DCB045191DDF40280014D479 /* ViewController.swift in Sources */,
 				DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */,
 				C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */,
