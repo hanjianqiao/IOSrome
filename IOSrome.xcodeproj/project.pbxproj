@@ -22,8 +22,6 @@
 /* Begin PBXFileReference section */
 		C40BE6AE1DF51DA900F6C200 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		C40BE6B01DF51DC700F6C200 /* SellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
-		C422AF281DF48DFD00DD2AF1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		C422AF2A1DF48FF600DD2AF1 /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = IOSrome/Gzip.framework; sourceTree = "<group>"; };
 		C44630701DEC1A990052E83F /* lanjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs.js; sourceTree = "<group>"; };
 		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
 		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
@@ -49,21 +47,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C422AF271DF48DFD00DD2AF1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C422AF2A1DF48FF600DD2AF1 /* Gzip.framework */,
-				C422AF281DF48DFD00DD2AF1 /* libz.tbd */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		DCB0450A1DDF40280014D479 = {
 			isa = PBXGroup;
 			children = (
 				DCB045151DDF40280014D479 /* IOSrome */,
 				DCB045141DDF40280014D479 /* Products */,
-				C422AF271DF48DFD00DD2AF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
