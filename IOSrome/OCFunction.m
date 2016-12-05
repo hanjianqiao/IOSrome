@@ -61,7 +61,7 @@
     serveraddr.sin_port = htons(portno);
     
     /* connect: create a connection with the server */
-    if (connect(sockfd, &serveraddr, sizeof(serveraddr)) < 0)
+    if (connect(sockfd, (const struct sockaddr*)(&serveraddr), sizeof(serveraddr)) < 0)
         printf("ERROR connecting");
     
     /* get message line from the user */

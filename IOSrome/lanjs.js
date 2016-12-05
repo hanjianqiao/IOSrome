@@ -42,7 +42,7 @@ function prepareLanJPanel(url){
     var initialHtml = "<p id=\"langenrat\"></p><p id=\"lan30dsel\"></p><p id=\"lanquerat\"></p><br><br>";
     initialHtml += "<table id=\"langenbro\" width=\"100%\" border=\"1\"></table><br><br>";
     initialHtml += "<table id=\"lanquebro\" width=\"100%\" border=\"1\"></table><br><br>";
-    //initialHtml += "<table id=\"lantaotic\" width=\"100%\" border=\"1\"></table><br><br>";
+    initialHtml += "<table id=\"lantaotic\" width=\"100%\" border=\"1\"></table><br><br>";
     initialHtml += "<table id=\"lanTKZtic\" width=\"100%\" border=\"1\"></table><br><br>";
     setLanJPanel(initialHtml);
 }
@@ -165,7 +165,6 @@ function setClipboard(string){
 function updateTaobaoCouponItemCallBack(htmlText, url){
     if(htmlText.indexOf("立刻领用") > 0){
         var innerText = "";
-        var jo = ja[i];
         innerText += "<td>";
         htmlText = htmlText.substring(htmlText.indexOf("coupon-info"), htmlText.indexOf("立刻领用"));
         innerText += htmlText.substring(htmlText.indexOf("满"), htmlText.indexOf("可用")) + "减";
@@ -186,15 +185,12 @@ function updateTaobaoCouponItem(sellerId, activityId){
 }
 
 function updateTaobaoCouponCallBack(htmlText, url){
-    alert(htmlText);
-    alert(url);
-    if(htmlText.startsWith("<!")){
-        document.getElementById("lantaotic").innerHTML="<caption>登陆查看优惠券</caption><tr style=\"background: #fe2641; color:#fff;\"><th>优惠券</th><th>使用时间</th><th>手机券</th></tr>";
-        var item = document.createElement("tr");
-        item.innerHTML = "请登陆";
-        document.getElementById("lantaotic").appendChild(item);
-    }
-    else{
+    //alert(htmlText[0]);
+    //alert(htmlText[1]);
+    //alert(htmlText[2]);
+    //alert(htmlText[3]);
+    //alert(url);
+    if(htmlText[2] == "{"){
         var obj = eval('('+htmlText+')');
         var ja = obj.priceVolumes;
         if(Object.keys(ja).length == 0){
@@ -207,10 +203,16 @@ function updateTaobaoCouponCallBack(htmlText, url){
             updateTaobaoCouponItem(userid, activityId);
         }
     }
+    else{
+        document.getElementById("lantaotic").innerHTML="<caption>登陆查看优惠券</caption><tr style=\"background: #fe2641; color:#fff;\"><th>优惠券</th><th>使用时间</th><th>手机券</th></tr>";
+        var item = document.createElement("tr");
+        item.innerHTML = "请登陆";
+        document.getElementById("lantaotic").appendChild(item);
+    }
 }
 
 function updateTaobaoCoupon(){
-    //LanJsBridge.getDataFromUrl("https://cart.taobao.com/json/GetPriceVolume.do?sellerId="+userid, "updateTaobaoCouponCallBack");
+    LanJsBridge.getDataFromUrl("https://cart.taobao.com/json/GetPriceVolume.do?sellerId="+userid, "updateTaobaoCouponCallBack");
 }
 
 // Taokezhushou Coupon

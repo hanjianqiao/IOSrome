@@ -120,7 +120,7 @@
         <!--user-->
         <scene sceneID="AbA-EL-u3B">
             <objects>
-                <viewController id="YEq-1U-1vr" sceneMemberID="viewController">
+                <viewController id="YEq-1U-1vr" customClass="UserViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="61c-eL-J7z"/>
                         <viewControllerLayoutGuide type="bottom" id="Po6-N0-2j3"/>
@@ -128,9 +128,29 @@
                     <view key="view" contentMode="scaleToFill" id="pJD-Eb-ZXN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://kouchenvip.com:5000/register" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mK7-k2-xVd">
+                                <rect key="frame" x="16" y="57" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGy-Zm-hzl">
+                                <rect key="frame" x="137" y="123" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="POST"/>
+                                <connections>
+                                    <action selector="postJSON:" destination="YEq-1U-1vr" eventType="touchUpInside" id="psw-TK-4pC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="user" id="VRa-eq-BRm"/>
+                    <connections>
+                        <outlet property="serverURL" destination="mK7-k2-xVd" id="pac-ui-eVF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9e-0o-EwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
