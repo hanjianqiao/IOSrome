@@ -70,21 +70,21 @@
 		DCB045151DDF40280014D479 /* IOSrome */ = {
 			isa = PBXGroup;
 			children = (
-				C40BE6B01DF51DC700F6C200 /* SellViewController.swift */,
-				C40BE6AE1DF51DA900F6C200 /* UserViewController.swift */,
-				DCB045161DDF40280014D479 /* AppDelegate.swift */,
-				DCB045181DDF40280014D479 /* ViewController.swift */,
-				DCB0451A1DDF40280014D479 /* Main.storyboard */,
-				DCB045201DDF40280014D479 /* Assets.xcassets */,
 				DCB045221DDF40280014D479 /* LaunchScreen.storyboard */,
-				DCB045251DDF40280014D479 /* Info.plist */,
-				DCB0451D1DDF40280014D479 /* IOSrome.xcdatamodeld */,
+				DCB045161DDF40280014D479 /* AppDelegate.swift */,
+				DCB0451A1DDF40280014D479 /* Main.storyboard */,
+				DCB045181DDF40280014D479 /* ViewController.swift */,
+				C40BE6B01DF51DC700F6C200 /* SellViewController.swift */,
+				C40BE6B41DF6621900F6C200 /* LoginViewController.swift */,
+				C40BE6B21DF660AA00F6C200 /* UserStoryboard.storyboard */,
+				C40BE6AE1DF51DA900F6C200 /* UserViewController.swift */,
 				C44630701DEC1A990052E83F /* lanjs.js */,
+				DCB045251DDF40280014D479 /* Info.plist */,
+				DCB045201DDF40280014D479 /* Assets.xcassets */,
+				DCB0451D1DDF40280014D479 /* IOSrome.xcdatamodeld */,
 				C44630B21DEDD96E0052E83F /* OCFunction.m */,
 				C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */,
 				C44630B41DEDDA840052E83F /* CustomeObject.h */,
-				C40BE6B21DF660AA00F6C200 /* UserStoryboard.storyboard */,
-				C40BE6B41DF6621900F6C200 /* LoginViewController.swift */,
 			);
 			path = IOSrome;
 			sourceTree = "<group>";

@@ -10,12 +10,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var usernam: UITextField!
+    @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         password.isSecureTextEntry = true
     }
@@ -24,7 +23,7 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func registerNewUser(_ sender: UIBarButtonItem) {
         let vc = UIStoryboard(name: "UserStoryboard", bundle: nil).instantiateInitialViewController() as UIViewController!
         self.navigationController?.pushViewController(vc!, animated: true)
@@ -35,16 +34,15 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-    let serverUrlString = "http://kouchenvip.com:5000/register"
-    
+
+    let serverUrlString = "http://kouchenvip.com:5000/login"
+
     @IBAction func doLogin(_ sender: UIButton) {
-        let alert = UIAlertController (title: "Password Reset", message: "Your user name: " + usernam.text! + "\nYour password: " + password.text!, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
         var request = URLRequest(url: URL(string: serverUrlString)!)
         request.httpMethod = "POST"
-        let postString = "{\"user_id\":\"SF-Zhou\",\"password\":\"ABCDEFG\",\"code\":\"123456\",\"wechat\":\"123456\",\"qq\":\"123456\",\"taobao\":\"123456\"}"
+        let postString = "{\"user_id\":\"" +
+            username.text! + "\",\"password\":\"" +
+            password.text! + "\"}"
         request.httpBody = postString.data(using: .utf8)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -60,6 +58,14 @@ class LoginViewController: UIViewController {
             //print(data)
             let responseString = String(data: data, encoding: .utf8)!
             print("responseString = \(responseString)")
+            
+            let alert = UIAlertController (title: "登陆结果", message: responseString
+                , preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            OperationQueue.main.addOperation {
+                self.present(alert, animated: true, completion: nil)
+            }
+            
         }
         task.resume()
     }

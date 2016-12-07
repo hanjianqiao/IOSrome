@@ -87,10 +87,13 @@ class UserViewController: UIViewController, URLSessionDelegate, UITextFieldDeleg
             let responseString = String(data: data, encoding: .utf8)!
             print("responseString = \(responseString)")
             
-            let alert1 = UIAlertController (title: "注册结果", message: responseString
+            let alert = UIAlertController (title: "注册结果", message: responseString
                 , preferredStyle: UIAlertControllerStyle.alert)
-            alert1.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert1, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            OperationQueue.main.addOperation {
+                self.present(alert, animated: true, completion: nil)
+            }
+            //self.present(alert1, animated: true, completion: nil)
         }
         task.resume()
     }
