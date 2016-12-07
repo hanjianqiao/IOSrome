@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C40BE6AF1DF51DA900F6C200 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE6AE1DF51DA900F6C200 /* UserViewController.swift */; };
 		C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE6B01DF51DC700F6C200 /* SellViewController.swift */; };
+		C40BE6B31DF660AA00F6C200 /* UserStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40BE6B21DF660AA00F6C200 /* UserStoryboard.storyboard */; };
+		C40BE6B51DF6621900F6C200 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE6B41DF6621900F6C200 /* LoginViewController.swift */; };
 		C44630711DEC1A990052E83F /* lanjs.js in Resources */ = {isa = PBXBuildFile; fileRef = C44630701DEC1A990052E83F /* lanjs.js */; };
 		C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C44630B21DEDD96E0052E83F /* OCFunction.m */; };
 		DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045161DDF40280014D479 /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		C40BE6AE1DF51DA900F6C200 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		C40BE6B01DF51DC700F6C200 /* SellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
+		C40BE6B21DF660AA00F6C200 /* UserStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserStoryboard.storyboard; sourceTree = "<group>"; };
+		C40BE6B41DF6621900F6C200 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C44630701DEC1A990052E83F /* lanjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs.js; sourceTree = "<group>"; };
 		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
 		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 				C44630B21DEDD96E0052E83F /* OCFunction.m */,
 				C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */,
 				C44630B41DEDDA840052E83F /* CustomeObject.h */,
+				C40BE6B21DF660AA00F6C200 /* UserStoryboard.storyboard */,
+				C40BE6B41DF6621900F6C200 /* LoginViewController.swift */,
 			);
 			path = IOSrome;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 				DCB045241DDF40280014D479 /* LaunchScreen.storyboard in Resources */,
 				DCB045211DDF40280014D479 /* Assets.xcassets in Resources */,
 				DCB0451C1DDF40280014D479 /* Main.storyboard in Resources */,
+				C40BE6B31DF660AA00F6C200 /* UserStoryboard.storyboard in Resources */,
 				C44630711DEC1A990052E83F /* lanjs.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40BE6B51DF6621900F6C200 /* LoginViewController.swift in Sources */,
 				DCB0451F1DDF40280014D479 /* IOSrome.xcdatamodeld in Sources */,
 				C40BE6AF1DF51DA900F6C200 /* UserViewController.swift in Sources */,
 				C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */,
