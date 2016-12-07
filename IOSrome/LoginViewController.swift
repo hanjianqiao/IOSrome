@@ -36,7 +36,16 @@ class LoginViewController: UIViewController {
     }
 
     let serverUrlString = "http://kouchenvip.com:5000/login"
-
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
     @IBAction func doLogin(_ sender: UIButton) {
         var request = URLRequest(url: URL(string: serverUrlString)!)
         request.httpMethod = "POST"
@@ -58,6 +67,11 @@ class LoginViewController: UIViewController {
             //print(data)
             let responseString = String(data: data, encoding: .utf8)!
             print("responseString = \(responseString)")
+            
+            let json = self.convertToDictionary(text: responseString)!
+            
+            print(json["status"] as! String == "failed")
+            print(json["message"]!)
             
             let alert = UIAlertController (title: "登陆结果", message: responseString
                 , preferredStyle: UIAlertControllerStyle.alert)
