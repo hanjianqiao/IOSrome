@@ -3,3 +3,6 @@
 //
 
 #import "CustomeObject.h"
+
+#import "WXApi.h"
+#import "WXApiObject.h"

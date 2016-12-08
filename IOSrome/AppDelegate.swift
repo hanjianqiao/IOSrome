@@ -17,9 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        WXApi.registerApp("wxb4ba3c02aa476ea1");
         return true
     }
-
+    
+    func onResp(resp: BaseResp!) {
+        //var strTitle = "支付结果"
+        var strMsg = "(resp.errCode)"
+        if resp.isKind(of: PayResp.self) {
+            switch resp.errCode {
+            case WXSuccess.rawValue:
+                strMsg = "pay success"
+            default:
+                strMsg = "支付失败，请您重新支付!"
+                print("retcode = \(resp.errCode), retstr =\(resp.errStr)")
+            }
+        }
+        print(strMsg)
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

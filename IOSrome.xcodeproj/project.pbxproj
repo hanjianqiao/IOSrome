@@ -11,6 +11,12 @@
 		C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE6B01DF51DC700F6C200 /* SellViewController.swift */; };
 		C40BE6B31DF660AA00F6C200 /* UserStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40BE6B21DF660AA00F6C200 /* UserStoryboard.storyboard */; };
 		C40BE6B51DF6621900F6C200 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE6B41DF6621900F6C200 /* LoginViewController.swift */; };
+		C40BE7131DF86E2800F6C200 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BE7101DF86E2800F6C200 /* libWeChatSDK.a */; };
+		C40BE7161DF86F5D00F6C200 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BE7151DF86F5D00F6C200 /* libstdc++.tbd */; };
+		C40BE7181DF86F6300F6C200 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BE7171DF86F6300F6C200 /* libsqlite3.tbd */; };
+		C40BE71A1DF86F6900F6C200 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BE7191DF86F6900F6C200 /* CoreTelephony.framework */; };
+		C40BE71C1DF86F6E00F6C200 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BE71B1DF86F6E00F6C200 /* SystemConfiguration.framework */; };
+		C40BE71E1DF86F8300F6C200 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BE71D1DF86F8300F6C200 /* libz.tbd */; };
 		C44630711DEC1A990052E83F /* lanjs.js in Resources */ = {isa = PBXBuildFile; fileRef = C44630701DEC1A990052E83F /* lanjs.js */; };
 		C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C44630B21DEDD96E0052E83F /* OCFunction.m */; };
 		DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045161DDF40280014D479 /* AppDelegate.swift */; };
@@ -26,6 +32,14 @@
 		C40BE6B01DF51DC700F6C200 /* SellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		C40BE6B21DF660AA00F6C200 /* UserStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserStoryboard.storyboard; sourceTree = "<group>"; };
 		C40BE6B41DF6621900F6C200 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C40BE7101DF86E2800F6C200 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = WeChatSDK/libWeChatSDK.a; sourceTree = "<group>"; };
+		C40BE7111DF86E2800F6C200 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXApi.h; path = WeChatSDK/WXApi.h; sourceTree = "<group>"; };
+		C40BE7121DF86E2800F6C200 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXApiObject.h; path = WeChatSDK/WXApiObject.h; sourceTree = "<group>"; };
+		C40BE7151DF86F5D00F6C200 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		C40BE7171DF86F6300F6C200 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C40BE7191DF86F6900F6C200 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		C40BE71B1DF86F6E00F6C200 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C40BE71D1DF86F8300F6C200 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		C44630701DEC1A990052E83F /* lanjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs.js; sourceTree = "<group>"; };
 		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
 		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
@@ -45,17 +59,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40BE71E1DF86F8300F6C200 /* libz.tbd in Frameworks */,
+				C40BE71C1DF86F6E00F6C200 /* SystemConfiguration.framework in Frameworks */,
+				C40BE71A1DF86F6900F6C200 /* CoreTelephony.framework in Frameworks */,
+				C40BE7181DF86F6300F6C200 /* libsqlite3.tbd in Frameworks */,
+				C40BE7161DF86F5D00F6C200 /* libstdc++.tbd in Frameworks */,
+				C40BE7131DF86E2800F6C200 /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40BE70F1DF86E0000F6C200 /* WXSDK */ = {
+			isa = PBXGroup;
+			children = (
+				C40BE7101DF86E2800F6C200 /* libWeChatSDK.a */,
+				C40BE7111DF86E2800F6C200 /* WXApi.h */,
+				C40BE7121DF86E2800F6C200 /* WXApiObject.h */,
+			);
+			name = WXSDK;
+			sourceTree = "<group>";
+		};
+		C40BE7141DF86F5D00F6C200 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C40BE71D1DF86F8300F6C200 /* libz.tbd */,
+				C40BE71B1DF86F6E00F6C200 /* SystemConfiguration.framework */,
+				C40BE7191DF86F6900F6C200 /* CoreTelephony.framework */,
+				C40BE7171DF86F6300F6C200 /* libsqlite3.tbd */,
+				C40BE7151DF86F5D00F6C200 /* libstdc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DCB0450A1DDF40280014D479 = {
 			isa = PBXGroup;
 			children = (
 				DCB045151DDF40280014D479 /* IOSrome */,
 				DCB045141DDF40280014D479 /* Products */,
+				C40BE7141DF86F5D00F6C200 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +113,7 @@
 		DCB045151DDF40280014D479 /* IOSrome */ = {
 			isa = PBXGroup;
 			children = (
+				C40BE70F1DF86E0000F6C200 /* WXSDK */,
 				DCB045221DDF40280014D479 /* LaunchScreen.storyboard */,
 				DCB045161DDF40280014D479 /* AppDelegate.swift */,
 				DCB0451A1DDF40280014D479 /* Main.storyboard */,
@@ -300,6 +344,10 @@
 				);
 				INFOPLIST_FILE = IOSrome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IOSrome/WeChatSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lan.IOSrome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IOSrome/IOSrome-Bridging-Header.h";
@@ -320,6 +368,10 @@
 				);
 				INFOPLIST_FILE = IOSrome/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IOSrome/WeChatSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lan.IOSrome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IOSrome/IOSrome-Bridging-Header.h";
