@@ -17,18 +17,25 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         password.isSecureTextEntry = true
+        
+        username.leftViewMode = UITextFieldViewMode.always
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: username.intrinsicContentSize.height, height: username.intrinsicContentSize.height))
+        let image = UIImage(named: "1启动页.jpg")
+        imageView.image = image
+        username.leftView = imageView
+        
+        password.leftViewMode = UITextFieldViewMode.always
+        let imageViewP = UIImageView(frame: CGRect(x: 0, y: 0, width: username.intrinsicContentSize.height, height: username.intrinsicContentSize.height))
+        let imageP = UIImage(named: "1启动页.jpg")
+        imageViewP.image = imageP
+        password.leftView = imageViewP
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func registerNewUser(_ sender: UIBarButtonItem) {
-        let vc = UIStoryboard(name: "UserStoryboard", bundle: nil).instantiateInitialViewController() as UIViewController!
-        self.navigationController?.pushViewController(vc!, animated: true)
-    }
-
+    
     @IBAction func forgetPassword(_ sender: UIButton) {
         let alert = UIAlertController (title: "Password Reset", message: "You forget the password", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))

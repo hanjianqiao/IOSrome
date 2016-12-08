@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C40BE6AF1DF51DA900F6C200 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE6AE1DF51DA900F6C200 /* UserViewController.swift */; };
+		C40BE6AF1DF51DA900F6C200 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE6AE1DF51DA900F6C200 /* RegisterViewController.swift */; };
 		C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE6B01DF51DC700F6C200 /* SellViewController.swift */; };
-		C40BE6B31DF660AA00F6C200 /* UserStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40BE6B21DF660AA00F6C200 /* UserStoryboard.storyboard */; };
+		C40BE6B31DF660AA00F6C200 /* UserCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40BE6B21DF660AA00F6C200 /* UserCenter.storyboard */; };
 		C40BE6B51DF6621900F6C200 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE6B41DF6621900F6C200 /* LoginViewController.swift */; };
 		C40BE7131DF86E2800F6C200 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BE7101DF86E2800F6C200 /* libWeChatSDK.a */; };
 		C40BE7161DF86F5D00F6C200 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BE7151DF86F5D00F6C200 /* libstdc++.tbd */; };
@@ -17,6 +17,11 @@
 		C40BE71A1DF86F6900F6C200 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BE7191DF86F6900F6C200 /* CoreTelephony.framework */; };
 		C40BE71C1DF86F6E00F6C200 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BE71B1DF86F6E00F6C200 /* SystemConfiguration.framework */; };
 		C40BE71E1DF86F8300F6C200 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C40BE71D1DF86F8300F6C200 /* libz.tbd */; };
+		C40BE72B1DF96F0500F6C200 /* 1启动页.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C40BE72A1DF96F0500F6C200 /* 1启动页.jpg */; };
+		C40BE7331DF9B3B400F6C200 /* UserCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE7321DF9B3B400F6C200 /* UserCenterViewController.swift */; };
+		C40BE7351DF9C34000F6C200 /* UserNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE7341DF9C34000F6C200 /* UserNavigationController.swift */; };
+		C40BE7371DF9D01100F6C200 /* tiny0.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7361DF9D01100F6C200 /* tiny0.png */; };
+		C40BE7391DF9D07E00F6C200 /* back0.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7381DF9D07E00F6C200 /* back0.png */; };
 		C44630711DEC1A990052E83F /* lanjs.js in Resources */ = {isa = PBXBuildFile; fileRef = C44630701DEC1A990052E83F /* lanjs.js */; };
 		C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C44630B21DEDD96E0052E83F /* OCFunction.m */; };
 		DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045161DDF40280014D479 /* AppDelegate.swift */; };
@@ -28,9 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C40BE6AE1DF51DA900F6C200 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		C40BE6AE1DF51DA900F6C200 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C40BE6B01DF51DC700F6C200 /* SellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
-		C40BE6B21DF660AA00F6C200 /* UserStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserStoryboard.storyboard; sourceTree = "<group>"; };
+		C40BE6B21DF660AA00F6C200 /* UserCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserCenter.storyboard; sourceTree = "<group>"; };
 		C40BE6B41DF6621900F6C200 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C40BE7101DF86E2800F6C200 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libWeChatSDK.a; path = WeChatSDK/libWeChatSDK.a; sourceTree = "<group>"; };
 		C40BE7111DF86E2800F6C200 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WXApi.h; path = WeChatSDK/WXApi.h; sourceTree = "<group>"; };
@@ -40,6 +45,11 @@
 		C40BE7191DF86F6900F6C200 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		C40BE71B1DF86F6E00F6C200 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C40BE71D1DF86F8300F6C200 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		C40BE72A1DF96F0500F6C200 /* 1启动页.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "1启动页.jpg"; path = "media/1启动页.jpg"; sourceTree = "<group>"; };
+		C40BE7321DF9B3B400F6C200 /* UserCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCenterViewController.swift; sourceTree = "<group>"; };
+		C40BE7341DF9C34000F6C200 /* UserNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNavigationController.swift; sourceTree = "<group>"; };
+		C40BE7361DF9D01100F6C200 /* tiny0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tiny0.png; path = media/tiny0.png; sourceTree = "<group>"; };
+		C40BE7381DF9D07E00F6C200 /* back0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back0.png; path = media/back0.png; sourceTree = "<group>"; };
 		C44630701DEC1A990052E83F /* lanjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs.js; sourceTree = "<group>"; };
 		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
 		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
@@ -93,6 +103,101 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C40BE7201DF94CA600F6C200 /* user */ = {
+			isa = PBXGroup;
+			children = (
+				C40BE6B21DF660AA00F6C200 /* UserCenter.storyboard */,
+				C40BE6AE1DF51DA900F6C200 /* RegisterViewController.swift */,
+				C40BE6B41DF6621900F6C200 /* LoginViewController.swift */,
+				C40BE7321DF9B3B400F6C200 /* UserCenterViewController.swift */,
+			);
+			name = user;
+			sourceTree = "<group>";
+		};
+		C40BE7231DF951DE00F6C200 /* stdlibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = stdlibs;
+			sourceTree = "<group>";
+		};
+		C40BE7281DF96E7800F6C200 /* media */ = {
+			isa = PBXGroup;
+			children = (
+				DCB045201DDF40280014D479 /* Assets.xcassets */,
+				C40BE7291DF96E8000F6C200 /* image */,
+			);
+			name = media;
+			sourceTree = "<group>";
+		};
+		C40BE7291DF96E8000F6C200 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				C40BE7381DF9D07E00F6C200 /* back0.png */,
+				C40BE7361DF9D01100F6C200 /* tiny0.png */,
+				C40BE72A1DF96F0500F6C200 /* 1启动页.jpg */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		C40BE72C1DF9B1B100F6C200 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				DCB045161DDF40280014D479 /* AppDelegate.swift */,
+				DCB045221DDF40280014D479 /* LaunchScreen.storyboard */,
+				DCB0451A1DDF40280014D479 /* Main.storyboard */,
+				C40BE7341DF9C34000F6C200 /* UserNavigationController.swift */,
+				C40BE72D1DF9B1BF00F6C200 /* taobao */,
+				C40BE72E1DF9B1D000F6C200 /* market */,
+				C40BE7201DF94CA600F6C200 /* user */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		C40BE72D1DF9B1BF00F6C200 /* taobao */ = {
+			isa = PBXGroup;
+			children = (
+				DCB045181DDF40280014D479 /* ViewController.swift */,
+				C44630701DEC1A990052E83F /* lanjs.js */,
+			);
+			name = taobao;
+			sourceTree = "<group>";
+		};
+		C40BE72E1DF9B1D000F6C200 /* market */ = {
+			isa = PBXGroup;
+			children = (
+				C40BE6B01DF51DC700F6C200 /* SellViewController.swift */,
+			);
+			name = market;
+			sourceTree = "<group>";
+		};
+		C40BE72F1DF9B1F300F6C200 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				DCB045251DDF40280014D479 /* Info.plist */,
+				DCB0451D1DDF40280014D479 /* IOSrome.xcdatamodeld */,
+			);
+			name = system;
+			sourceTree = "<group>";
+		};
+		C40BE7301DF9B24800F6C200 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				C40BE7311DF9B24F00F6C200 /* oc */,
+			);
+			name = support;
+			sourceTree = "<group>";
+		};
+		C40BE7311DF9B24F00F6C200 /* oc */ = {
+			isa = PBXGroup;
+			children = (
+				C44630B21DEDD96E0052E83F /* OCFunction.m */,
+				C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */,
+				C44630B41DEDDA840052E83F /* CustomeObject.h */,
+			);
+			name = oc;
+			sourceTree = "<group>";
+		};
 		DCB0450A1DDF40280014D479 = {
 			isa = PBXGroup;
 			children = (
@@ -113,22 +218,12 @@
 		DCB045151DDF40280014D479 /* IOSrome */ = {
 			isa = PBXGroup;
 			children = (
+				C40BE7301DF9B24800F6C200 /* support */,
+				C40BE72F1DF9B1F300F6C200 /* system */,
+				C40BE72C1DF9B1B100F6C200 /* main */,
+				C40BE7281DF96E7800F6C200 /* media */,
+				C40BE7231DF951DE00F6C200 /* stdlibs */,
 				C40BE70F1DF86E0000F6C200 /* WXSDK */,
-				DCB045221DDF40280014D479 /* LaunchScreen.storyboard */,
-				DCB045161DDF40280014D479 /* AppDelegate.swift */,
-				DCB0451A1DDF40280014D479 /* Main.storyboard */,
-				DCB045181DDF40280014D479 /* ViewController.swift */,
-				C40BE6B01DF51DC700F6C200 /* SellViewController.swift */,
-				C40BE6B41DF6621900F6C200 /* LoginViewController.swift */,
-				C40BE6B21DF660AA00F6C200 /* UserStoryboard.storyboard */,
-				C40BE6AE1DF51DA900F6C200 /* UserViewController.swift */,
-				C44630701DEC1A990052E83F /* lanjs.js */,
-				DCB045251DDF40280014D479 /* Info.plist */,
-				DCB045201DDF40280014D479 /* Assets.xcassets */,
-				DCB0451D1DDF40280014D479 /* IOSrome.xcdatamodeld */,
-				C44630B21DEDD96E0052E83F /* OCFunction.m */,
-				C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */,
-				C44630B41DEDDA840052E83F /* CustomeObject.h */,
 			);
 			path = IOSrome;
 			sourceTree = "<group>";
@@ -197,7 +292,10 @@
 				DCB045241DDF40280014D479 /* LaunchScreen.storyboard in Resources */,
 				DCB045211DDF40280014D479 /* Assets.xcassets in Resources */,
 				DCB0451C1DDF40280014D479 /* Main.storyboard in Resources */,
-				C40BE6B31DF660AA00F6C200 /* UserStoryboard.storyboard in Resources */,
+				C40BE6B31DF660AA00F6C200 /* UserCenter.storyboard in Resources */,
+				C40BE7371DF9D01100F6C200 /* tiny0.png in Resources */,
+				C40BE7391DF9D07E00F6C200 /* back0.png in Resources */,
+				C40BE72B1DF96F0500F6C200 /* 1启动页.jpg in Resources */,
 				C44630711DEC1A990052E83F /* lanjs.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,10 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40BE7331DF9B3B400F6C200 /* UserCenterViewController.swift in Sources */,
 				C40BE6B51DF6621900F6C200 /* LoginViewController.swift in Sources */,
 				DCB0451F1DDF40280014D479 /* IOSrome.xcdatamodeld in Sources */,
-				C40BE6AF1DF51DA900F6C200 /* UserViewController.swift in Sources */,
+				C40BE6AF1DF51DA900F6C200 /* RegisterViewController.swift in Sources */,
 				C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */,
+				C40BE7351DF9C34000F6C200 /* UserNavigationController.swift in Sources */,
 				DCB045191DDF40280014D479 /* ViewController.swift in Sources */,
 				DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */,
 				C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */,

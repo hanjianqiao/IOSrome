@@ -39,7 +39,7 @@ function prepareLanJPanel(url){
         //alert("tmall");
         insertAfter(JP, document.getElementById("s-price"));
     }
-    var initialHtml = "<p id=\"langenrat\"></p><p id=\"lan30dsel\"></p><p id=\"lanquerat\"></p><br><br>";
+    var initialHtml = "<br><p id=\"langenrat\"></p><p id=\"lan30dsel\"></p><p id=\"lanquerat\"></p><br><br>";
     initialHtml += "<table id=\"langenbro\" width=\"100%\" border=\"1\"></table><br><br>";
     initialHtml += "<table id=\"lanquebro\" width=\"100%\" border=\"1\"></table><br><br>";
     initialHtml += "<table id=\"lantaotic\" width=\"100%\" border=\"1\"></table><br><br>";
