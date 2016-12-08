@@ -104,7 +104,7 @@ function updateGeneralBrokerageCallBack(htmlText, url){
 }
 
 function updateGeneralBrokerage(){
-    LanJsBridge.getDataFromUrl("http://pub.alimama.com/items/search.json?q=https://item.taobao.com/item.htm?id="+goodid+"&perPageSize=50", "updateGeneralBrokerageCallBack");
+    LanJsBridge.getDataFromUrlSynch("http://pub.alimama.com/items/search.json?q=https://item.taobao.com/item.htm?id="+goodid+"&perPageSize=50", "updateGeneralBrokerageCallBack");
 }
 
 // queqiao brokerage
@@ -159,7 +159,8 @@ function updateQueqiaoBrokerage(){
 // Taobao Coupon
 
 function setClipboard(string){
-    LanJsBridge.setClipboard(string);
+    //alert("set clipboard")
+    LanJsBridge.setClipBoard(string);
 }
 
 function updateTaobaoCouponItemCallBack(htmlText, url){
