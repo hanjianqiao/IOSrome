@@ -22,6 +22,28 @@
 		C40BE7351DF9C34000F6C200 /* UserNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE7341DF9C34000F6C200 /* UserNavigationController.swift */; };
 		C40BE7371DF9D01100F6C200 /* tiny0.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7361DF9D01100F6C200 /* tiny0.png */; };
 		C40BE7391DF9D07E00F6C200 /* back0.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7381DF9D07E00F6C200 /* back0.png */; };
+		C40BE73B1DFA3DF800F6C200 /* user_center_vip.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE73A1DFA3DF800F6C200 /* user_center_vip.png */; };
+		C40BE73D1DFA4A3F00F6C200 /* user_center_my_invitation.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE73C1DFA4A3F00F6C200 /* user_center_my_invitation.png */; };
+		C40BE7421DFA4BCE00F6C200 /* user_center_about_us.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE73E1DFA4BCE00F6C200 /* user_center_about_us.png */; };
+		C40BE7431DFA4BCE00F6C200 /* user_center_system_message.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE73F1DFA4BCE00F6C200 /* user_center_system_message.png */; };
+		C40BE7441DFA4BCE00F6C200 /* user_center_tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7401DFA4BCE00F6C200 /* user_center_tutorial.png */; };
+		C40BE7451DFA4BCE00F6C200 /* user_center_user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7411DFA4BCE00F6C200 /* user_center_user_icon.png */; };
+		C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE7471DFA521B00F6C200 /* GlobalVariables.swift */; };
+		C40BE74A1DFA5C2800F6C200 /* fake_about_us.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7491DFA5C2800F6C200 /* fake_about_us.png */; };
+		C40BE74C1DFA764B00F6C200 /* fake_invitation.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE74B1DFA764B00F6C200 /* fake_invitation.png */; };
+		C40BE74E1DFA76CD00F6C200 /* fake_tutorial.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE74D1DFA76CD00F6C200 /* fake_tutorial.png */; };
+		C40BE7501DFA772D00F6C200 /* fake_message.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE74F1DFA772D00F6C200 /* fake_message.png */; };
+		C40BE7521DFA9A4D00F6C200 /* tiny_user_head.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7511DFA9A4D00F6C200 /* tiny_user_head.png */; };
+		C40BE7541DFB11F000F6C200 /* fake_repay_rule.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7531DFB11F000F6C200 /* fake_repay_rule.png */; };
+		C40BE7561DFB144100F6C200 /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7551DFB144100F6C200 /* eye.png */; };
+		C40BE7581DFB156D00F6C200 /* fake_bill.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7571DFB156D00F6C200 /* fake_bill.png */; };
+		C40BE75A1DFB16F100F6C200 /* background_invitation_overview.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7591DFB16F000F6C200 /* background_invitation_overview.png */; };
+		C40BE75C1DFB19BB00F6C200 /* fake_bill_detail.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE75B1DFB19BB00F6C200 /* fake_bill_detail.png */; };
+		C40BE75E1DFB1B0E00F6C200 /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE75D1DFB1B0E00F6C200 /* BillTableViewCell.swift */; };
+		C40BE7681DFB268500F6C200 /* BillListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE7661DFB268400F6C200 /* BillListTableViewController.swift */; };
+		C40BE76B1DFB2BCA00F6C200 /* MessageListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE76A1DFB2BCA00F6C200 /* MessageListTableViewController.swift */; };
+		C40BE76D1DFB2C3E00F6C200 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE76C1DFB2C3E00F6C200 /* MessageTableViewCell.swift */; };
+		C40BE76F1DFB2D1600F6C200 /* fake_message_detail.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE76E1DFB2D1600F6C200 /* fake_message_detail.png */; };
 		C44630711DEC1A990052E83F /* lanjs.js in Resources */ = {isa = PBXBuildFile; fileRef = C44630701DEC1A990052E83F /* lanjs.js */; };
 		C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C44630B21DEDD96E0052E83F /* OCFunction.m */; };
 		DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045161DDF40280014D479 /* AppDelegate.swift */; };
@@ -50,6 +72,28 @@
 		C40BE7341DF9C34000F6C200 /* UserNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNavigationController.swift; sourceTree = "<group>"; };
 		C40BE7361DF9D01100F6C200 /* tiny0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tiny0.png; path = media/tiny0.png; sourceTree = "<group>"; };
 		C40BE7381DF9D07E00F6C200 /* back0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back0.png; path = media/back0.png; sourceTree = "<group>"; };
+		C40BE73A1DFA3DF800F6C200 /* user_center_vip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_center_vip.png; path = media/user_center_vip.png; sourceTree = "<group>"; };
+		C40BE73C1DFA4A3F00F6C200 /* user_center_my_invitation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_center_my_invitation.png; path = media/user_center_my_invitation.png; sourceTree = "<group>"; };
+		C40BE73E1DFA4BCE00F6C200 /* user_center_about_us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_center_about_us.png; path = media/user_center_about_us.png; sourceTree = "<group>"; };
+		C40BE73F1DFA4BCE00F6C200 /* user_center_system_message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_center_system_message.png; path = media/user_center_system_message.png; sourceTree = "<group>"; };
+		C40BE7401DFA4BCE00F6C200 /* user_center_tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_center_tutorial.png; path = media/user_center_tutorial.png; sourceTree = "<group>"; };
+		C40BE7411DFA4BCE00F6C200 /* user_center_user_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_center_user_icon.png; path = media/user_center_user_icon.png; sourceTree = "<group>"; };
+		C40BE7471DFA521B00F6C200 /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		C40BE7491DFA5C2800F6C200 /* fake_about_us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fake_about_us.png; path = media/fake_about_us.png; sourceTree = "<group>"; };
+		C40BE74B1DFA764B00F6C200 /* fake_invitation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fake_invitation.png; path = media/fake_invitation.png; sourceTree = "<group>"; };
+		C40BE74D1DFA76CD00F6C200 /* fake_tutorial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fake_tutorial.png; path = media/fake_tutorial.png; sourceTree = "<group>"; };
+		C40BE74F1DFA772D00F6C200 /* fake_message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fake_message.png; path = media/fake_message.png; sourceTree = "<group>"; };
+		C40BE7511DFA9A4D00F6C200 /* tiny_user_head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tiny_user_head.png; path = media/tiny_user_head.png; sourceTree = "<group>"; };
+		C40BE7531DFB11F000F6C200 /* fake_repay_rule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fake_repay_rule.png; path = media/fake_repay_rule.png; sourceTree = "<group>"; };
+		C40BE7551DFB144100F6C200 /* eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eye.png; path = media/eye.png; sourceTree = "<group>"; };
+		C40BE7571DFB156D00F6C200 /* fake_bill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fake_bill.png; path = media/fake_bill.png; sourceTree = "<group>"; };
+		C40BE7591DFB16F000F6C200 /* background_invitation_overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_invitation_overview.png; path = media/background_invitation_overview.png; sourceTree = "<group>"; };
+		C40BE75B1DFB19BB00F6C200 /* fake_bill_detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fake_bill_detail.png; path = media/fake_bill_detail.png; sourceTree = "<group>"; };
+		C40BE75D1DFB1B0E00F6C200 /* BillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
+		C40BE7661DFB268400F6C200 /* BillListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillListTableViewController.swift; sourceTree = "<group>"; };
+		C40BE76A1DFB2BCA00F6C200 /* MessageListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListTableViewController.swift; sourceTree = "<group>"; };
+		C40BE76C1DFB2C3E00F6C200 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		C40BE76E1DFB2D1600F6C200 /* fake_message_detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fake_message_detail.png; path = media/fake_message_detail.png; sourceTree = "<group>"; };
 		C44630701DEC1A990052E83F /* lanjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs.js; sourceTree = "<group>"; };
 		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
 		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
@@ -110,6 +154,10 @@
 				C40BE6AE1DF51DA900F6C200 /* RegisterViewController.swift */,
 				C40BE6B41DF6621900F6C200 /* LoginViewController.swift */,
 				C40BE7321DF9B3B400F6C200 /* UserCenterViewController.swift */,
+				C40BE75D1DFB1B0E00F6C200 /* BillTableViewCell.swift */,
+				C40BE7661DFB268400F6C200 /* BillListTableViewController.swift */,
+				C40BE76C1DFB2C3E00F6C200 /* MessageTableViewCell.swift */,
+				C40BE76A1DFB2BCA00F6C200 /* MessageListTableViewController.swift */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -133,6 +181,23 @@
 		C40BE7291DF96E8000F6C200 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				C40BE76E1DFB2D1600F6C200 /* fake_message_detail.png */,
+				C40BE75B1DFB19BB00F6C200 /* fake_bill_detail.png */,
+				C40BE7591DFB16F000F6C200 /* background_invitation_overview.png */,
+				C40BE7571DFB156D00F6C200 /* fake_bill.png */,
+				C40BE7551DFB144100F6C200 /* eye.png */,
+				C40BE7531DFB11F000F6C200 /* fake_repay_rule.png */,
+				C40BE7511DFA9A4D00F6C200 /* tiny_user_head.png */,
+				C40BE74F1DFA772D00F6C200 /* fake_message.png */,
+				C40BE74D1DFA76CD00F6C200 /* fake_tutorial.png */,
+				C40BE74B1DFA764B00F6C200 /* fake_invitation.png */,
+				C40BE7491DFA5C2800F6C200 /* fake_about_us.png */,
+				C40BE73E1DFA4BCE00F6C200 /* user_center_about_us.png */,
+				C40BE73F1DFA4BCE00F6C200 /* user_center_system_message.png */,
+				C40BE7401DFA4BCE00F6C200 /* user_center_tutorial.png */,
+				C40BE7411DFA4BCE00F6C200 /* user_center_user_icon.png */,
+				C40BE73C1DFA4A3F00F6C200 /* user_center_my_invitation.png */,
+				C40BE73A1DFA3DF800F6C200 /* user_center_vip.png */,
 				C40BE7381DF9D07E00F6C200 /* back0.png */,
 				C40BE7361DF9D01100F6C200 /* tiny0.png */,
 				C40BE72A1DF96F0500F6C200 /* 1启动页.jpg */,
@@ -198,6 +263,14 @@
 			name = oc;
 			sourceTree = "<group>";
 		};
+		C40BE7461DFA517E00F6C200 /* global */ = {
+			isa = PBXGroup;
+			children = (
+				C40BE7471DFA521B00F6C200 /* GlobalVariables.swift */,
+			);
+			name = global;
+			sourceTree = "<group>";
+		};
 		DCB0450A1DDF40280014D479 = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +291,7 @@
 		DCB045151DDF40280014D479 /* IOSrome */ = {
 			isa = PBXGroup;
 			children = (
+				C40BE7461DFA517E00F6C200 /* global */,
 				C40BE7301DF9B24800F6C200 /* support */,
 				C40BE72F1DF9B1F300F6C200 /* system */,
 				C40BE72C1DF9B1B100F6C200 /* main */,
@@ -289,14 +363,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40BE7441DFA4BCE00F6C200 /* user_center_tutorial.png in Resources */,
+				C40BE7581DFB156D00F6C200 /* fake_bill.png in Resources */,
+				C40BE74C1DFA764B00F6C200 /* fake_invitation.png in Resources */,
+				C40BE73D1DFA4A3F00F6C200 /* user_center_my_invitation.png in Resources */,
+				C40BE73B1DFA3DF800F6C200 /* user_center_vip.png in Resources */,
+				C40BE7541DFB11F000F6C200 /* fake_repay_rule.png in Resources */,
+				C40BE74E1DFA76CD00F6C200 /* fake_tutorial.png in Resources */,
+				C40BE7421DFA4BCE00F6C200 /* user_center_about_us.png in Resources */,
+				C40BE7521DFA9A4D00F6C200 /* tiny_user_head.png in Resources */,
 				DCB045241DDF40280014D479 /* LaunchScreen.storyboard in Resources */,
+				C40BE75C1DFB19BB00F6C200 /* fake_bill_detail.png in Resources */,
+				C40BE76F1DFB2D1600F6C200 /* fake_message_detail.png in Resources */,
+				C40BE74A1DFA5C2800F6C200 /* fake_about_us.png in Resources */,
+				C40BE7431DFA4BCE00F6C200 /* user_center_system_message.png in Resources */,
 				DCB045211DDF40280014D479 /* Assets.xcassets in Resources */,
 				DCB0451C1DDF40280014D479 /* Main.storyboard in Resources */,
 				C40BE6B31DF660AA00F6C200 /* UserCenter.storyboard in Resources */,
+				C40BE7501DFA772D00F6C200 /* fake_message.png in Resources */,
+				C40BE7451DFA4BCE00F6C200 /* user_center_user_icon.png in Resources */,
 				C40BE7371DF9D01100F6C200 /* tiny0.png in Resources */,
 				C40BE7391DF9D07E00F6C200 /* back0.png in Resources */,
+				C40BE7561DFB144100F6C200 /* eye.png in Resources */,
 				C40BE72B1DF96F0500F6C200 /* 1启动页.jpg in Resources */,
 				C44630711DEC1A990052E83F /* lanjs.js in Resources */,
+				C40BE75A1DFB16F100F6C200 /* background_invitation_overview.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,11 +402,16 @@
 				C40BE6B51DF6621900F6C200 /* LoginViewController.swift in Sources */,
 				DCB0451F1DDF40280014D479 /* IOSrome.xcdatamodeld in Sources */,
 				C40BE6AF1DF51DA900F6C200 /* RegisterViewController.swift in Sources */,
+				C40BE75E1DFB1B0E00F6C200 /* BillTableViewCell.swift in Sources */,
+				C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */,
+				C40BE76B1DFB2BCA00F6C200 /* MessageListTableViewController.swift in Sources */,
+				C40BE76D1DFB2C3E00F6C200 /* MessageTableViewCell.swift in Sources */,
 				C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */,
 				C40BE7351DF9C34000F6C200 /* UserNavigationController.swift in Sources */,
 				DCB045191DDF40280014D479 /* ViewController.swift in Sources */,
 				DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */,
 				C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */,
+				C40BE7681DFB268500F6C200 /* BillListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

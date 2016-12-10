@@ -79,16 +79,26 @@ class LoginViewController: UIViewController {
             
             print(json["status"] as! String == "failed")
             print(json["message"]!)
-            
-            let alert = UIAlertController (title: "登陆结果", message: responseString
-                , preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            OperationQueue.main.addOperation {
-                self.present(alert, animated: true, completion: nil)
+            if(json["status"] as! String == "ok"){
+                OperationQueue.main.addOperation {
+                    AppStatus.sharedInstance.userID = self.username.text!
+                    AppStatus.sharedInstance.grantToken = self.password.text!
+                    AppStatus.sharedInstance.isLoggedIn = true
+                    let preView = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as! UserCenterViewController
+                    preView.updateUserView()
+                    _ = self.navigationController?.popViewController(animated: true)
+                }
+            }else{
+                OperationQueue.main.addOperation {
+                    let alert = UIAlertController (title: "登陆结果", message: responseString
+                        , preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
             }
-            
         }
         task.resume()
+        
     }
     
     @IBAction func WXPay(_ sender: UIButton) {

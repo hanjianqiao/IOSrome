@@ -25,7 +25,7 @@ import JavaScriptCore
     }
 
     internal func getDataFromUrlSynch(_ urlString: String, _ callBack: String){
-        print("get url from: \(urlString)")
+        //print("get url from: \(urlString)")
         let url:URL = URL(string: urlString)!
         var html: String? = nil
         let semaphore = DispatchSemaphore(value: 0)
@@ -105,7 +105,7 @@ import JavaScriptCore
             }
             
             //print("get url from: \(urlString) -> \(html)")
-            print("get url from: \(urlString)")
+            //print("get url from: \(urlString)")
             
             let function = self.jsContext?.objectForKeyedSubscript(callBack)
             _ = function?.call(withArguments: [html ?? "", urlString])
@@ -229,7 +229,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **/
     func webViewDidStartLoad(_ webView: UIWebView) {
         searchBar.text = webView.request?.url?.absoluteString
-        print("Start loading...")
+        //print("Start loading...\(webView.request?.url?.absoluteString)")
         /*
         let url = URL(string: "http://zhushou3.taokezhushou.com")
         let cookies = HTTPCookieStorage.shared.cookies(for: url!)
@@ -249,6 +249,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **/
     func webViewDidFinishLoad(_ webView: UIWebView) {
         
+        searchBar.text = webView.request?.url?.absoluteString
         webView.stringByEvaluatingJavaScript(from: jsString!)
         
         /* 
@@ -279,7 +280,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         */
         
         
-        print("Finish loading...")
+        //print("Finish loading...")
         /*
          * Do main work
          *
@@ -298,7 +299,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        print("Failed in loading...")
+        //print("Failed in loading...")
     }
     
     /**
