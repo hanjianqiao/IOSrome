@@ -44,8 +44,14 @@
 		C40BE76B1DFB2BCA00F6C200 /* MessageListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE76A1DFB2BCA00F6C200 /* MessageListTableViewController.swift */; };
 		C40BE76D1DFB2C3E00F6C200 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE76C1DFB2C3E00F6C200 /* MessageTableViewCell.swift */; };
 		C40BE76F1DFB2D1600F6C200 /* fake_message_detail.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE76E1DFB2D1600F6C200 /* fake_message_detail.png */; };
+		C40BE7711DFBC3EF00F6C200 /* fake_buy_vip.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7701DFBC3EF00F6C200 /* fake_buy_vip.png */; };
 		C44630711DEC1A990052E83F /* lanjs.js in Resources */ = {isa = PBXBuildFile; fileRef = C44630701DEC1A990052E83F /* lanjs.js */; };
 		C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C44630B21DEDD96E0052E83F /* OCFunction.m */; };
+		C4BB41051DFBC8EE00B01055 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41041DFBC8EE00B01055 /* Report.storyboard */; };
+		C4BB41071DFBC92300B01055 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41061DFBC92300B01055 /* ReportViewController.swift */; };
+		C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */; };
+		C4BB410B1DFBD38A00B01055 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB410A1DFBD38A00B01055 /* ReportTableViewCell.swift */; };
+		C4BB410D1DFBD3F000B01055 /* ReportListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB410C1DFBD3F000B01055 /* ReportListTableViewController.swift */; };
 		DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045161DDF40280014D479 /* AppDelegate.swift */; };
 		DCB045191DDF40280014D479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045181DDF40280014D479 /* ViewController.swift */; };
 		DCB0451C1DDF40280014D479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCB0451A1DDF40280014D479 /* Main.storyboard */; };
@@ -94,10 +100,16 @@
 		C40BE76A1DFB2BCA00F6C200 /* MessageListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListTableViewController.swift; sourceTree = "<group>"; };
 		C40BE76C1DFB2C3E00F6C200 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		C40BE76E1DFB2D1600F6C200 /* fake_message_detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fake_message_detail.png; path = media/fake_message_detail.png; sourceTree = "<group>"; };
+		C40BE7701DFBC3EF00F6C200 /* fake_buy_vip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fake_buy_vip.png; path = media/fake_buy_vip.png; sourceTree = "<group>"; };
 		C44630701DEC1A990052E83F /* lanjs.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs.js; sourceTree = "<group>"; };
 		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
 		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
 		C44630B41DEDDA840052E83F /* CustomeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomeObject.h; sourceTree = "<group>"; };
+		C4BB41041DFBC8EE00B01055 /* Report.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
+		C4BB41061DFBC92300B01055 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportNavigationController.swift; sourceTree = "<group>"; };
+		C4BB410A1DFBD38A00B01055 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
+		C4BB410C1DFBD3F000B01055 /* ReportListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportListTableViewController.swift; sourceTree = "<group>"; };
 		DCB045131DDF40280014D479 /* IOSrome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSrome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB045161DDF40280014D479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCB045181DDF40280014D479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +193,7 @@
 		C40BE7291DF96E8000F6C200 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				C40BE7701DFBC3EF00F6C200 /* fake_buy_vip.png */,
 				C40BE76E1DFB2D1600F6C200 /* fake_message_detail.png */,
 				C40BE75B1DFB19BB00F6C200 /* fake_bill_detail.png */,
 				C40BE7591DFB16F000F6C200 /* background_invitation_overview.png */,
@@ -211,9 +224,11 @@
 				DCB045161DDF40280014D479 /* AppDelegate.swift */,
 				DCB045221DDF40280014D479 /* LaunchScreen.storyboard */,
 				DCB0451A1DDF40280014D479 /* Main.storyboard */,
+				C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */,
 				C40BE7341DF9C34000F6C200 /* UserNavigationController.swift */,
 				C40BE72D1DF9B1BF00F6C200 /* taobao */,
 				C40BE72E1DF9B1D000F6C200 /* market */,
+				C4BB41031DFBC8B500B01055 /* report */,
 				C40BE7201DF94CA600F6C200 /* user */,
 			);
 			name = main;
@@ -269,6 +284,17 @@
 				C40BE7471DFA521B00F6C200 /* GlobalVariables.swift */,
 			);
 			name = global;
+			sourceTree = "<group>";
+		};
+		C4BB41031DFBC8B500B01055 /* report */ = {
+			isa = PBXGroup;
+			children = (
+				C4BB41041DFBC8EE00B01055 /* Report.storyboard */,
+				C4BB410A1DFBD38A00B01055 /* ReportTableViewCell.swift */,
+				C4BB410C1DFBD3F000B01055 /* ReportListTableViewController.swift */,
+				C4BB41061DFBC92300B01055 /* ReportViewController.swift */,
+			);
+			name = report;
 			sourceTree = "<group>";
 		};
 		DCB0450A1DDF40280014D479 = {
@@ -364,9 +390,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C40BE7441DFA4BCE00F6C200 /* user_center_tutorial.png in Resources */,
+				C40BE7711DFBC3EF00F6C200 /* fake_buy_vip.png in Resources */,
 				C40BE7581DFB156D00F6C200 /* fake_bill.png in Resources */,
 				C40BE74C1DFA764B00F6C200 /* fake_invitation.png in Resources */,
 				C40BE73D1DFA4A3F00F6C200 /* user_center_my_invitation.png in Resources */,
+				C4BB41051DFBC8EE00B01055 /* Report.storyboard in Resources */,
 				C40BE73B1DFA3DF800F6C200 /* user_center_vip.png in Resources */,
 				C40BE7541DFB11F000F6C200 /* fake_repay_rule.png in Resources */,
 				C40BE74E1DFA76CD00F6C200 /* fake_tutorial.png in Resources */,
@@ -404,11 +432,15 @@
 				C40BE6AF1DF51DA900F6C200 /* RegisterViewController.swift in Sources */,
 				C40BE75E1DFB1B0E00F6C200 /* BillTableViewCell.swift in Sources */,
 				C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */,
+				C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */,
+				C4BB410D1DFBD3F000B01055 /* ReportListTableViewController.swift in Sources */,
 				C40BE76B1DFB2BCA00F6C200 /* MessageListTableViewController.swift in Sources */,
 				C40BE76D1DFB2C3E00F6C200 /* MessageTableViewCell.swift in Sources */,
+				C4BB41071DFBC92300B01055 /* ReportViewController.swift in Sources */,
 				C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */,
 				C40BE7351DF9C34000F6C200 /* UserNavigationController.swift in Sources */,
 				DCB045191DDF40280014D479 /* ViewController.swift in Sources */,
+				C4BB410B1DFBD38A00B01055 /* ReportTableViewCell.swift in Sources */,
 				DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */,
 				C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */,
 				C40BE7681DFB268500F6C200 /* BillListTableViewController.swift in Sources */,

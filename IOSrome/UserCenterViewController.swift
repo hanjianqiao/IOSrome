@@ -68,7 +68,13 @@ class UserCenterViewController: UIViewController {
             notLoggedInMessage()
             return
         }
-        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "vip"))! as UIViewController
+        var targetViewIdentifier:String
+        if(AppStatus.sharedInstance.isVip == true){
+            targetViewIdentifier = "vip"
+        }else{
+            targetViewIdentifier = "BuyVip"
+        }
+        let vc = (self.storyboard?.instantiateViewController(withIdentifier: targetViewIdentifier))! as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func invitationButton(_ sender: UIButton) {

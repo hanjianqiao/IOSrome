@@ -18,9 +18,11 @@ class AppStatus {
     var isLoggedIn:Bool
     var userID:String
     var grantToken:String
+    var isVip:Bool
     init(){
         isLoggedIn = false
         userID = ""
         grantToken = ""
+        isVip = false
     }
 }

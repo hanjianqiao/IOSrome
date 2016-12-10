@@ -1,22 +1,21 @@
 //
-//  UserNavigationController.swift
+//  ReportViewController.swift
 //  IOSrome
 //
-//  Created by 韩建桥 on 2016/12/9.
+//  Created by 韩建桥 on 2016/12/10.
 //  Copyright © 2016年 Lanchitour. All rights reserved.
 //
 
 import UIKit
 
-class UserNavigationController: UINavigationController {
+class ReportViewController: UIViewController {
 
+    @IBOutlet weak var todayButton: UIButton!
+    @IBOutlet weak var yesterdayButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let UserViewController = UIStoryboard(name: "UserCenter", bundle: nil).instantiateInitialViewController() as UIViewController!
-        let vcArray = [UserViewController]
-        self.viewControllers = vcArray as! [UIViewController]
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +23,12 @@ class UserNavigationController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func yesterday(_ sender: UIButton) {
+    }
+    @IBAction func today(_ sender: UIButton) {
+    }
+    @IBAction func refresh(_ sender: UIButton) {
+    }
 
     /*
     // MARK: - Navigation

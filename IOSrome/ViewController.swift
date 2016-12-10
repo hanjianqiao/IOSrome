@@ -205,7 +205,8 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **/
     @IBAction func homeButton(_ sender: UIButton) {
         let url:URL = URL(string: "http://www.alimama.com")!
-        let request:URLRequest = URLRequest(url: url)
+        var request:URLRequest = URLRequest(url: url)
+        request.addValue("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36", forHTTPHeaderField: "User-Agent")
         webView.loadRequest(request)
     }
     @IBAction func taobaoButton(_ sender: UIButton) {
@@ -285,7 +286,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
          * Do main work
          *
          */
-        if(webView.request?.url?.absoluteString.contains("pub.alimama.com"))!{
+        if(webView.request?.url?.absoluteString.contains("alimama.com"))!{
             webView.stringByEvaluatingJavaScript(from: "var element = document.createElement('meta');  element.name = \"viewport\";  element.content = \"width=device-width,initial-scale=1.0,minimum-scale=0.5,maximum-scale=3,user-scalable=1\"; var head = document.getElementsByTagName('head')[0]; head.appendChild(element);")
         }
         webView.stringByEvaluatingJavaScript(from: "doWork()")

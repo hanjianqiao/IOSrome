@@ -1,20 +1,20 @@
 //
-//  UserNavigationController.swift
+//  ReportNavigationController.swift
 //  IOSrome
 //
-//  Created by 韩建桥 on 2016/12/9.
+//  Created by 韩建桥 on 2016/12/10.
 //  Copyright © 2016年 Lanchitour. All rights reserved.
 //
 
 import UIKit
 
-class UserNavigationController: UINavigationController {
+class ReportNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let UserViewController = UIStoryboard(name: "UserCenter", bundle: nil).instantiateInitialViewController() as UIViewController!
+        let UserViewController = UIStoryboard(name: "Report", bundle: nil).instantiateInitialViewController() as UIViewController!
         let vcArray = [UserViewController]
         self.viewControllers = vcArray as! [UIViewController]
     }

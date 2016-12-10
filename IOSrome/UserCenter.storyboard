@@ -190,10 +190,10 @@
             </objects>
             <point key="canvasLocation" x="3154" y="-753"/>
         </scene>
-        <!--View Controller-->
+        <!--VIP权益-->
         <scene sceneID="vzN-HE-sQz">
             <objects>
-                <viewController storyboardIdentifier="repayrule" id="2Oi-bP-EZO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="repayrule" title="VIP权益" id="2Oi-bP-EZO" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bxx-Nb-1Rv"/>
                         <viewControllerLayoutGuide type="bottom" id="iGi-ub-rLL"/>
@@ -213,6 +213,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORR-4C-B3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3933.75" y="-753.16901408450701"/>
+        </scene>
+        <!--开通VIP-->
+        <scene sceneID="LPK-AZ-Pqq">
+            <objects>
+                <viewController storyboardIdentifier="BuyVip" title="开通VIP" id="5uH-Qk-bD1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XEH-8b-TC4"/>
+                        <viewControllerLayoutGuide type="bottom" id="1If-QF-kEF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f6P-Qk-NYT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fake_buy_vip.png" translatesAutoresizingMaskIntoConstraints="NO" id="iUa-Nt-794">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8x-WU-Q0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4771.875" y="-753.16901408450701"/>
         </scene>
         <!--我的邀请-->
         <scene sceneID="y9G-lu-H8V">
@@ -753,10 +777,10 @@
             </objects>
             <point key="canvasLocation" x="4264" y="-1433"/>
         </scene>
-        <!--账单列表-->
+        <!--系统消息-->
         <scene sceneID="vIA-JA-HQN">
             <objects>
-                <tableViewController storyboardIdentifier="message" title="账单列表" id="xBE-Qg-mLd" customClass="MessageListTableViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="message" title="系统消息" id="xBE-Qg-mLd" customClass="MessageListTableViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qRH-Mc-mfs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -807,10 +831,10 @@
             </objects>
             <point key="canvasLocation" x="3153.75" y="1386.9718309859154"/>
         </scene>
-        <!--View Controller-->
+        <!--消息详情-->
         <scene sceneID="EVh-jN-xzf">
             <objects>
-                <viewController id="iVR-rR-NKX" sceneMemberID="viewController">
+                <viewController title="消息详情" id="iVR-rR-NKX" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jVD-Zg-N1E"/>
                         <viewControllerLayoutGuide type="bottom" id="ff0-JB-C5f"/>
@@ -838,6 +862,7 @@
         <image name="fake_about_us.png" width="741" height="1822"/>
         <image name="fake_bill.png" width="748" height="77"/>
         <image name="fake_bill_detail.png" width="743" height="601"/>
+        <image name="fake_buy_vip.png" width="742" height="2290"/>
         <image name="fake_message_detail.png" width="745" height="2071"/>
         <image name="fake_repay_rule.png" width="748" height="2163"/>
         <image name="fake_tutorial.png" width="746" height="1839"/>

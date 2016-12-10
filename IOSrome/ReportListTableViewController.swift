@@ -1,5 +1,5 @@
 //
-//  MessageListTableViewController.swift
+//  ReportListTableViewController.swift
 //  IOSrome
 //
 //  Created by 韩建桥 on 2016/12/10.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MessageListTableViewController: UITableViewController {
+class ReportListTableViewController: UITableViewController {
     
-    var items = [MessageTableViewCell]()
+    var items = [ReportTableViewCell]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +24,9 @@ class MessageListTableViewController: UITableViewController {
     }
     
     func loadSampleItems() {
-        let item0 = MessageTableViewCell()
-        let item1 = MessageTableViewCell()
-        let item2 = MessageTableViewCell()
+        let item0 = ReportTableViewCell()
+        let item1 = ReportTableViewCell()
+        let item2 = ReportTableViewCell()
         
         items += [item0, item1, item2]
     }
@@ -49,8 +49,8 @@ class MessageListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "message_table_item"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MessageTableViewCell
+        let cellIdentifier = "report_table_item"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ReportTableViewCell
         
         // Fetches the appropriate meal for the data source layout.
         //let item = items[indexPath.row]

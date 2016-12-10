@@ -20,7 +20,7 @@ class SellViewController: UIViewController, UIWebViewDelegate {
          * Main web page
          *
          */
-        let url:URL = URL(string: "http://m.taobao.com")!
+        let url:URL = URL(string: "http://www.alimama.com/index.html")!
         
         let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
