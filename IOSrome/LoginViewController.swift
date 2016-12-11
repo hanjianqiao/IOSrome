@@ -20,13 +20,13 @@ class LoginViewController: UIViewController {
         
         username.leftViewMode = UITextFieldViewMode.always
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: username.intrinsicContentSize.height, height: username.intrinsicContentSize.height))
-        let image = UIImage(named: "1启动页.jpg")
+        let image = UIImage(named: "手机号.png")
         imageView.image = image
         username.leftView = imageView
         
         password.leftViewMode = UITextFieldViewMode.always
         let imageViewP = UIImageView(frame: CGRect(x: 0, y: 0, width: username.intrinsicContentSize.height, height: username.intrinsicContentSize.height))
-        let imageP = UIImage(named: "1启动页.jpg")
+        let imageP = UIImage(named: "密码.png")
         imageViewP.image = imageP
         password.leftView = imageViewP
     }

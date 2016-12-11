@@ -15,6 +15,7 @@ class AppStatus {
         }
         return Static.instance
     }
+    var regInfo:RegisterInfo
     var isLoggedIn:Bool
     var userID:String
     var grantToken:String
@@ -24,5 +25,23 @@ class AppStatus {
         userID = ""
         grantToken = ""
         isVip = false
+        regInfo = RegisterInfo()
+    }
+}
+
+class RegisterInfo{
+    var userId:String
+    var password:String
+    var qq:String
+    var wechat:String
+    var taobao:String
+    var invitation:String
+    init(){
+        userId = ""
+        password = ""
+        qq = ""
+        wechat = ""
+        taobao = ""
+        invitation = ""
     }
 }

@@ -10,6 +10,23 @@
     </dependencies>
     <scenes>
         <!--首页-->
+        <scene sceneID="0bY-hS-54z">
+            <objects>
+                <navigationController title="首页" id="faB-lo-SXx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="首页默认.png" id="uZ0-P6-R2M"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4c1-Lc-5O8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aH4-SI-R9h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1A1-3g-RuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="-720"/>
+        </scene>
+        <!--首页-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="首页" id="BYZ-38-t0r" customClass="ViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,77 +39,133 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z4K-rc-MKF">
-                                <rect key="frame" x="0.0" y="72" width="320" height="402"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T14-A1-Ufq">
-                                <rect key="frame" x="16" y="482" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="阿妈"/>
-                                <connections>
-                                    <action selector="homeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tzD-Bz-Qvd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOo-fQ-tbB">
-                                <rect key="frame" x="110" y="482" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="刷新"/>
-                                <connections>
-                                    <action selector="reload" destination="z4K-rc-MKF" eventType="touchUpInside" id="PI2-tN-E48"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8v-Do-9uD">
-                                <rect key="frame" x="158" y="482" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="前进"/>
-                                <connections>
-                                    <action selector="goForward" destination="z4K-rc-MKF" eventType="touchUpInside" id="7Pd-aW-AOK"/>
-                                </connections>
-                            </button>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25J-3J-k5B">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-DP-FR7">
-                                <rect key="frame" x="63" y="482" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="后退"/>
-                                <connections>
-                                    <action selector="goBack" destination="z4K-rc-MKF" eventType="touchUpInside" id="PAz-7j-4Nv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aID-ef-wus">
-                                <rect key="frame" x="264" y="482" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="分享"/>
-                                <connections>
-                                    <action selector="shareUrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mlr-0s-3YL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-tY-6Hm">
-                                <rect key="frame" x="206" y="482" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <state key="normal" title="淘宝"/>
-                                <connections>
-                                    <action selector="taobaoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpC-RS-se3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="首页" image="首页默认.png" id="QEW-4f-pd3">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="eE5-Uc-gf2">
+                        <nil key="title"/>
+                        <view key="titleView" contentMode="scaleToFill" id="4Ir-6u-wSd">
+                            <rect key="frame" x="8" y="5.5" width="304" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T14-A1-Ufq">
+                                    <rect key="frame" x="0.0" y="3" width="31" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="阿妈">
+                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="homeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tzD-Bz-Qvd"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-DP-FR7">
+                                    <rect key="frame" x="39" y="3" width="32" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="后退">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="goBack" destination="z4K-rc-MKF" eventType="touchUpInside" id="PAz-7j-4Nv"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOo-fQ-tbB">
+                                    <rect key="frame" x="79" y="3" width="32" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="刷新">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="reload" destination="z4K-rc-MKF" eventType="touchUpInside" id="PI2-tN-E48"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8v-Do-9uD">
+                                    <rect key="frame" x="119" y="3" width="32" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="前进">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="goForward" destination="z4K-rc-MKF" eventType="touchUpInside" id="7Pd-aW-AOK"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-tY-6Hm">
+                                    <rect key="frame" x="159" y="3" width="32" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="淘宝">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="taobaoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpC-RS-se3"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aID-ef-wus">
+                                    <rect key="frame" x="199" y="3" width="32" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="分享">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="shareUrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mlr-0s-3YL"/>
+                                        <segue destination="MRO-Ua-QUL" kind="show" id="qIN-cc-mq5"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkj-je-HT5">
+                                    <rect key="frame" x="239" y="3" width="57" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="会淘一下">
+                                        <color key="titleColor" red="0.95118199479999999" green="0.4532237858" blue="0.1600397908" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="huitaoyixia:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Fp-sy-tcr"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="25J-3J-k5B" id="TP4-3C-3pw"/>
                         <outlet property="webView" destination="z4K-rc-MKF" id="fhM-bg-bQb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1070.625" y="-720.42253521126759"/>
+            <point key="canvasLocation" x="1942.5" y="-720.42253521126759"/>
+        </scene>
+        <!--会淘一下-->
+        <scene sceneID="LT3-Eo-bou">
+            <objects>
+                <viewController storyboardIdentifier="huitaoyixia" title="会淘一下" id="MRO-Ua-QUL" customClass="HuitaoViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="36p-F2-Zi9"/>
+                        <viewControllerLayoutGuide type="bottom" id="wr5-TF-l1P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IOs-pJ-Vne">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kie-TS-mae">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="kie-TS-mae" id="9Ni-p1-6xC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="48c-fW-RVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2739.375" y="-720.42253521126759"/>
         </scene>
         <!--推荐商城-->
         <scene sceneID="1am-oV-R4O">
@@ -185,7 +258,7 @@
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1J8-oW-k73">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
@@ -224,11 +297,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="u8C-gF-thK"/>
-                        <segue destination="24E-rb-Z1K" kind="relationship" relationship="viewControllers" id="Q4K-sp-vQ9"/>
-                        <segue destination="hIA-Ej-FGO" kind="relationship" relationship="viewControllers" id="pPa-l1-J4u"/>
-                        <segue destination="f5s-oG-ADr" kind="relationship" relationship="viewControllers" id="j67-NP-ghv"/>
-                        <segue destination="YiG-OF-J2o" kind="relationship" relationship="viewControllers" id="UyG-vg-83h"/>
+                        <segue destination="faB-lo-SXx" kind="relationship" relationship="viewControllers" id="59o-0G-m5t"/>
+                        <segue destination="24E-rb-Z1K" kind="relationship" relationship="viewControllers" id="HOQ-PP-X0M"/>
+                        <segue destination="hIA-Ej-FGO" kind="relationship" relationship="viewControllers" id="Sds-QM-2gL"/>
+                        <segue destination="f5s-oG-ADr" kind="relationship" relationship="viewControllers" id="CTI-Bm-pls"/>
+                        <segue destination="YiG-OF-J2o" kind="relationship" relationship="viewControllers" id="C3F-r4-ZcT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JtN-dr-1tB" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -142,7 +142,7 @@ import JavaScriptCore
 
 class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  {
 
-    @IBOutlet weak var searchBar: UISearchBar!
+    //@IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var webView: UIWebView!
     
     var jsString: String?
@@ -181,7 +181,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
         webView.loadRequest(request)
-        searchBar.delegate = self
+        //searchBar.delegate = self
         webView.delegate = self
     }
 
@@ -224,6 +224,12 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         UIPasteboard.general.string = webView.request?.url?.absoluteString
     }
 
+    @IBAction func huitaoyixia(_ sender: UIButton) {
+        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "huitaoyixia"))! as! HuitaoViewController
+        let strUrl:String = (webView.request?.url?.absoluteString)!
+        vc.targetUrl = strUrl
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     /**
      **
@@ -231,7 +237,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     func webViewDidStartLoad(_ webView: UIWebView) {
-        searchBar.text = webView.request?.url?.absoluteString
+        //searchBar.text = webView.request?.url?.absoluteString
         //print("Start loading...\(webView.request?.url?.absoluteString)")
         /*
         let url = URL(string: "http://zhushou3.taokezhushou.com")
@@ -252,7 +258,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **/
     func webViewDidFinishLoad(_ webView: UIWebView) {
         
-        searchBar.text = webView.request?.url?.absoluteString
+        //searchBar.text = webView.request?.url?.absoluteString
         webView.stringByEvaluatingJavaScript(from: jsString!)
         
         /* 
@@ -291,7 +297,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         if(webView.request?.url?.absoluteString.contains("alimama.com"))!{
             webView.stringByEvaluatingJavaScript(from: "var element = document.createElement('meta');  element.name = \"viewport\";  element.content = \"width=device-width,initial-scale=1.0,minimum-scale=0.5,maximum-scale=3,user-scalable=1\"; var head = document.getElementsByTagName('head')[0]; head.appendChild(element);")
         }
-        webView.stringByEvaluatingJavaScript(from: "doWork()")
+        //webView.stringByEvaluatingJavaScript(from: "doWork()")
     }
     
     

@@ -84,6 +84,10 @@
 		C4BB414D1DFD1C2D00B01055 /* 我的默认.png in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41431DFD1C2D00B01055 /* 我的默认.png */; };
 		C4BB414E1DFD1C2D00B01055 /* 注册成功.png in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41441DFD1C2D00B01055 /* 注册成功.png */; };
 		C4BB41511DFD23C000B01055 /* SelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41501DFD23C000B01055 /* SelfViewController.swift */; };
+		C4BB41531DFD328800B01055 /* StartRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41521DFD328800B01055 /* StartRegisterViewController.swift */; };
+		C4BB41551DFD3A6200B01055 /* BuyVIPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41541DFD3A6200B01055 /* BuyVIPViewController.swift */; };
+		C4BB41571DFD7EB100B01055 /* HuitaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */; };
+		C4BB41591DFD832A00B01055 /* lanjs_s.js in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41581DFD832A00B01055 /* lanjs_s.js */; };
 		DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045161DDF40280014D479 /* AppDelegate.swift */; };
 		DCB045191DDF40280014D479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045181DDF40280014D479 /* ViewController.swift */; };
 		DCB0451C1DDF40280014D479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCB0451A1DDF40280014D479 /* Main.storyboard */; };
@@ -174,6 +178,10 @@
 		C4BB41431DFD1C2D00B01055 /* 我的默认.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "我的默认.png"; path = "media/图标24X26/其他图标/我的默认.png"; sourceTree = "<group>"; };
 		C4BB41441DFD1C2D00B01055 /* 注册成功.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "注册成功.png"; path = "media/图标24X26/其他图标/注册成功.png"; sourceTree = "<group>"; };
 		C4BB41501DFD23C000B01055 /* SelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfViewController.swift; sourceTree = "<group>"; };
+		C4BB41521DFD328800B01055 /* StartRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartRegisterViewController.swift; sourceTree = "<group>"; };
+		C4BB41541DFD3A6200B01055 /* BuyVIPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyVIPViewController.swift; sourceTree = "<group>"; };
+		C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuitaoViewController.swift; sourceTree = "<group>"; };
+		C4BB41581DFD832A00B01055 /* lanjs_s.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs_s.js; sourceTree = "<group>"; };
 		DCB045131DDF40280014D479 /* IOSrome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSrome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB045161DDF40280014D479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCB045181DDF40280014D479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				C40BE6B21DF660AA00F6C200 /* UserCenter.storyboard */,
+				C4BB41521DFD328800B01055 /* StartRegisterViewController.swift */,
 				C40BE6AE1DF51DA900F6C200 /* RegisterViewController.swift */,
 				C40BE6B41DF6621900F6C200 /* LoginViewController.swift */,
 				C40BE7321DF9B3B400F6C200 /* UserCenterViewController.swift */,
@@ -234,6 +243,7 @@
 				C40BE7661DFB268400F6C200 /* BillListTableViewController.swift */,
 				C40BE76C1DFB2C3E00F6C200 /* MessageTableViewCell.swift */,
 				C40BE76A1DFB2BCA00F6C200 /* MessageListTableViewController.swift */,
+				C4BB41541DFD3A6200B01055 /* BuyVIPViewController.swift */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -308,6 +318,8 @@
 			children = (
 				DCB045181DDF40280014D479 /* ViewController.swift */,
 				C44630701DEC1A990052E83F /* lanjs.js */,
+				C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */,
+				C4BB41581DFD832A00B01055 /* lanjs_s.js */,
 			);
 			name = taobao;
 			sourceTree = "<group>";
@@ -502,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C40BE7441DFA4BCE00F6C200 /* user_center_tutorial.png in Resources */,
+				C4BB41591DFD832A00B01055 /* lanjs_s.js in Resources */,
 				C40BE7711DFBC3EF00F6C200 /* fake_buy_vip.png in Resources */,
 				C40BE7581DFB156D00F6C200 /* fake_bill.png in Resources */,
 				C40BE74C1DFA764B00F6C200 /* fake_invitation.png in Resources */,
@@ -572,6 +585,8 @@
 				C40BE6B51DF6621900F6C200 /* LoginViewController.swift in Sources */,
 				DCB0451F1DDF40280014D479 /* IOSrome.xcdatamodeld in Sources */,
 				C40BE6AF1DF51DA900F6C200 /* RegisterViewController.swift in Sources */,
+				C4BB41571DFD7EB100B01055 /* HuitaoViewController.swift in Sources */,
+				C4BB41531DFD328800B01055 /* StartRegisterViewController.swift in Sources */,
 				C40BE75E1DFB1B0E00F6C200 /* BillTableViewCell.swift in Sources */,
 				C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */,
 				C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */,
@@ -580,6 +595,7 @@
 				C40BE76B1DFB2BCA00F6C200 /* MessageListTableViewController.swift in Sources */,
 				C40BE76D1DFB2C3E00F6C200 /* MessageTableViewCell.swift in Sources */,
 				C4BB41071DFBC92300B01055 /* ReportViewController.swift in Sources */,
+				C4BB41551DFD3A6200B01055 /* BuyVIPViewController.swift in Sources */,
 				C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */,
 				C40BE7351DF9C34000F6C200 /* UserNavigationController.swift in Sources */,
 				C4BB410F1DFC724300B01055 /* MainTabBarController.swift in Sources */,

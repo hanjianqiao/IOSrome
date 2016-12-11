@@ -16,22 +16,15 @@ class UserViewController: UIViewController, URLSessionDelegate, UITextFieldDeleg
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "用户注册"
+        //self.title = "用户注册"
         
-        self.text_username.delegate = self
-        self.text_password.delegate = self
-        self.text_password.isSecureTextEntry = true
-        self.text_confirm.delegate = self
-        self.text_confirm.isSecureTextEntry = true
+        
         self.text_invitecode.delegate = self
         self.text_wechat.delegate = self
         self.text_qq.delegate = self
         self.text_taobao.delegate = self
         self.text_email.delegate = self
         
-        text_username.returnKeyType = UIReturnKeyType.done
-        text_password.returnKeyType = UIReturnKeyType.done
-        text_confirm.returnKeyType = UIReturnKeyType.done
         text_invitecode.returnKeyType = UIReturnKeyType.done
         text_wechat.returnKeyType = UIReturnKeyType.done
         text_qq.returnKeyType = UIReturnKeyType.done
@@ -45,9 +38,6 @@ class UserViewController: UIViewController, URLSessionDelegate, UITextFieldDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var text_username: UITextField!
-    @IBOutlet weak var text_password: UITextField!
-    @IBOutlet weak var text_confirm: UITextField!
     @IBOutlet weak var text_invitecode: UITextField!
     @IBOutlet weak var text_wechat: UITextField!
     @IBOutlet weak var text_qq: UITextField!
@@ -65,12 +55,12 @@ class UserViewController: UIViewController, URLSessionDelegate, UITextFieldDeleg
         var request = URLRequest(url: URL(string: serverUrlString)!)
         request.httpMethod = "POST"
         let postString = "{\"user_id\":\"" +
-            text_username.text! + "\",\"password\":\"" +
-            text_password.text! + "\",\"code\":\"" +
-            text_invitecode.text! + "\",\"wechat\":\"" +
-            text_wechat.text! + "\",\"qq\":\"" +
-            text_qq.text! + "\",\"taobao\":\"" +
-            text_taobao.text! + "\"}"
+            AppStatus.sharedInstance.regInfo.userId + "\",\"password\":\"" +
+            AppStatus.sharedInstance.regInfo.password + "\",\"code\":\"" +
+            AppStatus.sharedInstance.regInfo.invitation + "\",\"wechat\":\"" +
+            AppStatus.sharedInstance.regInfo.wechat + "\",\"qq\":\"" +
+            AppStatus.sharedInstance.regInfo.qq + "\",\"taobao\":\"" +
+            AppStatus.sharedInstance.regInfo.taobao + "\"}"
         request.httpBody = postString.data(using: .utf8)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
