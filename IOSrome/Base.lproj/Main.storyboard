@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25J-3J-k5B">
-                                <rect key="frame" x="0.0" y="28" width="274" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -61,14 +61,6 @@
                                 <state key="normal" title="后退"/>
                                 <connections>
                                     <action selector="goBack" destination="z4K-rc-MKF" eventType="touchUpInside" id="PAz-7j-4Nv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKb-Vc-Qdg">
-                                <rect key="frame" x="274" y="35" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="GO"/>
-                                <connections>
-                                    <action selector="reDoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ikV-Z0-zbL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aID-ef-wus">
@@ -90,7 +82,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="taobao" id="QEW-4f-pd3"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="首页默认.png" id="QEW-4f-pd3">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="searchBar" destination="25J-3J-k5B" id="TP4-3C-3pw"/>
                         <outlet property="webView" destination="z4K-rc-MKF" id="fhM-bg-bQb"/>
@@ -100,11 +94,11 @@
             </objects>
             <point key="canvasLocation" x="1070.625" y="-720.42253521126759"/>
         </scene>
-        <!--商城-->
+        <!--推荐商城-->
         <scene sceneID="1am-oV-R4O">
             <objects>
-                <navigationController title="商城" id="24E-rb-Z1K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="sell" id="nhf-lL-tHC"/>
+                <navigationController title="推荐商城" id="24E-rb-Z1K" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="推荐商城" image="商城默认.png" id="nhf-lL-tHC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZCK-5n-Qh5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -121,7 +115,7 @@
         <scene sceneID="02t-sb-zfK">
             <objects>
                 <navigationController title="我的" id="YiG-OF-J2o" customClass="UserNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="user" id="XRo-Vh-eOn"/>
+                    <tabBarItem key="tabBarItem" title="个人中心" image="我的焦点.png" id="XRo-Vh-eOn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="L25-Sm-sju">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -129,12 +123,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCP-h1-EsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071" y="1447"/>
+            <point key="canvasLocation" x="1071" y="2022"/>
         </scene>
-        <!--商城-->
+        <!--推荐商城-->
         <scene sceneID="T5E-cW-RwO">
             <objects>
-                <viewController title="商城" id="k0j-if-Iti" customClass="SellViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="推荐商城" id="k0j-if-Iti" customClass="SellViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T14-Xl-nQF"/>
                         <viewControllerLayoutGuide type="bottom" id="Hog-b5-KJ9"/>
@@ -151,7 +145,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="v0M-qG-Tk9"/>
+                    <navigationItem key="navigationItem" title="推荐商城" id="v0M-qG-Tk9"/>
                     <connections>
                         <outlet property="webView" destination="QJC-UJ-7sa" id="ZCQ-YQ-08J"/>
                     </connections>
@@ -160,11 +154,57 @@
             </objects>
             <point key="canvasLocation" x="2212.5" y="-43.309859154929576"/>
         </scene>
+        <!--自选商城-->
+        <scene sceneID="3NS-YH-vNw">
+            <objects>
+                <navigationController title="自选商城" id="hIA-Ej-FGO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="自选商城" image="商城默认.png" id="PrS-Wg-f9i"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SPx-Ml-9OG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="If8-G2-Aof" kind="relationship" relationship="rootViewController" id="QQJ-b2-aPQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eQ9-Ma-1Yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="643"/>
+        </scene>
+        <!--自选商城-->
+        <scene sceneID="Ske-7N-qGR">
+            <objects>
+                <viewController title="自选商城" id="If8-G2-Aof" customClass="SelfViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q7N-Qu-I7K"/>
+                        <viewControllerLayoutGuide type="bottom" id="PAk-Av-BFf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p5N-gn-Gv1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1J8-oW-k73">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="自选商城" id="9mU-LG-B5U"/>
+                    <connections>
+                        <outlet property="webView" destination="1J8-oW-k73" id="hrp-rO-g2y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cIc-fy-ONC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2212.5" y="641.19718309859161"/>
+        </scene>
         <!--报表-->
         <scene sceneID="gsl-b2-dvH">
             <objects>
                 <navigationController storyboardIdentifier="RecommendMall" title="报表" id="f5s-oG-ADr" customClass="ReportNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zrf-Hn-O0c"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="报表" image="报表默认.png" id="zrf-Hn-O0c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gds-RA-Fbb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -172,12 +212,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPX-Ga-eIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071" y="680"/>
+            <point key="canvasLocation" x="1071" y="1326"/>
         </scene>
         <!--主界面-->
         <scene sceneID="ZkY-mP-5Zl">
             <objects>
-                <tabBarController title="主界面" id="UKf-gh-SZ0" sceneMemberID="viewController">
+                <tabBarController title="主界面" id="UKf-gh-SZ0" customClass="MainTabBarController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="kEI-aW-Zt0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -186,8 +226,9 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="u8C-gF-thK"/>
                         <segue destination="24E-rb-Z1K" kind="relationship" relationship="viewControllers" id="Q4K-sp-vQ9"/>
-                        <segue destination="f5s-oG-ADr" kind="relationship" relationship="viewControllers" id="qos-Sn-CCN"/>
-                        <segue destination="YiG-OF-J2o" kind="relationship" relationship="viewControllers" id="mdf-mR-ihN"/>
+                        <segue destination="hIA-Ej-FGO" kind="relationship" relationship="viewControllers" id="pPa-l1-J4u"/>
+                        <segue destination="f5s-oG-ADr" kind="relationship" relationship="viewControllers" id="j67-NP-ghv"/>
+                        <segue destination="YiG-OF-J2o" kind="relationship" relationship="viewControllers" id="UyG-vg-83h"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JtN-dr-1tB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -195,4 +236,10 @@
             <point key="canvasLocation" x="-278" y="256"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="商城默认.png" width="39" height="38"/>
+        <image name="我的焦点.png" width="39" height="38"/>
+        <image name="报表默认.png" width="39" height="38"/>
+        <image name="首页默认.png" width="39" height="38"/>
+    </resources>
 </document>

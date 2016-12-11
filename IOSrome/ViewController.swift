@@ -186,13 +186,18 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        var str = searchBar.text!
+        let str = "https://s.m.taobao.com/h5?"
+        let queryItem = URLQueryItem(name: "q", value: searchBar.text!)
+        /*
         if !str.hasPrefix("http://"){
             str = str.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
             str = "http://www.baidu.com/s?word="+str
         }
-        let url = URL(string: str)!
-        let request = URLRequest(url: url)
+        */
+        var url = URLComponents(string: str)!
+        url.queryItems?.append(queryItem)
+        //print(url.url?.absoluteString)
+        let request = URLRequest(url: url.url!)
         webView.loadRequest(request)
         self.view.endEditing(true)
         
@@ -214,10 +219,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         let request:URLRequest = URLRequest(url: url)
         webView.loadRequest(request)
     }
-    
-    @IBAction func reDoButton(_ sender: UIButton) {
-        webViewDidFinishLoad(webView)
-    }
+
     @IBAction func shareUrl(_ sender: UIButton) {
         UIPasteboard.general.string = webView.request?.url?.absoluteString
     }
