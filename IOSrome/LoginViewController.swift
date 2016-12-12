@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    let serverUrlString = "http://kouchenvip.com:5000/login"
+    let serverUrlString = "https://kouchenvip.com:5000/login"
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {

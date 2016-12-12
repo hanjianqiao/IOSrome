@@ -20,12 +20,16 @@ class AppStatus {
     var userID:String
     var grantToken:String
     var isVip:Bool
+    var server:ServerInfo
+    var path:ServerPath
     init(){
         isLoggedIn = false
         userID = ""
         grantToken = ""
         isVip = false
         regInfo = RegisterInfo()
+        server = ServerInfo()
+        path = ServerPath()
     }
 }
 
@@ -44,4 +48,14 @@ class RegisterInfo{
         taobao = ""
         invitation = ""
     }
+}
+
+class ServerInfo{
+    let address:String = "www.kouchenvip.com"
+    let port:String = "5000"
+}
+
+class ServerPath{
+    let register:String = "register"
+    let login:String = "login"
 }

@@ -281,3 +281,5 @@ function doWork(srcUrl){
 function fitSalePosition(x){
     document.getElementById("dialog-singleton").style.left = "" + x + "px";
 }
+
+
