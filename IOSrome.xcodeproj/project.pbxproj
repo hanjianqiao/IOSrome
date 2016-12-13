@@ -47,6 +47,12 @@
 		C40BE7711DFBC3EF00F6C200 /* fake_buy_vip.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE7701DFBC3EF00F6C200 /* fake_buy_vip.png */; };
 		C44630711DEC1A990052E83F /* lanjs.js in Resources */ = {isa = PBXBuildFile; fileRef = C44630701DEC1A990052E83F /* lanjs.js */; };
 		C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C44630B21DEDD96E0052E83F /* OCFunction.m */; };
+		C44E10901E0004B700A716A2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E10891E0004B700A716A2 /* Result.swift */; };
+		C44E10911E0004B700A716A2 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E108A1E0004B700A716A2 /* Socket.swift */; };
+		C44E10921E0004B700A716A2 /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E108C1E0004B700A716A2 /* TCPClient.swift */; };
+		C44E10931E0004B700A716A2 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E108D1E0004B700A716A2 /* UDPClient.swift */; };
+		C44E10941E0004B700A716A2 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C44E108E1E0004B700A716A2 /* ytcpsocket.c */; };
+		C44E10951E0004B700A716A2 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C44E108F1E0004B700A716A2 /* yudpsocket.c */; };
 		C4BB41051DFBC8EE00B01055 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41041DFBC8EE00B01055 /* Report.storyboard */; };
 		C4BB41071DFBC92300B01055 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41061DFBC92300B01055 /* ReportViewController.swift */; };
 		C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */; };
@@ -141,6 +147,13 @@
 		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
 		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
 		C44630B41DEDDA840052E83F /* CustomeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomeObject.h; sourceTree = "<group>"; };
+		C44E10891E0004B700A716A2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Support/SwiftSocket/Result.swift; sourceTree = "<group>"; };
+		C44E108A1E0004B700A716A2 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Socket.swift; path = Support/SwiftSocket/Socket.swift; sourceTree = "<group>"; };
+		C44E108B1E0004B700A716A2 /* SwiftSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwiftSocket.h; path = Support/SwiftSocket/SwiftSocket.h; sourceTree = "<group>"; };
+		C44E108C1E0004B700A716A2 /* TCPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TCPClient.swift; path = Support/SwiftSocket/TCPClient.swift; sourceTree = "<group>"; };
+		C44E108D1E0004B700A716A2 /* UDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UDPClient.swift; path = Support/SwiftSocket/UDPClient.swift; sourceTree = "<group>"; };
+		C44E108E1E0004B700A716A2 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ytcpsocket.c; path = Support/SwiftSocket/ytcpsocket.c; sourceTree = "<group>"; };
+		C44E108F1E0004B700A716A2 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = yudpsocket.c; path = Support/SwiftSocket/yudpsocket.c; sourceTree = "<group>"; };
 		C4BB41041DFBC8EE00B01055 /* Report.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		C4BB41061DFBC92300B01055 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportNavigationController.swift; sourceTree = "<group>"; };
@@ -344,6 +357,7 @@
 		C40BE7301DF9B24800F6C200 /* support */ = {
 			isa = PBXGroup;
 			children = (
+				C44E10881E00049D00A716A2 /* swiftsocket */,
 				C40BE7311DF9B24F00F6C200 /* oc */,
 			);
 			name = support;
@@ -365,6 +379,20 @@
 				C40BE7471DFA521B00F6C200 /* GlobalVariables.swift */,
 			);
 			name = global;
+			sourceTree = "<group>";
+		};
+		C44E10881E00049D00A716A2 /* swiftsocket */ = {
+			isa = PBXGroup;
+			children = (
+				C44E10891E0004B700A716A2 /* Result.swift */,
+				C44E108A1E0004B700A716A2 /* Socket.swift */,
+				C44E108B1E0004B700A716A2 /* SwiftSocket.h */,
+				C44E108C1E0004B700A716A2 /* TCPClient.swift */,
+				C44E108D1E0004B700A716A2 /* UDPClient.swift */,
+				C44E108E1E0004B700A716A2 /* ytcpsocket.c */,
+				C44E108F1E0004B700A716A2 /* yudpsocket.c */,
+			);
+			name = swiftsocket;
 			sourceTree = "<group>";
 		};
 		C4BB41031DFBC8B500B01055 /* report */ = {
@@ -585,16 +613,22 @@
 				C40BE6B51DF6621900F6C200 /* LoginViewController.swift in Sources */,
 				DCB0451F1DDF40280014D479 /* IOSrome.xcdatamodeld in Sources */,
 				C40BE6AF1DF51DA900F6C200 /* RegisterViewController.swift in Sources */,
+				C44E10951E0004B700A716A2 /* yudpsocket.c in Sources */,
 				C4BB41571DFD7EB100B01055 /* HuitaoViewController.swift in Sources */,
 				C4BB41531DFD328800B01055 /* StartRegisterViewController.swift in Sources */,
+				C44E10941E0004B700A716A2 /* ytcpsocket.c in Sources */,
+				C44E10931E0004B700A716A2 /* UDPClient.swift in Sources */,
+				C44E10901E0004B700A716A2 /* Result.swift in Sources */,
 				C40BE75E1DFB1B0E00F6C200 /* BillTableViewCell.swift in Sources */,
 				C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */,
 				C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */,
 				C4BB410D1DFBD3F000B01055 /* ReportListTableViewController.swift in Sources */,
 				C4BB41511DFD23C000B01055 /* SelfViewController.swift in Sources */,
+				C44E10911E0004B700A716A2 /* Socket.swift in Sources */,
 				C40BE76B1DFB2BCA00F6C200 /* MessageListTableViewController.swift in Sources */,
 				C40BE76D1DFB2C3E00F6C200 /* MessageTableViewCell.swift in Sources */,
 				C4BB41071DFBC92300B01055 /* ReportViewController.swift in Sources */,
+				C44E10921E0004B700A716A2 /* TCPClient.swift in Sources */,
 				C4BB41551DFD3A6200B01055 /* BuyVIPViewController.swift in Sources */,
 				C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */,
 				C40BE7351DF9C34000F6C200 /* UserNavigationController.swift in Sources */,

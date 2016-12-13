@@ -51,11 +51,11 @@ class RegisterInfo{
 }
 
 class ServerInfo{
-    let address:String = "www.kouchenvip.com"
-    let port:String = "5000"
+    let address:String = "http://www.kouchenvip.com"
+    let port:String = ":5000"
 }
 
 class ServerPath{
-    let register:String = "register"
-    let login:String = "login"
+    let register:String = "/register"
+    let login:String = "/login"
 }

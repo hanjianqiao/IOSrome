@@ -34,6 +34,10 @@ function emptyLanSec(){
     setLanJPanel("")
 }
 
+function inforLanSec(){
+    setLanJPanel("请在商品页面点击会淘一下")
+}
+
 function updateGlobalInfo(){
     //document.getElementById("langenrat").innerHTML="General Taobrokerage";
     //document.getElementById("lan30dsel").innerHTML="Sells in 30 days";
@@ -264,8 +268,12 @@ function callBackShowAlert(htmlString, url){
 
 function doWork(srcUrl){
     if(!isDetailPage(srcUrl)){
-        emptyLanSec()
+        inforLanSec()
         return 'Invaliad';
+    }
+    if(!LanJsBridge.isVIP()){
+        setLanJPanel("购买VIP可启用功能")
+        return 'notVIP'
     }
     prepareLanJPanel(srcUrl);
     goodid = getGoodID(srcUrl);

@@ -17,8 +17,17 @@ import JavaScriptCore
     func getDataFromUrlSynch(_ urlString: String, _ callBack: String)
     func getDataFromUrl(_ urlString: String, _ callBack: String)
     func setClipBoard(_ string: String)
+    func isVIP() -> Bool
 }
 @objc class SwiftJavaScriptModel: NSObject, SwiftJavaScriptDelegate, URLSessionDelegate{
+    internal func isVIP() -> Bool {
+        if(AppStatus.sharedInstance.isVip){
+            return true
+        }else{
+            return false
+        }
+    }
+
     internal func setClipBoard(_ string: String) {
         //print("set clipboart: \(string)")
         UIPasteboard.general.string = string;

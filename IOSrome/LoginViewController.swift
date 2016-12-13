@@ -37,12 +37,30 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func forgetPassword(_ sender: UIButton) {
+        
+        let client = TCPClient(address: "www.apple.com", port: 80)
+        switch client.connect(timeout: 1) {
+        case .success:
+            switch client.send(string: "GET / HTTP/1.0\n\n" ) {
+            case .success:
+                guard let data = client.read(1024*10) else { return }
+                
+                if let response = String(bytes: data, encoding: .utf8) {
+                    print(response)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        case .failure(let error):
+            print(error)
+        }
+        
         let alert = UIAlertController (title: "Password Reset", message: "You forget the password", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 
-    let serverUrlString = "https://kouchenvip.com:5000/login"
+    let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.login
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
