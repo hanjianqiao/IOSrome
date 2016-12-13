@@ -72,51 +72,70 @@ class LoginViewController: UIViewController {
         return nil
     }
     @IBAction func doLogin(_ sender: UIButton) {
-        var request = URLRequest(url: URL(string: serverUrlString)!)
-        request.httpMethod = "POST"
-        let postString = "{\"user_id\":\"" +
-            username.text! + "\",\"password\":\"" +
-            password.text! + "\"}"
-        request.httpBody = postString.data(using: .utf8)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {               // check for fundamental networking error
-                print("error=\(error)")
-                return
-            }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            //print(data)
-            let responseString = String(data: data, encoding: .utf8)!
-            print("responseString = \(responseString)")
-            
-            let json = self.convertToDictionary(text: responseString)!
-            
-            print(json["status"] as! String == "failed")
-            print(json["message"]!)
-            if(json["status"] as! String == "ok"){
-                OperationQueue.main.addOperation {
-                    AppStatus.sharedInstance.userID = self.username.text!
-                    AppStatus.sharedInstance.grantToken = self.password.text!
-                    AppStatus.sharedInstance.isLoggedIn = true
-                    let preView = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as! UserCenterViewController
-                    preView.updateUserView()
-                    _ = self.navigationController?.popViewController(animated: true)
+        let queue = OperationQueue()
+        
+        // do something immediately
+        let alertLogging = UIAlertController (title: "正在登录", message: "请稍后。。。"
+            , preferredStyle: UIAlertControllerStyle.alert)
+        self.present(alertLogging, animated: true, completion: nil)
+        
+        queue.addOperation() {
+            // do something in the background
+            var request = URLRequest(url: URL(string: self.serverUrlString)!)
+            request.httpMethod = "POST"
+            let postString = "{\"user_id\":\"" +
+                self.username.text! + "\",\"password\":\"" +
+                self.password.text! + "\"}"
+            request.httpBody = postString.data(using: .utf8)
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                
+                
+                guard let data = data, error == nil else {               // check for fundamental networking error
+                    print("error=\(error)")
+                    return
                 }
-            }else{
-                OperationQueue.main.addOperation {
-                    let alert = UIAlertController (title: "登陆结果", message: responseString
-                        , preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
+                
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print("response = \(response)")
                 }
+                //print(data)
+                let responseString = String(data: data, encoding: .utf8)!
+                print("responseString = \(responseString)")
+                
+                let json = self.convertToDictionary(text: responseString)!
+                
+                print(json["status"] as! String == "failed")
+                print(json["message"]!)
+                
+                alertLogging.dismiss(animated: true, completion:{
+                    if(json["status"] as! String == "ok"){
+                        OperationQueue.main.addOperation {
+                            AppStatus.sharedInstance.userID = self.username.text!
+                            AppStatus.sharedInstance.grantToken = self.password.text!
+                            AppStatus.sharedInstance.isLoggedIn = true
+                            let preView = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as! UserCenterViewController
+                            preView.updateUserView()
+                            _ = self.navigationController?.popViewController(animated: true)
+                        }
+                    }else{
+                        OperationQueue.main.addOperation {
+                            alertLogging.dismiss(animated: true, completion: nil)
+                            let alert = UIAlertController (title: "登陆结果", message: responseString
+                                , preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }
+                })
+            }
+            task.resume()
+
+            OperationQueue.main.addOperation() {
+                // when done, update your UI and/or model on the main queue
             }
         }
-        task.resume()
-        
     }
     
     @IBAction func WXPay(_ sender: UIButton) {

@@ -51,7 +51,7 @@ class RegisterInfo{
 }
 
 class ServerInfo{
-    let address:String = "http://www.kouchenvip.com"
+    let address:String = "https://secure.hanjianqiao.cn"
     let port:String = ":5000"
 }
 
