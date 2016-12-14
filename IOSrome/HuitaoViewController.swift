@@ -9,10 +9,6 @@
 import UIKit
 import JavaScriptCore
 
-extension Notification.Name {
-    static let reload = Notification.Name("reload")
-}
-
 class HuitaoViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
