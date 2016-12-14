@@ -136,10 +136,12 @@ function updateQueqiaoBrokerageCallBack(htmlText, url){
         return;
     }
     var jo = obj.data.pageList[0];
-    document.getElementById("lanquerat").innerHTML="&nbsp&nbsp<span>鹊桥佣金比例：</span>&nbsp&nbsp<span>"+jo.eventRate+"%</span>";
+    document.getElementById("lanquerat").innerHTML="&nbsp&nbsp<span>鹊桥佣金比例：</span>&nbsp&nbsp<span>"+(showIt ? jo.eventRate : "??")+"%</span>";
     document.getElementById("lanquebro").innerHTML="<caption>高佣金推广活动（新鹊桥）</caption><tr style=\"background: #fe2641; color:#fff; \"><th>鹊桥ID</th><th>结束日期</th><th>实得佣金比例</th><th>操作</th></tr>";
     try {
-        updateQueqiaoBrokerageItem(goodid);
+        if(showIt){
+            updateQueqiaoBrokerageItem(goodid);
+        }
     }catch (err){
         alert(err.message);
         document.getElementById("lanquebro").innerHTML="<caption>没有鹊桥佣金</caption><tr style=\"background: #fe2641; color:#fff; \"><th>计划名称</th><th>剩余天数</th><th>实得佣金比例</th><th>操作</th></tr>";
@@ -184,11 +186,6 @@ function updateTaobaoCouponItem(sellerId, activityId){
 }
 
 function updateTaobaoCouponCallBack(htmlText, url){
-    //alert(htmlText[0]);
-    //alert(htmlText[1]);
-    //alert(htmlText[2]);
-    //alert(htmlText[3]);
-    //alert(url);
     if(htmlText[2] == "{"){
         var obj = eval('('+htmlText+')');
         var ja = obj.priceVolumes;

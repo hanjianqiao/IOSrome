@@ -57,10 +57,11 @@ class UserViewController: UIViewController, URLSessionDelegate, UITextFieldDeleg
         let postString = "{\"user_id\":\"" +
             AppStatus.sharedInstance.regInfo.userId + "\",\"password\":\"" +
             AppStatus.sharedInstance.regInfo.password + "\",\"code\":\"" +
-            AppStatus.sharedInstance.regInfo.invitation + "\",\"wechat\":\"" +
-            AppStatus.sharedInstance.regInfo.wechat + "\",\"qq\":\"" +
-            AppStatus.sharedInstance.regInfo.qq + "\",\"taobao\":\"" +
-            AppStatus.sharedInstance.regInfo.taobao + "\"}"
+            text_invitecode.text! + "\",\"wechat\":\"" +
+            text_wechat.text! + "\",\"qq\":\"" +
+            text_qq.text! + "\",\"taobao\":\"" +
+            text_taobao.text! + "\",\"email\":\"" +
+            text_email.text! + "\"}"
         request.httpBody = postString.data(using: .utf8)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in

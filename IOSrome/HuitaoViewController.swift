@@ -20,6 +20,9 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.navigationItem.title = AppStatus.sharedInstance.isVip ? "会淘一下" : "购买VIP查看数据"
+        
         do{
             let filePath = Bundle.main.path(forResource: "lanjs_s", ofType: "js")
             try jsString = String(contentsOfFile: filePath!)
@@ -33,12 +36,12 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
         
         //let url:URL = URL(string: "http://kouchenvip.com:5000/recommend")!
         
+        webView.scalesPageToFit = true
         
         let staticHTML = "<html><head><meta http-equiv=\"Content-Language\"content=\"zh-CN\"><meta HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html;charset=UTF-8\"><title>会淘助手</title></head><body><section id=\"lanSec\">hellowor</section></body></html>"
         webView.loadHTMLString(staticHTML, baseURL: nil)
         
         //let request:URLRequest = URLRequest(url: url)
-        //webView.scalesPageToFit = true
         //webView.loadRequest(request)
 
         webView.delegate = self
