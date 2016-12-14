@@ -15,14 +15,15 @@ class AppStatus {
         }
         return Static.instance
     }
-    var regInfo:RegisterInfo
     var isLoggedIn:Bool
     var userID:String
     var grantToken:String
     var isVip:Bool
+    var regInfo:RegisterInfo
     var server:ServerInfo
     var path:ServerPath
     var vipInfo:VipInfo
+    var userInfo:UserInfo
     init(){
         isLoggedIn = false
         userID = ""
@@ -32,6 +33,16 @@ class AppStatus {
         server = ServerInfo()
         path = ServerPath()
         vipInfo = VipInfo()
+        userInfo = UserInfo()
+    }
+    func logout(){
+        isLoggedIn = false
+        userID = ""
+        grantToken = ""
+        isVip = false
+        regInfo.clean()
+        vipInfo.clean()
+        userInfo.clean()
     }
 }
 
@@ -50,6 +61,24 @@ class RegisterInfo{
         taobao = ""
         invitation = ""
     }
+    func clean(){
+        userId = ""
+        password = ""
+        qq = ""
+        wechat = ""
+        taobao = ""
+        invitation = ""
+    }
+}
+
+class UserInfo{
+    var inviteCode:String
+    init(){
+        inviteCode = "666666"
+    }
+    func clean(){
+        inviteCode = ""
+    }
 }
 
 class VipInfo{
@@ -61,6 +90,15 @@ class VipInfo{
     var endMonth:Int
     var endDay:Int
     init(){
+        startYear = 2016
+        startMonth = 1
+        startDay = 1
+        
+        endYear = 2016
+        endMonth = 12
+        endDay = 14
+    }
+    func clean(){
         startYear = 2016
         startMonth = 1
         startDay = 1
@@ -79,4 +117,6 @@ class ServerInfo{
 class ServerPath{
     let register:String = "/register"
     let login:String = "/login"
+    let selfchoose:String = "/selfchoose"
+    let recommend:String = "/recommend"
 }

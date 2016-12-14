@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func onResp(resp: BaseResp!) {
+        print("resp")
         //var strTitle = "支付结果"
         var strMsg = "(resp.errCode)"
         if resp.isKind(of: PayResp.self) {

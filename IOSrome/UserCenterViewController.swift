@@ -50,9 +50,7 @@ class UserCenterViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: UIButton) {
-        AppStatus.sharedInstance.isLoggedIn = false
-        AppStatus.sharedInstance.userID = ""
-        AppStatus.sharedInstance.grantToken = ""
+        AppStatus.sharedInstance.logout()
         updateUserView()
     }
     

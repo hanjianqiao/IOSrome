@@ -20,7 +20,8 @@ class SellViewController: UIViewController, UIWebViewDelegate {
          * Main web page
          *
          */
-        let url:URL = URL(string: "http://kouchenvip.com:5000/recommend")!
+        let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.recommend
+        let url:URL = URL(string: serverUrlString)!
         
         let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true

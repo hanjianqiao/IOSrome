@@ -52,6 +52,7 @@
 		C44E10931E0004B700A716A2 /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E108D1E0004B700A716A2 /* UDPClient.swift */; };
 		C44E10941E0004B700A716A2 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C44E108E1E0004B700A716A2 /* ytcpsocket.c */; };
 		C44E10951E0004B700A716A2 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C44E108F1E0004B700A716A2 /* yudpsocket.c */; };
+		C4612E811E01445B00B79331 /* VIPDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E801E01445B00B79331 /* VIPDetailViewController.swift */; };
 		C4BB41051DFBC8EE00B01055 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41041DFBC8EE00B01055 /* Report.storyboard */; };
 		C4BB41071DFBC92300B01055 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41061DFBC92300B01055 /* ReportViewController.swift */; };
 		C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */; };
@@ -153,6 +154,7 @@
 		C44E108D1E0004B700A716A2 /* UDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UDPClient.swift; path = Support/SwiftSocket/UDPClient.swift; sourceTree = "<group>"; };
 		C44E108E1E0004B700A716A2 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ytcpsocket.c; path = Support/SwiftSocket/ytcpsocket.c; sourceTree = "<group>"; };
 		C44E108F1E0004B700A716A2 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = yudpsocket.c; path = Support/SwiftSocket/yudpsocket.c; sourceTree = "<group>"; };
+		C4612E801E01445B00B79331 /* VIPDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIPDetailViewController.swift; sourceTree = "<group>"; };
 		C4BB41041DFBC8EE00B01055 /* Report.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		C4BB41061DFBC92300B01055 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportNavigationController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				C40BE76C1DFB2C3E00F6C200 /* MessageTableViewCell.swift */,
 				C40BE76A1DFB2BCA00F6C200 /* MessageListTableViewController.swift */,
 				C4BB41541DFD3A6200B01055 /* BuyVIPViewController.swift */,
+				C4612E801E01445B00B79331 /* VIPDetailViewController.swift */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				C44E10901E0004B700A716A2 /* Result.swift in Sources */,
 				C40BE75E1DFB1B0E00F6C200 /* BillTableViewCell.swift in Sources */,
 				C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */,
+				C4612E811E01445B00B79331 /* VIPDetailViewController.swift in Sources */,
 				C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */,
 				C4BB410D1DFBD3F000B01055 /* ReportListTableViewController.swift in Sources */,
 				C4BB41511DFD23C000B01055 /* SelfViewController.swift in Sources */,

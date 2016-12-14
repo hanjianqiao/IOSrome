@@ -12,7 +12,9 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
-
+    
+    let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.login
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -60,7 +62,6 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.login
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
@@ -137,46 +138,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func WXPay(_ sender: UIButton) {
-        let request = URLRequest(url: URL(string: "http://wxpay.weixin.qq.com/pub_v2/app/app_pay.php?plat=ios")!)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {               // check for fundamental networking error
-                print("error=\(error)")
-                return
-            }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            //print(data)
-            let responseString = String(data: data, encoding: .utf8)!
-            print("responseString = \(responseString)")
-            
-            let json = self.convertToDictionary(text: responseString)!
-            print(json)
-            
-            let alert = UIAlertController (title: "登陆结果", message: responseString
-                , preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-            OperationQueue.main.addOperation {
-                self.present(alert, animated: true, completion: nil)
-            }
-            
-            
-            let payRequest = PayReq()
-            payRequest.partnerId = "10000100"
-            payRequest.prepayId = "1101000000140415649af9fc314aa427"
-            payRequest.package = "Sign=WXPay"
-            payRequest.nonceStr = "a462b76e7436e98e0ed6e13c64b4fd1c"
-            payRequest.timeStamp = 1397527777
-            payRequest.sign =  "582282D72DD2B03AD892830965F428CB16E7A256"
-            WXApi.send(payRequest)
-            
-        }
-        task.resume()
-    }
+
     /*
     // MARK: - Navigation
 
