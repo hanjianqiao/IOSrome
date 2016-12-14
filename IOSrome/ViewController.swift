@@ -46,6 +46,18 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
     }
 
     @IBAction func huitaoyixia(_ sender: UIButton) {
+        if(AppStatus.sharedInstance.isVip){
+            let date = Date()
+            let calendar = Calendar.current
+            let comp = calendar.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+            if(comp.year! <= AppStatus.sharedInstance.vipInfo.endYear
+                && comp.month! <= AppStatus.sharedInstance.vipInfo.endMonth
+                && comp.day! <= AppStatus.sharedInstance.vipInfo.endDay){
+                //OK
+            }else{
+                AppStatus.sharedInstance.isVip = false
+            }
+        }
         let vc = (self.storyboard?.instantiateViewController(withIdentifier: "huitaoyixia"))! as! HuitaoViewController
         let strUrl:String = (webView.request?.url?.absoluteString)!
         vc.targetUrl = strUrl

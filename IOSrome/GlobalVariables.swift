@@ -22,6 +22,7 @@ class AppStatus {
     var isVip:Bool
     var server:ServerInfo
     var path:ServerPath
+    var vipInfo:VipInfo
     init(){
         isLoggedIn = false
         userID = ""
@@ -30,6 +31,7 @@ class AppStatus {
         regInfo = RegisterInfo()
         server = ServerInfo()
         path = ServerPath()
+        vipInfo = VipInfo()
     }
 }
 
@@ -47,6 +49,25 @@ class RegisterInfo{
         wechat = ""
         taobao = ""
         invitation = ""
+    }
+}
+
+class VipInfo{
+    var startYear:Int
+    var startMonth:Int
+    var startDay:Int
+    
+    var endYear:Int
+    var endMonth:Int
+    var endDay:Int
+    init(){
+        startYear = 2016
+        startMonth = 1
+        startDay = 1
+        
+        endYear = 2016
+        endMonth = 1
+        endDay = 1
     }
 }
 

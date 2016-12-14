@@ -68,6 +68,20 @@ class UserCenterViewController: UIViewController {
             notLoggedInMessage()
             return
         }
+        
+        if(AppStatus.sharedInstance.isVip){
+            let date = Date()
+            let calendar = Calendar.current
+            let comp = calendar.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+            if(comp.year! <= AppStatus.sharedInstance.vipInfo.endYear
+                && comp.month! <= AppStatus.sharedInstance.vipInfo.endMonth
+                && comp.day! <= AppStatus.sharedInstance.vipInfo.endDay){
+                //OK
+            }else{
+                AppStatus.sharedInstance.isVip = false
+            }
+        }
+
         var targetViewIdentifier:String
         if(AppStatus.sharedInstance.isVip == true){
             targetViewIdentifier = "vip"
