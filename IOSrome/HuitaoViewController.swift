@@ -62,7 +62,7 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
         }
         
         let function = jsContext?.objectForKeyedSubscript("doWork")
-        _ = function?.call(withArguments: [targetUrl ?? ""])
+        _ = function?.call(withArguments: [targetUrl ?? "", AppStatus.sharedInstance.isVip])
         print("loading finish...")
         webView.scrollView.setZoomScale(0.1, animated: true)
         //webView.stringByEvaluatingJavaScript(from: "doWork()")

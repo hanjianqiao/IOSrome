@@ -1,4 +1,5 @@
 var goodid, userid, shopid, tbtoken;
+var showIt;
 
 function RegexItem(f, c, b) {
     try {
@@ -83,14 +84,16 @@ function updateGeneralBrokerageCallBack(htmlText, url){
         document.getElementById("langenbro").innerHTML="<caption>没有计划</caption><tr style=\"background: #fe2641; color:#fff; \"><th>计划名称</th><th>人工审核</th><th>佣金比例</th><th>申请计划</th></tr>";
     }else{
         var dataList = obj.data.pageList[0];
-        document.getElementById("langenrat").innerHTML="&nbsp&nbsp<span>通用佣金比例：</span>&nbsp&nbsp<span>"+dataList.tkRate+"%</span>&nbsp&nbsp<a style=\"color:#fe2641\" href=http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid + ">生成推广链接</a>";
-        document.getElementById("lan30dsel").innerHTML="&nbsp&nbsp<span>30天推广：<span>"+dataList.totalNum+"</span>件</span>&nbsp&nbsp<span >支出佣金：<span id=\"Lan30DayOut\">"+dataList.totalFee+"</span>元</span>";
+        document.getElementById("langenrat").innerHTML="&nbsp&nbsp<span>通用佣金比例：</span>&nbsp&nbsp<span>"+(showIt ? dataList.tkRate : "??")+"%</span>&nbsp&nbsp<a style=\"color:#fe2641\""+(showIt ? ("href=http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid) : "") + ">生成推广链接</a>";
+        document.getElementById("lan30dsel").innerHTML="&nbsp&nbsp<span>30天推广：<span>"+(showIt ? dataList.totalNum : "??")+"</span>件</span>&nbsp&nbsp<span >支出佣金：<span id=\"Lan30DayOut\">"+(showIt ? dataList.totalFee : "??")+"</span>元</span>";
         var processedText = "<caption>计划详情</caption><tr style=\"background: #fe2641; color:#fff; \"><th>计划名称</th><th>人工审核</th><th>佣金比例</th><th>申请计划</th></tr>";
         userid = dataList.sellerId;
         spTkRates = dataList.tkSpecialCampaignIdRateMap;
         tkRate = dataList.tkRate;
         document.getElementById("langenbro").innerHTML=processedText;
-        updateGeneralBrokerageItem(dataList.sellerId);
+        if(showIt){
+            updateGeneralBrokerageItem(dataList.sellerId);
+        }
     }
 }
 
@@ -164,7 +167,11 @@ function updateTaobaoCouponItemCallBack(htmlText, url){
         innerText += "</td><td>";
         innerText += htmlText.substring(htmlText.indexOf("有效期:")+4, htmlText.indexOf("</dl>")-5);
         innerText += "</td><td>";
-        innerText += "<button onclick=setClipboard(\"http://shop.m.taobao.com/shop/coupon.htm?seller_id=" + userid +"&activity_id=" + url.substring(url.indexOf("activity_id=")+12, url.length) + "\")>点击复制</button>";
+        if(showIt){
+            innerText += "<button onclick=setClipboard(\"http://shop.m.taobao.com/shop/coupon.htm?seller_id=" + userid +"&activity_id=" + url.substring(url.indexOf("activity_id=")+12, url.length) + "\")>点击复制</button>";
+        }else{
+            innerText += "<button>VIP可复制</button>";
+        }
         innerText += "</td>";
         var item = document.createElement("tr");
         item.innerHTML = innerText;
@@ -219,7 +226,11 @@ function updateTKZSCouponItemCallBack(htmlText, url){
         innerText += "</td><td>";
         innerText += htmlText.substring(htmlText.indexOf("有效期:")+4, htmlText.indexOf("</dl>")-5);
         innerText += "</td><td>";
-        innerText += "<button onclick=setClipboard(\"http://shop.m.taobao.com/shop/coupon.htm?seller_id=" + userid +"&activity_id=" + url.substring(url.indexOf("activity_id=")+12, url.length) + "\")>点击复制</button>";
+        if(showIt){
+            innerText += "<button onclick=setClipboard(\"http://shop.m.taobao.com/shop/coupon.htm?seller_id=" + userid +"&activity_id=" + url.substring(url.indexOf("activity_id=")+12, url.length) + "\")>点击复制</button>";
+        }else{
+            innerText += "<button>VIP可复制</button>";
+        }
         innerText += "</td>";
         var item = document.createElement("tr");
         item.innerHTML = innerText;
@@ -266,14 +277,11 @@ function callBackShowAlert(htmlString, url){
     return ''
 }
 
-function doWork(srcUrl){
+function doWork(srcUrl, showit){
+    showIt = showit;
     if(!isDetailPage(srcUrl)){
         inforLanSec()
         return 'Invaliad';
-    }
-    if(!LanJsBridge.isVIP()){
-        setLanJPanel("购买VIP可启用功能")
-        return 'notVIP'
     }
     prepareLanJPanel(srcUrl);
     goodid = getGoodID(srcUrl);
