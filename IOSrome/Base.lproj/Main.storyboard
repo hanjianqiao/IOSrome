@@ -1,173 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UKf-gh-SZ0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UKf-gh-SZ0">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--首页-->
         <scene sceneID="0bY-hS-54z">
             <objects>
-                <navigationController title="首页" id="faB-lo-SXx" sceneMemberID="viewController">
+                <navigationController title="首页" id="faB-lo-SXx" customClass="TaobaoNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" selectedImage="首页默认.png" id="uZ0-P6-R2M"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4c1-Lc-5O8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aH4-SI-R9h"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1A1-3g-RuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1071" y="-720"/>
         </scene>
-        <!--首页-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController title="首页" id="BYZ-38-t0r" customClass="ViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z4K-rc-MKF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="首页" image="首页默认.png" id="QEW-4f-pd3">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
-                    <navigationItem key="navigationItem" id="eE5-Uc-gf2">
-                        <nil key="title"/>
-                        <view key="titleView" contentMode="scaleToFill" id="4Ir-6u-wSd">
-                            <rect key="frame" x="8" y="6" width="304" height="33"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T14-A1-Ufq">
-                                    <rect key="frame" x="8" y="0.0" width="31" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="阿妈">
-                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="homeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tzD-Bz-Qvd"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKB-DP-FR7">
-                                    <rect key="frame" x="102" y="0.0" width="32" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="后退">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="goBack" destination="z4K-rc-MKF" eventType="touchUpInside" id="PAz-7j-4Nv"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8v-Do-9uD">
-                                    <rect key="frame" x="142" y="0.0" width="32" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="前进">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="goForward" destination="z4K-rc-MKF" eventType="touchUpInside" id="7Pd-aW-AOK"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shk-tY-6Hm">
-                                    <rect key="frame" x="47" y="0.0" width="32" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="淘宝">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="taobaoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpC-RS-se3"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkj-je-HT5">
-                                    <rect key="frame" x="239" y="0.0" width="57" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <state key="normal" title="会淘一下">
-                                        <color key="titleColor" red="0.95118199479999999" green="0.4532237858" blue="0.1600397908" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="huitaoyixia:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Fp-sy-tcr"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aID-ef-wus">
-                                    <rect key="frame" x="193" y="0.0" width="32" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="分享">
-                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="shareUrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mlr-0s-3YL"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="webView" destination="z4K-rc-MKF" id="fhM-bg-bQb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1942.5" y="-720.42253521126759"/>
-        </scene>
-        <!--会淘一下-->
-        <scene sceneID="LT3-Eo-bou">
-            <objects>
-                <viewController storyboardIdentifier="huitaoyixia" title="会淘一下" id="MRO-Ua-QUL" customClass="HuitaoViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="36p-F2-Zi9"/>
-                        <viewControllerLayoutGuide type="bottom" id="wr5-TF-l1P"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IOs-pJ-Vne">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kie-TS-mae">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="kie-TS-mae" id="9Ni-p1-6xC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="48c-fW-RVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2739.375" y="-720.42253521126759"/>
-        </scene>
         <!--推荐商城-->
         <scene sceneID="1am-oV-R4O">
             <objects>
-                <navigationController title="推荐商城" id="24E-rb-Z1K" sceneMemberID="viewController">
+                <navigationController title="推荐商城" id="24E-rb-Z1K" customClass="RecommendNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="推荐商城" image="商城默认.png" id="nhf-lL-tHC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZCK-5n-Qh5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="k0j-if-Iti" kind="relationship" relationship="rootViewController" id="J4b-KV-tWR"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYk-Z1-SwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,80 +51,19 @@
             </objects>
             <point key="canvasLocation" x="1071" y="2022"/>
         </scene>
-        <!--推荐商城-->
-        <scene sceneID="T5E-cW-RwO">
-            <objects>
-                <viewController title="推荐商城" id="k0j-if-Iti" customClass="SellViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="T14-Xl-nQF"/>
-                        <viewControllerLayoutGuide type="bottom" id="Hog-b5-KJ9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="C39-Ux-7v5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QJC-UJ-7sa">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="推荐商城" id="v0M-qG-Tk9"/>
-                    <connections>
-                        <outlet property="webView" destination="QJC-UJ-7sa" id="ZCQ-YQ-08J"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Aa3-xr-6gM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1943" y="-43"/>
-        </scene>
         <!--自选商城-->
         <scene sceneID="3NS-YH-vNw">
             <objects>
-                <navigationController title="自选商城" id="hIA-Ej-FGO" sceneMemberID="viewController">
+                <navigationController title="自选商城" id="hIA-Ej-FGO" customClass="SelfchooseNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="自选商城" image="商城默认.png" id="PrS-Wg-f9i"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SPx-Ml-9OG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="If8-G2-Aof" kind="relationship" relationship="rootViewController" id="QQJ-b2-aPQ"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQ9-Ma-1Yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1071" y="643"/>
-        </scene>
-        <!--自选商城-->
-        <scene sceneID="Ske-7N-qGR">
-            <objects>
-                <viewController title="自选商城" id="If8-G2-Aof" customClass="SelfViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Q7N-Qu-I7K"/>
-                        <viewControllerLayoutGuide type="bottom" id="PAk-Av-BFf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="p5N-gn-Gv1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1J8-oW-k73">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="自选商城" id="9mU-LG-B5U"/>
-                    <connections>
-                        <outlet property="webView" destination="1J8-oW-k73" id="hrp-rO-g2y"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cIc-fy-ONC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1943" y="642"/>
         </scene>
         <!--报表-->
         <scene sceneID="gsl-b2-dvH">

@@ -53,6 +53,12 @@
 		C44E10941E0004B700A716A2 /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C44E108E1E0004B700A716A2 /* ytcpsocket.c */; };
 		C44E10951E0004B700A716A2 /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C44E108F1E0004B700A716A2 /* yudpsocket.c */; };
 		C4612E811E01445B00B79331 /* VIPDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E801E01445B00B79331 /* VIPDetailViewController.swift */; };
+		C4612E831E03B20F00B79331 /* Taobao.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4612E821E03B20F00B79331 /* Taobao.storyboard */; };
+		C4612E851E03B2B100B79331 /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4612E841E03B2B100B79331 /* Recommend.storyboard */; };
+		C4612E881E03B2D800B79331 /* Selfchoose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4612E871E03B2D800B79331 /* Selfchoose.storyboard */; };
+		C4612E8A1E03B34300B79331 /* TaobaoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E891E03B34300B79331 /* TaobaoNavigationController.swift */; };
+		C4612E8C1E03B35C00B79331 /* RecommendNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E8B1E03B35C00B79331 /* RecommendNavigationController.swift */; };
+		C4612E8E1E03B36E00B79331 /* SelfchooseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E8D1E03B36E00B79331 /* SelfchooseNavigationController.swift */; };
 		C4BB41051DFBC8EE00B01055 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41041DFBC8EE00B01055 /* Report.storyboard */; };
 		C4BB41071DFBC92300B01055 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41061DFBC92300B01055 /* ReportViewController.swift */; };
 		C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */; };
@@ -155,6 +161,12 @@
 		C44E108E1E0004B700A716A2 /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ytcpsocket.c; path = Support/SwiftSocket/ytcpsocket.c; sourceTree = "<group>"; };
 		C44E108F1E0004B700A716A2 /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = yudpsocket.c; path = Support/SwiftSocket/yudpsocket.c; sourceTree = "<group>"; };
 		C4612E801E01445B00B79331 /* VIPDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIPDetailViewController.swift; sourceTree = "<group>"; };
+		C4612E821E03B20F00B79331 /* Taobao.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Taobao.storyboard; sourceTree = "<group>"; };
+		C4612E841E03B2B100B79331 /* Recommend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
+		C4612E871E03B2D800B79331 /* Selfchoose.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Selfchoose.storyboard; sourceTree = "<group>"; };
+		C4612E891E03B34300B79331 /* TaobaoNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaobaoNavigationController.swift; sourceTree = "<group>"; };
+		C4612E8B1E03B35C00B79331 /* RecommendNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendNavigationController.swift; sourceTree = "<group>"; };
+		C4612E8D1E03B36E00B79331 /* SelfchooseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfchooseNavigationController.swift; sourceTree = "<group>"; };
 		C4BB41041DFBC8EE00B01055 /* Report.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		C4BB41061DFBC92300B01055 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportNavigationController.swift; sourceTree = "<group>"; };
@@ -318,6 +330,9 @@
 				DCB045221DDF40280014D479 /* LaunchScreen.storyboard */,
 				DCB0451A1DDF40280014D479 /* Main.storyboard */,
 				C4BB410E1DFC724300B01055 /* MainTabBarController.swift */,
+				C4612E891E03B34300B79331 /* TaobaoNavigationController.swift */,
+				C4612E8B1E03B35C00B79331 /* RecommendNavigationController.swift */,
+				C4612E8D1E03B36E00B79331 /* SelfchooseNavigationController.swift */,
 				C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */,
 				C40BE7341DF9C34000F6C200 /* UserNavigationController.swift */,
 				C40BE72D1DF9B1BF00F6C200 /* taobao */,
@@ -332,6 +347,7 @@
 		C40BE72D1DF9B1BF00F6C200 /* taobao */ = {
 			isa = PBXGroup;
 			children = (
+				C4612E821E03B20F00B79331 /* Taobao.storyboard */,
 				DCB045181DDF40280014D479 /* ViewController.swift */,
 				C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */,
 				C4BB41581DFD832A00B01055 /* lanjs_s.js */,
@@ -342,6 +358,7 @@
 		C40BE72E1DF9B1D000F6C200 /* market */ = {
 			isa = PBXGroup;
 			children = (
+				C4612E841E03B2B100B79331 /* Recommend.storyboard */,
 				C40BE6B01DF51DC700F6C200 /* SellViewController.swift */,
 			);
 			name = market;
@@ -447,6 +464,7 @@
 		C4BB414F1DFD23A000B01055 /* selfchoose */ = {
 			isa = PBXGroup;
 			children = (
+				C4612E871E03B2D800B79331 /* Selfchoose.storyboard */,
 				C4BB41501DFD23C000B01055 /* SelfViewController.swift */,
 			);
 			name = selfchoose;
@@ -563,7 +581,9 @@
 				C4BB41301DFD199900B01055 /* 淘宝.png in Resources */,
 				C4BB414A1DFD1C2D00B01055 /* 首页焦点.png in Resources */,
 				C4BB41331DFD199900B01055 /* 系统消息.png in Resources */,
+				C4612E881E03B2D800B79331 /* Selfchoose.storyboard in Resources */,
 				C4BB414C1DFD1C2D00B01055 /* 我的焦点.png in Resources */,
+				C4612E831E03B20F00B79331 /* Taobao.storyboard in Resources */,
 				C40BE73D1DFA4A3F00F6C200 /* user_center_my_invitation.png in Resources */,
 				C4BB413A1DFD199900B01055 /* VIP.png in Resources */,
 				C4BB41291DFD199900B01055 /* 订单明细.png in Resources */,
@@ -609,6 +629,7 @@
 				C40BE75A1DFB16F100F6C200 /* background_invitation_overview.png in Resources */,
 				C4BB41471DFD1C2D00B01055 /* 默认头像.png in Resources */,
 				C4BB41461DFD1C2D00B01055 /* 报表默认.png in Resources */,
+				C4612E851E03B2B100B79331 /* Recommend.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +650,7 @@
 				C44E10941E0004B700A716A2 /* ytcpsocket.c in Sources */,
 				C44E10931E0004B700A716A2 /* UDPClient.swift in Sources */,
 				C4E3AABA1E010C0100564EC3 /* SwiftJavascriptBridge.swift in Sources */,
+				C4612E8A1E03B34300B79331 /* TaobaoNavigationController.swift in Sources */,
 				C44E10901E0004B700A716A2 /* Result.swift in Sources */,
 				C40BE75E1DFB1B0E00F6C200 /* BillTableViewCell.swift in Sources */,
 				C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */,
@@ -642,8 +664,10 @@
 				C4BB41071DFBC92300B01055 /* ReportViewController.swift in Sources */,
 				C44E10921E0004B700A716A2 /* TCPClient.swift in Sources */,
 				C4BB41551DFD3A6200B01055 /* BuyVIPViewController.swift in Sources */,
+				C4612E8E1E03B36E00B79331 /* SelfchooseNavigationController.swift in Sources */,
 				C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */,
 				C40BE7351DF9C34000F6C200 /* UserNavigationController.swift in Sources */,
+				C4612E8C1E03B35C00B79331 /* RecommendNavigationController.swift in Sources */,
 				C4BB410F1DFC724300B01055 /* MainTabBarController.swift in Sources */,
 				DCB045191DDF40280014D479 /* ViewController.swift in Sources */,
 				C4BB410B1DFBD38A00B01055 /* ReportTableViewCell.swift in Sources */,
