@@ -21,7 +21,7 @@ class UserCenterViewController: UIViewController {
             userIconButton.setImage(UIImage(named: "tiny_user_head.png"), for: UIControlState.normal)
         }else{
             logoutButton.isHidden = false
-            userNameButton.setTitle("你的用户名", for: UIControlState.normal)
+            userNameButton.setTitle(AppStatus.sharedInstance.userID, for: UIControlState.normal)
             userIconButton.setImage(UIImage(named: "tiny0.png"), for: UIControlState.normal)
         }
 
@@ -71,12 +71,15 @@ class UserCenterViewController: UIViewController {
             let date = Date()
             let calendar = Calendar.current
             let comp = calendar.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
-            if(comp.year! <= AppStatus.sharedInstance.vipInfo.endYear
-                && comp.month! <= AppStatus.sharedInstance.vipInfo.endMonth
-                && comp.day! <= AppStatus.sharedInstance.vipInfo.endDay){
-                //OK
-            }else{
+            let A = comp.year! > AppStatus.sharedInstance.vipInfo.endYear
+            let AE = comp.year! == AppStatus.sharedInstance.vipInfo.endYear
+            let B = comp.month! > AppStatus.sharedInstance.vipInfo.endMonth
+            let BE = comp.month! == AppStatus.sharedInstance.vipInfo.endMonth
+            let C = comp.day! > AppStatus.sharedInstance.vipInfo.endDay
+            if((A) || (AE && B) || (AE && BE && C)){
                 AppStatus.sharedInstance.isVip = false
+            }else{
+                //OK
             }
         }
 

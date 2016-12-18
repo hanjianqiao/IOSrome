@@ -17,6 +17,11 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
     var targetUrl: String?
     var jsContext: JSContext?
 
+    @IBAction func copyToken(_ sender: UIBarButtonItem) {
+        let function = jsContext?.objectForKeyedSubscript("copyToken")
+        let tokenString = function?.call(withArguments: [""])
+        print("Token is: \(tokenString!)")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -61,13 +66,13 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
         }
         
         if(webView.request?.url?.absoluteString.contains("alimama.com"))!{
-            webView.stringByEvaluatingJavaScript(from: "var element = document.createElement('meta');  element.name = \"viewport\";  element.content = \"width=device-width,initial-scale=1.0,minimum-scale=0.5,maximum-scale=3,user-scalable=1\"; var head = document.getElementsByTagName('head')[0]; head.appendChild(element);")
+            webView.stringByEvaluatingJavaScript(from: "var element = document.createElement('meta');  element.name = \"viewport\";  element.content = \"width=device-width,initial-scale=0.6,minimum-scale=0.6,maximum-scale=0.6,user-scalable=0.6\"; var head = document.getElementsByTagName('head')[0]; head.appendChild(element);")
         }
         
         let function = jsContext?.objectForKeyedSubscript("doWork")
-        _ = function?.call(withArguments: [targetUrl ?? "", AppStatus.sharedInstance.isVip])
+        _ = function?.call(withArguments: [targetUrl ?? "", true])
         print("loading finish...")
-        webView.scrollView.setZoomScale(0.1, animated: true)
+        //webView.scrollView.setZoomScale(0.1, animated: true)
         //webView.stringByEvaluatingJavaScript(from: "doWork()")
     }
     

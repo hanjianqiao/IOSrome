@@ -295,4 +295,16 @@ function fitSalePosition(x){
     document.getElementById("dialog-singleton").style.left = "" + x + "px";
 }
 
+function copyToken(any){
+    var tokens = document.getElementsByClassName("code-wrap-s");
+    var ret = "";
+    for(var i = 0; i < tokens.length; i++){
+        var htmlText = tokens[i].innerHTML;
+        ret += htmlText.substring(htmlText.indexOf("class=\"label\"")+25, htmlText.indexOf("class=\"label\"")+30);
+        ret += htmlText.substring(htmlText.indexOf("value=")+7, htmlText.indexOf("value=")+19);
+        ret += "\n"
+    }
+    return ret;
+}
+
 

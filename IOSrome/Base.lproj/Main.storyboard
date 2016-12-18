@@ -41,7 +41,7 @@
         <scene sceneID="02t-sb-zfK">
             <objects>
                 <navigationController title="我的" id="YiG-OF-J2o" customClass="UserNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="个人中心" image="我的焦点.png" id="XRo-Vh-eOn"/>
+                    <tabBarItem key="tabBarItem" title="个人中心" image="我的默认.png" id="XRo-Vh-eOn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="L25-Sm-sju">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -102,9 +102,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="商城默认.png" width="39" height="38"/>
-        <image name="我的焦点.png" width="39" height="38"/>
-        <image name="报表默认.png" width="39" height="38"/>
-        <image name="首页默认.png" width="39" height="38"/>
+        <image name="商城默认.png" width="26" height="25"/>
+        <image name="我的默认.png" width="26" height="25"/>
+        <image name="报表默认.png" width="26" height="25"/>
+        <image name="首页默认.png" width="26" height="25"/>
     </resources>
 </document>

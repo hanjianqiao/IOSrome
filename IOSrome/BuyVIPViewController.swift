@@ -56,6 +56,16 @@ class BuyVIPViewController: UIViewController {
         payRequest.sign =  "582282D72DD2B03AD892830965F428CB16E7A256"
         WXApi.send(payRequest)
         
+        let xml = SWXMLHash.parse(postString)
+
+        for i in xml.children{
+            for j in i.children{
+                print(j.element?.text! ?? "")
+            }
+        }
+        //print(xml)
+        
+        
         //AppStatus.sharedInstance.isVip = true
     }
 

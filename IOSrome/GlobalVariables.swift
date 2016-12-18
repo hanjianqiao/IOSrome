@@ -94,7 +94,7 @@ class VipInfo{
         startMonth = 1
         startDay = 1
         
-        endYear = 2016
+        endYear = 2017
         endMonth = 12
         endDay = 14
     }
