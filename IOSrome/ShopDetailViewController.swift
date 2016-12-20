@@ -1,14 +1,16 @@
 //
-//  SelfViewController.swift
+//  ShopDetailViewController.swift
 //  IOSrome
 //
-//  Created by 韩建桥 on 2016/12/11.
+//  Created by 韩建桥 on 2016/12/20.
 //  Copyright © 2016年 Lanchitour. All rights reserved.
 //
 
 import UIKit
 
-class SelfViewController: UIViewController, UIWebViewDelegate {
+class ShopDetailViewController: UIViewController, UIWebViewDelegate {
+    
+    var goodID:String = ""
 
     @IBOutlet weak var webView: UIWebView!
     
@@ -16,12 +18,7 @@ class SelfViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        /*
-         * Main web page
-         *
-         */
-        //let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.selfchoose
-        let serverUrlString = "http://kouchenvip.com/tao/h5/search.html"
+        let serverUrlString = "http://kouchenvip.com/tao/h5/item.html?id=" + goodID
         let url:URL = URL(string: serverUrlString)!
         
         let request:URLRequest = URLRequest(url: url)
