@@ -62,16 +62,6 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    func convertToDictionary(text: String) -> [String: Any]? {
-        if let data = text.data(using: .utf8) {
-            do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
-    }
     @IBAction func doLogin(_ sender: UIButton) {
         let queue = OperationQueue()
         
@@ -105,7 +95,7 @@ class LoginViewController: UIViewController {
                 let responseString = String(data: data, encoding: .utf8)!
                 print("responseString = \(responseString)")
                 
-                let json = self.convertToDictionary(text: responseString)!
+                let json = JsonTools.convertToDictionary(text: responseString)!
                 
                 print(json["status"] as! String == "failed")
                 print(json["message"]!)

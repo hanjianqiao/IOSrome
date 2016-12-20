@@ -15,6 +15,10 @@ class AppStatus {
         }
         return Static.instance
     }
+    
+    let wechatAPPID:String = "wxb4ba3c02aa476ea1"
+    let wechatPayKey:String = "a462b76e7436e98e0ed6e13c64b4fd1c"
+    
     var isLoggedIn:Bool
     var userID:String
     var grantToken:String

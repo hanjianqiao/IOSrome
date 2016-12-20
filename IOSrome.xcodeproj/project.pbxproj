@@ -98,6 +98,8 @@
 		C4BB41571DFD7EB100B01055 /* HuitaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */; };
 		C4BB41591DFD832A00B01055 /* lanjs_s.js in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41581DFD832A00B01055 /* lanjs_s.js */; };
 		C4E3AABA1E010C0100564EC3 /* SwiftJavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E3AAB91E010C0100564EC3 /* SwiftJavascriptBridge.swift */; };
+		C4EE467F1E08EB3E00E5D0E3 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EE467E1E08EB3E00E5D0E3 /* String+MD5.swift */; };
+		C4EE46821E08EE6800E5D0E3 /* JsonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EE46811E08EE6800E5D0E3 /* JsonTools.swift */; };
 		DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045161DDF40280014D479 /* AppDelegate.swift */; };
 		DCB045191DDF40280014D479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB045181DDF40280014D479 /* ViewController.swift */; };
 		DCB0451C1DDF40280014D479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCB0451A1DDF40280014D479 /* Main.storyboard */; };
@@ -204,6 +206,8 @@
 		C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuitaoViewController.swift; sourceTree = "<group>"; };
 		C4BB41581DFD832A00B01055 /* lanjs_s.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs_s.js; sourceTree = "<group>"; };
 		C4E3AAB91E010C0100564EC3 /* SwiftJavascriptBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJavascriptBridge.swift; sourceTree = "<group>"; };
+		C4EE467E1E08EB3E00E5D0E3 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
+		C4EE46811E08EE6800E5D0E3 /* JsonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonTools.swift; sourceTree = "<group>"; };
 		DCB045131DDF40280014D479 /* IOSrome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSrome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB045161DDF40280014D479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCB045181DDF40280014D479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -366,6 +370,8 @@
 		C40BE7301DF9B24800F6C200 /* support */ = {
 			isa = PBXGroup;
 			children = (
+				C4EE46801E08EE5300E5D0E3 /* json */,
+				C4EE467D1E08EB2D00E5D0E3 /* extension */,
 				C4612E8F1E063CC500B79331 /* xml */,
 				C4E3AAB81E010BE200564EC3 /* communication */,
 				C44E10881E00049D00A716A2 /* swiftsocket */,
@@ -477,6 +483,22 @@
 				C4E3AAB91E010C0100564EC3 /* SwiftJavascriptBridge.swift */,
 			);
 			name = communication;
+			sourceTree = "<group>";
+		};
+		C4EE467D1E08EB2D00E5D0E3 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				C4EE467E1E08EB3E00E5D0E3 /* String+MD5.swift */,
+			);
+			name = extension;
+			sourceTree = "<group>";
+		};
+		C4EE46801E08EE5300E5D0E3 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				C4EE46811E08EE6800E5D0E3 /* JsonTools.swift */,
+			);
+			name = json;
 			sourceTree = "<group>";
 		};
 		DCB0450A1DDF40280014D479 = {
@@ -655,6 +677,7 @@
 				C4BB41511DFD23C000B01055 /* SelfViewController.swift in Sources */,
 				C44E10911E0004B700A716A2 /* Socket.swift in Sources */,
 				C40BE76B1DFB2BCA00F6C200 /* MessageListTableViewController.swift in Sources */,
+				C4EE46821E08EE6800E5D0E3 /* JsonTools.swift in Sources */,
 				C40BE76D1DFB2C3E00F6C200 /* MessageTableViewCell.swift in Sources */,
 				C4BB41071DFBC92300B01055 /* ReportViewController.swift in Sources */,
 				C44E10921E0004B700A716A2 /* TCPClient.swift in Sources */,
@@ -670,6 +693,7 @@
 				C4612E941E063CD500B79331 /* SWXMLHash+TypeConversion.swift in Sources */,
 				C4BB410B1DFBD38A00B01055 /* ReportTableViewCell.swift in Sources */,
 				DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */,
+				C4EE467F1E08EB3E00E5D0E3 /* String+MD5.swift in Sources */,
 				C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */,
 				C40BE7681DFB268500F6C200 /* BillListTableViewController.swift in Sources */,
 			);
