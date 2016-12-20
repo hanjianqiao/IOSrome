@@ -20,7 +20,8 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
     @IBAction func copyToken(_ sender: UIBarButtonItem) {
         let function = jsContext?.objectForKeyedSubscript("copyToken")
         let tokenString = function?.call(withArguments: [""])
-        print("Token is: \(tokenString!)")
+        print("Token is:\n\(tokenString!)")
+        UIPasteboard.general.string = tokenString?.toString()!
     }
     override func viewDidLoad() {
         super.viewDidLoad()
