@@ -69,7 +69,7 @@
         <scene sceneID="gsl-b2-dvH">
             <objects>
                 <navigationController storyboardIdentifier="RecommendMall" title="报表" id="f5s-oG-ADr" customClass="ReportNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" enabled="NO" title="报表" image="报表默认.png" id="zrf-Hn-O0c"/>
+                    <tabBarItem key="tabBarItem" title="报表" image="报表默认.png" id="zrf-Hn-O0c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gds-RA-Fbb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

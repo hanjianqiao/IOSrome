@@ -97,6 +97,8 @@
 		C4BB41551DFD3A6200B01055 /* BuyVIPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41541DFD3A6200B01055 /* BuyVIPViewController.swift */; };
 		C4BB41571DFD7EB100B01055 /* HuitaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */; };
 		C4BB41591DFD832A00B01055 /* lanjs_s.js in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41581DFD832A00B01055 /* lanjs_s.js */; };
+		C4E380771E09974B0037083F /* ReportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E380761E09974B0037083F /* ReportDetailViewController.swift */; };
+		C4E380791E0999D70037083F /* lanjs_rep_det.js in Resources */ = {isa = PBXBuildFile; fileRef = C4E380781E0999D60037083F /* lanjs_rep_det.js */; };
 		C4E3AABA1E010C0100564EC3 /* SwiftJavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E3AAB91E010C0100564EC3 /* SwiftJavascriptBridge.swift */; };
 		C4EE467F1E08EB3E00E5D0E3 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EE467E1E08EB3E00E5D0E3 /* String+MD5.swift */; };
 		C4EE46821E08EE6800E5D0E3 /* JsonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EE46811E08EE6800E5D0E3 /* JsonTools.swift */; };
@@ -205,6 +207,8 @@
 		C4BB41541DFD3A6200B01055 /* BuyVIPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyVIPViewController.swift; sourceTree = "<group>"; };
 		C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuitaoViewController.swift; sourceTree = "<group>"; };
 		C4BB41581DFD832A00B01055 /* lanjs_s.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs_s.js; sourceTree = "<group>"; };
+		C4E380761E09974B0037083F /* ReportDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailViewController.swift; sourceTree = "<group>"; };
+		C4E380781E0999D60037083F /* lanjs_rep_det.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs_rep_det.js; sourceTree = "<group>"; };
 		C4E3AAB91E010C0100564EC3 /* SwiftJavascriptBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJavascriptBridge.swift; sourceTree = "<group>"; };
 		C4EE467E1E08EB3E00E5D0E3 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		C4EE46811E08EE6800E5D0E3 /* JsonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonTools.swift; sourceTree = "<group>"; };
@@ -425,10 +429,12 @@
 		C4BB41031DFBC8B500B01055 /* report */ = {
 			isa = PBXGroup;
 			children = (
+				C4E380781E0999D60037083F /* lanjs_rep_det.js */,
 				C4BB41041DFBC8EE00B01055 /* Report.storyboard */,
 				C4BB410A1DFBD38A00B01055 /* ReportTableViewCell.swift */,
 				C4BB410C1DFBD3F000B01055 /* ReportListTableViewController.swift */,
 				C4BB41061DFBC92300B01055 /* ReportViewController.swift */,
+				C4E380761E09974B0037083F /* ReportDetailViewController.swift */,
 			);
 			name = report;
 			sourceTree = "<group>";
@@ -635,6 +641,7 @@
 				C40BE7391DF9D07E00F6C200 /* back0.png in Resources */,
 				C4BB412A1DFD199900B01055 /* 关于.png in Resources */,
 				C4BB41481DFD1C2D00B01055 /* 商城焦点.png in Resources */,
+				C4E380791E0999D70037083F /* lanjs_rep_det.js in Resources */,
 				C4BB41281DFD199900B01055 /* 层级头像.png in Resources */,
 				C4BB41341DFD199900B01055 /* 系统消息主图标.png in Resources */,
 				C40BE7561DFB144100F6C200 /* eye.png in Resources */,
@@ -683,6 +690,7 @@
 				C44E10921E0004B700A716A2 /* TCPClient.swift in Sources */,
 				C4612E931E063CD500B79331 /* SWXMLHash.swift in Sources */,
 				C4612E961E08D91B00B79331 /* ShopDetailViewController.swift in Sources */,
+				C4E380771E09974B0037083F /* ReportDetailViewController.swift in Sources */,
 				C4BB41551DFD3A6200B01055 /* BuyVIPViewController.swift in Sources */,
 				C4612E8E1E03B36E00B79331 /* SelfchooseNavigationController.swift in Sources */,
 				C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */,

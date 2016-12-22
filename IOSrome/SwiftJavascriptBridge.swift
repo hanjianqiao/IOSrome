@@ -19,8 +19,20 @@ import JavaScriptCore
     func getDataFromUrl(_ urlString: String, _ callBack: String)
     func setClipBoard(_ string: String)
     func isVIP() -> Bool
+    func getCookie(_ name:String, _ forUrl:String) -> String
 }
 @objc class SwiftJavaScriptModel: NSObject, SwiftJavaScriptDelegate, URLSessionDelegate{
+    internal func getCookie(_ name: String, _ forUrl: String) -> String {
+        let url = URL(string: forUrl)
+        let cookies = HTTPCookieStorage.shared.cookies(for: url!)
+        for cookie in cookies!{
+            if(cookie.name == name){
+                return cookie.value
+            }
+        }
+        return ""
+    }
+
     
     weak var controller: UIViewController?
     weak var jsContext: JSContext?

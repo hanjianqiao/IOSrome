@@ -283,6 +283,8 @@ function doWork(srcUrl, showit){
     prepareLanJPanel(srcUrl);
     goodid = getGoodID(srcUrl);
     
+    tbtoken = LanJsBridge.getCookie("_tb_token_", "http://pub.alimama.com/")
+    
     updateGlobalInfo();
     updateGeneralBrokerage();
     updateQueqiaoBrokerage();
@@ -303,13 +305,13 @@ function copyToken(any){
         var endIndex = startIndex;
         while(htmlText[endIndex] != "<"){endIndex++;}
         ret += htmlText.substring(startIndex, endIndex);
-        
+
         startIndex = htmlText.indexOf("value=");
         while(htmlText[startIndex] != "\""){startIndex++;}
         startIndex++;
         endIndex = startIndex;
         while(htmlText[endIndex] != "\""){endIndex++;}
-        
+
         ret += htmlText.substring(startIndex, endIndex);
         ret += "\n"
     }
