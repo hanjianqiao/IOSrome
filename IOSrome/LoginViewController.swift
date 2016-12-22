@@ -84,6 +84,15 @@ class LoginViewController: UIViewController {
                 
                 guard let data = data, error == nil else {               // check for fundamental networking error
                     print("error=\(error)")
+                    alertLogging.dismiss(animated: true, completion:{
+                        OperationQueue.main.addOperation {
+                            alertLogging.dismiss(animated: true, completion: nil)
+                            let alert = UIAlertController (title: "网络异常", message: "请重新登录"
+                                , preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    })
                     return
                 }
                 
