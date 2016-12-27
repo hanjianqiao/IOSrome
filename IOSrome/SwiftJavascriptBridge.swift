@@ -72,7 +72,7 @@ import JavaScriptCore
             let res = response as! HTTPURLResponse
             let enct:String = res.allHeaderFields["Content-Type"]! as! String
             //print(enct)
-            if(enct.contains("GBK")){
+            if(enct.contains("GBK") || enct.contains("gbk")){
                 let cfEnc = CFStringEncodings.GB_18030_2000
                 let enc = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(cfEnc.rawValue))
                 html = String(data: data!, encoding: String.Encoding(rawValue: enc))!
@@ -89,6 +89,9 @@ import JavaScriptCore
         }
         task.resume()
         _ = semaphore.wait(timeout: .distantFuture)
+        
+        //print("get url from: \(urlString) -> \(html!)")
+        
         let function = jsContext?.objectForKeyedSubscript(callBack)
         _ = function?.call(withArguments: [html ?? "", urlString])
     }
@@ -116,7 +119,7 @@ import JavaScriptCore
             let res = response as! HTTPURLResponse
             let enct:String = res.allHeaderFields["Content-Type"]! as! String
             //print(enct)
-            if(enct.contains("GBK")){
+            if(enct.contains("GBK") || enct.contains("gbk")){
                 let cfEnc = CFStringEncodings.GB_18030_2000
                 let enc = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(cfEnc.rawValue))
                 html = String(data: data!, encoding: String.Encoding(rawValue: enc))!
@@ -130,7 +133,7 @@ import JavaScriptCore
                 print("Unsolved encoding type: \(enct)")
             }
             
-            //print("get url from: \(urlString) -> \(html)")
+            //print("get url from: \(urlString) -> \(html!)")
             //print("get url from: \(urlString)")
             
             let function = self.jsContext?.objectForKeyedSubscript(callBack)
