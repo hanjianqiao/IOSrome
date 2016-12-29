@@ -115,7 +115,7 @@ class VipInfo{
 
 class ServerInfo{
     let address:String = "https://secure.hanjianqiao.cn"
-    let port:String = ":5000"
+    let port:String = ":443"
 }
 
 class ServerPath{

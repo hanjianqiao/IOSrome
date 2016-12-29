@@ -10,7 +10,7 @@ import UIKit
 
 class UserViewController: UIViewController, URLSessionDelegate, UITextFieldDelegate {
     
-    let serverUrlString = "http://kouchenvip.com:5000/register"
+    let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.register
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -41,6 +41,8 @@
 		C40BE76B1DFB2BCA00F6C200 /* MessageListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE76A1DFB2BCA00F6C200 /* MessageListTableViewController.swift */; };
 		C40BE76D1DFB2C3E00F6C200 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE76C1DFB2C3E00F6C200 /* MessageTableViewCell.swift */; };
 		C40BE76F1DFB2D1600F6C200 /* fake_message_detail.png in Resources */ = {isa = PBXBuildFile; fileRef = C40BE76E1DFB2D1600F6C200 /* fake_message_detail.png */; };
+		C41D800A1E122BB500E4F019 /* get_item_detail.js in Resources */ = {isa = PBXBuildFile; fileRef = C41D80091E122BB500E4F019 /* get_item_detail.js */; };
+		C41D800C1E1431CA00E4F019 /* SelfDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D800B1E1431CA00E4F019 /* SelfDetailViewController.swift */; };
 		C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C44630B21DEDD96E0052E83F /* OCFunction.m */; };
 		C44E10901E0004B700A716A2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E10891E0004B700A716A2 /* Result.swift */; };
 		C44E10911E0004B700A716A2 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44E108A1E0004B700A716A2 /* Socket.swift */; };
@@ -147,6 +149,8 @@
 		C40BE76A1DFB2BCA00F6C200 /* MessageListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListTableViewController.swift; sourceTree = "<group>"; };
 		C40BE76C1DFB2C3E00F6C200 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		C40BE76E1DFB2D1600F6C200 /* fake_message_detail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fake_message_detail.png; path = media/fake_message_detail.png; sourceTree = "<group>"; };
+		C41D80091E122BB500E4F019 /* get_item_detail.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = get_item_detail.js; sourceTree = "<group>"; };
+		C41D800B1E1431CA00E4F019 /* SelfDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfDetailViewController.swift; sourceTree = "<group>"; };
 		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
 		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
 		C44630B41DEDDA840052E83F /* CustomeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomeObject.h; sourceTree = "<group>"; };
@@ -326,12 +330,12 @@
 				DCB045161DDF40280014D479 /* AppDelegate.swift */,
 				DCB045221DDF40280014D479 /* LaunchScreen.storyboard */,
 				DCB0451A1DDF40280014D479 /* Main.storyboard */,
+				C40BE7341DF9C34000F6C200 /* UserNavigationController.swift */,
 				C4BB410E1DFC724300B01055 /* MainTabBarController.swift */,
 				C4612E891E03B34300B79331 /* TaobaoNavigationController.swift */,
 				C4612E8B1E03B35C00B79331 /* RecommendNavigationController.swift */,
 				C4612E8D1E03B36E00B79331 /* SelfchooseNavigationController.swift */,
 				C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */,
-				C40BE7341DF9C34000F6C200 /* UserNavigationController.swift */,
 				C40BE72D1DF9B1BF00F6C200 /* taobao */,
 				C40BE72E1DF9B1D000F6C200 /* market */,
 				C4BB414F1DFD23A000B01055 /* selfchoose */,
@@ -347,7 +351,6 @@
 				C4612E821E03B20F00B79331 /* Taobao.storyboard */,
 				DCB045181DDF40280014D479 /* ViewController.swift */,
 				C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */,
-				C4BB41581DFD832A00B01055 /* lanjs_s.js */,
 			);
 			name = taobao;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 		C40BE7301DF9B24800F6C200 /* support */ = {
 			isa = PBXGroup;
 			children = (
+				C41D80081E122B9300E4F019 /* js */,
 				C4EE46801E08EE5300E5D0E3 /* json */,
 				C4EE467D1E08EB2D00E5D0E3 /* extension */,
 				C4612E8F1E063CC500B79331 /* xml */,
@@ -400,6 +404,15 @@
 				C40BE7471DFA521B00F6C200 /* GlobalVariables.swift */,
 			);
 			name = global;
+			sourceTree = "<group>";
+		};
+		C41D80081E122B9300E4F019 /* js */ = {
+			isa = PBXGroup;
+			children = (
+				C4BB41581DFD832A00B01055 /* lanjs_s.js */,
+				C41D80091E122BB500E4F019 /* get_item_detail.js */,
+			);
+			name = js;
 			sourceTree = "<group>";
 		};
 		C44E10881E00049D00A716A2 /* swiftsocket */ = {
@@ -479,6 +492,7 @@
 			children = (
 				C4612E871E03B2D800B79331 /* Selfchoose.storyboard */,
 				C4BB41501DFD23C000B01055 /* SelfViewController.swift */,
+				C41D800B1E1431CA00E4F019 /* SelfDetailViewController.swift */,
 			);
 			name = selfchoose;
 			sourceTree = "<group>";
@@ -652,6 +666,7 @@
 				C4BB414D1DFD1C2D00B01055 /* 我的默认.png in Resources */,
 				C40BE75A1DFB16F100F6C200 /* background_invitation_overview.png in Resources */,
 				C4BB41471DFD1C2D00B01055 /* 默认头像.png in Resources */,
+				C41D800A1E122BB500E4F019 /* get_item_detail.js in Resources */,
 				C4BB41461DFD1C2D00B01055 /* 报表默认.png in Resources */,
 				C4612E851E03B2B100B79331 /* Recommend.storyboard in Resources */,
 			);
@@ -688,6 +703,7 @@
 				C40BE76D1DFB2C3E00F6C200 /* MessageTableViewCell.swift in Sources */,
 				C4BB41071DFBC92300B01055 /* ReportViewController.swift in Sources */,
 				C44E10921E0004B700A716A2 /* TCPClient.swift in Sources */,
+				C41D800C1E1431CA00E4F019 /* SelfDetailViewController.swift in Sources */,
 				C4612E931E063CD500B79331 /* SWXMLHash.swift in Sources */,
 				C4612E961E08D91B00B79331 /* ShopDetailViewController.swift in Sources */,
 				C4E380771E09974B0037083F /* ReportDetailViewController.swift in Sources */,

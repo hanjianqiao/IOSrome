@@ -1,41 +1,43 @@
 //
-//  SellViewController.swift
+//  SelfDetailViewController.swift
 //  IOSrome
 //
-//  Created by 韩建桥 on 2016/12/4.
+//  Created by 韩建桥 on 2016/12/29.
 //  Copyright © 2016年 Lanchitour. All rights reserved.
 //
 
 import UIKit
 
-class SellViewController: UIViewController, UIWebViewDelegate {
-
+class SelfDetailViewController: UIViewController, UIWebViewDelegate {
+    
+    var goodID:String = ""
+    
     @IBOutlet weak var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // make navigation bar full transparent
+        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        //self.navigationController?.navigationBar.shadowImage = UIImage()
         // Do any additional setup after loading the view.
-        
-        /*
-         * Main web page
-         *
-         */
-        //let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.recommend
-        let serverUrlString = "https://secure.hanjianqiao.cn:7741/A/shop.html"
+        let serverUrlString = "https://secure.hanjianqiao.cn:7741/A/detail.html?id=" + goodID
         let url:URL = URL(string: serverUrlString)!
         
         let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
         webView.loadRequest(request)
         webView.delegate = self
+
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    var id:String = ""
-    func showDetail(){
-        print("Detail shown \(id)...")
-        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "detail"))! as! ShopDetailViewController
-        vc.goodID = id
-        self.navigationController?.pushViewController(vc, animated: true)
+    var taoDetail:String = ""
+    func showTaobaoDetail(){
+        NotificationCenter.default.post(name: Notification.Name("noti_load_page"), object: self, userInfo: ["url":taoDetail])
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
@@ -46,7 +48,7 @@ class SellViewController: UIViewController, UIWebViewDelegate {
             let method:String = (request.url?.absoluteString.substring(from: startIndex))!
             let parameters:[String] = method.components(separatedBy: ":")
             let selector:Selector = NSSelectorFromString(parameters[0])
-            id = parameters[1]
+            taoDetail = parameters[1]+":"+parameters[2]
             if self.responds(to: selector){
                 let control: UIControl = UIControl()
                 control.sendAction(selector, to: self, for: nil)
@@ -58,12 +60,6 @@ class SellViewController: UIViewController, UIWebViewDelegate {
         return true
         
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation

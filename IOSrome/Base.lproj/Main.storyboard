@@ -13,7 +13,7 @@
         <scene sceneID="0bY-hS-54z">
             <objects>
                 <navigationController title="首页" id="faB-lo-SXx" customClass="TaobaoNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="首页默认.png" id="uZ0-P6-R2M"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="首页默认.png" id="uZ0-P6-R2M"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4c1-Lc-5O8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

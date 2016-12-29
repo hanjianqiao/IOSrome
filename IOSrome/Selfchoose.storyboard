@@ -38,5 +38,34 @@
             </objects>
             <point key="canvasLocation" x="1943" y="642"/>
         </scene>
+        <!--商品详情-->
+        <scene sceneID="2VU-ZA-B5a">
+            <objects>
+                <viewController storyboardIdentifier="detail" title="商品详情" id="l0H-IJ-9ed" customClass="SelfDetailViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7mH-PM-m9G"/>
+                        <viewControllerLayoutGuide type="bottom" id="NSh-0D-KXZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hD6-JA-J5a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z2n-fS-VGr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="商品详情" id="cad-9D-DMo"/>
+                    <connections>
+                        <outlet property="webView" destination="Z2n-fS-VGr" id="T3s-Br-aoF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ioi-JP-IbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2842" y="642"/>
+        </scene>
     </scenes>
 </document>

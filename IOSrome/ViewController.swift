@@ -16,8 +16,13 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    
-        let url:URL = URL(string: "http://m.taobao.com")!
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.loadPage),
+            name: NSNotification.Name(rawValue: "noti_load_page"),
+            object: nil)
+        
+        let url:URL = URL(string: "https://secure.hanjianqiao.cn:7741/A/index.html")!
         
         let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
@@ -36,7 +41,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         webView.loadRequest(request)
     }
     @IBAction func taobaoButton(_ sender: UIButton) {
-        let url:URL = URL(string: "http://m.taobao.com")!
+        let url:URL = URL(string: "https://secure.hanjianqiao.cn:7741/A/index.html")!
         let request:URLRequest = URLRequest(url: url)
         webView.loadRequest(request)
     }
@@ -63,7 +68,24 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         vc.targetUrl = strUrl
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    /**
+     **
+     ** Called when start to load a page
+     **
+     **/
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        //print(webView.request?.url?.absoluteString ?? "No url")
+    }
     
+    
+    /**
+     **
+     ** Called when finish loading a page
+     **
+     **
+     **/
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+    }
     /**
      ** Other functions
      **
@@ -72,6 +94,22 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @objc func loadPage(notification: NSNotification){
+        //do stuff
+        
+        if((self.navigationController?.viewControllers.count)! > 1){
+            _ = self.navigationController?.popViewController(animated: true)
+        }
+        let str = notification.userInfo?[AnyHashable("url")] as! String
+        
+        print(str)
+        
+        let url:URL = URL(string: str)!
+        let request:URLRequest = URLRequest(url: url)
+        webView.loadRequest(request)
+        
+        self.tabBarController?.selectedIndex = 0;
     }
 }
 

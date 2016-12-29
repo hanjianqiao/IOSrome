@@ -29,7 +29,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="推荐商城" id="di5-kn-e3h"/>
+                    <navigationItem key="navigationItem" title="推荐商城" id="di5-kn-e3h">
+                        <barButtonItem key="backBarButtonItem" title="返回" id="TzM-6T-GVU"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="3uu-lF-0rX" id="N9e-Xc-cXr"/>
                     </connections>
@@ -52,13 +54,13 @@
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMo-T7-VNS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="MH3-jP-3Lb"/>
+                    <navigationItem key="navigationItem" title="商品详情" id="MH3-jP-3Lb"/>
                     <connections>
                         <outlet property="webView" destination="vMo-T7-VNS" id="7Nd-bD-Qho"/>
                     </connections>
