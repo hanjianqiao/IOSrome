@@ -21,7 +21,7 @@ class SellViewController: UIViewController, UIWebViewDelegate {
          *
          */
         //let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.recommend
-        let serverUrlString = "https://secure.hanjianqiao.cn:7741/A/shop.html"
+        let serverUrlString = "https://secure.hanjianqiao.cn:7741/A/shop.html?id=774108823"
         let url:URL = URL(string: serverUrlString)!
         
         let request:URLRequest = URLRequest(url: url)
