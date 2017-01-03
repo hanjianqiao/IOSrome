@@ -68,14 +68,14 @@
         <!--报表-->
         <scene sceneID="gsl-b2-dvH">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPX-Ga-eIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="RecommendMall" title="报表" id="f5s-oG-ADr" customClass="ReportNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="报表" image="报表默认.png" id="zrf-Hn-O0c"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="报表" image="报表默认.png" id="zrf-Hn-O0c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gds-RA-Fbb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fPX-Ga-eIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1071" y="1326"/>
         </scene>
@@ -92,7 +92,6 @@
                         <segue destination="faB-lo-SXx" kind="relationship" relationship="viewControllers" id="59o-0G-m5t"/>
                         <segue destination="24E-rb-Z1K" kind="relationship" relationship="viewControllers" id="HOQ-PP-X0M"/>
                         <segue destination="hIA-Ej-FGO" kind="relationship" relationship="viewControllers" id="Sds-QM-2gL"/>
-                        <segue destination="f5s-oG-ADr" kind="relationship" relationship="viewControllers" id="CTI-Bm-pls"/>
                         <segue destination="YiG-OF-J2o" kind="relationship" relationship="viewControllers" id="C3F-r4-ZcT"/>
                     </connections>
                 </tabBarController>
