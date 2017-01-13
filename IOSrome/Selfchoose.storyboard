@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ckt-W2-Bwl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RtD-aq-a56">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,9 +10,37 @@
     </dependencies>
     <scenes>
         <!--自选商城-->
+        <scene sceneID="PVC-cv-ARm">
+            <objects>
+                <viewController title="自选商城" id="RtD-aq-a56" customClass="SelfMainViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kF0-Xl-4nI"/>
+                        <viewControllerLayoutGuide type="bottom" id="vRb-LR-yso"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iYB-eD-04e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="440-hD-SL4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="440-hD-SL4" id="AGR-gk-Gra"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXi-v9-X7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1180" y="642"/>
+        </scene>
+        <!--自选搜索-->
         <scene sceneID="Z9z-A6-qMK">
             <objects>
-                <viewController title="自选商城" id="Ckt-W2-Bwl" customClass="SelfViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="list" title="自选搜索" id="Ckt-W2-Bwl" customClass="SelfViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3NU-ej-HLW"/>
                         <viewControllerLayoutGuide type="bottom" id="1zn-WB-myx"/>
@@ -29,7 +57,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="自选商城" id="vo0-Bl-PU2"/>
+                    <navigationItem key="navigationItem" title="自选搜索" id="vo0-Bl-PU2"/>
                     <connections>
                         <outlet property="webView" destination="tH6-gd-xrt" id="Jkd-mL-nio"/>
                     </connections>
@@ -65,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ioi-JP-IbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2842" y="642"/>
+            <point key="canvasLocation" x="2711" y="642"/>
         </scene>
     </scenes>
 </document>

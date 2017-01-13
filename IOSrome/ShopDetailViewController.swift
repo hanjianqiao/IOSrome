@@ -18,7 +18,7 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let serverUrlString = "https://secure.hanjianqiao.cn:7741/A/detail.html?id=" + goodID
+        let serverUrlString = AppStatus.sharedInstance.contentServer.detailShopPageURL + "?id=" + goodID
         let url:URL = URL(string: serverUrlString)!
         
         let request:URLRequest = URLRequest(url: url)
@@ -36,6 +36,12 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
     func showTaobaoDetail(){
         NotificationCenter.default.post(name: Notification.Name("noti_load_page"), object: self, userInfo: ["url":taoDetail])
     }
+    var targetUrl:String = ""
+    func showHuitao(){
+        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "huitaoyixia"))! as! huitaoShopViewController
+        vc.url = targetUrl
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if(request.url?.absoluteString.hasPrefix("ios"))!{
@@ -52,8 +58,22 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
             }
             NSLog("IOS call")
             return false
+        } else if (request.url?.absoluteString.hasPrefix("clipboard"))!{
+            let url:String = (request.url?.absoluteString)!
+            let range = url.range(of: ":")
+            let startIndex = url.index(after: (range?.lowerBound)!)
+            let dataStr:String = (request.url?.absoluteString.substring(from: startIndex))!
+            UIPasteboard.general.string = dataStr;
+            return false
+        } else if (request.url?.absoluteString.hasPrefix("huitao"))!{
+            let url:String = (request.url?.absoluteString)!
+            let range = url.range(of: ":")
+            let startIndex = url.index(after: (range?.lowerBound)!)
+            let dataStr:String = (request.url?.absoluteString.substring(from: startIndex))!
+            targetUrl = dataStr;
+            showHuitao()
+            return false
         }
-        print(request.url ?? "Error request url");
         return true
         
     }

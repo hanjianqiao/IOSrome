@@ -13,7 +13,7 @@
         <scene sceneID="0bY-hS-54z">
             <objects>
                 <navigationController title="首页" id="faB-lo-SXx" customClass="TaobaoNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="首页默认.png" id="uZ0-P6-R2M"/>
+                    <tabBarItem key="tabBarItem" title="查" image="首页默认.png" id="uZ0-P6-R2M"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4c1-Lc-5O8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,7 +27,7 @@
         <scene sceneID="1am-oV-R4O">
             <objects>
                 <navigationController title="推荐商城" id="24E-rb-Z1K" customClass="RecommendNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="推荐商城" image="商城默认.png" id="nhf-lL-tHC"/>
+                    <tabBarItem key="tabBarItem" title="高佣" image="商城默认.png" id="nhf-lL-tHC"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZCK-5n-Qh5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -41,7 +41,7 @@
         <scene sceneID="02t-sb-zfK">
             <objects>
                 <navigationController title="我的" id="YiG-OF-J2o" customClass="UserNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="个人中心" image="我的默认.png" id="XRo-Vh-eOn"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="我的默认.png" id="XRo-Vh-eOn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="L25-Sm-sju">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -55,7 +55,7 @@
         <scene sceneID="3NS-YH-vNw">
             <objects>
                 <navigationController title="自选商城" id="hIA-Ej-FGO" customClass="SelfchooseNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="自选商城" image="商城默认.png" id="PrS-Wg-f9i"/>
+                    <tabBarItem key="tabBarItem" title="自选" image="商城默认.png" id="PrS-Wg-f9i"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SPx-Ml-9OG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -68,7 +68,6 @@
         <!--报表-->
         <scene sceneID="gsl-b2-dvH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fPX-Ga-eIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="RecommendMall" title="报表" id="f5s-oG-ADr" customClass="ReportNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" enabled="NO" title="报表" image="报表默认.png" id="zrf-Hn-O0c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gds-RA-Fbb">
@@ -76,6 +75,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPX-Ga-eIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1071" y="1326"/>
         </scene>

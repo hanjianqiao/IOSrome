@@ -21,7 +21,7 @@ class SellViewController: UIViewController, UIWebViewDelegate {
          *
          */
         //let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.recommend
-        let serverUrlString = "https://secure.hanjianqiao.cn:7741/A/shop.html?id=774108823"
+        let serverUrlString = AppStatus.sharedInstance.contentServer.highBrokerPageURL
         let url:URL = URL(string: serverUrlString)!
         
         let request:URLRequest = URLRequest(url: url)
@@ -32,7 +32,6 @@ class SellViewController: UIViewController, UIWebViewDelegate {
     
     var id:String = ""
     func showDetail(){
-        print("Detail shown \(id)...")
         let vc = (self.storyboard?.instantiateViewController(withIdentifier: "detail"))! as! ShopDetailViewController
         vc.goodID = id
         self.navigationController?.pushViewController(vc, animated: true)
@@ -51,10 +50,8 @@ class SellViewController: UIViewController, UIWebViewDelegate {
                 let control: UIControl = UIControl()
                 control.sendAction(selector, to: self, for: nil)
             }
-            NSLog("IOS call")
             return false
         }
-        print(request.url ?? "Error request url");
         return true
         
     }

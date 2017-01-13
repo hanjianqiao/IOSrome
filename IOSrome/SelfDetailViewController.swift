@@ -20,7 +20,7 @@ class SelfDetailViewController: UIViewController, UIWebViewDelegate {
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         //self.navigationController?.navigationBar.shadowImage = UIImage()
         // Do any additional setup after loading the view.
-        let serverUrlString = "https://secure.hanjianqiao.cn:7741/A/detail.html?id=" + goodID
+        let serverUrlString = AppStatus.sharedInstance.contentServer.detailSelfPageURL + "?id=" + goodID
         let url:URL = URL(string: serverUrlString)!
         
         let request:URLRequest = URLRequest(url: url)
@@ -55,8 +55,14 @@ class SelfDetailViewController: UIViewController, UIWebViewDelegate {
             }
             NSLog("IOS call")
             return false
+        } else if (request.url?.absoluteString.hasPrefix("clipboard"))!{
+            let url:String = (request.url?.absoluteString)!
+            let range = url.range(of: ":")
+            let startIndex = url.index(after: (range?.lowerBound)!)
+            let dataStr:String = (request.url?.absoluteString.substring(from: startIndex))!
+            UIPasteboard.general.string = dataStr;
+            return false
         }
-        print(request.url ?? "Error request url");
         return true
         
     }

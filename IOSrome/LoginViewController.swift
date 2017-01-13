@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.login
+    let serverUrlString = AppStatus.sharedInstance.userServer.login_url
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,26 +109,46 @@ class LoginViewController: UIViewController {
                 print(json["status"] as! String == "failed")
                 print(json["message"]!)
                 
-                alertLogging.dismiss(animated: true, completion:{
-                    if(json["status"] as! String == "ok"){
-                        OperationQueue.main.addOperation {
-                            AppStatus.sharedInstance.userID = self.username.text!
-                            AppStatus.sharedInstance.grantToken = self.password.text!
+                OperationQueue.main.addOperation {
+                    alertLogging.dismiss(animated: true, completion:{
+                        if(json["status"] as! String == "ok"){
+                            let infodata = json["data"] as! [String:AnyObject]
+                            AppStatus.sharedInstance.userInfo.userId = infodata["user_id"] as! String
+                            AppStatus.sharedInstance.userInfo.password = self.password.text!
+                            AppStatus.sharedInstance.userInfo.inviter = infodata["inviter"] as! String
+                            AppStatus.sharedInstance.userInfo.invitation = infodata["code"] as! String
+                            AppStatus.sharedInstance.vipInfo.endYear = Int(infodata["expire_year"] as! String)!
+                            AppStatus.sharedInstance.vipInfo.endMonth = Int(infodata["expire_month"] as! String)!
+                            AppStatus.sharedInstance.vipInfo.endDay = Int(infodata["expire_day"] as! String)!
+                            AppStatus.sharedInstance.userInfo.level = infodata["level"] as! String
+                            AppStatus.sharedInstance.userInfo.balance = infodata["balance"] as! String
+                            
                             AppStatus.sharedInstance.isLoggedIn = true
+                            let date = Date()
+                            let calendar = Calendar.current
+                            let comp = calendar.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+                            let A = comp.year! > AppStatus.sharedInstance.vipInfo.endYear
+                            let AE = comp.year! == AppStatus.sharedInstance.vipInfo.endYear
+                            let B = comp.month! > AppStatus.sharedInstance.vipInfo.endMonth
+                            let BE = comp.month! == AppStatus.sharedInstance.vipInfo.endMonth
+                            let C = comp.day! > AppStatus.sharedInstance.vipInfo.endDay
+                            if((A) || (AE && B) || (AE && BE && C)){
+                                AppStatus.sharedInstance.isVip = false
+                            }else{
+                                AppStatus.sharedInstance.isVip = true
+                            }
                             let preView = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as! UserCenterViewController
                             preView.updateUserView()
                             _ = self.navigationController?.popViewController(animated: true)
-                        }
-                    }else{
-                        OperationQueue.main.addOperation {
+                        }else{
                             alertLogging.dismiss(animated: true, completion: nil)
                             let alert = UIAlertController (title: "登陆结果", message: responseString
                                 , preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
                         }
-                    }
-                })
+                    })
+                }
             }
             task.resume()
 

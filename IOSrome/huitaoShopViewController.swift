@@ -1,22 +1,23 @@
 //
-//  HuitaoViewController.swift
+//  huitaoShopViewController.swift
 //  IOSrome
 //
-//  Created by 韩建桥 on 2016/12/11.
-//  Copyright © 2016年 Lanchitour. All rights reserved.
+//  Created by 韩建桥 on 2017/1/13.
+//  Copyright © 2017年 Lanchitour. All rights reserved.
 //
 
 import UIKit
 import JavaScriptCore
 
-class HuitaoViewController: UIViewController, UIWebViewDelegate {
-
+class huitaoShopViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     
     var jsString: String?
     var targetUrl: String?
     var jsContext: JSContext?
-
+    var url:String = ""
+    
+    
     @IBAction func copyToken(_ sender: UIBarButtonItem) {
         let function = jsContext?.objectForKeyedSubscript("copyToken")
         let tokenString = function?.call(withArguments: [""])
@@ -40,22 +41,16 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
          *
          */
         
-        //let url:URL = URL(string: "http://kouchenvip.com:5000/recommend")!
-        
-        webView.scalesPageToFit = true
-        
-        let staticHTML = "<html><head><meta http-equiv=\"Content-Language\"content=\"zh-CN\"><meta HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html;charset=UTF-8\"><title>会淘助手</title></head><body><section id=\"lanSec\">hellowor</section></body></html>"
-        webView.loadHTMLString(staticHTML, baseURL: nil)
-        
-        //let request:URLRequest = URLRequest(url: url)
-        //webView.loadRequest(request)
-
         webView.delegate = self
+        let url:URL = URL(string: self.url)!
+        let request:URLRequest = URLRequest(url: url)
+        webView.loadRequest(request)
+        
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         webView.stringByEvaluatingJavaScript(from: jsString!)
- 
+        
         jsContext = (webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext)
         let model = SwiftJavaScriptModel()
         model.controller = self
@@ -73,8 +68,6 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
         let function = jsContext?.objectForKeyedSubscript("doWork")
         _ = function?.call(withArguments: [targetUrl ?? "", AppStatus.sharedInstance.isVip])
         print("loading finish...")
-        //webView.scrollView.setZoomScale(0.1, animated: true)
-        //webView.stringByEvaluatingJavaScript(from: "doWork()")
     }
     
     override func didReceiveMemoryWarning() {

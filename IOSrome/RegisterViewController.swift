@@ -10,7 +10,7 @@ import UIKit
 
 class UserViewController: UIViewController, URLSessionDelegate, UITextFieldDelegate {
     
-    let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.register
+    let serverUrlString = AppStatus.sharedInstance.userServer.register_url
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,6 @@ class UserViewController: UIViewController, URLSessionDelegate, UITextFieldDeleg
         text_qq.returnKeyType = UIReturnKeyType.done
         text_taobao.returnKeyType = UIReturnKeyType.done
         text_email.returnKeyType = UIReturnKeyType.done
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,7 +79,11 @@ class UserViewController: UIViewController, URLSessionDelegate, UITextFieldDeleg
             
             let alert = UIAlertController (title: "注册结果", message: responseString
                 , preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in
+                var viewControllers = self.navigationController?.viewControllers
+                viewControllers?.removeLast(2) //views to pop
+                self.navigationController?.setViewControllers(viewControllers!, animated: true)
+                }))
             OperationQueue.main.addOperation {
                 self.present(alert, animated: true, completion: nil)
             }

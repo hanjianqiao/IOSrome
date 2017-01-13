@@ -41,7 +41,25 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>alicdn.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
 			<key>alimama.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+			</dict>
+			<key>liangxinyao.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
@@ -77,24 +95,6 @@
 				<key>NSTemporaryExceptionMinimumTLSVersion</key>
 				<string>TLSv1.1</string>
 			</dict>
-			<key>tmall.com</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSTemporaryExceptionMinimumTLSVersion</key>
-				<string>TLSv1.1</string>
-			</dict>
-			<key>liangxinyao.com</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<true/>
-				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSTemporaryExceptionMinimumTLSVersion</key>
-				<string>TLSv1.1</string>
-			</dict>
 			<key>tbcnd.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
@@ -104,7 +104,7 @@
 				<key>NSTemporaryExceptionMinimumTLSVersion</key>
 				<string>TLSv1.1</string>
 			</dict>
-			<key>alicdn.com</key>
+			<key>tmall.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>

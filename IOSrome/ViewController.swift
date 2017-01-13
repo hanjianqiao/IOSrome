@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             name: NSNotification.Name(rawValue: "noti_load_page"),
             object: nil)
         
-        let url:URL = URL(string: "https://secure.hanjianqiao.cn:7741/A/index.html")!
+        let url:URL = URL(string: AppStatus.sharedInstance.contentServer.mainPageURL)!
         
         let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
@@ -41,7 +41,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         webView.loadRequest(request)
     }
     @IBAction func taobaoButton(_ sender: UIButton) {
-        let url:URL = URL(string: "https://secure.hanjianqiao.cn:7741/A/index.html")!
+        let url:URL = URL(string: AppStatus.sharedInstance.contentServer.mainPageURL)!
         let request:URLRequest = URLRequest(url: url)
         webView.loadRequest(request)
     }
@@ -55,12 +55,15 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             let date = Date()
             let calendar = Calendar.current
             let comp = calendar.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
-            if(comp.year! <= AppStatus.sharedInstance.vipInfo.endYear
-                && comp.month! <= AppStatus.sharedInstance.vipInfo.endMonth
-                && comp.day! <= AppStatus.sharedInstance.vipInfo.endDay){
-                //OK
-            }else{
+            let A = comp.year! > AppStatus.sharedInstance.vipInfo.endYear
+            let AE = comp.year! == AppStatus.sharedInstance.vipInfo.endYear
+            let B = comp.month! > AppStatus.sharedInstance.vipInfo.endMonth
+            let BE = comp.month! == AppStatus.sharedInstance.vipInfo.endMonth
+            let C = comp.day! > AppStatus.sharedInstance.vipInfo.endDay
+            if((A) || (AE && B) || (AE && BE && C)){
                 AppStatus.sharedInstance.isVip = false
+            }else{
+                AppStatus.sharedInstance.isVip = true
             }
         }
         let vc = (self.storyboard?.instantiateViewController(withIdentifier: "huitaoyixia"))! as! HuitaoViewController
@@ -74,7 +77,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     func webViewDidStartLoad(_ webView: UIWebView) {
-        //print(webView.request?.url?.absoluteString ?? "No url")
+        print(webView.request?.url?.absoluteString ?? "No url")
     }
     
     
