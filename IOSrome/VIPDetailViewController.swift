@@ -78,6 +78,7 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
                             let url:URL = URL(string: AppStatus.sharedInstance.contentServer.vipPageURL3)!
                             let request:URLRequest = URLRequest(url: url)
                             self.webView.loadRequest(request)
+                            AppStatus.sharedInstance.update()
                         }else{
                             alertLogging.dismiss(animated: true, completion: nil)
                             let alert = UIAlertController (title: "购买请求失败", message: responseString

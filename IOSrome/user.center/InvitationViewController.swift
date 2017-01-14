@@ -87,6 +87,7 @@ class InvitationViewController: UIViewController, UIWebViewDelegate {
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in
                                 let url:URL = URL(string: AppStatus.sharedInstance.contentServer.agentPageURL2)!
                                 let request:URLRequest = URLRequest(url: url)
+                                AppStatus.sharedInstance.update()
                                 self.webView.loadRequest(request)}))
                             self.present(alert, animated: true, completion: nil)
                         }else{
