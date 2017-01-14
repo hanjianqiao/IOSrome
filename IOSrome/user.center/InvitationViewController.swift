@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JavaScriptCore
 
 class InvitationViewController: UIViewController, UIWebViewDelegate {
 
@@ -136,6 +137,21 @@ class InvitationViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    var jsContext: JSContext?
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        jsContext = (webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext)
+        let model = SwiftJavaScriptModel()
+        model.controller = self
+        jsContext?.setObject(model, forKeyedSubscript: "LanJsBridge" as (NSCopying & NSObjectProtocol)!)
+        model.jsContext = jsContext
+        jsContext?.exceptionHandler = {
+            (context, exception) in
+            print("exception: ", exception ?? "No")
+        }
+        let function = jsContext?.objectForKeyedSubscript("updateDisplay")
+        _ = function?.call(withArguments: [AppStatus.sharedInstance.userInfo.userId, AppStatus.sharedInstance.userInfo.password])
+    }
+
 
     /*
     // MARK: - Navigation

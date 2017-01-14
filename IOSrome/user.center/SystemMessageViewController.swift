@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JavaScriptCore
 
 class SystemMessageViewController: UIViewController, UIWebViewDelegate {
 
@@ -29,17 +30,20 @@ class SystemMessageViewController: UIViewController, UIWebViewDelegate {
         webView.delegate = self
     }
     
-    var id:String = ""
-    func showDetail(){
+    func showDetail(id:String){
         let vc = (self.storyboard?.instantiateViewController(withIdentifier: "message_detail"))! as! SystemMessageDetailViewController
+        vc.messageId = id
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if(request.url?.absoluteString.hasPrefix("ios"))!{
-            showDetail()
-            NSLog("IOS call")
+            let url:String = (request.url?.absoluteString)!
+            let para:[String] = url.components(separatedBy: ":")
+            if(para[1] == "showDetail"){
+                showDetail(id: para[2])
+            }
             return false
         }
         print(request.url ?? "Error request url");
@@ -53,6 +57,21 @@ class SystemMessageViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    var jsContext: JSContext?
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        jsContext = (webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext)
+        let model = SwiftJavaScriptModel()
+        model.controller = self
+        jsContext?.setObject(model, forKeyedSubscript: "LanJsBridge" as (NSCopying & NSObjectProtocol)!)
+        model.jsContext = jsContext
+        jsContext?.exceptionHandler = {
+            (context, exception) in
+            print("exception: ", exception ?? "No")
+        }
+        let function = jsContext?.objectForKeyedSubscript("updateDisplay")
+        _ = function?.call(withArguments: [AppStatus.sharedInstance.userInfo.userId, AppStatus.sharedInstance.userInfo.password])
+    }
+
 
     /*
     // MARK: - Navigation

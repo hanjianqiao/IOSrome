@@ -13,32 +13,35 @@ class UserCenterViewController: UIViewController {
     @IBOutlet weak var userIconButton: UIButton!
     @IBOutlet weak var userNameButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
-    @IBOutlet weak var balancePanel: UIView!
-    @IBOutlet weak var balance: UILabel!
-    func updateUserView(){
+
+    
+    @objc func updateDisplay(notification: NSNotification){
+        //do stuff
+        //let str = notification.userInfo?[AnyHashable("url")] as! String
+        //print(str)
+        
         if(AppStatus.sharedInstance.isLoggedIn == false){
             logoutButton.isHidden = true
-            balancePanel.isHidden = true
             userNameButton.setTitle("点击登陆会淘账号", for: UIControlState.normal)
             userIconButton.setImage(UIImage(named: "tiny_user_head.png"), for: UIControlState.normal)
-            balance.text = "0.00"
         }else{
             logoutButton.isHidden = false
-            balancePanel.isHidden = false
             userNameButton.setTitle(AppStatus.sharedInstance.userInfo.userId, for: UIControlState.normal)
             userIconButton.setImage(UIImage(named: "tiny0.png"), for: UIControlState.normal)
-            balance.text = AppStatus.sharedInstance.userInfo.balance
         }
-
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
-        updateUserView()
-
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.updateDisplay),
+            name: NSNotification.Name(rawValue: "update"),
+            object: nil)
+        NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,102 +75,19 @@ class UserCenterViewController: UIViewController {
         return sign
     }
 
-    @IBAction func drawback(_ sender: UIButton) {
-    }
-    let serverUrlString = AppStatus.sharedInstance.userServer.charge_url
-    @IBAction func charge(_ sender: UIButton) {
-        print("Buy vip...")
-        let payRequest = PayReq()
-        payRequest.partnerId = "10000100"
-        payRequest.prepayId = "1101000000140415649af9fc314aa427"
-        payRequest.package = "Sign=WXPay"
-        payRequest.nonceStr = "a462b76e7436e98e0ed6e13c64b4fd1c"
-        payRequest.timeStamp = UInt32(NSDate(timeIntervalSinceNow: 0).timeIntervalSince1970)
-        
-        var dic:[String:String] = [:]
-        dic["appid"] = AppStatus.sharedInstance.wechatAPPID
-        dic["prepayid"] = payRequest.prepayId
-        dic["package"] = payRequest.package
-        dic["noncestr"] = payRequest.nonceStr
-        dic["timestamp"] = "\(payRequest.timeStamp)"
-        
-        let sign = self.getSign(dic: dic, key: AppStatus.sharedInstance.wechatPayKey)
-        
-        payRequest.sign = sign
-        
-        WXApi.send(payRequest)
-        
-        let queue = OperationQueue()
-        
-        // do something immediately
-        let alertLogging = UIAlertController (title: "充值中", message: "请稍后。。。"
-            , preferredStyle: UIAlertControllerStyle.alert)
-        self.present(alertLogging, animated: true, completion: nil)
-        
-        queue.addOperation() {
-            // do something in the background
-            var request = URLRequest(url: URL(string: self.serverUrlString)!)
-            request.httpMethod = "POST"
-            let postString = "{\"user_id\":\"" +
-                AppStatus.sharedInstance.userInfo.userId + "\",\"password\":\"" +
-                AppStatus.sharedInstance.userInfo.password + "\"}"
-            request.httpBody = postString.data(using: .utf8)
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                
-                
-                guard let data = data, error == nil else {               // check for fundamental networking error
-                    print("error=\(error)")
-                    alertLogging.dismiss(animated: true, completion:{
-                        OperationQueue.main.addOperation {
-                            alertLogging.dismiss(animated: true, completion: nil)
-                            let alert = UIAlertController (title: "网络异常", message: "请重新充值"
-                                , preferredStyle: UIAlertControllerStyle.alert)
-                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                            self.present(alert, animated: true, completion: nil)
-                        }
-                    })
-                    return
-                }
-                
-                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                    print("response = \(response)")
-                }
-                //print(data)
-                let responseString = String(data: data, encoding: .utf8)!
-                print("responseString = \(responseString)")
-                
-                let json = JsonTools.convertToDictionary(text: responseString)!
-                
-                print(json["status"] as! String == "failed")
-                print(json["message"]!)
-                
-                alertLogging.dismiss(animated: true, completion:{
-                    OperationQueue.main.addOperation {
-                        alertLogging.dismiss(animated: true, completion: nil)
-                        let alert = UIAlertController (title: "充值结果", message: json["message"] as? String
-                            , preferredStyle: UIAlertControllerStyle.alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                    }
-                })
-            }
-            task.resume()
-        }
-    }
-
     @IBAction func userButton(_ sender: UIButton) {
         if(AppStatus.sharedInstance.isLoggedIn == false){
             let vc = (self.storyboard?.instantiateViewController(withIdentifier: "login"))! as UIViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }else{
+            let vc = (self.storyboard?.instantiateViewController(withIdentifier: "money"))! as UIViewController
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 
     @IBAction func logout(_ sender: UIButton) {
         AppStatus.sharedInstance.logout()
-        updateUserView()
+        NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
     }
     
     func notLoggedInMessage(){

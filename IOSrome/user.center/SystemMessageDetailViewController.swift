@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JavaScriptCore
 
 class SystemMessageDetailViewController: UIViewController, UIWebViewDelegate {
 
@@ -28,24 +29,6 @@ class SystemMessageDetailViewController: UIViewController, UIWebViewDelegate {
         webView.loadRequest(request)
         webView.delegate = self
     }
-    
-    var id:String = ""
-    func showDetail(){
-        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "detail"))! as! SelfDetailViewController
-        vc.goodID = id
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-    }
-    
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        if(request.url?.absoluteString.hasPrefix("ios"))!{
-            NSLog("IOS call")
-            return false
-        }
-        print(request.url ?? "Error request url");
-        return true
-        
-    }
 
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +36,23 @@ class SystemMessageDetailViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    var jsContext: JSContext?
+    var messageId:String?
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        print("Finish loading...")
+        jsContext = (webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext)
+        let model = SwiftJavaScriptModel()
+        model.controller = self
+        jsContext?.setObject(model, forKeyedSubscript: "LanJsBridge" as (NSCopying & NSObjectProtocol)!)
+        model.jsContext = jsContext
+        jsContext?.exceptionHandler = {
+            (context, exception) in
+            print("exception: ", exception ?? "No")
+        }
+        let function = jsContext?.objectForKeyedSubscript("updateDisplay")
+        _ = function?.call(withArguments: [AppStatus.sharedInstance.userInfo.userId, AppStatus.sharedInstance.userInfo.password, messageId ?? ""])
+    }
 
     /*
     // MARK: - Navigation

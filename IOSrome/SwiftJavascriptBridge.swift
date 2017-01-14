@@ -129,13 +129,15 @@ import JavaScriptCore
             else if(enct.contains("application/json")){
                 html = String(data: data!, encoding: String.Encoding.utf8)
             }
+            else if(enct.contains("text/html")){
+                html = String(data: data!, encoding: String.Encoding.utf8)
+            }
             else{
                 print("Unsolved encoding type: \(enct)")
             }
             
-            //print("get url from: \(urlString) -> \(html!)")
+            print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
             //print("get url from: \(urlString)")
-            
             let function = self.jsContext?.objectForKeyedSubscript(callBack)
             _ = function?.call(withArguments: [html ?? "", urlString])
             //semaphore.signal()

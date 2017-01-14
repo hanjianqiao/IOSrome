@@ -137,8 +137,8 @@ class LoginViewController: UIViewController {
                             }else{
                                 AppStatus.sharedInstance.isVip = true
                             }
-                            let preView = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as! UserCenterViewController
-                            preView.updateUserView()
+                            _ = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as! UserCenterViewController
+                            NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
                             _ = self.navigationController?.popViewController(animated: true)
                         }else{
                             alertLogging.dismiss(animated: true, completion: nil)

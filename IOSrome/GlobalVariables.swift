@@ -48,6 +48,53 @@ class AppStatus {
         vipInfo.clean()
         userInfo.clean()
     }
+    func update(){
+        let queue = OperationQueue()
+        queue.addOperation() {
+            // do something in the background
+            var request = URLRequest(url: URL(string: AppStatus.sharedInstance.userServer.login_url)!)
+            request.httpMethod = "POST"
+            let postString = "{\"user_id\":\"" +
+                AppStatus.sharedInstance.userInfo.userId + "\",\"password\":\"" +
+                AppStatus.sharedInstance.userInfo.password + "\"}"
+            request.httpBody = postString.data(using: .utf8)
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {               // check for fundamental networking error
+                    print("error=\(error)")
+                    return
+                }
+                let responseString = String(data: data, encoding: .utf8)!
+                let json = JsonTools.convertToDictionary(text: responseString)!
+                if(json["status"] as! String == "ok"){
+                    let infodata = json["data"] as! [String:AnyObject]
+                    AppStatus.sharedInstance.userInfo.inviter = infodata["inviter"] as! String
+                    AppStatus.sharedInstance.userInfo.invitation = infodata["code"] as! String
+                    AppStatus.sharedInstance.vipInfo.endYear = Int(infodata["expire_year"] as! String)!
+                    AppStatus.sharedInstance.vipInfo.endMonth = Int(infodata["expire_month"] as! String)!
+                    AppStatus.sharedInstance.vipInfo.endDay = Int(infodata["expire_day"] as! String)!
+                    AppStatus.sharedInstance.userInfo.level = infodata["level"] as! String
+                    AppStatus.sharedInstance.userInfo.balance = infodata["balance"] as! String
+                    AppStatus.sharedInstance.isLoggedIn = true
+                    let date = Date()
+                    let calendar = Calendar.current
+                    let comp = calendar.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+                    let A = comp.year! > AppStatus.sharedInstance.vipInfo.endYear
+                    let AE = comp.year! == AppStatus.sharedInstance.vipInfo.endYear
+                    let B = comp.month! > AppStatus.sharedInstance.vipInfo.endMonth
+                    let BE = comp.month! == AppStatus.sharedInstance.vipInfo.endMonth
+                    let C = comp.day! > AppStatus.sharedInstance.vipInfo.endDay
+                    if((A) || (AE && B) || (AE && BE && C)){
+                        AppStatus.sharedInstance.isVip = false
+                    }else{
+                        AppStatus.sharedInstance.isVip = true
+                    }
+                    NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
+                }
+            }
+            task.resume()
+        }
+    }
 }
 
 class RegisterInfo{
@@ -164,6 +211,7 @@ class ContentServer{
     let detailShopPageURL:String = "https://secure.hanjianqiao.cn:7741/A/detail_shop.html"
     let detailSelfPageURL:String = "https://secure.hanjianqiao.cn:7741/A/detail_self.html"
     
+    let money:String = "https://secure.hanjianqiao.cn:7741/A/user/money.html"
     let vipPageURL1:String = "https://secure.hanjianqiao.cn:7741/A/user/vip01.html"
     let vipPageURL2:String = "https://secure.hanjianqiao.cn:7741/A/user/vip02.html"
     let vipPageURL3:String = "https://secure.hanjianqiao.cn:7741/A/user/vip03.html"

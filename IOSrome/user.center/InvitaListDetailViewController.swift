@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JavaScriptCore
 
 class InvitaListDetailViewController: UIViewController, UIWebViewDelegate {
 
@@ -48,6 +49,22 @@ class InvitaListDetailViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    var jsContext: JSContext?
+    var messageId:String?
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        jsContext = (webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext)
+        let model = SwiftJavaScriptModel()
+        model.controller = self
+        jsContext?.setObject(model, forKeyedSubscript: "LanJsBridge" as (NSCopying & NSObjectProtocol)!)
+        model.jsContext = jsContext
+        jsContext?.exceptionHandler = {
+            (context, exception) in
+            print("exception: ", exception ?? "No")
+        }
+        let function = jsContext?.objectForKeyedSubscript("updateDisplay")
+        _ = function?.call(withArguments: [AppStatus.sharedInstance.userInfo.userId, AppStatus.sharedInstance.userInfo.password, messageId ?? ""])
+    }
 
     /*
     // MARK: - Navigation

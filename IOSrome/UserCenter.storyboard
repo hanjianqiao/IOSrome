@@ -47,42 +47,6 @@
                                                 <action selector="userButton:" destination="d62-cf-lZ3" eventType="touchUpInside" id="0Yj-Gr-SS3"/>
                                             </connections>
                                         </button>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ABO-VR-CRi">
-                                            <rect key="frame" x="0.0" y="165" width="414" height="45"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b0N-M0-Q79">
-                                                    <rect key="frame" x="337" y="7" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="充值"/>
-                                                    <connections>
-                                                        <action selector="charge:" destination="d62-cf-lZ3" eventType="touchUpInside" id="C5p-U9-lAK"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTa-QN-U0x">
-                                                    <rect key="frame" x="255" y="8" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="提现"/>
-                                                    <connections>
-                                                        <action selector="drawback:" destination="d62-cf-lZ3" eventType="touchUpInside" id="8Qn-mQ-YIt"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCQ-F9-gZF">
-                                                    <rect key="frame" x="140" y="13" width="87" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="余额：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bx3-xI-7hx">
-                                                    <rect key="frame" x="34" y="13" width="66" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
@@ -236,8 +200,6 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="balance" destination="iCQ-F9-gZF" id="th9-lU-8Fw"/>
-                        <outlet property="balancePanel" destination="ABO-VR-CRi" id="Or9-zM-nkD"/>
                         <outlet property="logoutButton" destination="QTy-I3-W5P" id="gck-YK-0Ib"/>
                         <outlet property="userIconButton" destination="77G-vx-4fd" id="EuH-NI-co2"/>
                         <outlet property="userNameButton" destination="yyB-Or-g6W" id="Myu-w5-Ha3"/>
@@ -328,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FrM-m6-Q3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4108" y="-25"/>
+            <point key="canvasLocation" x="1332" y="-752"/>
         </scene>
         <!--账单详情-->
         <scene sceneID="oj6-8U-02J">
@@ -356,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krk-JO-A5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4845" y="-25.35211267605634"/>
+            <point key="canvasLocation" x="2019" y="-753"/>
         </scene>
         <!--新手引导-->
         <scene sceneID="oqM-C6-XNx">
@@ -679,6 +641,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psx-G1-ggx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3933.75" y="1386.9718309859154"/>
+        </scene>
+        <!--财富中心-->
+        <scene sceneID="8aJ-nM-c8a">
+            <objects>
+                <viewController storyboardIdentifier="money" title="财富中心" id="Uwo-uF-AeU" customClass="MoneyViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h4W-Ma-LwZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="BB8-ix-rSN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vVa-oH-uIi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jAb-FF-EC2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="jAb-FF-EC2" id="bdH-FR-Kh4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tm2-oL-ier" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="666.66666666666674" y="-753.26086956521749"/>
         </scene>
     </scenes>
     <resources>
