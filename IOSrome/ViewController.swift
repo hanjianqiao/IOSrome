@@ -80,7 +80,25 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         print(webView.request?.url?.absoluteString ?? "No url")
     }
     
-    
+    /**
+     **
+     ** Called when failed to load a page
+     **
+     **/
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        //print("Webview fail with error \(error)");
+        var str = String(describing: error)
+        str = str.substring(from: (str.range(of: "NSErrorFailingURLStringKey=")?.upperBound)!)
+        str = str.substring(to: (str.range(of: ",")?.lowerBound)!)
+        let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+            print("reloading...\(str)")
+            let url:URL = URL(string: str)!
+            let request:URLRequest = URLRequest(url: url)
+            webView.loadRequest(request)
+        }
+    }
     /**
      **
      ** Called when finish loading a page

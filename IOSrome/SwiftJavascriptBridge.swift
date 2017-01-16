@@ -116,6 +116,10 @@ import JavaScriptCore
         request.addValue("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36", forHTTPHeaderField: "User-Agent")
         let task = session.dataTask(with: request, completionHandler:{
             (data: Data?, response: URLResponse?, error: Error?) in
+            if(response == nil){
+                print("Bridge get nothing from: \(urlString)")
+                return
+            }
             let res = response as! HTTPURLResponse
             let enct:String = res.allHeaderFields["Content-Type"]! as! String
             //print(enct)
@@ -136,7 +140,7 @@ import JavaScriptCore
                 print("Unsolved encoding type: \(enct)")
             }
             
-            print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
+            //print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
             //print("get url from: \(urlString)")
             let function = self.jsContext?.objectForKeyedSubscript(callBack)
             _ = function?.call(withArguments: [html ?? "", urlString])

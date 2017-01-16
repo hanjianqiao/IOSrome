@@ -29,8 +29,7 @@ class SelfMainViewController: UIViewController, UIWebViewDelegate {
         webView.delegate = self
     }
     
-    var id:String = ""
-    func showDetail(){
+    func showDetail(id:String){
         let vc = (self.storyboard?.instantiateViewController(withIdentifier: "list"))! as! SelfViewController
         vc.q = id
         self.navigationController?.pushViewController(vc, animated: true)
@@ -40,10 +39,10 @@ class SelfMainViewController: UIViewController, UIWebViewDelegate {
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if(request.url?.absoluteString.hasPrefix("ios"))!{
             let url:String = (request.url?.absoluteString)!
-            let range = url.range(of: ":")
-            let startIndex = url.index(after: (range?.lowerBound)!)
-            id = (request.url?.absoluteString.substring(from: startIndex))!
-            showDetail()
+            let para:[String] = url.components(separatedBy: ":")
+            if(para[1] == "self"){
+                showDetail(id: para[2])
+            }
             return false
         }
         print(request.url ?? "Error request url");

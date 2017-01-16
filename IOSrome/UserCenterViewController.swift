@@ -14,6 +14,7 @@ class UserCenterViewController: UIViewController {
     @IBOutlet weak var userNameButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
 
+    @IBOutlet weak var unReadNoti: UILabel!
     
     @objc func updateDisplay(notification: NSNotification){
         //do stuff
@@ -28,6 +29,11 @@ class UserCenterViewController: UIViewController {
             logoutButton.isHidden = false
             userNameButton.setTitle(AppStatus.sharedInstance.userInfo.userId, for: UIControlState.normal)
             userIconButton.setImage(UIImage(named: "tiny0.png"), for: UIControlState.normal)
+        }
+        if(AppStatus.sharedInstance.userInfo.unRead == 0){
+            self.unReadNoti.text = ""
+        }else{
+            self.unReadNoti.text = "（\(AppStatus.sharedInstance.userInfo.unRead)条未读）"
         }
     }
 
@@ -139,6 +145,12 @@ class UserCenterViewController: UIViewController {
             notLoggedInMessage()
             return
         }
+        let defaults = UserDefaults.standard
+        let nowid = AppStatus.sharedInstance.userInfo.unRead + defaults.integer(forKey: defaultsKeys.keyOne)
+        AppStatus.sharedInstance.userInfo.unRead = 0
+        defaults.setValue(nowid, forKey: defaultsKeys.keyOne)
+        print("nowid is \(nowid)")
+        NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
         let vc = (self.storyboard?.instantiateViewController(withIdentifier: "message"))! as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

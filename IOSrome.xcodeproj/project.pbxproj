@@ -118,6 +118,8 @@
 		C4BB41531DFD328800B01055 /* StartRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41521DFD328800B01055 /* StartRegisterViewController.swift */; };
 		C4BB41571DFD7EB100B01055 /* HuitaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */; };
 		C4BB41591DFD832A00B01055 /* lanjs_s.js in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41581DFD832A00B01055 /* lanjs_s.js */; };
+		C4E242661E2C79CE00A948E9 /* bg_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = C4E242651E2C79CE00A948E9 /* bg_orange.png */; };
+		C4E242681E2CB40700A948E9 /* SqlConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E242671E2CB40700A948E9 /* SqlConnector.swift */; };
 		C4E380771E09974B0037083F /* ReportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E380761E09974B0037083F /* ReportDetailViewController.swift */; };
 		C4E380791E0999D70037083F /* lanjs_rep_det.js in Resources */ = {isa = PBXBuildFile; fileRef = C4E380781E0999D60037083F /* lanjs_rep_det.js */; };
 		C4E3AABA1E010C0100564EC3 /* SwiftJavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E3AAB91E010C0100564EC3 /* SwiftJavascriptBridge.swift */; };
@@ -249,6 +251,8 @@
 		C4BB41521DFD328800B01055 /* StartRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartRegisterViewController.swift; sourceTree = "<group>"; };
 		C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuitaoViewController.swift; sourceTree = "<group>"; };
 		C4BB41581DFD832A00B01055 /* lanjs_s.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs_s.js; sourceTree = "<group>"; };
+		C4E242651E2C79CE00A948E9 /* bg_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_orange.png; path = media/bg_orange.png; sourceTree = "<group>"; };
+		C4E242671E2CB40700A948E9 /* SqlConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqlConnector.swift; sourceTree = "<group>"; };
 		C4E380761E09974B0037083F /* ReportDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailViewController.swift; sourceTree = "<group>"; };
 		C4E380781E0999D60037083F /* lanjs_rep_det.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs_rep_det.js; sourceTree = "<group>"; };
 		C4E3AAB91E010C0100564EC3 /* SwiftJavascriptBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJavascriptBridge.swift; sourceTree = "<group>"; };
@@ -343,6 +347,7 @@
 		C40BE7291DF96E8000F6C200 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				C4E242641E2C79C100A948E9 /* background  */,
 				C4460E481E29F5DD0000F2C3 /* icon */,
 				C445645A1E28B0AB000E5F36 /* tiny5.png */,
 				C44564521E28B072000E5F36 /* tiny1.png */,
@@ -433,6 +438,7 @@
 				C4E3AAB81E010BE200564EC3 /* communication */,
 				C44E10881E00049D00A716A2 /* swiftsocket */,
 				C40BE7311DF9B24F00F6C200 /* oc */,
+				C4E242671E2CB40700A948E9 /* SqlConnector.swift */,
 			);
 			name = support;
 			sourceTree = "<group>";
@@ -560,6 +566,14 @@
 				C445644E1E289D8B000E5F36 /* SelfMainViewController.swift */,
 			);
 			name = selfchoose;
+			sourceTree = "<group>";
+		};
+		C4E242641E2C79C100A948E9 /* background  */ = {
+			isa = PBXGroup;
+			children = (
+				C4E242651E2C79CE00A948E9 /* bg_orange.png */,
+			);
+			name = "background ";
 			sourceTree = "<group>";
 		};
 		C4E3AAB81E010BE200564EC3 /* communication */ = {
@@ -741,6 +755,7 @@
 				C4BB41351DFD199900B01055 /* 新手引导.png in Resources */,
 				C4BB414E1DFD1C2D00B01055 /* 注册成功.png in Resources */,
 				C4BB41391DFD199900B01055 /* QQ.png in Resources */,
+				C4E242661E2C79CE00A948E9 /* bg_orange.png in Resources */,
 				C4BB414D1DFD1C2D00B01055 /* 我的默认.png in Resources */,
 				C40BE75A1DFB16F100F6C200 /* background_invitation_overview.png in Resources */,
 				C4BB41471DFD1C2D00B01055 /* 默认头像.png in Resources */,
@@ -802,6 +817,7 @@
 				C4BB410B1DFBD38A00B01055 /* ReportTableViewCell.swift in Sources */,
 				DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */,
 				C422A3A71E1CE81200AA8589 /* SystemMessageViewController.swift in Sources */,
+				C4E242681E2CB40700A948E9 /* SqlConnector.swift in Sources */,
 				C4EE467F1E08EB3E00E5D0E3 /* String+MD5.swift in Sources */,
 				C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */,
 			);
@@ -945,8 +961,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOSrome/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lan.IOSrome;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lan.iosromebeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "IOSrome/IOSrome-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -972,7 +990,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOSrome/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lan.IOSrome;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lan.iosromebeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IOSrome/IOSrome-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

@@ -23,7 +23,7 @@ class SelfViewController: UIViewController, UIWebViewDelegate {
          *
          */
         //let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.selfchoose
-        let serverUrlString = AppStatus.sharedInstance.contentServer.selfServicePageURL
+        let serverUrlString = AppStatus.sharedInstance.contentServer.selfServicePageURL+q
         let url:URL = URL(string: serverUrlString)!
         
         let request:URLRequest = URLRequest(url: url)

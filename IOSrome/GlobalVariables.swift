@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct defaultsKeys {
+    static let keyOne = "MessageUntilID"
+}
+
 class AppStatus {
     class var sharedInstance: AppStatus {
         struct Static {
@@ -28,6 +32,53 @@ class AppStatus {
     var contentServer:ContentServer
     var vipInfo:VipInfo
     var userInfo:UserInfo
+    
+    var db:SQLiteConnect? = nil
+    func init_db(){
+        // 資料庫檔案的路徑
+        let sqlitePath = NSHomeDirectory() + "/Documents/sqlite3.db"
+        
+        // 印出儲存檔案的位置
+        print(sqlitePath)
+        
+        // SQLite 資料庫
+        db = SQLiteConnect(path: sqlitePath)!
+        
+        if let mydb = db {
+            
+            // create table
+            _ = mydb.createTable(tableName: "students", columnsInfo: [
+                "id integer primary key autoincrement",
+                "name text",
+                "height double"])
+            
+            // insert
+            _ = mydb.insert(
+                tableName: "students", rowInfo:
+                ["name":"'大強'","height":"178.2"])
+            
+            // select
+            let statement = mydb.fetch(
+                tableName: "students", cond: "1 == 1", order: nil)
+            while sqlite3_step(statement) == SQLITE_ROW{
+                let id = sqlite3_column_int(statement, 0)
+                let name = String(cString: sqlite3_column_text(statement, 1))
+                let height = sqlite3_column_double(statement, 2)
+                print("\(id). \(name) 身高： \(height)")
+            }
+            sqlite3_finalize(statement)
+            
+            // update
+            _ = mydb.update(
+                tableName: "students", 
+                cond: "id = 1", 
+                rowInfo: ["name":"'小強'","height":"176.8"])
+            
+            // delete
+            _ = mydb.delete(tableName: "students", cond: "id = 5")
+            
+        }
+    }
     init(){
         isLoggedIn = false
         userID = ""
@@ -38,6 +89,7 @@ class AppStatus {
         contentServer = ContentServer()
         vipInfo = VipInfo()
         userInfo = UserInfo()
+        init_db()
     }
     func logout(){
         isLoggedIn = false
@@ -47,6 +99,49 @@ class AppStatus {
         regInfo.clean()
         vipInfo.clean()
         userInfo.clean()
+    }
+    
+    func periodCheck(){
+        print("Period check...")
+        if(AppStatus.sharedInstance.isLoggedIn == true){
+            let defaults = UserDefaults.standard
+            
+            let mid = defaults.integer(forKey: defaultsKeys.keyOne)
+            
+            // do something in the background
+            var request = URLRequest(url: URL(string: AppStatus.sharedInstance.userServer.newMessageCheck_url)!)
+            request.httpMethod = "POST"
+            let postString = "{\"user_id\":\"" +
+                AppStatus.sharedInstance.userInfo.userId + "\",\"password\":\"" +
+                AppStatus.sharedInstance.userInfo.password + "\"}"
+            request.httpBody = postString.data(using: .utf8)
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {               // check for fundamental networking error
+                    print("error=\(error)")
+                    return
+                }
+                let responseString = String(data: data, encoding: .utf8)!
+                print(responseString)
+                let prej = JsonTools.convertToDictionary(text: responseString)
+                if((prej) != nil){
+                    let json = prej!
+                    if(json["status"] as! String == "ok"){
+                        let nowid = json["message"] as! Int
+                        print("nowid is \(nowid) and mid is \(mid)")
+                        if(nowid > mid){
+                            AppStatus.sharedInstance.userInfo.unRead = nowid - mid
+                            NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
+                        }
+                    }
+                }
+            }
+            task.resume()
+        }
+        let when = DispatchTime.now() + 60 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.periodCheck()
+        }
     }
     func update(){
         let queue = OperationQueue()
@@ -137,6 +232,7 @@ class UserInfo{
     var email:String
     var type:String
     var level:String
+    var unRead:Int
     init(){
         userId = ""
         password = ""
@@ -149,6 +245,7 @@ class UserInfo{
         email = ""
         type = ""
         level = ""
+        unRead = 0
     }
     func clean(){
         userId = ""
@@ -162,6 +259,7 @@ class UserInfo{
         email = ""
         type = ""
         level = ""
+        unRead = 0
     }
 }
 
@@ -201,6 +299,7 @@ class UserServer{
     let up2vip_url:String = "https://secure.hanjianqiao.cn:10000/up2vip"
     let extendvip_url:String = "https://secure.hanjianqiao.cn:10000/extendvip"
     let extendagent_url:String = "https://secure.hanjianqiao.cn:10000/extendagent"
+    let newMessageCheck_url:String = "https://secure.hanjianqiao.cn:30000/check"
 }
 
 class ContentServer{
