@@ -94,6 +94,11 @@ class UserCenterViewController: UIViewController {
     @IBAction func logout(_ sender: UIButton) {
         AppStatus.sharedInstance.logout()
         NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
+        self.tabBarController?.tabBar.items?[0].isEnabled = false
+        self.tabBarController?.tabBar.items?[1].isEnabled = false
+        self.tabBarController?.tabBar.items?[2].isEnabled = false
+        self.tabBarController?.tabBar.items?[3].isEnabled = true
+        self.tabBarController?.selectedIndex = 3
     }
     
     func notLoggedInMessage(){

@@ -20,8 +20,12 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
     @IBAction func copyToken(_ sender: UIBarButtonItem) {
         let function = jsContext?.objectForKeyedSubscript("copyToken")
         let tokenString = function?.call(withArguments: [""])
-        print("Token is:\n\(tokenString!)")
-        UIPasteboard.general.string = tokenString?.toString()!
+        if(tokenString == nil){
+            return
+        }else{
+            print("Token is:\n\(tokenString!)")
+            UIPasteboard.general.string = tokenString?.toString()!
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,17 +44,12 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
          *
          */
         
-        //let url:URL = URL(string: "http://kouchenvip.com:5000/recommend")!
         
+        let url:URL = URL(string: AppStatus.sharedInstance.contentServer.kuaitaoPageURL)!
+        let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
-        
-        let staticHTML = "<html><head><meta http-equiv=\"Content-Language\"content=\"zh-CN\"><meta HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html;charset=UTF-8\"><title>会淘助手</title></head><body><section id=\"lanSec\">hellowor</section></body></html>"
-        webView.loadHTMLString(staticHTML, baseURL: nil)
-        
-        //let request:URLRequest = URLRequest(url: url)
-        //webView.loadRequest(request)
-
         webView.delegate = self
+        webView.loadRequest(request)
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
@@ -69,7 +68,7 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
         if(webView.request?.url?.absoluteString.contains("alimama.com"))!{
             webView.stringByEvaluatingJavaScript(from: "var element = document.createElement('meta');  element.name = \"viewport\";  element.content = \"width=device-width,initial-scale=0.6,minimum-scale=0.6,maximum-scale=0.6,user-scalable=0.6\"; var head = document.getElementsByTagName('head')[0]; head.appendChild(element);")
         }
-        
+        //print(webView.request?.url?.absoluteString)
         let function = jsContext?.objectForKeyedSubscript("doWork")
         _ = function?.call(withArguments: [targetUrl ?? "", AppStatus.sharedInstance.isVip])
         print("loading finish...")

@@ -14,16 +14,9 @@ class InvitaListDetailViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
-        /*
-         * Main web page
-         *
-         */
-        //let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.selfchoose
         let serverUrlString = AppStatus.sharedInstance.contentServer.agentPageURL4
         let url:URL = URL(string: serverUrlString)!
-        
         let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
         webView.loadRequest(request)
@@ -41,14 +34,12 @@ class InvitaListDetailViewController: UIViewController, UIWebViewDelegate {
         }
         print(request.url ?? "Error request url");
         return true
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     var jsContext: JSContext?
     var messageId:String?

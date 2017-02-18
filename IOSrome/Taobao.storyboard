@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3hK-tj-AgW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3hK-tj-AgW">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--首页-->
         <scene sceneID="FGe-SJ-jDP">
             <objects>
-                <viewController title="首页" id="3hK-tj-AgW" customClass="ViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webkit" title="首页" id="3hK-tj-AgW" customClass="ViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="71W-7A-qZD"/>
                         <viewControllerLayoutGuide type="bottom" id="cyS-ct-CBK"/>
@@ -35,63 +35,65 @@
                     <navigationItem key="navigationItem" id="VSK-SV-Q5v">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="mus-B5-Zzr">
-                            <rect key="frame" x="8" y="6" width="304" height="33"/>
+                            <rect key="frame" x="12" y="0.0" width="296" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElG-tg-tzV">
-                                    <rect key="frame" x="8" y="0.0" width="31" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="阿妈">
-                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="homeButton:" destination="3hK-tj-AgW" eventType="touchUpInside" id="UyY-xf-VlX"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1F1-ij-rOh">
-                                    <rect key="frame" x="102" y="0.0" width="32" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <rect key="frame" x="100" y="1" width="44" height="43"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="后退">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="goBack" destination="xZF-7b-NOj" eventType="touchUpInside" id="jMs-QI-ejz"/>
+                                        <action selector="goBack:" destination="3hK-tj-AgW" eventType="touchUpInside" id="rEa-1u-OQ3"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dr-AF-Azj">
-                                    <rect key="frame" x="142" y="0.0" width="32" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <rect key="frame" x="145" y="1" width="46" height="43"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="前进">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="goForward" destination="xZF-7b-NOj" eventType="touchUpInside" id="R4I-7k-z6j"/>
+                                        <action selector="goForward:" destination="3hK-tj-AgW" eventType="touchUpInside" id="Ibz-hg-ddh"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XvS-0L-mUG">
-                                    <rect key="frame" x="47" y="0.0" width="32" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pu-JN-iBl">
+                                    <rect key="frame" x="0.0" y="2" width="46" height="43"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="阿妈">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="goForward:" destination="3hK-tj-AgW" eventType="touchUpInside" id="fhV-iQ-eAs"/>
+                                        <action selector="homeButton:" destination="3hK-tj-AgW" eventType="touchUpInside" id="RiX-DU-9as"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLL-00-IP0">
+                                    <rect key="frame" x="46" y="1" width="46" height="43"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="首页">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="taobaoButton:" destination="3hK-tj-AgW" eventType="touchUpInside" id="TK1-Yt-tYt"/>
+                                        <action selector="goForward:" destination="3hK-tj-AgW" eventType="touchUpInside" id="TTj-Fq-cZJ"/>
+                                        <action selector="taobaoButton:" destination="3hK-tj-AgW" eventType="touchUpInside" id="6EC-Hv-Zuz"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rf7-r6-oXY">
-                                    <rect key="frame" x="239" y="0.0" width="57" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <state key="normal" title="会淘一下">
-                                        <color key="titleColor" red="0.95118199479999999" green="0.4532237858" blue="0.1600397908" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdo-4h-xsT">
+                                    <rect key="frame" x="242" y="1" width="46" height="43"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="快淘">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="huitaoyixia:" destination="3hK-tj-AgW" eventType="touchUpInside" id="jUG-v7-xFl"/>
+                                        <action selector="goForward:" destination="3hK-tj-AgW" eventType="touchUpInside" id="425-3X-bjq"/>
+                                        <action selector="kuaitao:" destination="3hK-tj-AgW" eventType="touchUpInside" id="iq0-PN-Ruw"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTe-E3-W7Y">
-                                    <rect key="frame" x="193" y="0.0" width="32" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <rect key="frame" x="194" y="-1" width="44" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="分享">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -111,6 +113,54 @@
             </objects>
             <point key="canvasLocation" x="1942.5" y="-720.42253521126759"/>
         </scene>
+        <!--欢迎-->
+        <scene sceneID="8MV-vF-e9N">
+            <objects>
+                <viewController storyboardIdentifier="taowel" title="欢迎" id="Qbs-PM-Urd" customClass="WelcomViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gdc-uX-GG4"/>
+                        <viewControllerLayoutGuide type="bottom" id="USx-la-3I7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gcP-7C-RJl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftp-gs-8P3">
+                                <rect key="frame" x="47" y="248" width="227" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请在下方输入地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOq-xG-URw">
+                                <rect key="frame" x="47" y="219" width="196" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4c-Tc-lfy">
+                                <rect key="frame" x="62" y="330" width="196" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" backgroundImage="bg_orange.png"/>
+                                <connections>
+                                    <action selector="goToUrl:" destination="Qbs-PM-Urd" eventType="touchUpInside" id="Hqv-cA-P5O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="欢迎" id="vVd-LM-kux">
+                        <barButtonItem key="backBarButtonItem" title="back" id="kln-cv-2vh"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="urlText" destination="ftp-gs-8P3" id="x0Y-go-Xmo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Erd-MA-ddC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950.625" y="-720.42253521126759"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FBV-xa-scc">
             <objects>
@@ -120,12 +170,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="m3Q-U9-RFC" kind="relationship" relationship="rootViewController" id="DAX-Pt-q3o"/>
+                        <segue destination="3hK-tj-AgW" kind="relationship" relationship="rootViewController" id="RFf-el-vhf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9M3-WB-KtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005" y="-472"/>
+            <point key="canvasLocation" x="1172" y="56"/>
         </scene>
         <!--会淘一下-->
         <scene sceneID="bxM-om-5MP">
@@ -165,6 +215,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg_orange.png" width="542" height="102"/>
         <image name="首页默认.png" width="26" height="25"/>
     </resources>
 </document>

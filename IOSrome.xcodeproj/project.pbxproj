@@ -80,6 +80,7 @@
 		C4612E931E063CD500B79331 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E911E063CD500B79331 /* SWXMLHash.swift */; };
 		C4612E941E063CD500B79331 /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E921E063CD500B79331 /* SWXMLHash+TypeConversion.swift */; };
 		C4612E961E08D91B00B79331 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E951E08D91A00B79331 /* ShopDetailViewController.swift */; };
+		C4A576E01E4BF74F00E3812D /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A576DF1E4BF74F00E3812D /* WelcomViewController.swift */; };
 		C4BB41051DFBC8EE00B01055 /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41041DFBC8EE00B01055 /* Report.storyboard */; };
 		C4BB41071DFBC92300B01055 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41061DFBC92300B01055 /* ReportViewController.swift */; };
 		C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */; };
@@ -213,6 +214,7 @@
 		C4612E911E063CD500B79331 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWXMLHash.swift; path = Support/SWXMLHash/SWXMLHash.swift; sourceTree = "<group>"; };
 		C4612E921E063CD500B79331 /* SWXMLHash+TypeConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SWXMLHash+TypeConversion.swift"; path = "Support/SWXMLHash/SWXMLHash+TypeConversion.swift"; sourceTree = "<group>"; };
 		C4612E951E08D91A00B79331 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
+		C4A576DF1E4BF74F00E3812D /* WelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
 		C4BB41041DFBC8EE00B01055 /* Report.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
 		C4BB41061DFBC92300B01055 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportNavigationController.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 				C4612E821E03B20F00B79331 /* Taobao.storyboard */,
 				DCB045181DDF40280014D479 /* ViewController.swift */,
 				C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */,
+				C4A576DF1E4BF74F00E3812D /* WelcomViewController.swift */,
 			);
 			name = taobao;
 			sourceTree = "<group>";
@@ -784,6 +787,7 @@
 				C44E10941E0004B700A716A2 /* ytcpsocket.c in Sources */,
 				C44E10931E0004B700A716A2 /* UDPClient.swift in Sources */,
 				C4E3AABA1E010C0100564EC3 /* SwiftJavascriptBridge.swift in Sources */,
+				C4A576E01E4BF74F00E3812D /* WelcomViewController.swift in Sources */,
 				C4612E8A1E03B34300B79331 /* TaobaoNavigationController.swift in Sources */,
 				C44E10901E0004B700A716A2 /* Result.swift in Sources */,
 				C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */,
@@ -961,7 +965,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOSrome/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lan.iosromebeta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huitao.iosrome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -990,7 +994,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IOSrome/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Lan.iosromebeta;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huitao.iosrome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "IOSrome/IOSrome-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

@@ -69,6 +69,10 @@ import JavaScriptCore
         request.addValue("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36", forHTTPHeaderField: "User-Agent")
         let task = session.dataTask(with: request){
             (data, response, error) in
+            if(response == nil){
+                print("Bridge get nothing from: \(urlString)")
+                return
+            }
             let res = response as! HTTPURLResponse
             let enct:String = res.allHeaderFields["Content-Type"]! as! String
             //print(enct)
@@ -99,7 +103,9 @@ import JavaScriptCore
     
     
     internal func getDataFromUrl(_ urlString: String, _ callBack: String){
-        let url:URL = URL(string: urlString)!
+        print("get url from: \(urlString)")
+        let processed:String = urlString.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
+        let url:URL = URL(string: processed)!
         var html: String? = nil
         //let semaphore = DispatchSemaphore(value: 0)
         var request:URLRequest = URLRequest(url: url)

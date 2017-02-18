@@ -51,45 +51,69 @@ class UserViewController: UIViewController, URLSessionDelegate, UITextFieldDeleg
     }
     
     @IBAction func doRegister(_ sender: UIButton) {
-        var request = URLRequest(url: URL(string: serverUrlString)!)
-        request.httpMethod = "POST"
-        let postString = "{\"user_id\":\"" +
-            AppStatus.sharedInstance.regInfo.userId + "\",\"password\":\"" +
-            AppStatus.sharedInstance.regInfo.password + "\",\"code\":\"" +
-            text_invitecode.text! + "\",\"wechat\":\"" +
-            text_wechat.text! + "\",\"qq\":\"" +
-            text_qq.text! + "\",\"taobao\":\"" +
-            text_taobao.text! + "\",\"email\":\"" +
-            text_email.text! + "\"}"
-        request.httpBody = postString.data(using: .utf8)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {               // check for fundamental networking error
-                print("error=\(error)")
-                return
-            }
+        let queue = OperationQueue()
+        
+        // do something immediately
+        let alertLogging = UIAlertController (title: "正在登录", message: "请稍后。。。"
+            , preferredStyle: UIAlertControllerStyle.alert)
+        self.present(alertLogging, animated: true, completion: nil)
+        
+        queue.addOperation() {
+            // do something in the background
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+            var request = URLRequest(url: URL(string: self.serverUrlString)!)
+            request.httpMethod = "POST"
+            let postString = "{\"user_id\":\"" +
+                AppStatus.sharedInstance.regInfo.userId + "\",\"password\":\"" +
+                AppStatus.sharedInstance.regInfo.password + "\",\"code\":\"" +
+                self.text_invitecode.text! + "\",\"wechat\":\"" +
+                self.text_wechat.text! + "\",\"qq\":\"" +
+                self.text_qq.text! + "\",\"taobao\":\"" +
+                self.text_taobao.text! + "\",\"email\":\"" +
+                self.text_email.text! + "\"}"
+            request.httpBody = postString.data(using: .utf8)
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {               // check for fundamental networking error
+                    print("error=\(error)")
+                    alertLogging.dismiss(animated: true, completion:{
+                        OperationQueue.main.addOperation {
+                            alertLogging.dismiss(animated: true, completion: nil)
+                            let alert = UIAlertController (title: "网络异常", message: "请重新登录"
+                                , preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    })
+                    return
+                }
+                
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                    print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                    print("response = \(response)")
+                }
+                //print(data)
+                let responseString = String(data: data, encoding: .utf8)!
+                print("responseString = \(responseString)")
+                let json = JsonTools.convertToDictionary(text: responseString)!
+                OperationQueue.main.addOperation {
+                    alertLogging.dismiss(animated: true, completion:{
+                        if(json["status"] as! String == "ok"){
+                            var viewControllers = self.navigationController?.viewControllers
+                            viewControllers?.removeLast(2) //views to pop
+                            self.navigationController?.setViewControllers(viewControllers!, animated: true)
+                        }else{
+                            alertLogging.dismiss(animated: true, completion: nil)
+                            let alert = UIAlertController (title: "注册结果", message: responseString
+                                , preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    })
+                }
             }
-            //print(data)
-            let responseString = String(data: data, encoding: .utf8)!
-            print("responseString = \(responseString)")
-            
-            let alert = UIAlertController (title: "注册结果", message: responseString
-                , preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in
-                var viewControllers = self.navigationController?.viewControllers
-                viewControllers?.removeLast(2) //views to pop
-                self.navigationController?.setViewControllers(viewControllers!, animated: true)
-                }))
-            OperationQueue.main.addOperation {
-                self.present(alert, animated: true, completion: nil)
-            }
-            //self.present(alert1, animated: true, completion: nil)
+            task.resume()
         }
-        task.resume()
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

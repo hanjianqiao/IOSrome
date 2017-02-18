@@ -12,6 +12,8 @@ import JavaScriptCore
 class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  {
 
     @IBOutlet weak var webView: UIWebView!
+    var needReload:Bool = false
+    var mainUrl:String = AppStatus.sharedInstance.contentServer.mainPageURL
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +24,12 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             name: NSNotification.Name(rawValue: "noti_load_page"),
             object: nil)
         
-        let url:URL = URL(string: AppStatus.sharedInstance.contentServer.mainPageURL)!
+        let url:URL = URL(string: mainUrl)!
         
         let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
         webView.delegate = self
+        needReload = true
         webView.loadRequest(request)
     }
     
@@ -41,16 +44,28 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         webView.loadRequest(request)
     }
     @IBAction func taobaoButton(_ sender: UIButton) {
-        let url:URL = URL(string: AppStatus.sharedInstance.contentServer.mainPageURL)!
+        //let url:URL = URL(string: AppStatus.sharedInstance.contentServer.mainPageURL)!
+        let url:URL = URL(string: mainUrl)!
         let request:URLRequest = URLRequest(url: url)
         webView.loadRequest(request)
     }
 
+    @IBAction func goBack(_ sender: UIButton) {
+        if(webView.canGoBack){
+            webView.goBack()
+        }
+    }
+    @IBAction func goForward(_ sender: UIButton) {
+        if(webView.canGoForward){
+            webView.goForward()
+        }
+        
+    }
     @IBAction func shareUrl(_ sender: UIButton) {
         UIPasteboard.general.string = webView.request?.url?.absoluteString
     }
 
-    @IBAction func huitaoyixia(_ sender: UIButton) {
+    @IBAction func kuaitao(_ sender: UIButton) {
         if(AppStatus.sharedInstance.isVip){
             let date = Date()
             let calendar = Calendar.current
@@ -93,10 +108,13 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
-            print("reloading...\(str)")
-            let url:URL = URL(string: str)!
-            let request:URLRequest = URLRequest(url: url)
-            webView.loadRequest(request)
+            if(self.needReload){
+                print("reloading...\(str)")
+                let url:URL = URL(string: str)!
+                let request:URLRequest = URLRequest(url: url)
+                self.needReload = false
+                webView.loadRequest(request)
+            }
         }
     }
     /**

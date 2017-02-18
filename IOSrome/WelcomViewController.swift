@@ -1,24 +1,20 @@
 //
-//  MainTabBarController.swift
+//  WelcomViewController.swift
 //  IOSrome
 //
-//  Created by 韩建桥 on 2016/12/11.
-//  Copyright © 2016年 Lanchitour. All rights reserved.
+//  Created by 韩建桥 on 2017/2/9.
+//  Copyright © 2017年 Lanchitour. All rights reserved.
 //
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class WelcomViewController: UIViewController {
 
+    @IBOutlet weak var urlText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.tabBar.items?[0].isEnabled = false
-        self.tabBar.items?[1].isEnabled = false
-        self.tabBar.items?[2].isEnabled = false
-        self.tabBar.items?[3].isEnabled = true
-        self.selectedIndex = 3
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +22,12 @@ class MainTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goToUrl(_ sender: UIButton) {
+        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "webkit"))! as! ViewController
+        let strUrl:String = (urlText.text)!
+        vc.mainUrl = strUrl
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
     /*
     // MARK: - Navigation

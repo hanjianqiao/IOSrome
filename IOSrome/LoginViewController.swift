@@ -74,9 +74,11 @@ class LoginViewController: UIViewController {
             // do something in the background
             var request = URLRequest(url: URL(string: self.serverUrlString)!)
             request.httpMethod = "POST"
+            let uuid = UUID().uuidString
             let postString = "{\"user_id\":\"" +
                 self.username.text! + "\",\"password\":\"" +
-                self.password.text! + "\"}"
+                self.password.text! + "\",\"uuid\":\"" +
+                uuid + "\"}"
             request.httpBody = postString.data(using: .utf8)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -137,6 +139,10 @@ class LoginViewController: UIViewController {
                             }else{
                                 AppStatus.sharedInstance.isVip = true
                             }
+                            self.tabBarController?.tabBar.items?[0].isEnabled = true
+                            self.tabBarController?.tabBar.items?[1].isEnabled = true
+                            self.tabBarController?.tabBar.items?[2].isEnabled = true
+                            self.tabBarController?.tabBar.items?[3].isEnabled = true
                             _ = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as! UserCenterViewController
                             NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
                             _ = self.navigationController?.popViewController(animated: true)
