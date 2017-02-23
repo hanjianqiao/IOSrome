@@ -27,10 +27,7 @@ var spTkRates;
 var tkRate;
 
 function updateGeneralBrokerageItemCallBack(htmlText, url){
-    if(htmlText.startsWith("<!")){
-        document.getElementById("plantitle").innerHTML = "请登陆后查看详情";
-    }
-    else{
+    try{
         var obj = eval('('+htmlText+')');
         var ja = obj.data.campaignList;
         for(var i = 0; i < ja.length; i++){
@@ -45,6 +42,8 @@ function updateGeneralBrokerageItemCallBack(htmlText, url){
             item.innerHTML = innerText;
             document.getElementById("plantable").appendChild(item);
         }
+    }catch(err){
+        document.getElementById("plantitle").innerHTML = "请<a href=ios:showTaobaoDetail:http://www.alimama.com/ style=\"color:red\"><b>登陆</b></a>后查看详情";
     }
 }
 
@@ -110,7 +109,7 @@ function updateQueqiaoBrokerageCallBack(htmlText, url){
         return;
     }
     var jo = obj.data.pageList[0];
-    document.getElementById("queqiaorate").innerHTML = (showIt ? jo.eventRate : "??")+"%";
+    document.getElementById("queqiaorate").innerHTML = (showIt ? (jo.eventRate ? jo.eventRate : "0") : "??")+"%";
     try {
         if(showIt){
             updateQueqiaoBrokerageItem(goodid);

@@ -81,7 +81,7 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
                             AppStatus.sharedInstance.update()
                         }else{
                             alertLogging.dismiss(animated: true, completion: nil)
-                            let alert = UIAlertController (title: "购买请求失败", message: responseString
+                            let alert = UIAlertController (title: "购买请求失败", message:  json["message"] as? String
                                 , preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
@@ -146,7 +146,7 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
                 OperationQueue.main.addOperation {
                     alertLogging.dismiss(animated: true, completion:{
                         if(json["status"] as! String == "ok"){
-                            let alert = UIAlertController (title: "续费成功", message: responseString
+                            let alert = UIAlertController (title: "续费成功", message:  json["message"] as? String
                                 , preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in
                                 let url:URL = URL(string: AppStatus.sharedInstance.contentServer.vipPageURL3)!
@@ -154,7 +154,7 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
                                 self.webView.loadRequest(request)}))
                             self.present(alert, animated: true, completion: nil)
                         }else{
-                            let alert = UIAlertController (title: "购买请求失败", message: responseString
+                            let alert = UIAlertController (title: "购买请求失败", message:  json["message"] as? String
                                 , preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)

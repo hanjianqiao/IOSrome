@@ -31,6 +31,18 @@ class LoginViewController: UIViewController {
         let imageP = UIImage(named: "密码.png")
         imageViewP.image = imageP
         password.leftView = imageViewP
+        
+        let defaults = UserDefaults.standard
+        username.text = defaults.string(forKey: defaultsKeys.username)
+        password.text = defaults.string(forKey: defaultsKeys.passwd)
+        if( defaults.string(forKey: defaultsKeys.username) == nil
+            || defaults.string(forKey: defaultsKeys.passwd) == nil
+            || defaults.string(forKey: defaultsKeys.username) == ""
+            || defaults.string(forKey: defaultsKeys.passwd) == ""){
+            self.savePasswd.isOn = false
+        }else{
+            self.savePasswd.isOn = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,11 +69,23 @@ class LoginViewController: UIViewController {
             print(error)
         }
         
-        let alert = UIAlertController (title: "Password Reset", message: "You forget the password", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController (title: "帮助", message: "如有疑问请关注“小牛快淘”微信公众号", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 
+    @IBOutlet weak var savePasswd: UISwitch!
+    
+    @IBAction func doSave(_ sender: UISwitch) {
+        let defaults = UserDefaults.standard
+        if(savePasswd.isOn){
+            defaults.setValue(username.text!, forKey: defaultsKeys.username)
+            defaults.setValue(password.text!, forKey: defaultsKeys.passwd)
+        }else{
+            defaults.setValue(nil, forKey: defaultsKeys.username)
+            defaults.setValue(nil, forKey: defaultsKeys.passwd)
+        }
+    }
     @IBAction func doLogin(_ sender: UIButton) {
         let queue = OperationQueue()
         
@@ -148,7 +172,7 @@ class LoginViewController: UIViewController {
                             _ = self.navigationController?.popViewController(animated: true)
                         }else{
                             alertLogging.dismiss(animated: true, completion: nil)
-                            let alert = UIAlertController (title: "登陆结果", message: responseString
+                            let alert = UIAlertController (title: "登陆结果", message: json["message"] as? String
                                 , preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rex-Cf-Rzj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Rex-Cf-Rzj">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -183,7 +183,7 @@
         <!--订单明细-->
         <scene sceneID="UPf-KT-QmQ">
             <objects>
-                <viewController title="订单明细" id="2by-LV-K9Q" customClass="ReportDetailViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="订单明细" id="2by-LV-K9Q" customClass="TestViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="geT-1x-QLx"/>
                         <viewControllerLayoutGuide type="bottom" id="7bw-PY-TSy"/>

@@ -32,6 +32,7 @@
     
     NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:cookieProperties];
     [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+    
 }
 - (void) readHttp{
     int sockfd, portno;

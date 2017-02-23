@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JavaScriptCore
 
 class ShopDetailViewController: UIViewController, UIWebViewDelegate {
     
@@ -77,6 +78,21 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
         return true
         
     }
+    
+    var jsContext: JSContext?
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        jsContext = (webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext)
+        let model = SwiftJavaScriptModel()
+        model.controller = self
+        jsContext?.setObject(model, forKeyedSubscript: "LanJsBridge" as (NSCopying & NSObjectProtocol)!)
+        model.jsContext = jsContext
+        jsContext?.exceptionHandler = {
+            (context, exception) in
+            print("exception: ", exception ?? "No")
+        }
+        webView.stringByEvaluatingJavaScript(from: "doWork()")
+    }
+    
 
     /*
     // MARK: - Navigation

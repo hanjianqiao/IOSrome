@@ -18,9 +18,6 @@ class UserCenterViewController: UIViewController {
     
     @objc func updateDisplay(notification: NSNotification){
         //do stuff
-        //let str = notification.userInfo?[AnyHashable("url")] as! String
-        //print(str)
-        
         if(AppStatus.sharedInstance.isLoggedIn == false){
             logoutButton.isHidden = true
             userNameButton.setTitle("点击登陆会淘账号", for: UIControlState.normal)
@@ -30,10 +27,15 @@ class UserCenterViewController: UIViewController {
             userNameButton.setTitle(AppStatus.sharedInstance.userInfo.userId, for: UIControlState.normal)
             userIconButton.setImage(UIImage(named: "tiny0.png"), for: UIControlState.normal)
         }
-        if(AppStatus.sharedInstance.userInfo.unRead == 0){
-            self.unReadNoti.text = ""
-        }else{
-            self.unReadNoti.text = "（\(AppStatus.sharedInstance.userInfo.unRead)条未读）"
+        if(notification.userInfo != nil){
+            let str = notification.userInfo?[AnyHashable("isThere")] as! Bool
+            print(str)
+            
+            if(str == false){
+                self.unReadNoti.text = ""
+            }else{
+                self.unReadNoti.text = "（新消息）"
+            }
         }
     }
 
@@ -47,7 +49,7 @@ class UserCenterViewController: UIViewController {
             selector: #selector(self.updateDisplay),
             name: NSNotification.Name(rawValue: "update"),
             object: nil)
-        NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
+        NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: ["isThere":false])
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,7 +95,7 @@ class UserCenterViewController: UIViewController {
 
     @IBAction func logout(_ sender: UIButton) {
         AppStatus.sharedInstance.logout()
-        NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
+        NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: ["isThere":false])
         self.tabBarController?.tabBar.items?[0].isEnabled = false
         self.tabBarController?.tabBar.items?[1].isEnabled = false
         self.tabBarController?.tabBar.items?[2].isEnabled = false
@@ -150,12 +152,7 @@ class UserCenterViewController: UIViewController {
             notLoggedInMessage()
             return
         }
-        let defaults = UserDefaults.standard
-        let nowid = AppStatus.sharedInstance.userInfo.unRead + defaults.integer(forKey: defaultsKeys.keyOne)
-        AppStatus.sharedInstance.userInfo.unRead = 0
-        defaults.setValue(nowid, forKey: defaultsKeys.keyOne)
-        print("nowid is \(nowid)")
-        NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
+        NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: ["isThere":false])
         let vc = (self.storyboard?.instantiateViewController(withIdentifier: "message"))! as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

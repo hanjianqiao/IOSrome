@@ -146,7 +146,7 @@ import JavaScriptCore
                 print("Unsolved encoding type: \(enct)")
             }
             
-            //print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
+            print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
             //print("get url from: \(urlString)")
             let function = self.jsContext?.objectForKeyedSubscript(callBack)
             _ = function?.call(withArguments: [html ?? "", urlString])

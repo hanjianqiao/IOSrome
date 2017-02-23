@@ -9,7 +9,8 @@
 import Foundation
 
 struct defaultsKeys {
-    static let keyOne = "MessageUntilID"
+    static let username = "UserName"
+    static let passwd = "Password"
 }
 
 class AppStatus {
@@ -104,9 +105,6 @@ class AppStatus {
     func periodCheck(){
         print("Period check...")
         if(AppStatus.sharedInstance.isLoggedIn == true){
-            let defaults = UserDefaults.standard
-            
-            let mid = defaults.integer(forKey: defaultsKeys.keyOne)
             
             // do something in the background
             var request = URLRequest(url: URL(string: AppStatus.sharedInstance.userServer.newMessageCheck_url)!)
@@ -127,11 +125,9 @@ class AppStatus {
                 if((prej) != nil){
                     let json = prej!
                     if(json["status"] as! String == "ok"){
-                        let nowid = json["message"] as! Int
-                        print("nowid is \(nowid) and mid is \(mid)")
-                        if(nowid > mid){
-                            AppStatus.sharedInstance.userInfo.unRead = nowid - mid
-                            NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
+                        let nowid = json["message"] as! String
+                        if(nowid == "yes"){
+                            NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: ["isThere":true])
                         }
                     }
                 }
@@ -305,7 +301,7 @@ class UserServer{
 class ContentServer{
     let mainPageURL:String = "https://shop.hanjianqiao.cn:7741/A/index.html"
     let kuaitaoPageURL:String = "https://shop.hanjianqiao.cn:7741/A/kuaitao.html"
-    let highBrokerPageURL:String = "https://shop.hanjianqiao.cn:7741/A/shop.html"
+    let highBrokerPageURL:String = "https://shop.hanjianqiao.cn:7741/A/shop.html?catalog=0"
     let selfServiceMainPageURL:String = "https://shop.hanjianqiao.cn:7741/A/self.html"
     let selfServicePageURL:String = "https://shop.hanjianqiao.cn:7741/A/search.html"
     let detailShopPageURL:String = "https://shop.hanjianqiao.cn:7741/A/detail_shop.html"

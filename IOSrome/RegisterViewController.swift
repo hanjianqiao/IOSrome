@@ -98,13 +98,15 @@ class UserViewController: UIViewController, URLSessionDelegate, UITextFieldDeleg
                 let json = JsonTools.convertToDictionary(text: responseString)!
                 OperationQueue.main.addOperation {
                     alertLogging.dismiss(animated: true, completion:{
-                        if(json["status"] as! String == "ok"){
+                        let status:String = json["status"] as! String
+                        let message:String = json["message"] as! String
+                        if(status == "ok"){
                             var viewControllers = self.navigationController?.viewControllers
                             viewControllers?.removeLast(2) //views to pop
                             self.navigationController?.setViewControllers(viewControllers!, animated: true)
                         }else{
                             alertLogging.dismiss(animated: true, completion: nil)
-                            let alert = UIAlertController (title: "注册结果", message: responseString
+                            let alert = UIAlertController (title: "注册结果", message: message
                                 , preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
