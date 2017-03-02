@@ -32,6 +32,9 @@
 		C44564511E28A541000E5F36 /* huitaoShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44564501E28A541000E5F36 /* huitaoShopViewController.swift */; };
 		C4460E451E2954DD0000F2C3 /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4460E441E2954DD0000F2C3 /* MoneyViewController.swift */; };
 		C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C44630B21DEDD96E0052E83F /* OCFunction.m */; };
+		C45F7A881E68785700450551 /* tishi.png in Resources */ = {isa = PBXBuildFile; fileRef = C45F7A871E68785700450551 /* tishi.png */; };
+		C45F7A8E1E6885F500450551 /* ShopTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F7A8D1E6885F500450551 /* ShopTutorialViewController.swift */; };
+		C45F7A901E68875000450551 /* TaoTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F7A8F1E68875000450551 /* TaoTutorialViewController.swift */; };
 		C4612E811E01445B00B79331 /* VIPDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E801E01445B00B79331 /* VIPDetailViewController.swift */; };
 		C4612E831E03B20F00B79331 /* Taobao.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4612E821E03B20F00B79331 /* Taobao.storyboard */; };
 		C4612E851E03B2B100B79331 /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4612E841E03B2B100B79331 /* Recommend.storyboard */; };
@@ -68,7 +71,6 @@
 		C4C654141E62B98400F240DD /* shop.css in Resources */ = {isa = PBXBuildFile; fileRef = C4C653E51E62B98400F240DD /* shop.css */; };
 		C4C654151E62B98400F240DD /* detail_self.html in Resources */ = {isa = PBXBuildFile; fileRef = C4C653E61E62B98400F240DD /* detail_self.html */; };
 		C4C654161E62B98400F240DD /* detail_shop.html in Resources */ = {isa = PBXBuildFile; fileRef = C4C653E71E62B98400F240DD /* detail_shop.html */; };
-		C4C654171E62B98400F240DD /* guide.html in Resources */ = {isa = PBXBuildFile; fileRef = C4C653E81E62B98400F240DD /* guide.html */; };
 		C4C654181E62B98400F240DD /* erweima.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C653EA1E62B98400F240DD /* erweima.png */; };
 		C4C654191E62B98400F240DD /* fuzhi.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C653EB1E62B98400F240DD /* fuzhi.png */; };
 		C4C6541A1E62B98400F240DD /* gray.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C653EC1E62B98400F240DD /* gray.png */; };
@@ -236,7 +238,6 @@
 		C4C655B71E65D59500F240DD /* unlogged.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C655B41E65D59500F240DD /* unlogged.png */; };
 		C4C655B81E65D59500F240DD /* unlogged@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C655B51E65D59500F240DD /* unlogged@2x.png */; };
 		C4C655B91E65D59500F240DD /* unlogged@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C655B61E65D59500F240DD /* unlogged@3x.png */; };
-		C4C655BB1E65D6B900F240DD /* icon_main_taobao0.png in Resources */ = {isa = PBXBuildFile; fileRef = C4C655BA1E65D6B900F240DD /* icon_main_taobao0.png */; };
 		C4C655BD1E65E6C400F240DD /* TaobaoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C655BC1E65E6C400F240DD /* TaobaoDetailViewController.swift */; };
 		C4C655BF1E65E99D00F240DD /* TaobaoDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C655BE1E65E99D00F240DD /* TaobaoDetailViewController2.swift */; };
 		C4DA4E201E5865E4008A5975 /* INSDataStackContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA4E1C1E5865E4008A5975 /* INSDataStackContainer.swift */; };
@@ -283,6 +284,9 @@
 		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
 		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
 		C44630B41DEDDA840052E83F /* CustomeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomeObject.h; sourceTree = "<group>"; };
+		C45F7A871E68785700450551 /* tishi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tishi.png; sourceTree = "<group>"; };
+		C45F7A8D1E6885F500450551 /* ShopTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTutorialViewController.swift; sourceTree = "<group>"; };
+		C45F7A8F1E68875000450551 /* TaoTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaoTutorialViewController.swift; sourceTree = "<group>"; };
 		C4612E801E01445B00B79331 /* VIPDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VIPDetailViewController.swift; sourceTree = "<group>"; };
 		C4612E821E03B20F00B79331 /* Taobao.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Taobao.storyboard; sourceTree = "<group>"; };
 		C4612E841E03B2B100B79331 /* Recommend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
@@ -323,7 +327,6 @@
 		C4C653E51E62B98400F240DD /* shop.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = shop.css; path = Resources/css/shop.css; sourceTree = "<group>"; };
 		C4C653E61E62B98400F240DD /* detail_self.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = detail_self.html; path = Resources/detail_self.html; sourceTree = "<group>"; };
 		C4C653E71E62B98400F240DD /* detail_shop.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = detail_shop.html; path = Resources/detail_shop.html; sourceTree = "<group>"; };
-		C4C653E81E62B98400F240DD /* guide.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = guide.html; path = Resources/guide.html; sourceTree = "<group>"; };
 		C4C653EA1E62B98400F240DD /* erweima.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = erweima.png; path = Resources/images/erweima.png; sourceTree = "<group>"; };
 		C4C653EB1E62B98400F240DD /* fuzhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fuzhi.png; sourceTree = "<group>"; };
 		C4C653EC1E62B98400F240DD /* gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray.png; sourceTree = "<group>"; };
@@ -491,7 +494,6 @@
 		C4C655B41E65D59500F240DD /* unlogged.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unlogged.png; sourceTree = "<group>"; };
 		C4C655B51E65D59500F240DD /* unlogged@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unlogged@2x.png"; sourceTree = "<group>"; };
 		C4C655B61E65D59500F240DD /* unlogged@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unlogged@3x.png"; sourceTree = "<group>"; };
-		C4C655BA1E65D6B900F240DD /* icon_main_taobao0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_main_taobao0.png; path = Resources/images/icon_main_taobao0.png; sourceTree = "<group>"; };
 		C4C655BC1E65E6C400F240DD /* TaobaoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaobaoDetailViewController.swift; sourceTree = "<group>"; };
 		C4C655BE1E65E99D00F240DD /* TaobaoDetailViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaobaoDetailViewController2.swift; sourceTree = "<group>"; };
 		C4DA4E1C1E5865E4008A5975 /* INSDataStackContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = INSDataStackContainer.swift; path = Support/INSPersistentContainer/INSDataStackContainer.swift; sourceTree = "<group>"; };
@@ -606,6 +608,7 @@
 				DCB045181DDF40280014D479 /* ViewController.swift */,
 				C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */,
 				C4A576DF1E4BF74F00E3812D /* WelcomViewController.swift */,
+				C45F7A8F1E68875000450551 /* TaoTutorialViewController.swift */,
 			);
 			name = taobao;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				C4612E951E08D91A00B79331 /* ShopDetailViewController.swift */,
 				C44564501E28A541000E5F36 /* huitaoShopViewController.swift */,
 				C4C655BC1E65E6C400F240DD /* TaobaoDetailViewController.swift */,
+				C45F7A8D1E6885F500450551 /* ShopTutorialViewController.swift */,
 			);
 			name = market;
 			sourceTree = "<group>";
@@ -749,7 +753,6 @@
 				C4C6543E1E62C74000F240DD /* SelfChoose */,
 				C4C6543D1E62C19900F240DD /* Recommend */,
 				C4C6543C1E62BCCF00F240DD /* index */,
-				C4C653E81E62B98400F240DD /* guide.html */,
 				C4C653E91E62B98400F240DD /* images */,
 				C4C654061E62B98400F240DD /* js */,
 			);
@@ -759,6 +762,7 @@
 		C4C653E91E62B98400F240DD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C45F7A871E68785700450551 /* tishi.png */,
 				C4C653EB1E62B98400F240DD /* fuzhi.png */,
 				C4C653EC1E62B98400F240DD /* gray.png */,
 				C4C653ED1E62B98400F240DD /* icon */,
@@ -805,7 +809,6 @@
 		C4C6543C1E62BCCF00F240DD /* index */ = {
 			isa = PBXGroup;
 			children = (
-				C4C655BA1E65D6B900F240DD /* icon_main_taobao0.png */,
 				C4C654051E62B98400F240DD /* index.html */,
 				C4C653E31E62B98400F240DD /* index.css */,
 				C4C653F51E62B98400F240DD /* icon_search.png */,
@@ -1179,7 +1182,6 @@
 				C4C6541C1E62B98400F240DD /* icon-coupon.png in Resources */,
 				C4C654111E62B98400F240DD /* guide.css in Resources */,
 				C4C654DF1E6468E600F240DD /* vip03.css in Resources */,
-				C4C655BB1E65D6B900F240DD /* icon_main_taobao0.png in Resources */,
 				C4BB41591DFD832A00B01055 /* lanjs_s.js in Resources */,
 				C4C655861E65BF1800F240DD /* 搜索@3x.png in Resources */,
 				C4C6556E1E65BF1800F240DD /* VIP@3x.png in Resources */,
@@ -1265,6 +1267,7 @@
 				C4C6550C1E6485B200F240DD /* imga01.png in Resources */,
 				C4C654101E62B98400F240DD /* detail.css in Resources */,
 				C4C655B71E65D59500F240DD /* unlogged.png in Resources */,
+				C45F7A881E68785700450551 /* tishi.png in Resources */,
 				C4C6543B1E62B98400F240DD /* shop.html in Resources */,
 				C4C654291E62B98400F240DD /* img3.png in Resources */,
 				C4C655B11E65D15600F240DD /* Mine_head.png in Resources */,
@@ -1351,7 +1354,6 @@
 				C4C654271E62B98400F240DD /* img1.png in Resources */,
 				C4C655691E65BF1800F240DD /* QQ.png in Resources */,
 				C4C655B91E65D59500F240DD /* unlogged@3x.png in Resources */,
-				C4C654171E62B98400F240DD /* guide.html in Resources */,
 				C41D800A1E122BB500E4F019 /* get_item_detail.js in Resources */,
 				C4C655791E65BF1800F240DD /* 微信@2x.png in Resources */,
 				C4612E851E03B2B100B79331 /* Recommend.storyboard in Resources */,
@@ -1380,12 +1382,14 @@
 				C4BB41531DFD328800B01055 /* StartRegisterViewController.swift in Sources */,
 				C4E3AABA1E010C0100564EC3 /* SwiftJavascriptBridge.swift in Sources */,
 				C4A576E01E4BF74F00E3812D /* WelcomViewController.swift in Sources */,
+				C45F7A901E68875000450551 /* TaoTutorialViewController.swift in Sources */,
 				C4612E8A1E03B34300B79331 /* TaobaoNavigationController.swift in Sources */,
 				C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */,
 				C4DA4E211E5865E4008A5975 /* INSPersistentContainer.swift in Sources */,
 				C4BCA6691E67A534007E552A /* Socket.swift in Sources */,
 				C4612E811E01445B00B79331 /* VIPDetailViewController.swift in Sources */,
 				C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */,
+				C45F7A8E1E6885F500450551 /* ShopTutorialViewController.swift in Sources */,
 				C4BB41511DFD23C000B01055 /* SelfViewController.swift in Sources */,
 				C4DA4E221E5865E4008A5975 /* INSPersistentStoreDescription.swift in Sources */,
 				C4EE46821E08EE6800E5D0E3 /* JsonTools.swift in Sources */,

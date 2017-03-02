@@ -50,6 +50,38 @@ class UserCenterViewController: UIViewController {
             name: NSNotification.Name(rawValue: "update"),
             object: nil)
         NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: ["isThere":false])
+        
+        // do something in the background
+        let request = URLRequest(url: URL(string: AppStatus.sharedInstance.contentServer.versionCheckURL)!)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {               // check for fundamental networking error
+                print("error=\(error)")
+                return
+            }
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+                return
+            }
+            
+            let responseString = String(data: data, encoding: .utf8)
+            
+            if(responseString == nil){
+                return
+            }
+            let json = JsonTools.convertToDictionary(text: responseString!)
+            if(json == nil){
+                return
+            }
+            
+            if(json?["message"] as! String != AppStatus.sharedInstance.version){
+                let alert = UIAlertController (title: "更新提示：为了更好的使用体验，请重新下载安装最新版本，下载地址请关注“小牛快淘”微信公众号，回复“最新版本”即可。", message: ""
+                    , preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+        task.resume()
     }
 
     override func didReceiveMemoryWarning() {

@@ -136,7 +136,7 @@ class LoginViewController: UIViewController {
                     print("response = \(response)")
                     alertLogging.dismiss(animated: true, completion:{
                         OperationQueue.main.addOperation {
-                            let alert = UIAlertController (title: "服务器异常", message: "请重新登录"
+                            let alert = UIAlertController (title: "服务器状态异常", message: "请重新登录"
                                 , preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
@@ -145,12 +145,9 @@ class LoginViewController: UIViewController {
                     return
                 }
 
-                let responseString = String(data: data, encoding: .utf8)!
-                print("responseString = \(responseString)")
+                let responseString = String(data: data, encoding: .utf8)
                 
-                let json = JsonTools.convertToDictionary(text: responseString)
-                
-                if(json == nil){
+                if(responseString == nil){
                     alertLogging.dismiss(animated: true, completion:{
                         OperationQueue.main.addOperation {
                             let alert = UIAlertController (title: "服务器返回异常", message: "请重新尝试"
@@ -161,9 +158,19 @@ class LoginViewController: UIViewController {
                     })
                     return
                 }
+                let json = JsonTools.convertToDictionary(text: responseString!)
                 
-                print(json?["status"] as! String == "failed")
-                print(json?["message"]! ?? "")
+                if(json == nil){
+                    alertLogging.dismiss(animated: true, completion:{
+                        OperationQueue.main.addOperation {
+                            let alert = UIAlertController (title: "服务器数据异常", message: "请重新尝试"
+                                , preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    })
+                    return
+                }
                 
                 OperationQueue.main.addOperation {
                     alertLogging.dismiss(animated: true, completion:{

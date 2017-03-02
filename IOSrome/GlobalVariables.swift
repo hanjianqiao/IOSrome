@@ -24,6 +24,8 @@ class AppStatus {
     let wechatAPPID:String = "wxb4ba3c02aa476ea1"
     let wechatPayKey:String = "a462b76e7436e98e0ed6e13c64b4fd1c"
     
+    let version = "0"
+    
     var isLoggedIn:Bool
     var userID:String
     var grantToken:String
@@ -299,6 +301,7 @@ class UserServer{
 }
 
 class ContentServer{
+    let versionCheckURL:String = "http://user.hanjianqiao.cn:13420/check"
     let mainPageURL:String = "https://shop.hanjianqiao.cn:7741/A/index.html"
     let kuaitaoPageURL:String = "https://shop.hanjianqiao.cn:7741/A/kuaitao.html"
     let highBrokerPageURL:String = "https://shop.hanjianqiao.cn:7741/A/shop.html?catalog=0"

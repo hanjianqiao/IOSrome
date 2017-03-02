@@ -154,5 +154,27 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         
         self.tabBarController?.selectedIndex = 0;
     }
+    func showGuide(){
+        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "guide"))! as! TaoTutorialViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if(request.url?.absoluteString.hasPrefix("ios"))!{
+            let url:String = (request.url?.absoluteString)!
+            let range = url.range(of: ":")
+            let startIndex = url.index(after: (range?.lowerBound)!)
+            let method:String = (request.url?.absoluteString.substring(from: startIndex))!
+            let parameters:[String] = method.components(separatedBy: ":")
+            let selector:Selector = NSSelectorFromString(parameters[0])
+            if self.responds(to: selector){
+                let control: UIControl = UIControl()
+                control.sendAction(selector, to: self, for: nil)
+            }
+            return false
+        }
+        return true
+        
+    }
 }
 

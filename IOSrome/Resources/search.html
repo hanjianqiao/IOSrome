@@ -42,9 +42,35 @@
 		<div class="product-list">
 
 		</div>
-
+        <p style="font-size:0.3rem;  line-height: 0.7rem; color:#666; text-align:center">
+        下拉加载更多
+        </p>
+        <button class="btn03">极速商品定制</button>
     </section>
-    <script type="text/javascript" src="lan_2.js"></script>
+    <!-- 弹窗 -->
+    <div class="alert">
+        <div class="alert01">
+            <div class="form-group" style="font-size:0.38rem;line-height:0.38rem">
+                <span style="vertical-align: bottom;">提示</span>
+                <img src="tishi.png" alt="" style="width:0.38rem; height:0.38rem;vertical-align: bottom;">
+                    </div>
+            <div class="form-group" style="text-align:justify">都不满意？请关注微信公众号“小牛快淘”，并回复您的商品需求，3小时内极速上架！</div>
+            <button class="btn04">确&nbsp;定</button>
+        </div>
+    </div>
+
 </body>
 
+<script src="jquery.min.js"></script>
+<script>
+    $(function() {
+      $(".btn03").on('click', function(event) {
+                     $(".alert").addClass('disBlock');
+                     });
+      $(".btn04").on('click', function(event) {
+                     $(".alert").removeClass('disBlock');
+                     });
+      })
+    </script>
+    <script type="text/javascript" src="lan_2.js"></script>
 </html>

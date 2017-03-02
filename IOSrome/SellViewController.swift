@@ -42,6 +42,10 @@ class SellViewController: UIViewController, UIWebViewDelegate {
         vc.goodID = id
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    func showGuide(){
+        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "guide"))! as! ShopTutorialViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         if(request.url?.absoluteString.hasPrefix("ios"))!{

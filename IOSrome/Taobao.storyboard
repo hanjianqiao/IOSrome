@@ -29,9 +29,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="首页" image="首页默认.png" id="1vy-n2-l2B">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
                     <navigationItem key="navigationItem" id="VSK-SV-Q5v">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="mus-B5-Zzr">
@@ -92,10 +89,37 @@
             </objects>
             <point key="canvasLocation" x="1942.5" y="-720.42253521126759"/>
         </scene>
+        <!--Tao Tutorial View Controller-->
+        <scene sceneID="mzv-dX-1Nr">
+            <objects>
+                <viewController storyboardIdentifier="guide" id="f3O-LW-muP" customClass="TaoTutorialViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fxz-Kh-BQJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="XCx-PN-il5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Ao-nX-BLU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Xm-1o-fUm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="8Xm-1o-fUm" id="Ovb-jQ-Zns"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xf1-bu-uOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1931.8840579710147" y="18.75"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FBV-xa-scc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9M3-WB-KtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="helper" id="dhT-IW-xKb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PPm-o7-5BR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -105,6 +129,7 @@
                         <segue destination="3hK-tj-AgW" kind="relationship" relationship="rootViewController" id="RFf-el-vhf"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9M3-WB-KtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="488" y="-721"/>
         </scene>
@@ -150,6 +175,5 @@
         <image name="顶部搜索.png" width="43" height="38"/>
         <image name="顶部返回.png" width="43" height="38"/>
         <image name="顶部首页.png" width="43" height="38"/>
-        <image name="首页默认.png" width="30" height="30"/>
     </resources>
 </document>
