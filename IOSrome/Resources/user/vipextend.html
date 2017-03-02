@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>小牛快淘</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta content="telephone=no, address=no" name="format-detection">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="person.css">
+	<!-- rem设置 -->
+	<script type="text/javascript">
+		var scale = 1 / devicePixelRatio;
+		document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+	</script>
+
+	<script type="text/javascript">
+		function inc(){
+			var str = document.getElementById("nums").innerHTML;
+			var nums = parseInt(str, 10);
+			if(nums >= 24) return;
+			nums = nums + 1;
+			var price = 168 * nums;
+			document.getElementById("extendlink").href = "ios:extend:" + nums.toString();
+			document.getElementById("nums").innerHTML = nums.toString();
+			document.getElementById("price").innerHTML = price.toString();
+		}
+		function dec(){
+			var str = document.getElementById("nums").innerHTML;
+			var nums = parseInt(str, 10);
+			if(nums <= 1) return;
+			nums = nums - 1;
+			var price = 89 * nums;
+			document.getElementById("extendlink").href = "ios:extend:" + nums.toString();
+			document.getElementById("nums").innerHTML = nums.toString();
+			document.getElementById("price").innerHTML = price.toString();
+		}
+	</script>
+</head>
+
+<body>
+	<!-- 布局 -->
+	<section>
+		<div class="con">
+			<div class="border second">
+				<p class="fl">按月续费</p>
+				<p class="clear">请选择续费月数</p>
+				<div class="month">
+					<p class="fl">月数：</p>
+					<div class="row fl">
+						<button class="sort" onclick="dec();">&minus;</button>
+						<span class="nums" id="nums">1</span>
+						<button class="add" onclick="inc();">&plus;</button>
+						<input type="hidden" value="1">
+					</div>
+				</div>
+
+				<div class="price">
+					<p class="fl">金额：</p>
+					<p class="fl  color-price">￥<span id="price">168</span></p>
+				</div>
+			</div>
+			<a id="extendlink" href="ios:extend:1">
+				<button class="btn02">确认支付</button>
+			</a>
+			<br>
+			<br>
+			<br>
+			<a href="vip03.html">
+				<button class="btn02">返回</button>
+			</a>
+		</div>
+	</section>
+</body>
+</script>
+</html>

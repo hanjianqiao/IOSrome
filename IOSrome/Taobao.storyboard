@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3hK-tj-AgW">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="cyS-ct-CBK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5e3-OJ-k3O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xZF-7b-NOj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
@@ -35,13 +35,13 @@
                     <navigationItem key="navigationItem" id="VSK-SV-Q5v">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="mus-B5-Zzr">
-                            <rect key="frame" x="12" y="0.0" width="296" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="12" y="0.0" width="390" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1F1-ij-rOh">
-                                    <rect key="frame" x="78" y="1" width="44" height="43"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="后退">
+                                    <rect key="frame" x="130" y="12" width="22" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" backgroundImage="顶部返回.png">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
@@ -49,9 +49,9 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dr-AF-Azj">
-                                    <rect key="frame" x="123" y="1" width="46" height="43"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="前进">
+                                    <rect key="frame" x="223" y="12" width="22" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" backgroundImage="顶部前进.png">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
@@ -59,9 +59,9 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pu-JN-iBl">
-                                    <rect key="frame" x="0.0" y="2" width="46" height="43"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="首页">
+                                    <rect key="frame" x="31" y="12" width="22" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" backgroundImage="顶部首页.png">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
@@ -69,9 +69,9 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdo-4h-xsT">
-                                    <rect key="frame" x="195" y="1" width="93" height="43"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="快淘一下">
+                                    <rect key="frame" x="332" y="12" width="22" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" backgroundImage="顶部搜索.png">
                                         <color key="titleColor" red="1" green="0.1046149281" blue="0.2423724773" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
@@ -84,6 +84,7 @@
                         </view>
                     </navigationItem>
                     <connections>
+                        <outlet property="bt_kuaitaoyixia" destination="Hdo-4h-xsT" id="skt-rh-3mP"/>
                         <outlet property="webView" destination="xZF-7b-NOj" id="32T-DJ-0eR"/>
                     </connections>
                 </viewController>
@@ -91,57 +92,10 @@
             </objects>
             <point key="canvasLocation" x="1942.5" y="-720.42253521126759"/>
         </scene>
-        <!--欢迎-->
-        <scene sceneID="8MV-vF-e9N">
-            <objects>
-                <viewController storyboardIdentifier="taowel" title="欢迎" id="Qbs-PM-Urd" customClass="WelcomViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Gdc-uX-GG4"/>
-                        <viewControllerLayoutGuide type="bottom" id="USx-la-3I7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gcP-7C-RJl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftp-gs-8P3">
-                                <rect key="frame" x="47" y="248" width="227" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请在下方输入地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOq-xG-URw">
-                                <rect key="frame" x="47" y="219" width="196" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4c-Tc-lfy">
-                                <rect key="frame" x="62" y="330" width="196" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" backgroundImage="bg_orange.png"/>
-                                <connections>
-                                    <action selector="goToUrl:" destination="Qbs-PM-Urd" eventType="touchUpInside" id="Hqv-cA-P5O"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="欢迎" id="vVd-LM-kux">
-                        <barButtonItem key="backBarButtonItem" title="back" id="kln-cv-2vh"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="urlText" destination="ftp-gs-8P3" id="x0Y-go-Xmo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Erd-MA-ddC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="950.625" y="-720.42253521126759"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="FBV-xa-scc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9M3-WB-KtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="helper" id="dhT-IW-xKb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PPm-o7-5BR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -151,9 +105,8 @@
                         <segue destination="3hK-tj-AgW" kind="relationship" relationship="rootViewController" id="RFf-el-vhf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9M3-WB-KtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1172" y="56"/>
+            <point key="canvasLocation" x="488" y="-721"/>
         </scene>
         <!--会淘一下-->
         <scene sceneID="bxM-om-5MP">
@@ -164,11 +117,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Xdj-oO-rhF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vah-hj-Tsp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QPx-bm-hcd">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
@@ -193,7 +146,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_orange.png" width="542" height="102"/>
-        <image name="首页默认.png" width="26" height="25"/>
+        <image name="顶部前进.png" width="43" height="38"/>
+        <image name="顶部搜索.png" width="43" height="38"/>
+        <image name="顶部返回.png" width="43" height="38"/>
+        <image name="顶部首页.png" width="43" height="38"/>
+        <image name="首页默认.png" width="30" height="30"/>
     </resources>
 </document>

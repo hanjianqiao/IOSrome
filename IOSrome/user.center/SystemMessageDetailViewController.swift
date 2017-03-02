@@ -21,13 +21,14 @@ class SystemMessageDetailViewController: UIViewController, UIWebViewDelegate {
          *
          */
         //let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.selfchoose
-        let serverUrlString = AppStatus.sharedInstance.contentServer.systemMessageDetailPageURL
-        let url:URL = URL(string: serverUrlString)!
-        
-        let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
-        webView.loadRequest(request)
+        //webView.loadRequest(request)
         webView.delegate = self
+        webView.isOpaque = false
+        webView.backgroundColor = UIColor.white
+        if let path = Bundle.main.path(forResource: "news", ofType: "html") {
+            webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+        }
     }
 
 

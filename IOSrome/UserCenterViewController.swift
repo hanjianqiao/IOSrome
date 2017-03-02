@@ -21,11 +21,11 @@ class UserCenterViewController: UIViewController {
         if(AppStatus.sharedInstance.isLoggedIn == false){
             logoutButton.isHidden = true
             userNameButton.setTitle("点击登陆会淘账号", for: UIControlState.normal)
-            userIconButton.setImage(UIImage(named: "tiny_user_head.png"), for: UIControlState.normal)
+            userIconButton.setImage(UIImage(named: "unlogged.png"), for: UIControlState.normal)
         }else{
             logoutButton.isHidden = false
             userNameButton.setTitle(AppStatus.sharedInstance.userInfo.userId, for: UIControlState.normal)
-            userIconButton.setImage(UIImage(named: "tiny0.png"), for: UIControlState.normal)
+            userIconButton.setImage(UIImage(named: "Mine_head.png"), for: UIControlState.normal)
         }
         if(notification.userInfo != nil){
             let str = notification.userInfo?[AnyHashable("isThere")] as! Bool

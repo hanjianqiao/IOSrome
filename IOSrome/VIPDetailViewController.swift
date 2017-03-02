@@ -24,16 +24,18 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
         var serverUrlString:String
         print("user level: \(AppStatus.sharedInstance.userInfo.level)")
         if(AppStatus.sharedInstance.userInfo.level == "user"){
-            serverUrlString = AppStatus.sharedInstance.contentServer.vipPageURL1
+            serverUrlString = "vip01"
         }else{
-            serverUrlString = AppStatus.sharedInstance.contentServer.vipPageURL3
+            serverUrlString = "vip03"
         }
-        let url:URL = URL(string: serverUrlString)!
-        
-        let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
-        webView.loadRequest(request)
         webView.delegate = self
+        webView.isOpaque = false
+        webView.backgroundColor = UIColor.white
+        if let path = Bundle.main.path(forResource: serverUrlString, ofType: "html") {
+            webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+        }
+
     }
         
     func buyvip(){
@@ -75,9 +77,9 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
                 OperationQueue.main.addOperation {
                     alertLogging.dismiss(animated: true, completion:{
                         if(json["status"] as! String == "ok"){
-                            let url:URL = URL(string: AppStatus.sharedInstance.contentServer.vipPageURL3)!
-                            let request:URLRequest = URLRequest(url: url)
-                            self.webView.loadRequest(request)
+                            if let path = Bundle.main.path(forResource: "vip03", ofType: "html") {
+                                self.webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+                            }
                             AppStatus.sharedInstance.update()
                         }else{
                             alertLogging.dismiss(animated: true, completion: nil)

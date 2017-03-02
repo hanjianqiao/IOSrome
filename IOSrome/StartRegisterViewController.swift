@@ -40,6 +40,31 @@ class StartRegisterViewController: UIViewController, UITextFieldDelegate {
         text_username.returnKeyType = UIReturnKeyType.done
         text_password.returnKeyType = UIReturnKeyType.done
         text_confirm.returnKeyType = UIReturnKeyType.done
+        
+        text_confirm.frame.size.height = 40
+        text_password.frame.size.height = 40
+        text_username.frame.size.height = 40
+        
+        text_username.leftViewMode = UITextFieldViewMode.always
+        text_password.leftViewMode = UITextFieldViewMode.always
+        text_confirm.leftViewMode = UITextFieldViewMode.always
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: text_username.intrinsicContentSize.height+10, height: text_username.intrinsicContentSize.height))
+        let image = UIImage(named: "手机号.png")
+        imageView.image = image
+        imageView.contentMode = UIViewContentMode.center
+        text_username.leftView = imageView
+        
+        let imageView1 = UIImageView(frame: CGRect(x: 0, y: 0, width: text_password.intrinsicContentSize.height+10, height: text_password.intrinsicContentSize.height))
+        let image1 = UIImage(named: "密码.png")
+        imageView1.image = image1
+        imageView1.contentMode = UIViewContentMode.center
+        text_password.leftView = imageView1
+        
+        let imageView2 = UIImageView(frame: CGRect(x: 0, y: 0, width: text_confirm.intrinsicContentSize.height+10, height: text_confirm.intrinsicContentSize.height))
+        let image2 = UIImage(named: "密码.png")
+        imageView2.image = image2
+        imageView2.contentMode = UIViewContentMode.center
+        text_confirm.leftView = imageView2
     }
 
     override func didReceiveMemoryWarning() {

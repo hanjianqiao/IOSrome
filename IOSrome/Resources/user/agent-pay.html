@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <section class="page">
+
+        <!-- banner/swiper -->
+        <div class="swiper-container">
+            <!-- <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="timg.jpg" alt="">
+                </div>
+            </div> -->
+            <!-- 如果需要分页器-->
+            <!-- div class="swiper-pagination"></div>-->
+        </div>
+
+        <menu>
+            <button class="tab-button active" data-type="1" name="Hello">邀请套餐</button>
+            <button class="tab-button" data-type="2" name="world">续费套餐</button>
+        </menu>
+
+        <div class="page-tab-box">
+
+            <!-- active 决定是否显示 -->
+            <div class="tab-list" style="display: block;">
+
+                <ul>
+                    <li>
+                        <input type="radio" name="type1" checked value="1">
+                        <div class="tab-list-item">
+                            <h3>铜牌代理</h3>
+                            <span>邀请10次</span>
+                            <em>
+                                <i>￥</i>2180
+                            </em>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="type1" value="3">
+                        <div class="tab-list-item">
+                            <h3>银牌代理</h3>
+                            <span>邀请30次</span>
+                            <em>
+                                <i>￥</i>5040
+                            </em>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="type1" value="5">
+                        <div class="tab-list-item">
+                            <h3>金牌代理</h3>
+                            <span>邀请100次</span>
+                            <em>
+                                <i>￥</i>13800
+                            </em>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="type1" value="7">
+                        <div class="tab-list-item">
+                            <h3>铂金代理</h3>
+                            <span>邀请300次</span>
+                            <em>
+                                <i>￥</i>35400
+                            </em>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="type1" value="9">
+                        <div class="tab-list-item">
+                            <h3>钻石代理</h3>
+                            <span>邀请1000次</span>
+                            <em>
+                                <i>￥</i>108000
+                            </em>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="tab-list">
+
+                <ul>
+                    <li>
+                        <input type="radio" name="type2" checked value="2">
+                        <div class="tab-list-item">
+                            <h3>铜牌代理</h3>
+                            <span>续费10次</span>
+                            <em>
+                                <i>￥</i>1280
+                            </em>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="type2" value="4">
+                        <div class="tab-list-item">
+                            <h3>银牌代理</h3>
+                            <span>续费30次</span>
+                            <em>
+                                <i>￥</i>2940
+                            </em>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="type2" value="6">
+                        <div class="tab-list-item">
+                            <h3>金牌代理</h3>
+                            <span>续费100次</span>
+                            <em>
+                                <i>￥</i>7800
+                            </em>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="type2" value="8">
+                        <div class="tab-list-item">
+                            <h3>铂金代理</h3>
+                            <span>续费300次</span>
+                            <em>
+                                <i>￥</i>20400
+                            </em>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="type2" value="10">
+                        <div class="tab-list-item">
+                            <h3>钻石代理</h3>
+                            <span>续费1000次</span>
+                            <em>
+                                <i>￥</i>58000
+                            </em>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <div class="page-form-group">
+            <!-- <button type="button">立即支付</button> -->
+            <input type="button" class="button" id="button-sub" value="立即支付">
+            <small>
+                备注: 如因为限额等问题造成无法购买，请及时联系公众号。
+            </small>
+        </div>
+
+        <!-- 版权说明 -->
+        <footer>
+            <small>(请认准企业认证：青岛会海电子商务有限公司)</small>
+        </footer>
+
+    </section>
+
+    <script>
+
+        // 常量
+        var _ = document;
+
+        // 实现选择器
+        window.$ = function(selector) {
+		    var selectorType = 'querySelectorAll';
+		 
+		    if (selector.indexOf('#') === 0) {
+		        selectorType = 'getElementById';
+		        selector = selector.substr(1, selector.length);
+		    }
+		 
+		    return _[selectorType](selector);
+		};
+
+		window.onload = function(){
+            
+            // console.log($('input[type="radio"]')[0].value)
+
+            // 实现tab's
+            var _tabButton  =   $('menu button'),
+                _tabList    =   $('.tab-list'),
+                _length     =   _tabButton.length;
+
+                console.log('length'+_length);
+            for(var i = 0; i < _length; i++){
+
+               _tabButton[i].index = i;
+
+               _tabButton[i].onclick = function(){
+                  
+                  for(var i = 0; i < _length; i++){
+                     _tabButton[i].className = '';
+                     _tabList[i].style.display = 'none';
+                  
+                  };
+                  
+                  this.className = 'active';
+                  _tabList[this.index].style.display = 'block';
+               
+               };
+            };
+
+            // 实现提交
+                        
+            var _button     =   $('.page-form-group .button')[0];
+
+            _button.onclick = function(){
+
+                var list    =   $('div[style="display: block;"]')[0]
+                console.log(list.name);
+                var _radio  =   list.querySelectorAll('input[type="radio"]:checked')[0],
+                    _name   =   _radio.name,
+                    _value  =   _radio.value;
+
+                //alert(_name);
+                //alert(_value);
+                console.log(_name);
+                console.log(_value);
+                window.location.href = "ios:buycom:"+_value;            
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>小牛快淘</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta content="telephone=no, address=no" name="format-detection">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="agent.css">
+	<!-- rem设置 -->
+	<script type="text/javascript">
+		var scale = 1 / devicePixelRatio;
+		document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+	</script>
+</head>
+
+<body>
+	<!-- 布局 -->
+<section>
+<!-- 余额 -->
+<div class="topBox">
+<div class="topCenter">
+		<div class="agentLeft">
+			<p class="fontA">邀请次数（次）</p>
+			<p class="font5" id="inv"></p>
+		</div>
+
+		<div class="agentRight">
+			<p class="fontA">续费次数（次）</p>
+			<p class="font5" id="ext"></p>
+		</div>
+</div>
+<a href="agent-pay.html">
+	<button class="btnTop">购买套餐</button>
+</a>
+</div>
+
+	<!-- bill  开始 -->
+	<ul class="bill">
+				<li class="bill02">
+					<img src="icon04.png" alt="" class="fl imgAgent">
+					<span class="fl">总邀请（人）</span>
+					<span class="fr font5" id="tot"></span>
+				</li>
+
+				<li class="bill02">
+					<img src="icon04.png" alt="" class="fl imgAgent">
+					<span class="fl">邀请会员（人）</span>
+					<span class="fr font5" id="vip"></span>
+				</li>
+
+				<li class="bill02">
+					<img src="icon04.png" alt="" class="fl imgAgent">
+					<span class="fl">邀请代理（人）</span>
+					<span class="fr font5" id="age"></span>
+				</li>
+
+				<li class="bill02 borderClear">
+					<img src="icon04.png" alt="" class="fl imgAgent">
+					<span class="fl">团队总人数</span>
+					<span class="fr font5" id="tea"></span>
+				</li>
+	</ul>
+</section>
+	<script type="text/javascript" src="3.js"></script>
+</body>
+</html>

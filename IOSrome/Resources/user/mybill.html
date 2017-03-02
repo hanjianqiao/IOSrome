@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>小牛快淘</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta content="telephone=no, address=no" name="format-detection">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="css/mybill.css">
+	<!-- rem设置 -->
+	<script type="text/javascript">
+		var scale = 1 / devicePixelRatio;
+		document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+	</script>
+</head>
+
+<body>
+	<!-- 布局 -->
+<section>
+	<ul class="bill">
+				<li class="bill01">
+					<span class="fl" id="title">邀请奖励</span>
+					<span class="fr" id="value">7.00</span>
+				</li>
+
+				<li class="bill02">
+					<span class="fl">我的层级</span>
+					<span class="fr">
+						<img src="images/icon01.png" alt="" class="icon01 mr02">
+						<i class="mr02" id="level">UD15898656465</i>
+						<a href="#">
+							<img src="images/icon02.png" alt="" class="icon02">
+						</a>
+					</span>
+				</li>
+
+				<li class="bill02">
+					<span class="fl">交易时间</span>
+					<span class="fr" id="start">22:22:22</span>
+				</li>
+
+				<li class="bill02">
+					<span class="fl">到账时间</span>
+					<span class="fr" id="end">22:22:22</span>
+				</li>
+
+				<li class="bill02">
+					<span class="fl">订单号</span>
+					<span class="fr" id="no">1234567812345678</span>
+				</li>
+	</ul>
+</section>
+	<script type="text/javascript" src="js/6.js"></script>
+</body>
+</html>

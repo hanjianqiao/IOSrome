@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>推荐商城</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta content="telephone=no, address=no" name="format-detection">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="shop.css">
+	<!-- rem设置 -->
+	<script type="text/javascript">
+		var scale = 1 / devicePixelRatio;
+		document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+	</script>
+</head>
+
+<body>
+	<!-- 布局 -->
+	<section class="page">
+		<!-- search form 
+		<div class="search">
+			<form action="https://s.m.taobao.com/h5">
+				<input type="search" name="q" placeholder="请输入您要推广的商品或店铺">
+				<button class="btnSearch04">
+							<img src="images/icon/icon-search.png" alt="" style="width: 100%; height:auto">
+				</button>
+			</form>
+		</div>
+		classify nav -->
+		<nav class="flex classify-nav">
+			<a href="?catalog=0" class="active">
+				<span>推荐</span>
+			</a>
+			<a href="?catalog=1">
+				<span>女装</span>
+			</a>
+			<a href="?catalog=2">
+				<span>鞋品</span>
+			</a>
+			<a href="?catalog=3">
+				<span>居家</span>
+			</a>
+			<a href="?catalog=4">
+				<span>儿童</span>
+			</a>
+			<a href="?catalog=5">
+				<span>美食</span>
+			</a>
+			<span></span>
+			<h3>选择分类</h3>
+		</nav>
+
+		<!-- mask -->
+		<div class="mask">
+			<ul class="classify-nav-all">
+				<li><a href="?catalog=6">女装</a></li>
+				<li><a href="?catalog=7">鞋品</a></li>
+				<li><a href="?catalog=8">居家</a></li>
+				<li><a href="?catalog=9">儿童</a></li>
+				<li><a href="?catalog=10">美食</a></li>
+				<li><a href="?catalog=11">男装</a></li>
+				<li><a href="?catalog=12">中老年</a></li>
+				<li><a href="?catalog=13">母婴</a></li>
+				<li><a href="?catalog=14">内衣</a></li>
+				<li><a href="?catalog=15">箱包</a></li>
+				<li><a href="?catalog=16">数码家电</a></li>
+				<li><a href="?catalog=17">配置</a></li>
+				<li><a href="?catalog=18">美妆</a></li>
+				<li><a href="?catalog=19">家纺</a></li>
+				<li><a href="?catalog=20">运动</a></li>
+				<li>
+					<a href="#"></a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- if use'd tab's -->
+		<div class="tab-product-item">
+			<!-- swiper or ad's banner -->
+			<div class="swiper-container">
+                <a href="#">
+                    <img src="swiper-shops-banner.png" alt="">
+                </a>
+			</div>
+
+			<!-- navigator -->
+			<div class="navigator flex">
+				<a href="?catalog=21">
+					每日上新
+				</a>
+				<a href="?catalog=22">
+					本月销榜
+				</a>
+				<a href="?catalog=23">
+					一元疯抢
+				</a>
+				<a href="?catalog=24">
+					50%高佣
+				</a>
+			</div>
+
+			<!-- product -->
+			<div class="product-list">
+			</div>
+		</div>
+	</section>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript" src="lan_0.js"></script>
+	<script>
+		;
+		(function() {
+			'use strict';
+			var $open = $('.classify-nav > span'),
+				$openTips = $('.classify-nav > h3'),
+				$mask = $('.mask');
+			$open.on('click', function() {
+				var $self = $(this);
+
+				if ($self.hasClass('active')) {
+					$self.removeClass('active');
+					$mask.fadeOut();
+					$openTips.hide();
+				} else {
+					$self.addClass('active');
+					$mask.fadeIn();
+					$openTips.show();
+				}
+			})
+		})($);
+	</script>
+</body>
+
+</html>

@@ -11,7 +11,7 @@ import Foundation
 import JavaScriptCore
 
 @objc protocol SwiftJavaScriptDelegate: JSExport{
-    func test0() -> String
+    func notValidUrl()
     func test1(_ para: String ) -> String
     func test2(_ para0:String,_ para1:String) -> String
     func have(_ a: String,_ b:String)->String
@@ -22,6 +22,14 @@ import JavaScriptCore
     func getCookie(_ name:String, _ forUrl:String) -> String
 }
 @objc class SwiftJavaScriptModel: NSObject, SwiftJavaScriptDelegate, URLSessionDelegate{
+    
+    
+    weak var controller: UIViewController?
+    weak var jsContext: JSContext?
+    internal func notValidUrl(){
+        controller?.navigationItem.title = "请在商品页面使用"
+    }
+    
     internal func getCookie(_ name: String, _ forUrl: String) -> String {
         let url = URL(string: forUrl)
         let cookies = HTTPCookieStorage.shared.cookies(for: url!)
@@ -33,10 +41,6 @@ import JavaScriptCore
         return ""
     }
 
-    
-    weak var controller: UIViewController?
-    weak var jsContext: JSContext?
-    
     internal func isVIP() -> Bool {
         if(AppStatus.sharedInstance.isVip){
             return true
@@ -170,12 +174,5 @@ import JavaScriptCore
         NSLog("Function test1 ")
         return "hj"
     }
-    
-    internal func test0() -> String {
-        NSLog("Function test 0")
-        return "Test0"
-    }
-    
-    
 }
 

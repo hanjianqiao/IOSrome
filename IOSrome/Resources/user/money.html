@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>小牛快淘</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta content="telephone=no, address=no" name="format-detection">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="agent.css">
+	<!-- rem设置 -->
+	<script type="text/javascript">
+		var scale = 1 / devicePixelRatio;
+		document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+	</script>
+</head>
+
+<body>
+	<!-- 布局 -->
+<section>
+<!-- 余额 -->
+<div class="topBox">
+<p class="titleStyle">账户余额</p>
+<p class="fontStyle" id="balance">正在获取中...</p>
+<!--
+<a href="ios:charge">
+-->
+<p>
+    <button onclick="location.href = 'iOS:alert:请关注微信公众号“小牛快淘”，并回复“充值”，会有客服人员帮您完成提现';" class="btnTop">微信充值</button>
+    <button onclick="location.href = 'iOS:alert:请关注微信公众号“小牛快淘”，并回复“提现”，会有客服人员帮您完成提现';" class="btnTop">申请提现</button>
+</p>
+</div>
+
+<!-- 我的账单 -->
+<a href="list:hello">
+	<div class="centerBill">
+		<img src="icon05.png" alt="" class="imgAgent02">
+		<span class="fl color01">我的账单</span>
+		<span class="fr">
+		<img src="icon06.png" alt="" class="imgAgent03">
+		</span>
+	</div>
+</a>
+</section>
+	<script type="text/javascript" src="4.js"></script>
+</body>
+</html>

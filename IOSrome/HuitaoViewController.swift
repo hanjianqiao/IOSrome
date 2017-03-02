@@ -20,11 +20,17 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
     @IBAction func copyToken(_ sender: UIBarButtonItem) {
         let function = jsContext?.objectForKeyedSubscript("copyToken")
         let tokenString = function?.call(withArguments: [""])
-        if(tokenString == nil){
-            return
+        if(tokenString == nil || tokenString?.toString() == ""){
+            let alert = UIAlertController (title: "获取失败", message: "没有找到目标"
+                , preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }else{
-            print("Token is:\n\(tokenString!)")
             UIPasteboard.general.string = tokenString?.toString()!
+            let alert = UIAlertController (title: "获取成功", message: UIPasteboard.general.string
+                , preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     override func viewDidLoad() {
@@ -44,12 +50,14 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
          *
          */
         
-        
-        let url:URL = URL(string: AppStatus.sharedInstance.contentServer.kuaitaoPageURL)!
-        let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
+        //webView.loadRequest(request)
         webView.delegate = self
-        webView.loadRequest(request)
+        webView.isOpaque = false
+        webView.backgroundColor = UIColor.white
+        if let path = Bundle.main.path(forResource: "kuaitao", ofType: "html") {
+            webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+        }
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

@@ -19,7 +19,7 @@ function setLanJPanel(text){
 }
 
 function isDetailPage(url){
-    return url.indexOf("h5.m.taobao.com/awp/core/detail.htm") > 0 || url.indexOf("detail.m.tmall.com/item.htm") > 0;
+    return url.indexOf("h5.m.taobao.com/awp/core/detail.htm") > 0 || url.indexOf("detail.m.tmall.com/item.htm") > 0 || url.indexOf("detail.m.liangxinyao.com/item.htm") > 0;
 }
 
 // general brokerage
@@ -247,6 +247,7 @@ function callBackShowAlert(htmlString, url){
 function doWork(srcUrl, showit){
     showIt = showit;
     if(!isDetailPage(srcUrl)){
+        LanJsBridge.notValidUrl();
         return 'Invaliad';
     }
     goodid = getGoodID(srcUrl);

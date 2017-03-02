@@ -11,6 +11,7 @@ import JavaScriptCore
 
 class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  {
 
+    @IBOutlet weak var bt_kuaitaoyixia: UIButton!
     @IBOutlet weak var webView: UIWebView!
     var needReload:Bool = false
     var mainUrl:String = AppStatus.sharedInstance.contentServer.mainPageURL
@@ -23,14 +24,19 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             selector: #selector(self.loadPage),
             name: NSNotification.Name(rawValue: "noti_load_page"),
             object: nil)
-        
-        let url:URL = URL(string: mainUrl)!
-        
-        let request:URLRequest = URLRequest(url: url)
+//        
+//        let url:URL = URL(string: mainUrl)!
+//        
+//        let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
         webView.delegate = self
         needReload = true
-        webView.loadRequest(request)
+//        webView.loadRequest(request)
+        webView.isOpaque = false
+        webView.backgroundColor = UIColor.white
+        if let path = Bundle.main.path(forResource: "index", ofType: "html") {
+            webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+        }
     }
     
     /**
@@ -44,10 +50,9 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         webView.loadRequest(request)
     }
     @IBAction func taobaoButton(_ sender: UIButton) {
-        //let url:URL = URL(string: AppStatus.sharedInstance.contentServer.mainPageURL)!
-        let url:URL = URL(string: mainUrl)!
-        let request:URLRequest = URLRequest(url: url)
-        webView.loadRequest(request)
+        if let path = Bundle.main.path(forResource: "index", ofType: "html") {
+            webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+        }
     }
 
     @IBAction func goBack(_ sender: UIButton) {
@@ -92,7 +97,6 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     func webViewDidStartLoad(_ webView: UIWebView) {
-        print(webView.request?.url?.absoluteString ?? "No url")
     }
     
     /**

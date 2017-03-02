@@ -19,13 +19,14 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let serverUrlString = AppStatus.sharedInstance.contentServer.detailShopPageURL + "?id=" + goodID
-        let url:URL = URL(string: serverUrlString)!
-        
-        let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
-        webView.loadRequest(request)
+        //webView.loadRequest(request)
         webView.delegate = self
+        webView.isOpaque = false
+        webView.backgroundColor = UIColor.white
+        if let path = Bundle.main.path(forResource: "detail_shop", ofType: "html") {
+            webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +36,10 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
     
     var taoDetail:String = ""
     func showTaobaoDetail(){
-        NotificationCenter.default.post(name: Notification.Name("noti_load_page"), object: self, userInfo: ["url":taoDetail])
+        //NotificationCenter.default.post(name: Notification.Name("noti_load_page"), object: self, userInfo: ["url":taoDetail])
+        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "taodetail"))! as! TaobaoDetailViewController
+        vc.address = taoDetail
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     var targetUrl:String = ""
     func showHuitao(){
@@ -90,7 +94,7 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
             (context, exception) in
             print("exception: ", exception ?? "No")
         }
-        webView.stringByEvaluatingJavaScript(from: "doWork()")
+        webView.stringByEvaluatingJavaScript(from: "doWork('"+goodID+"')")
     }
     
 

@@ -21,8 +21,18 @@ class huitaoShopViewController: UIViewController, UIWebViewDelegate {
     @IBAction func copyToken(_ sender: UIBarButtonItem) {
         let function = jsContext?.objectForKeyedSubscript("copyToken")
         let tokenString = function?.call(withArguments: [""])
-        print("Token is:\n\(tokenString!)")
-        UIPasteboard.general.string = tokenString?.toString()!
+        if(tokenString == nil || tokenString?.toString() == ""){
+            let alert = UIAlertController (title: "获取失败", message: "没有找到目标"
+                , preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            UIPasteboard.general.string = tokenString?.toString()!
+            let alert = UIAlertController (title: "获取成功", message: UIPasteboard.general.string
+                , preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +75,8 @@ class huitaoShopViewController: UIViewController, UIWebViewDelegate {
             webView.stringByEvaluatingJavaScript(from: "var element = document.createElement('meta');  element.name = \"viewport\";  element.content = \"width=device-width,initial-scale=0.6,minimum-scale=0.6,maximum-scale=0.6,user-scalable=0.6\"; var head = document.getElementsByTagName('head')[0]; head.appendChild(element);")
         }
         
-        let function = jsContext?.objectForKeyedSubscript("doWork")
-        _ = function?.call(withArguments: [targetUrl ?? "", AppStatus.sharedInstance.isVip])
+        //let function = jsContext?.objectForKeyedSubscript("doWork")
+        //_ = function?.call(withArguments: [targetUrl ?? "", AppStatus.sharedInstance.isVip])
         print("loading finish...")
     }
     

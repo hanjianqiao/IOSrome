@@ -24,16 +24,18 @@ class InvitationViewController: UIViewController, UIWebViewDelegate {
         var serverUrlString:String
         print("user level: \(AppStatus.sharedInstance.userInfo.level)")
         if(AppStatus.sharedInstance.userInfo.level == "user" || AppStatus.sharedInstance.userInfo.level == "vip"){
-            serverUrlString = AppStatus.sharedInstance.contentServer.agentPageURL1
+            serverUrlString = "agent-before"
         }else{
-            serverUrlString = AppStatus.sharedInstance.contentServer.agentPageURL2
+            serverUrlString = "agent"
         }
-        let url:URL = URL(string: serverUrlString)!
-        
-        let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
-        webView.loadRequest(request)
+        //webView.loadRequest(request)
         webView.delegate = self
+        webView.isOpaque = false
+        webView.backgroundColor = UIColor.white
+        if let path = Bundle.main.path(forResource: serverUrlString, ofType: "html") {
+            webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+        }
     }
     
     var id:String = ""
@@ -85,10 +87,10 @@ class InvitationViewController: UIViewController, UIWebViewDelegate {
                             let alert = UIAlertController (title: "套餐购买成功", message:  json["message"] as? String
                                 , preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in
-                                let url:URL = URL(string: AppStatus.sharedInstance.contentServer.agentPageURL2)!
-                                let request:URLRequest = URLRequest(url: url)
-                                AppStatus.sharedInstance.update()
-                                self.webView.loadRequest(request)}))
+                                if let path = Bundle.main.path(forResource: "agent", ofType: "html") {
+                                    self.webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+                                }
+                                AppStatus.sharedInstance.update()}))
                             self.present(alert, animated: true, completion: nil)
                         }else{
                             let alert = UIAlertController (title: "购买请求失败", message:  json["message"] as? String

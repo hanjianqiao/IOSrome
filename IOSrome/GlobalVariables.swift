@@ -90,7 +90,7 @@ class AppStatus {
         contentServer = ContentServer()
         vipInfo = VipInfo()
         userInfo = UserInfo()
-        init_db()
+        //init_db()
     }
     func logout(){
         isLoggedIn = false

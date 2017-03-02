@@ -21,13 +21,14 @@ class SelfDetailViewController: UIViewController, UIWebViewDelegate {
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         //self.navigationController?.navigationBar.shadowImage = UIImage()
         // Do any additional setup after loading the view.
-        let serverUrlString = AppStatus.sharedInstance.contentServer.detailSelfPageURL + "?id=" + goodID
-        let url:URL = URL(string: serverUrlString)!
-        
-        let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
-        webView.loadRequest(request)
+        //webView.loadRequest(request)
         webView.delegate = self
+        webView.isOpaque = false
+        webView.backgroundColor = UIColor.white
+        if let path = Bundle.main.path(forResource: "detail_self", ofType: "html") {
+            webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+        }
 
     }
 
@@ -38,7 +39,11 @@ class SelfDetailViewController: UIViewController, UIWebViewDelegate {
     
     var taoDetail:String = ""
     func showTaobaoDetail(){
-        NotificationCenter.default.post(name: Notification.Name("noti_load_page"), object: self, userInfo: ["url":taoDetail])
+        //NotificationCenter.default.post(name: Notification.Name("noti_load_page"), object: self, userInfo: ["url":taoDetail])
+        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "taodetail"))! as! TaobaoDetailViewController2
+        vc.address = taoDetail
+        self.navigationController?.pushViewController(vc, animated: true)
+
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
@@ -83,7 +88,7 @@ class SelfDetailViewController: UIViewController, UIWebViewDelegate {
             (context, exception) in
             print("exception: ", exception ?? "No")
         }
-        webView.stringByEvaluatingJavaScript(from: "doWork()")
+        webView.stringByEvaluatingJavaScript(from: "doWork('?id="+goodID+"')")
     }
 
     /*

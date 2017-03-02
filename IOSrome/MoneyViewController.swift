@@ -12,16 +12,22 @@ import JavaScriptCore
 class MoneyViewController: UIViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let url:URL = URL(string: AppStatus.sharedInstance.contentServer.money)!
+        //let url:URL = URL(string: AppStatus.sharedInstance.contentServer.money)!
         
-        let request:URLRequest = URLRequest(url: url)
+        //let request:URLRequest = URLRequest(url: url)
         webView.scalesPageToFit = true
-        webView.loadRequest(request)
+        //webView.loadRequest(request)
         webView.delegate = self
+        webView.isOpaque = false
+        webView.backgroundColor = UIColor.white
+        if let path = Bundle.main.path(forResource: "money", ofType: "html") {
+            webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+        }
     }
     var id:String = ""
     func showList(){
@@ -34,7 +40,12 @@ class MoneyViewController: UIViewController, UIWebViewDelegate {
             let url:String = (request.url?.absoluteString)!
             let para:[String] = url.components(separatedBy: ":")
             if(para[1] == "charge"){
-                charge()
+                //charge()
+            }else if(para[1] == "alert"){
+                let alert = UIAlertController (title: para[2].removingPercentEncoding, message: ""
+                    , preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
             return false
         }else if(request.url?.absoluteString.hasPrefix("list"))!{
@@ -93,7 +104,7 @@ class MoneyViewController: UIViewController, UIWebViewDelegate {
         print(sign)
         return sign
     }
-
+/*
     let serverUrlString = AppStatus.sharedInstance.userServer.charge_url
     func charge() {
         print("Buy vip...")
@@ -177,6 +188,7 @@ class MoneyViewController: UIViewController, UIWebViewDelegate {
             task.resume()
         }
     }
+    */
     /*
     // MARK: - Navigation
 
