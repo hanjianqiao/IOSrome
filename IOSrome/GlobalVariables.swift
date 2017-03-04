@@ -297,29 +297,10 @@ class UserServer{
     let up2vip_url:String = "https://user.hanjianqiao.cn:10000/up2vip"
     let extendvip_url:String = "https://user.hanjianqiao.cn:10000/extendvip"
     let extendagent_url:String = "https://user.hanjianqiao.cn:10000/extendagent"
-    let newMessageCheck_url:String = "https://user.hanjianqiao.cn:30000/check"
+    let newMessageCheck_url:String = "http://user.hanjianqiao.cn:30000/check"
 }
 
 class ContentServer{
     let versionCheckURL:String = "http://user.hanjianqiao.cn:13420/check"
-    let mainPageURL:String = "https://shop.hanjianqiao.cn:7741/A/index.html"
-    let kuaitaoPageURL:String = "https://shop.hanjianqiao.cn:7741/A/kuaitao.html"
-    let highBrokerPageURL:String = "https://shop.hanjianqiao.cn:7741/A/shop.html?catalog=0"
-    let selfServiceMainPageURL:String = "https://shop.hanjianqiao.cn:7741/A/self.html"
-    let selfServicePageURL:String = "https://shop.hanjianqiao.cn:7741/A/search.html"
-    let detailShopPageURL:String = "https://shop.hanjianqiao.cn:7741/A/detail_shop.html"
-    let detailSelfPageURL:String = "https://shop.hanjianqiao.cn:7741/A/detail_self.html"
     
-    let money:String = "https://user.hanjianqiao.cn:10000/A/user/money.html"
-    let vipPageURL1:String = "https://user.hanjianqiao.cn:10000/A/user/vip01.html"
-    let vipPageURL2:String = "https://user.hanjianqiao.cn:10000/A/user/vip02.html"
-    let vipPageURL3:String = "https://user.hanjianqiao.cn:10000/A/user/vip03.html"
-    let agentPageURL1:String = "https://user.hanjianqiao.cn:10000/A/user/agent-before.html"
-    let agentPageURL2:String = "https://user.hanjianqiao.cn:10000/A/user/agent.html"
-    let agentPageURL3:String = "https://user.hanjianqiao.cn:10000/A/user/mybill-list.html"
-    let agentPageURL4:String = "https://user.hanjianqiao.cn:10000/A/user/mybill.html"
-    let tutorialPageURL:String = "https://user.hanjianqiao.cn:10000/A/user/newcomer.html"
-    let systemMessagePageURL:String = "https://user.hanjianqiao.cn:10000/A/user/message.html"
-    let systemMessageDetailPageURL:String = "https://user.hanjianqiao.cn:10000/A/user/news.html"
-    let aboutUsPageURL:String = "https://user.hanjianqiao.cn:10000/A/user/about.html"
 }

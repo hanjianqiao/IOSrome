@@ -15,7 +15,7 @@ class huitaoShopViewController: UIViewController, UIWebViewDelegate {
     var jsString: String?
     var targetUrl: String?
     var jsContext: JSContext?
-    var url:String = AppStatus.sharedInstance.contentServer.kuaitaoPageURL
+    var url:String = ""
     
     
     @IBAction func copyToken(_ sender: UIBarButtonItem) {

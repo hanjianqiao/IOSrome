@@ -1,5 +1,6 @@
 
 var target;
+var searchKey;
 
 var str0 = '<a href="ios:showDetail:'
 var str1 = '"><img src="'
@@ -29,18 +30,19 @@ function callBack(html, url){
 		    item.innerHTML = str0 + jo.good_id + str1 + jo.image + str2 + jo. good_id + str3 + jo.title + str4 + jo.price + str5 + jo.sell + str6;
 		    target.appendChild(item);
 		}
-	}else{
-		var moreStr = '找不到商品，请换一个关键词';
-		var item = document.createElement('p');
-		var att = document.createAttribute('style');
-		att.value = 'font-size:0.3rem; line-height: 0.9rem; color:#666; text-align:center';
-		item.setAttributeNode(att);
-		item.innerHTML = moreStr;
-		target.appendChild(item);
-	}
+        document.getElementById('pull2up').innerHTML = '点击加载更多'
+    }else{
+        document.getElementById('pull2up').innerHTML = '没有更多的商品<br>都不满意？请关注微信公众号“小牛快淘”，并回复您的商品需求，3小时内极速上架！'
+        document.getElementById('pull2up').onclick = ''
+        var item = document.createElement('p');
+        item.innerHTML = '';
+        target.appendChild(item);
+        //$(".btn03").removeClass('disNone');
+    }
 }
 
 function doWork(q){
+    searchKey = q;
 	target = document.getElementsByClassName('product-list')[0];
 	LanJsBridge.getDataFromUrl("http://user.hanjianqiao.cn:7008/search"+q, "callBack")
 }

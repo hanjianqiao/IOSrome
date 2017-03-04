@@ -151,9 +151,10 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
                             let alert = UIAlertController (title: "续费成功", message:  json["message"] as? String
                                 , preferredStyle: UIAlertControllerStyle.alert)
                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in
-                                let url:URL = URL(string: AppStatus.sharedInstance.contentServer.vipPageURL3)!
-                                let request:URLRequest = URLRequest(url: url)
-                                self.webView.loadRequest(request)}))
+                                if let path = Bundle.main.path(forResource: "vip03", ofType: "html") {
+                                    self.webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+                                }
+                            }))
                             self.present(alert, animated: true, completion: nil)
                         }else{
                             let alert = UIAlertController (title: "购买请求失败", message:  json["message"] as? String

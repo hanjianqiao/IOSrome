@@ -14,7 +14,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
     @IBOutlet weak var bt_kuaitaoyixia: UIButton!
     @IBOutlet weak var webView: UIWebView!
     var needReload:Bool = false
-    var mainUrl:String = AppStatus.sharedInstance.contentServer.mainPageURL
+    var mainUrl:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

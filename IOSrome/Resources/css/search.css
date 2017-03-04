@@ -26,4 +26,5 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
     color: #fff;
     margin: .1rem auto}
 .disBlock {display: block}
+.disNone {display: none}
 .form-group {text-align: center; font-size: 0.34rem;width: 78%;margin: .6rem auto; color:#fe9901;}

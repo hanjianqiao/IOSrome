@@ -88,16 +88,16 @@
 
 			<!-- navigator -->
 			<div class="navigator flex">
-				<a href="?catalog=21">
+				<a href="?activity=1">
 					每日上新
 				</a>
-				<a href="?catalog=22">
+				<a href="?activity=2">
 					本月销榜
 				</a>
-				<a href="?catalog=23">
+				<a href="?activity=3">
 					一元疯抢
 				</a>
-				<a href="?catalog=24">
+				<a href="?activity=4">
 					50%高佣
 				</a>
 			</div>
@@ -105,23 +105,11 @@
 			<!-- product -->
 			<div class="product-list">
 			</div>
-            <p style="font-size:0.3rem;  line-height: 0.7rem; color:#666; text-align:center">
-            下拉加载更多
+            <p style="font-size:0.3rem;  line-height: 0.7rem; color:#666; text-align:center" id="pull2up" onclick="loadMore();return false;">
+            没有更多的商品
             </p>
-            <button class="btn03">极速商品定制</button>
 		</div>
 	</section>
-    <!-- 弹窗 -->
-    <div class="alert">
-        <div class="alert01">
-            <div class="form-group" style="font-size:0.38rem;line-height:0.38rem">
-                <span style="vertical-align: bottom;">提示</span>
-                <img src="tishi.png" alt="" style="width:0.38rem; height:0.38rem;vertical-align: bottom;">
-                    </div>
-            <div class="form-group" style="text-align:justify">都不满意？请关注微信公众号“小牛快淘”，并回复您的商品需求，3小时内极速上架！</div>
-            <button class="btn04">确&nbsp;定</button>
-        </div>
-    </div>
     </body>
 <script src="jquery.min.js"></script>
 <script>
@@ -147,17 +135,19 @@
      })($);
     </script>
 
-<script>
-    $(function() {
-      $(".btn03").on('click', function(event) {
-                     $(".alert").addClass('disBlock');
-                     });
-      $(".btn04").on('click', function(event) {
-                     $(".alert").removeClass('disBlock');
-                     });
-      })
-    </script>
 
+<script>
+    var nowLoad = 0;
+    function loadMore(){
+        var limit = 20;
+        nowLoad = nowLoad+limit;
+        var catalog = get('catalog');
+        if(catalog == null) catalog = '0';
+        var activity = get('activity');
+        if(activity == null) activity = '0';
+        LanJsBridge.getDataFromUrl("http://user.hanjianqiao.cn:7010/search?catalog="+catalog+"&activity="+activity+"&offset="+nowLoad+"&limit="+limit, "callBack")
+    }
+</script>
 <script type="text/javascript" src="lan_0.js"></script>
 
 </html>

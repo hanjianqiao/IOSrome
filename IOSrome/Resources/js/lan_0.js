@@ -33,14 +33,13 @@ function callBack(html, url){
 		    item.innerHTML = str0 + jo.good_id + str1 + jo.off + str2 + jo. rate + str3 + jo.image + str4 + jo.title + str5 + jo.price + str6 + jo.sell + str7;
 		    target.appendChild(item);
 		}
-	}else{
-		var moreStr = '当前分类没有商品';
-		var item = document.createElement('p');
-		var att = document.createAttribute('style');
-		att.value = 'font-size:0.3rem; line-height: 0.9rem; color:#666; text-align:center';
-		item.setAttributeNode(att);
-		item.innerHTML = moreStr;
-		target.appendChild(item);
+        document.getElementById('pull2up').innerHTML = '点击加载更多'
+    }else{
+        document.getElementById('pull2up').innerHTML = '没有更多的商品<br>都不满意？请关注微信公众号“小牛快淘”，并回复您的商品需求，3小时内极速上架！'
+        document.getElementById('pull2up').onclick = ''
+        var item = document.createElement('p');
+        item.innerHTML = '';
+        target.appendChild(item);
 	}
 }
 
@@ -48,5 +47,7 @@ function doWork(){
 	//LanJsBridge.getDataFromUrl("https://shop.hanjianqiao.cn:30002/search?key="+get('catalog'), "callBack")
     var catalog = get('catalog');
     if(catalog == null) catalog = '0';
-	LanJsBridge.getDataFromUrl("http://user.hanjianqiao.cn:7010/search?catalog="+catalog, "callBack")
+    var activity = get('activity');
+    if(activity == null) activity = '0';
+	LanJsBridge.getDataFromUrl("http://user.hanjianqiao.cn:7010/search?catalog="+catalog+"&activity="+activity, "callBack")
 }

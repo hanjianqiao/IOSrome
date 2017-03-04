@@ -15,12 +15,12 @@ class InvitaListDetailViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let serverUrlString = AppStatus.sharedInstance.contentServer.agentPageURL4
-        let url:URL = URL(string: serverUrlString)!
-        let request:URLRequest = URLRequest(url: url)
-        webView.scalesPageToFit = true
-        webView.loadRequest(request)
-        webView.delegate = self
+//        let serverUrlString = AppStatus.sharedInstance.contentServer.agentPageURL4
+//        let url:URL = URL(string: serverUrlString)!
+//        let request:URLRequest = URLRequest(url: url)
+//        webView.scalesPageToFit = true
+//        webView.loadRequest(request)
+//        webView.delegate = self
     }
     
     var id:String = ""

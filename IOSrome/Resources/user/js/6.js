@@ -9,5 +9,5 @@ function callBack(html, url){
     document.getElementById("no").innerHTML=ja.no;
 }
 function updateDisplay(userId, password, messageId){
-	LanJsBridge.getDataFromUrl("https://user.hanjianqiao.cn:40000/detail?id="+messageId+"&userid="+userId+"&password="+password, "callBack")
+	LanJsBridge.getDataFromUrl("http://user.hanjianqiao.cn:40000/detail?id="+messageId+"&userid="+userId+"&password="+password, "callBack")
 }

@@ -32,6 +32,7 @@
 		C44564511E28A541000E5F36 /* huitaoShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44564501E28A541000E5F36 /* huitaoShopViewController.swift */; };
 		C4460E451E2954DD0000F2C3 /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4460E441E2954DD0000F2C3 /* MoneyViewController.swift */; };
 		C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = C44630B21DEDD96E0052E83F /* OCFunction.m */; };
+		C44DFE761E6A6E3B0008BA15 /* youhui.png in Resources */ = {isa = PBXBuildFile; fileRef = C44DFE751E6A6E3B0008BA15 /* youhui.png */; };
 		C45F7A881E68785700450551 /* tishi.png in Resources */ = {isa = PBXBuildFile; fileRef = C45F7A871E68785700450551 /* tishi.png */; };
 		C45F7A8E1E6885F500450551 /* ShopTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F7A8D1E6885F500450551 /* ShopTutorialViewController.swift */; };
 		C45F7A901E68875000450551 /* TaoTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45F7A8F1E68875000450551 /* TaoTutorialViewController.swift */; };
@@ -284,6 +285,7 @@
 		C44630B11DEDD96E0052E83F /* IOSrome-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSrome-Bridging-Header.h"; sourceTree = "<group>"; };
 		C44630B21DEDD96E0052E83F /* OCFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCFunction.m; sourceTree = "<group>"; };
 		C44630B41DEDDA840052E83F /* CustomeObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomeObject.h; sourceTree = "<group>"; };
+		C44DFE751E6A6E3B0008BA15 /* youhui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youhui.png; sourceTree = "<group>"; };
 		C45F7A871E68785700450551 /* tishi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tishi.png; sourceTree = "<group>"; };
 		C45F7A8D1E6885F500450551 /* ShopTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTutorialViewController.swift; sourceTree = "<group>"; };
 		C45F7A8F1E68875000450551 /* TaoTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaoTutorialViewController.swift; sourceTree = "<group>"; };
@@ -754,7 +756,6 @@
 				C4C6543D1E62C19900F240DD /* Recommend */,
 				C4C6543C1E62BCCF00F240DD /* index */,
 				C4C653E91E62B98400F240DD /* images */,
-				C4C654061E62B98400F240DD /* js */,
 			);
 			name = htmls;
 			sourceTree = "<group>";
@@ -762,6 +763,7 @@
 		C4C653E91E62B98400F240DD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C44DFE751E6A6E3B0008BA15 /* youhui.png */,
 				C45F7A871E68785700450551 /* tishi.png */,
 				C4C653EB1E62B98400F240DD /* fuzhi.png */,
 				C4C653EC1E62B98400F240DD /* gray.png */,
@@ -796,14 +798,6 @@
 				C4C653F41E62B98400F240DD /* icon-search.png */,
 			);
 			path = icon;
-			sourceTree = "<group>";
-		};
-		C4C654061E62B98400F240DD /* js */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = js;
-			path = Resources/js;
 			sourceTree = "<group>";
 		};
 		C4C6543C1E62BCCF00F240DD /* index */ = {
@@ -1182,6 +1176,7 @@
 				C4C6541C1E62B98400F240DD /* icon-coupon.png in Resources */,
 				C4C654111E62B98400F240DD /* guide.css in Resources */,
 				C4C654DF1E6468E600F240DD /* vip03.css in Resources */,
+				C44DFE761E6A6E3B0008BA15 /* youhui.png in Resources */,
 				C4BB41591DFD832A00B01055 /* lanjs_s.js in Resources */,
 				C4C655861E65BF1800F240DD /* 搜索@3x.png in Resources */,
 				C4C6556E1E65BF1800F240DD /* VIP@3x.png in Resources */,

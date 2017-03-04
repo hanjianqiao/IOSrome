@@ -57,7 +57,18 @@ class SelfViewController: UIViewController, UIWebViewDelegate {
             }
             NSLog("IOS call")
             return false
+        } else if(request.url?.absoluteString.hasPrefix("lanalert"))!{
+            let url:String = (request.url?.absoluteString)!
+            let range = url.range(of: ":")
+            let startIndex = url.index(after: (range?.lowerBound)!)
+            let method:String = (request.url?.absoluteString.substring(from: startIndex))!
+            let alert = UIAlertController (title: "提示", message: method.removingPercentEncoding
+                , preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
         }
+
         print(request.url ?? "Error request url");
         return true
         
