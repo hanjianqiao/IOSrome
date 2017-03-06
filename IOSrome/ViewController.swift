@@ -165,11 +165,18 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             let range = url.range(of: ":")
             let startIndex = url.index(after: (range?.lowerBound)!)
             let method:String = (request.url?.absoluteString.substring(from: startIndex))!
-            let parameters:[String] = method.components(separatedBy: ":")
-            let selector:Selector = NSSelectorFromString(parameters[0])
-            if self.responds(to: selector){
-                let control: UIControl = UIControl()
-                control.sendAction(selector, to: self, for: nil)
+//            let parameters:[String] = method.components(separatedBy: ":")
+//            let selector:Selector = NSSelectorFromString(parameters[0])
+//            if self.responds(to: selector){
+//                let control: UIControl = UIControl()
+//                control.sendAction(selector, to: self, for: nil)
+//            }
+            let targetStr = method.substring(from:(method.range(of: "?q=")?.upperBound)!)
+            if((targetStr.removingPercentEncoding?.lowercased().hasPrefix("http://"))! || (targetStr.removingPercentEncoding?.lowercased().hasPrefix("https://"))!){
+                //print(targetStr.removingPercentEncoding!)
+                self.webView.loadRequest(URLRequest(url:URL(string:targetStr.removingPercentEncoding!)!))
+            }else{
+                self.webView.loadRequest(URLRequest(url:URL(string:"https://s.m.taobao.com/h5"+method)!))
             }
             return false
         }

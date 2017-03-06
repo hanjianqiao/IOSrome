@@ -22,7 +22,7 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
          */
         //let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.selfchoose
         var serverUrlString:String
-        print("user level: \(AppStatus.sharedInstance.userInfo.level)")
+        //print("user level: \(AppStatus.sharedInstance.userInfo.level)")
         if(AppStatus.sharedInstance.userInfo.level == "user"){
             serverUrlString = "vip01"
         }else{
@@ -67,12 +67,12 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
                 }
                 //print(data)
                 let responseString = String(data: data, encoding: .utf8)!
-                print("responseString = \(responseString)")
+                //print("responseString = \(responseString)")
                 
                 let json = JsonTools.convertToDictionary(text: responseString)!
                 
-                print(json["status"] as! String == "failed")
-                print(json["message"]!)
+                //print(json["status"] as! String == "failed")
+                //print(json["message"]!)
                 
                 OperationQueue.main.addOperation {
                     alertLogging.dismiss(animated: true, completion:{
@@ -138,12 +138,12 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
                 }
                 //print(data)
                 let responseString = String(data: data, encoding: .utf8)!
-                print("responseString = \(responseString)")
+                //print("responseString = \(responseString)")
                 
                 let json = JsonTools.convertToDictionary(text: responseString)!
                 
-                print(json["status"] as! String == "failed")
-                print(json["message"]!)
+                //print(json["status"] as! String == "failed")
+                //print(json["message"]!)
                 
                 OperationQueue.main.addOperation {
                     alertLogging.dismiss(animated: true, completion:{

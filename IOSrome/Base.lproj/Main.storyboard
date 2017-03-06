@@ -76,7 +76,6 @@
         <!--报表-->
         <scene sceneID="gsl-b2-dvH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fPX-Ga-eIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="RecommendMall" title="报表" id="f5s-oG-ADr" customClass="ReportNavigationController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" enabled="NO" title="报表" id="zrf-Hn-O0c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gds-RA-Fbb">
@@ -84,6 +83,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fPX-Ga-eIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1071" y="1326"/>
         </scene>
@@ -96,11 +96,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="selectedImageTintColor" red="0.98775501939999999" green="0.61980772510000004" blue="0.051849660339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                            <color key="value" red="0.97642141580581665" green="0.78811252117156982" blue="0.19941049814224243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="faB-lo-SXx" kind="relationship" relationship="viewControllers" id="59o-0G-m5t"/>
                         <segue destination="24E-rb-Z1K" kind="relationship" relationship="viewControllers" id="HOQ-PP-X0M"/>

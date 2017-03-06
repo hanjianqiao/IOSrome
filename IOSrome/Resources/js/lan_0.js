@@ -20,6 +20,16 @@ function get(name){
     }
 }
 
+function lastStage0(para){
+    sel = document.getElementById('pull2up');
+    sel.innerHTML = '点击加载更多'
+}
+function lastStage1(para){
+    sel = document.getElementById('pull2up');
+    sel.innerHTML = '没有更多的商品<br>都不满意？请关注微信公众号“小牛快淘”，并回复您的商品需求，3小时内极速上架！'
+    sel.onclick = ''
+}
+
 function callBack(html, url){
 	var obj = eval('('+html+')');
     var ja = obj.message;
@@ -32,15 +42,12 @@ function callBack(html, url){
 		    item.setAttributeNode(att);
 		    item.innerHTML = str0 + jo.good_id + str1 + jo.off + str2 + jo. rate + str3 + jo.image + str4 + jo.title + str5 + jo.price + str6 + jo.sell + str7;
 		    target.appendChild(item);
-		}
-        document.getElementById('pull2up').innerHTML = '点击加载更多'
+        }
+        LanJsBridge.callInMain("lastStage0", "");
     }else{
-        document.getElementById('pull2up').innerHTML = '没有更多的商品<br>都不满意？请关注微信公众号“小牛快淘”，并回复您的商品需求，3小时内极速上架！'
-        document.getElementById('pull2up').onclick = ''
-        var item = document.createElement('p');
-        item.innerHTML = '';
-        target.appendChild(item);
-	}
+        LanJsBridge.callInMain("lastStage1", "");
+
+    }
 }
 
 function doWork(){

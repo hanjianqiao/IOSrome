@@ -20,8 +20,16 @@ import JavaScriptCore
     func setClipBoard(_ string: String)
     func isVIP() -> Bool
     func getCookie(_ name:String, _ forUrl:String) -> String
+    func callInMain(_ function:String, _ para:String)
 }
 @objc class SwiftJavaScriptModel: NSObject, SwiftJavaScriptDelegate, URLSessionDelegate{
+    internal func callInMain(_ function: String, _ para: String) {
+        OperationQueue.main.addOperation {
+            let function = self.jsContext?.objectForKeyedSubscript(function)
+            _ = function?.call(withArguments: [para])
+        }
+    }
+
     
     
     weak var controller: UIViewController?

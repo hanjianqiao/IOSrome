@@ -71,6 +71,8 @@ class SellViewController: UIViewController, UIWebViewDelegate {
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return false
+        }else if(request.url?.absoluteString.hasPrefix("load"))!{
+            webView.stringByEvaluatingJavaScript(from: "doWork()")
         }
 
         return true
