@@ -78,6 +78,16 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
             targetUrl = dataStr;
             showHuitao()
             return false
+        } else if(request.url?.absoluteString.hasPrefix("lanalert"))!{
+            let url:String = (request.url?.absoluteString)!
+            let range = url.range(of: ":")
+            let startIndex = url.index(after: (range?.lowerBound)!)
+            let method:String = (request.url?.absoluteString.substring(from: startIndex))!
+            let alert = UIAlertController (title: "提示", message: method.removingPercentEncoding
+                , preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
         }
         return true
         
@@ -94,7 +104,8 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
             (context, exception) in
             print("exception: ", exception ?? "No")
         }
-        webView.stringByEvaluatingJavaScript(from: "doWork('"+goodID+"')")
+        let function = jsContext?.objectForKeyedSubscript("doWork")
+        _ = function?.call(withArguments: [goodID, AppStatus.sharedInstance.isVip])
     }
     
 

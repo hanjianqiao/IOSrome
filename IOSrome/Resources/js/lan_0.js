@@ -1,4 +1,5 @@
 var target = document.getElementsByClassName('product-list')[0];
+var shouIt = false;
 
 var str0 = '<a href="ios:showDetail:'
 var str1 = '"><i>领券<br>减'
@@ -40,7 +41,7 @@ function callBack(html, url){
 		    var att = document.createAttribute('class');
 		    att.value = 'product-item';
 		    item.setAttributeNode(att);
-		    item.innerHTML = str0 + jo.good_id + str1 + jo.off + str2 + jo. rate + str3 + jo.image + str4 + jo.title + str5 + jo.price + str6 + jo.sell + str7;
+            item.innerHTML = str0 + jo.good_id + str1 + jo.off + str2 + (showIt?jo. rate:'?') + str3 + jo.image + str4 + jo.title + str5 + jo.price + str6 + jo.sell + str7;
 		    target.appendChild(item);
         }
         LanJsBridge.callInMain("lastStage0", "");
@@ -50,7 +51,8 @@ function callBack(html, url){
     }
 }
 
-function doWork(){
+function doWork(isVip){
+    showIt = isVip;
 	//LanJsBridge.getDataFromUrl("https://shop.hanjianqiao.cn:30002/search?key="+get('catalog'), "callBack")
     var catalog = get('catalog');
     if(catalog == null) catalog = '0';

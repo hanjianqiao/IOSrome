@@ -72,7 +72,8 @@ class SellViewController: UIViewController, UIWebViewDelegate {
             self.present(alert, animated: true, completion: nil)
             return false
         }else if(request.url?.absoluteString.hasPrefix("load"))!{
-            webView.stringByEvaluatingJavaScript(from: "doWork()")
+            let function = jsContext?.objectForKeyedSubscript("doWork")
+            _ = function?.call(withArguments: [AppStatus.sharedInstance.isVip])
         }
 
         return true
@@ -95,7 +96,8 @@ class SellViewController: UIViewController, UIWebViewDelegate {
             (context, exception) in
             print("exception: ", exception ?? "No")
         }
-        webView.stringByEvaluatingJavaScript(from: "doWork()")
+        let function = jsContext?.objectForKeyedSubscript("doWork")
+        _ = function?.call(withArguments: [AppStatus.sharedInstance.isVip])
     }
 
     /*
