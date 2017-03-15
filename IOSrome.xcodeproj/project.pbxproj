@@ -30,6 +30,11 @@
 		C422A3B11E1CEA2100AA8589 /* InvitaListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422A3B01E1CEA2100AA8589 /* InvitaListDetailViewController.swift */; };
 		C429CCE41E6D4D8F00711E56 /* banner_shop.png in Resources */ = {isa = PBXBuildFile; fileRef = C429CCE31E6D4D8F00711E56 /* banner_shop.png */; };
 		C429CCE61E6D4DA300711E56 /* banner_main.png in Resources */ = {isa = PBXBuildFile; fileRef = C429CCE51E6D4DA300711E56 /* banner_main.png */; };
+		C43AFE3D1E74EA4C00593398 /* newimg01.png in Resources */ = {isa = PBXBuildFile; fileRef = C43AFE391E74EA4C00593398 /* newimg01.png */; };
+		C43AFE3E1E74EA4C00593398 /* newimg02.png in Resources */ = {isa = PBXBuildFile; fileRef = C43AFE3A1E74EA4C00593398 /* newimg02.png */; };
+		C43AFE3F1E74EA4C00593398 /* newimg03.png in Resources */ = {isa = PBXBuildFile; fileRef = C43AFE3B1E74EA4C00593398 /* newimg03.png */; };
+		C43AFE401E74EA4C00593398 /* newimg04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C43AFE3C1E74EA4C00593398 /* newimg04.jpg */; };
+		C43AFE421E756A4900593398 /* GeneralWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AFE411E756A4900593398 /* GeneralWebViewController.swift */; };
 		C445644F1E289D8B000E5F36 /* SelfMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445644E1E289D8B000E5F36 /* SelfMainViewController.swift */; };
 		C44564511E28A541000E5F36 /* huitaoShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44564501E28A541000E5F36 /* huitaoShopViewController.swift */; };
 		C4460E451E2954DD0000F2C3 /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4460E441E2954DD0000F2C3 /* MoneyViewController.swift */; };
@@ -282,6 +287,11 @@
 		C422A3B01E1CEA2100AA8589 /* InvitaListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InvitaListDetailViewController.swift; path = user.center/InvitaListDetailViewController.swift; sourceTree = "<group>"; };
 		C429CCE31E6D4D8F00711E56 /* banner_shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner_shop.png; path = Resources/images/banner_shop.png; sourceTree = "<group>"; };
 		C429CCE51E6D4DA300711E56 /* banner_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banner_main.png; path = Resources/images/banner_main.png; sourceTree = "<group>"; };
+		C43AFE391E74EA4C00593398 /* newimg01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newimg01.png; sourceTree = "<group>"; };
+		C43AFE3A1E74EA4C00593398 /* newimg02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newimg02.png; sourceTree = "<group>"; };
+		C43AFE3B1E74EA4C00593398 /* newimg03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newimg03.png; sourceTree = "<group>"; };
+		C43AFE3C1E74EA4C00593398 /* newimg04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newimg04.jpg; sourceTree = "<group>"; };
+		C43AFE411E756A4900593398 /* GeneralWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralWebViewController.swift; sourceTree = "<group>"; };
 		C445644E1E289D8B000E5F36 /* SelfMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfMainViewController.swift; sourceTree = "<group>"; };
 		C44564501E28A541000E5F36 /* huitaoShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = huitaoShopViewController.swift; sourceTree = "<group>"; };
 		C4460E441E2954DD0000F2C3 /* MoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoneyViewController.swift; sourceTree = "<group>"; };
@@ -564,6 +574,7 @@
 				C422A3AE1E1CE9E400AA8589 /* InvitationListViewController.swift */,
 				C422A3B01E1CEA2100AA8589 /* InvitaListDetailViewController.swift */,
 				C4460E441E2954DD0000F2C3 /* MoneyViewController.swift */,
+				C43AFE411E756A4900593398 /* GeneralWebViewController.swift */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -898,6 +909,10 @@
 		C4C654A81E6468E600F240DD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				C43AFE391E74EA4C00593398 /* newimg01.png */,
+				C43AFE3A1E74EA4C00593398 /* newimg02.png */,
+				C43AFE3B1E74EA4C00593398 /* newimg03.png */,
+				C43AFE3C1E74EA4C00593398 /* newimg04.jpg */,
 				C4C6550B1E6485B200F240DD /* imga01.png */,
 				C4C654AA1E6468E600F240DD /* icon01.png */,
 				C4C654AB1E6468E600F240DD /* icon02.png */,
@@ -1188,6 +1203,7 @@
 				C4C654E41E6468E600F240DD /* icon04.png in Resources */,
 				C4C655991E65BF1800F240DD /* 邀请码@3x.png in Resources */,
 				C4C6557C1E65BF1800F240DD /* 我的层级@2x.png in Resources */,
+				C43AFE3F1E74EA4C00593398 /* newimg03.png in Resources */,
 				C4C654391E62B98400F240DD /* search.html in Resources */,
 				C4C655B21E65D15600F240DD /* Mine_head@2x.png in Resources */,
 				C4C6541A1E62B98400F240DD /* gray.png in Resources */,
@@ -1225,6 +1241,7 @@
 				C4C6558C1E65BF1800F240DD /* 淘宝@2x.png in Resources */,
 				C4C654201E62B98400F240DD /* icon-nav-4.png in Resources */,
 				C4C654D61E6468E600F240DD /* mybill.css in Resources */,
+				C43AFE3E1E74EA4C00593398 /* newimg02.png in Resources */,
 				C4C654EE1E6468E600F240DD /* 2.js in Resources */,
 				C4C6542A1E62B98400F240DD /* img4.png in Resources */,
 				C4C654341E62B98400F240DD /* lan_0.js in Resources */,
@@ -1294,6 +1311,7 @@
 				C40BE6B31DF660AA00F6C200 /* UserCenter.storyboard in Resources */,
 				C4C655711E65BF1800F240DD /* 关于@3x.png in Resources */,
 				C429CCE61E6D4DA300711E56 /* banner_main.png in Resources */,
+				C43AFE3D1E74EA4C00593398 /* newimg01.png in Resources */,
 				C4C655751E65BF1800F240DD /* 密码.png in Resources */,
 				C4C655331E655AD400F240DD /* 首页焦点.png in Resources */,
 				C4C655771E65BF1800F240DD /* 密码@3x.png in Resources */,
@@ -1330,6 +1348,7 @@
 				C4C6552D1E655AD400F240DD /* 我的焦点.png in Resources */,
 				C4C654DE1E6468E600F240DD /* vip02.css in Resources */,
 				C4C655931E65BF1800F240DD /* 订单明细@3x.png in Resources */,
+				C43AFE401E74EA4C00593398 /* newimg04.jpg in Resources */,
 				C4C654FF1E6468E600F240DD /* vip03.html in Resources */,
 				C4C6552F1E655AD400F240DD /* 我的焦点@3x.png in Resources */,
 				C4C655871E65BF1800F240DD /* 新手引导.png in Resources */,
@@ -1398,6 +1417,7 @@
 				C4DA4E201E5865E4008A5975 /* INSDataStackContainer.swift in Sources */,
 				C44564511E28A541000E5F36 /* huitaoShopViewController.swift in Sources */,
 				C4BCA65C1E67A4D8007E552A /* ReportDetailViewController.swift in Sources */,
+				C43AFE421E756A4900593398 /* GeneralWebViewController.swift in Sources */,
 				C41D800C1E1431CA00E4F019 /* SelfDetailViewController.swift in Sources */,
 				C4BCA65E1E67A4D8007E552A /* ReportTableViewCell.swift in Sources */,
 				C4BCA65D1E67A4D8007E552A /* ReportListTableViewController.swift in Sources */,

@@ -22,7 +22,7 @@ class ReportDetailViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.navigationItem.title = AppStatus.sharedInstance.isVip ? "会淘一下" : "购买VIP查看数据"
+        self.navigationItem.title = AppStatus.sharedInstance.isVip ? "快淘一下" : "购买VIP查看数据"
         
         do{
             let filePath = Bundle.main.path(forResource: "lanjs_rep_det", ofType: "js")
@@ -32,7 +32,7 @@ class ReportDetailViewController: UIViewController, UIWebViewDelegate {
         }
         webView.scalesPageToFit = true
         
-        let staticHTML = "<html><head><meta http-equiv=\"Content-Language\"content=\"zh-CN\"><meta HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html;charset=UTF-8\"><title>会淘助手</title></head><body><section id=\"lanSec\">hellowor</section></body></html>"
+        let staticHTML = "<html><head><meta http-equiv=\"Content-Language\"content=\"zh-CN\"><meta HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html;charset=UTF-8\"><title>小牛快淘</title></head><body><section id=\"lanSec\">hellowor</section></body></html>"
         webView.loadHTMLString(staticHTML, baseURL: nil)
         
         webView.delegate = self

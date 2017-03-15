@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         WXApi.registerApp(AppStatus.sharedInstance.wechatAPPID);
         AppStatus.sharedInstance.periodCheck()
+        sleep(1)
         return true
     }
     

@@ -75,6 +75,7 @@ class UserCenterViewController: UIViewController {
             }
             
             if(json?["message"] as! String != AppStatus.sharedInstance.version){
+                print(json?["message"] ?? "")
                 let alert = UIAlertController (title: "更新提示：为了更好的使用体验，请重新下载安装最新版本，下载地址请关注“小牛快淘”微信公众号，回复“最新版本”即可。", message: ""
                     , preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
@@ -141,6 +142,12 @@ class UserCenterViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    func notVipMessage(){
+        let alert = UIAlertController (title: "提示", message: "开通会员后即可查看"
+            , preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func vipButton(_ sender: UIButton) {
         if(AppStatus.sharedInstance.isLoggedIn == false){
@@ -176,6 +183,14 @@ class UserCenterViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func userGuideButton(_ sender: UIButton) {
+        if(AppStatus.sharedInstance.isLoggedIn == false){
+            notLoggedInMessage()
+            return
+        }
+        if(AppStatus.sharedInstance.isVip == false){
+            notVipMessage()
+            return
+        }
         let vc = (self.storyboard?.instantiateViewController(withIdentifier: "tutorial"))! as UIViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }

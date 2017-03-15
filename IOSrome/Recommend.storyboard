@@ -97,10 +97,10 @@
             </objects>
             <point key="canvasLocation" x="2692" y="-44.527736131934034"/>
         </scene>
-        <!--会淘一下-->
+        <!--快淘一下-->
         <scene sceneID="d5T-Vy-Uyk">
             <objects>
-                <viewController storyboardIdentifier="huitaoyixia" title="会淘一下" id="x2e-SU-eY9" customClass="huitaoShopViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="huitaoyixia" title="快淘一下" id="x2e-SU-eY9" customClass="huitaoShopViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="prR-mU-87H"/>
                         <viewControllerLayoutGuide type="bottom" id="Zp2-wW-MUb"/>

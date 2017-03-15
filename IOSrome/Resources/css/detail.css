@@ -2,3 +2,6 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 .priceBox{width:94%; margin: 0 auto; overflow:hidden;}
 .price_d{color:#ababab;font-size:.24rem}.detail-box .price_d span{display:inline-block;float:left}.gray-bottom{width:100%;height:auto; position: absolute;bottom:0; left:0; background:#f7f7f7; overflow:hidden}.gray-bottom button{width:49.9%;line-height:1.1rem;background:#ff7c00;color:#fff;font-size:.36rem;float:right;text-align:center; border:none}.gray-bottom .btn_left{float:left;background:#f50}
 .priceBox  .copylink{width:1.2rem; height:0.4rem;vertical-align: bottom; margin-right:0.2rem;}
+.thw-detail-panel{
+    position: fixed;
+}

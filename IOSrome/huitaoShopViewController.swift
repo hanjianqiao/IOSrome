@@ -38,7 +38,7 @@ class huitaoShopViewController: UIViewController, UIWebViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.navigationItem.title = AppStatus.sharedInstance.isVip ? "会淘一下" : "购买VIP查看数据"
+        self.navigationItem.title = AppStatus.sharedInstance.isVip ? "快淘一下" : "购买VIP查看数据"
         
         do{
             let filePath = Bundle.main.path(forResource: "lanjs_s", ofType: "js")

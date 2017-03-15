@@ -31,22 +31,19 @@ class TutorialViewController: UIViewController, UIWebViewDelegate {
         }
     }
     
-    var id:String = ""
-    func showDetail(){
-        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "detail"))! as! SelfDetailViewController
-        vc.goodID = id
+    func loadPage(address:String){
+        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "generalwebview"))! as! GeneralWebViewController
+        vc.targetAddress = address
         self.navigationController?.pushViewController(vc, animated: true)
-        
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        if(request.url?.absoluteString.hasPrefix("ios"))!{
-            NSLog("IOS call")
-            return false
-        }
-        print(request.url ?? "Error request url");
+//        if(request.url?.absoluteString.hasPrefix("http://rule.alimama.com/"))!{
+//            loadPage(address: (request.url?.absoluteString)!)
+//            return false
+//        }
+        print(request.url?.absoluteString)
         return true
-        
     }
     
 
