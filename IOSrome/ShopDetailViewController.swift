@@ -45,6 +45,7 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
     func showHuitao(){
         let vc = (self.storyboard?.instantiateViewController(withIdentifier: "huitaoyixia"))! as! huitaoShopViewController
         vc.url = targetUrl
+        print("Show shop detail: \(targetUrl)");
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

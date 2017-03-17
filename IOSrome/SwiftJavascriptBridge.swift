@@ -60,6 +60,13 @@ import JavaScriptCore
     internal func setClipBoard(_ string: String) {
         //print("set clipboart: \(string)")
         UIPasteboard.general.string = string;
+        let alert = UIAlertController (title: "已复制", message: string
+            , preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        OperationQueue.main.addOperation {
+            self.controller?.present(alert, animated: true, completion: nil)
+        }
+
     }
     
     internal func getDataFromUrlSynch(_ urlString: String, _ callBack: String){

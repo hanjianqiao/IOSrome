@@ -53,7 +53,7 @@ function callBack(html, url){
 
 function doWork(isVip){
     showIt = isVip;
-	//LanJsBridge.getDataFromUrl("https://shop.hanjianqiao.cn:30002/search?key="+get('catalog'), "callBack")
+	//LanJsBridge.getDataFromUrl("https://user.hanjianqiao.cn:30002/search?key="+get('catalog'), "callBack")
     var catalog = get('catalog');
     if(catalog == null) catalog = '0';
     var activity = get('activity');

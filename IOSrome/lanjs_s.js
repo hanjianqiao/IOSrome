@@ -62,7 +62,7 @@ function updateGeneralBrokerageCallBack(htmlText, url){
         document.getElementById("genbrorate").innerHTML = (showIt ? dataList.tkRate : "??")+"%";
         document.getElementById("days30sell").innerHTML = (showIt ? dataList.totalNum : "??");
         document.getElementById("givebro").innerHTML = (showIt ? dataList.totalFee : "??");
-        document.getElementById("genlick").href = (showIt ? ("http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid) : "");
+        document.getElementById("genlick").href = (showIt ? ("http://pub.alimama.com/promo/item/channel/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&channel=qqhd") : "");
         userid = dataList.sellerId;
         spTkRates = dataList.tkSpecialCampaignIdRateMap;
         tkRate = dataList.tkRate;
@@ -99,13 +99,13 @@ function updateQueqiaoBrokerageItemCallBack(htmlText, url){
 }
 
 function updateQueqiaoBrokerageItem(goodId){
-    LanJsBridge.getDataFromUrl("http://zhushou.taokezhushou.com/api/v1/queqiaos/"+goodId, "updateQueqiaoBrokerageItemCallBack");
+    //LanJsBridge.getDataFromUrl("http://zhushou.taokezhushou.com/api/v1/queqiaos/"+goodId, "updateQueqiaoBrokerageItemCallBack");
 }
 
 function updateQueqiaoBrokerageCallBack(htmlText, url){
     var obj = eval('('+htmlText+')');
     if(obj.data.head.status == "NORESULT"){
-        document.getElementById("queqiaotitle").innerHTML="没有鹊桥佣金";
+        //document.getElementById("queqiaotitle").innerHTML="没有鹊桥佣金";
         return;
     }
     var jo = obj.data.pageList[0];

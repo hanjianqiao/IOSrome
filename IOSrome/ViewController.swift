@@ -45,8 +45,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **/
     @IBAction func homeButton(_ sender: UIButton) {
         let url:URL = URL(string: "http://www.alimama.com")!
-        var request:URLRequest = URLRequest(url: url)
-        request.addValue("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36", forHTTPHeaderField: "User-Agent")
+        let request:URLRequest = URLRequest(url: url)
         webView.loadRequest(request)
     }
     @IBAction func taobaoButton(_ sender: UIButton) {
@@ -97,6 +96,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     func webViewDidStartLoad(_ webView: UIWebView) {
+        print("Starting...\(webView.request?.url?.absoluteString)")
     }
     
     /**
@@ -128,6 +128,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        print("Finished...\(webView.request?.url?.absoluteString)")
     }
     /**
      ** Other functions

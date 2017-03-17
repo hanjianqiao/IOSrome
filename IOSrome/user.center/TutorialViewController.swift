@@ -42,7 +42,7 @@ class TutorialViewController: UIViewController, UIWebViewDelegate {
 //            loadPage(address: (request.url?.absoluteString)!)
 //            return false
 //        }
-        print(request.url?.absoluteString)
+        print(request.url?.absoluteString ?? "Nothing")
         return true
     }
     

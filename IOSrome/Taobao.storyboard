@@ -62,7 +62,7 @@
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
                                     <connections>
-                                        <action selector="taobaoButton:" destination="3hK-tj-AgW" eventType="touchUpInside" id="LKU-7j-xhi"/>
+                                        <action selector="homeButton:" destination="3hK-tj-AgW" eventType="touchUpInside" id="T6a-8g-8om"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdo-4h-xsT">
