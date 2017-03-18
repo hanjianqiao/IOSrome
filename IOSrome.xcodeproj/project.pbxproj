@@ -269,6 +269,7 @@
 		C4CCCE7E1E7D6D3F00F5687F /* 邀请码.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CCCE2D1E7D6D3F00F5687F /* 邀请码.png */; };
 		C4CCCE7F1E7D6D3F00F5687F /* 邀请码@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CCCE2E1E7D6D3F00F5687F /* 邀请码@2x.png */; };
 		C4CCCE801E7D6D3F00F5687F /* 邀请码@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4CCCE2F1E7D6D3F00F5687F /* 邀请码@3x.png */; };
+		C4CCCE821E7D6EBD00F5687F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CCCE811E7D6EBD00F5687F /* Assets.xcassets */; };
 		C4DA4E201E5865E4008A5975 /* INSDataStackContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA4E1C1E5865E4008A5975 /* INSDataStackContainer.swift */; };
 		C4DA4E211E5865E4008A5975 /* INSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA4E1D1E5865E4008A5975 /* INSPersistentContainer.swift */; };
 		C4DA4E221E5865E4008A5975 /* INSPersistentStoreDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA4E1E1E5865E4008A5975 /* INSPersistentStoreDescription.swift */; };
@@ -553,6 +554,7 @@
 		C4CCCE2D1E7D6D3F00F5687F /* 邀请码.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "邀请码.png"; sourceTree = "<group>"; };
 		C4CCCE2E1E7D6D3F00F5687F /* 邀请码@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "邀请码@2x.png"; sourceTree = "<group>"; };
 		C4CCCE2F1E7D6D3F00F5687F /* 邀请码@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "邀请码@3x.png"; sourceTree = "<group>"; };
+		C4CCCE811E7D6EBD00F5687F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = IOSrome/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		C4DA4E1C1E5865E4008A5975 /* INSDataStackContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = INSDataStackContainer.swift; path = Support/INSPersistentContainer/INSDataStackContainer.swift; sourceTree = "<group>"; };
 		C4DA4E1D1E5865E4008A5975 /* INSPersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = INSPersistentContainer.swift; path = Support/INSPersistentContainer/INSPersistentContainer.swift; sourceTree = "<group>"; };
 		C4DA4E1E1E5865E4008A5975 /* INSPersistentStoreDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = INSPersistentStoreDescription.swift; path = Support/INSPersistentContainer/INSPersistentStoreDescription.swift; sourceTree = "<group>"; };
@@ -928,6 +930,7 @@
 		C4CCCDDA1E7D6D3F00F5687F /* UIResouce */ = {
 			isa = PBXGroup;
 			children = (
+				C4CCCE811E7D6EBD00F5687F /* Assets.xcassets */,
 				C4CCCDDB1E7D6D3F00F5687F /* Main */,
 				C4CCCDF01E7D6D3F00F5687F /* Taobao */,
 				C4CCCDF51E7D6D3F00F5687F /* UserCenter */,
@@ -1309,6 +1312,7 @@
 				C4CCCE721E7D6D3F00F5687F /* 淘宝.png in Resources */,
 				C4CCCBB91E7D6D2100F5687F /* 5.js in Resources */,
 				C4CCCC0C1E7D6D2100F5687F /* news.html in Resources */,
+				C4CCCE821E7D6EBD00F5687F /* Assets.xcassets in Resources */,
 				C4CCCBB51E7D6D2100F5687F /* 1.js in Resources */,
 				C4CCCE441E7D6D3F00F5687F /* 顶部搜索.png in Resources */,
 				C4CCCBD81E7D6D2100F5687F /* icon05.png in Resources */,
