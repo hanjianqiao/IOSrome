@@ -24,7 +24,7 @@ class AppStatus {
     let wechatAPPID:String = "wxb4ba3c02aa476ea1"
     let wechatPayKey:String = "a462b76e7436e98e0ed6e13c64b4fd1c"
     
-    let version = "2"
+    let version:Int = 4
     
     var isLoggedIn:Bool
     var userID:String

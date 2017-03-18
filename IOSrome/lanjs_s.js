@@ -52,23 +52,28 @@ function updateGeneralBrokerageItem(memberId){
 }
 
 function updateGeneralBrokerageCallBack(htmlText, url){
-    var obj = eval('('+htmlText+')');
-    if(obj.data.head.status == "NORESULT"){
+    try{
+        var obj = JSON.parse(htmlText);
+        if(obj.data.head.status == "NORESULT"){
+            document.getElementById("genbrorate").innerHTML="0%";
+            document.getElementById("days30sell").innerHTML="0";
+            document.getElementById("plantitle").innerHTML="没有计划";
+        }else{
+            var dataList = obj.data.pageList[0];
+            document.getElementById("genbrorate").innerHTML = (showIt ? dataList.tkRate : "??")+"%";
+            document.getElementById("days30sell").innerHTML = (showIt ? dataList.totalNum : "??");
+            document.getElementById("givebro").innerHTML = (showIt ? dataList.totalFee : "??");
+            userid = dataList.sellerId;
+            spTkRates = dataList.tkSpecialCampaignIdRateMap;
+            tkRate = dataList.tkRate;
+            if(showIt){
+                updateGeneralBrokerageItem(dataList.sellerId);
+            }
+        }
+    }catch(err){
         document.getElementById("genbrorate").innerHTML="0%";
         document.getElementById("days30sell").innerHTML="0";
         document.getElementById("plantitle").innerHTML="没有计划";
-    }else{
-        var dataList = obj.data.pageList[0];
-        document.getElementById("genbrorate").innerHTML = (showIt ? dataList.tkRate : "??")+"%";
-        document.getElementById("days30sell").innerHTML = (showIt ? dataList.totalNum : "??");
-        document.getElementById("givebro").innerHTML = (showIt ? dataList.totalFee : "??");
-        document.getElementById("genlick").href = (showIt ? ("http://pub.alimama.com/promo/item/channel/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&channel=qqhd") : "");
-        userid = dataList.sellerId;
-        spTkRates = dataList.tkSpecialCampaignIdRateMap;
-        tkRate = dataList.tkRate;
-        if(showIt){
-            updateGeneralBrokerageItem(dataList.sellerId);
-        }
     }
 }
 
@@ -103,19 +108,21 @@ function updateQueqiaoBrokerageItem(goodId){
 }
 
 function updateQueqiaoBrokerageCallBack(htmlText, url){
-    var obj = eval('('+htmlText+')');
+    var obj = JSON.parse(htmlText);
     if(obj.data.head.status == "NORESULT"){
         //document.getElementById("queqiaotitle").innerHTML="没有鹊桥佣金";
+        document.getElementById("queqiaorate").innerHTML = "0%";
         return;
     }
     var jo = obj.data.pageList[0];
     document.getElementById("queqiaorate").innerHTML = (showIt ? (jo.eventRate ? jo.eventRate : "0") : "??")+"%";
+    document.getElementById("genlick").href = (showIt ? ((jo.eventRate || jo.eventRate == '0') ? ("http://pub.alimama.com/promo/item/channel/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&channel=qqhd") : ("http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid)) : "");
     try {
         if(showIt){
             updateQueqiaoBrokerageItem(goodid);
         }
     }catch (err){
-        alert(err.message);
+        //alert(err.message);
         document.getElementById("queqiaotitle").innerHTML="没有鹊桥佣金";
     }
 }

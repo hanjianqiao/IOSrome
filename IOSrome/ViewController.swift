@@ -24,6 +24,11 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             selector: #selector(self.loadPage),
             name: NSNotification.Name(rawValue: "noti_load_page"),
             object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.loadFile),
+            name: NSNotification.Name(rawValue: "noti_load_file"),
+            object: nil)
 //        
 //        let url:URL = URL(string: mainUrl)!
 //        
@@ -155,12 +160,29 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         
         self.tabBarController?.selectedIndex = 0;
     }
+    @objc func loadFile(notification: NSNotification){
+        //do stuff
+        
+        if((self.navigationController?.viewControllers.count)! > 1){
+            _ = self.navigationController?.popViewController(animated: true)
+        }
+        let str = notification.userInfo?[AnyHashable("url")] as! String
+        
+        print("taobao notified to load file: \(str)")
+        
+        if let path = Bundle.main.path(forResource: str, ofType: "html") {
+            webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+        }
+        
+        self.tabBarController?.selectedIndex = 0;
+    }
     func showGuide(){
         let vc = (self.storyboard?.instantiateViewController(withIdentifier: "guide"))! as! TaoTutorialViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        print("webview is : \(webView.request?.url?.absoluteString) Will loading \(request.url?.absoluteString)")
         if(request.url?.absoluteString.hasPrefix("ios"))!{
             let url:String = (request.url?.absoluteString)!
             let range = url.range(of: ":")
@@ -180,6 +202,13 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
                 self.webView.loadRequest(URLRequest(url:URL(string:"https://s.m.taobao.com/h5"+method)!))
             }
             return false
+        }else if(webView.request?.url != nil && (webView.request?.url?.absoluteString.hasPrefix("http://c.b1wt.com"))!){
+            if(request.url?.absoluteString.hasPrefix("taobao:"))!{
+                let para:[String] = (request.url?.absoluteString.components(separatedBy: ":"))!
+                let newUrl:String = "https:"+para[1];
+                webView.loadRequest(URLRequest(url:URL(string:newUrl)!))
+                return false;
+            }
         }
         return true
         

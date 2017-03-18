@@ -66,12 +66,6 @@
 		C4BCA65D1E67A4D8007E552A /* ReportListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA6581E67A4D8007E552A /* ReportListTableViewController.swift */; };
 		C4BCA65E1E67A4D8007E552A /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA6591E67A4D8007E552A /* ReportTableViewCell.swift */; };
 		C4BCA65F1E67A4D8007E552A /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA65A1E67A4D8007E552A /* ReportViewController.swift */; };
-		C4BCA6681E67A534007E552A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA6611E67A534007E552A /* Result.swift */; };
-		C4BCA6691E67A534007E552A /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA6621E67A534007E552A /* Socket.swift */; };
-		C4BCA66A1E67A534007E552A /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA6641E67A534007E552A /* TCPClient.swift */; };
-		C4BCA66B1E67A534007E552A /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA6651E67A534007E552A /* UDPClient.swift */; };
-		C4BCA66C1E67A534007E552A /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA6661E67A534007E552A /* ytcpsocket.c */; };
-		C4BCA66D1E67A534007E552A /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA6671E67A534007E552A /* yudpsocket.c */; };
 		C4BCA6721E67A56C007E552A /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BCA66F1E67A56C007E552A /* libWeChatSDK.a */; };
 		C4C654101E62B98400F240DD /* detail.css in Resources */ = {isa = PBXBuildFile; fileRef = C4C653E11E62B98400F240DD /* detail.css */; };
 		C4C654111E62B98400F240DD /* guide.css in Resources */ = {isa = PBXBuildFile; fileRef = C4C653E21E62B98400F240DD /* guide.css */; };
@@ -328,13 +322,6 @@
 		C4BCA6581E67A4D8007E552A /* ReportListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportListTableViewController.swift; sourceTree = "<group>"; };
 		C4BCA6591E67A4D8007E552A /* ReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
 		C4BCA65A1E67A4D8007E552A /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
-		C4BCA6611E67A534007E552A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		C4BCA6621E67A534007E552A /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
-		C4BCA6631E67A534007E552A /* SwiftSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftSocket.h; sourceTree = "<group>"; };
-		C4BCA6641E67A534007E552A /* TCPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = "<group>"; };
-		C4BCA6651E67A534007E552A /* UDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
-		C4BCA6661E67A534007E552A /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = "<group>"; };
-		C4BCA6671E67A534007E552A /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = "<group>"; };
 		C4BCA66F1E67A56C007E552A /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		C4BCA6701E67A56C007E552A /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		C4BCA6711E67A56C007E552A /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
@@ -668,7 +655,6 @@
 		C40BE7301DF9B24800F6C200 /* support */ = {
 			isa = PBXGroup;
 			children = (
-				C4BCA6601E67A534007E552A /* SwiftSocket */,
 				C4DA4E1B1E5865CF008A5975 /* INSPersistentContainer */,
 				C41D80081E122B9300E4F019 /* js */,
 				C4EE46801E08EE5300E5D0E3 /* json */,
@@ -740,21 +726,6 @@
 				C4BCA65A1E67A4D8007E552A /* ReportViewController.swift */,
 			);
 			name = report;
-			sourceTree = "<group>";
-		};
-		C4BCA6601E67A534007E552A /* SwiftSocket */ = {
-			isa = PBXGroup;
-			children = (
-				C4BCA6611E67A534007E552A /* Result.swift */,
-				C4BCA6621E67A534007E552A /* Socket.swift */,
-				C4BCA6631E67A534007E552A /* SwiftSocket.h */,
-				C4BCA6641E67A534007E552A /* TCPClient.swift */,
-				C4BCA6651E67A534007E552A /* UDPClient.swift */,
-				C4BCA6661E67A534007E552A /* ytcpsocket.c */,
-				C4BCA6671E67A534007E552A /* yudpsocket.c */,
-			);
-			name = SwiftSocket;
-			path = Support/SwiftSocket;
 			sourceTree = "<group>";
 		};
 		C4BCA66E1E67A56C007E552A /* WeChatSDK */ = {
@@ -1471,7 +1442,6 @@
 				C4612E8A1E03B34300B79331 /* TaobaoNavigationController.swift in Sources */,
 				C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */,
 				C4DA4E211E5865E4008A5975 /* INSPersistentContainer.swift in Sources */,
-				C4BCA6691E67A534007E552A /* Socket.swift in Sources */,
 				C4612E811E01445B00B79331 /* VIPDetailViewController.swift in Sources */,
 				C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */,
 				C45F7A8E1E6885F500450551 /* ShopTutorialViewController.swift in Sources */,
@@ -1480,7 +1450,6 @@
 				C4EE46821E08EE6800E5D0E3 /* JsonTools.swift in Sources */,
 				C422A3AF1E1CE9E400AA8589 /* InvitationListViewController.swift in Sources */,
 				C422A3AD1E1CE9B200AA8589 /* InvitationViewController.swift in Sources */,
-				C4BCA66A1E67A534007E552A /* TCPClient.swift in Sources */,
 				C4DA4E201E5865E4008A5975 /* INSDataStackContainer.swift in Sources */,
 				C44564511E28A541000E5F36 /* huitaoShopViewController.swift in Sources */,
 				C4BCA65C1E67A4D8007E552A /* ReportDetailViewController.swift in Sources */,
@@ -1493,15 +1462,12 @@
 				C4C655BD1E65E6C400F240DD /* TaobaoDetailViewController.swift in Sources */,
 				C422A3AB1E1CE96100AA8589 /* TutorialViewController.swift in Sources */,
 				C4460E451E2954DD0000F2C3 /* MoneyViewController.swift in Sources */,
-				C4BCA66D1E67A534007E552A /* yudpsocket.c in Sources */,
 				C4612E8E1E03B36E00B79331 /* SelfchooseNavigationController.swift in Sources */,
 				C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */,
 				C4BCA65F1E67A4D8007E552A /* ReportViewController.swift in Sources */,
-				C4BCA66C1E67A534007E552A /* ytcpsocket.c in Sources */,
 				C4C655BF1E65E99D00F240DD /* TaobaoDetailViewController2.swift in Sources */,
 				C422A3B11E1CEA2100AA8589 /* InvitaListDetailViewController.swift in Sources */,
 				C40BE7351DF9C34000F6C200 /* UserNavigationController.swift in Sources */,
-				C4BCA66B1E67A534007E552A /* UDPClient.swift in Sources */,
 				C422A3A91E1CE86500AA8589 /* SystemMessageDetailViewController.swift in Sources */,
 				C4612E8C1E03B35C00B79331 /* RecommendNavigationController.swift in Sources */,
 				C4BB410F1DFC724300B01055 /* MainTabBarController.swift in Sources */,
@@ -1512,7 +1478,6 @@
 				DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */,
 				C422A3A71E1CE81200AA8589 /* SystemMessageViewController.swift in Sources */,
 				C4E242681E2CB40700A948E9 /* SqlConnector.swift in Sources */,
-				C4BCA6681E67A534007E552A /* Result.swift in Sources */,
 				C4EE467F1E08EB3E00E5D0E3 /* String+MD5.swift in Sources */,
 				C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */,
 			);

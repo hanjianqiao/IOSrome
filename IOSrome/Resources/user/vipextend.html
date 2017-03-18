@@ -23,9 +23,13 @@
 			if(nums >= 24) return;
 			nums = nums + 1;
 			var price = 168 * nums;
-			document.getElementById("extendlink").href = "ios:extend:" + nums.toString();
-			document.getElementById("nums").innerHTML = nums.toString();
-			document.getElementById("price").innerHTML = price.toString();
+            document.getElementById("extendlink").href = "ios:extend:" + nums.toString();
+            document.getElementById("nums").innerHTML = nums.toString();
+            if(LanJsBridge.userLevel() == "user"){
+                document.getElementById("price").innerHTML = price.toString();
+            }else{
+                document.getElementById("price").innerHTML = "将从您的续费套餐扣除";
+            }
 		}
 		function dec(){
 			var str = document.getElementById("nums").innerHTML;
@@ -34,8 +38,12 @@
 			nums = nums - 1;
 			var price = 168 * nums;
 			document.getElementById("extendlink").href = "ios:extend:" + nums.toString();
-			document.getElementById("nums").innerHTML = nums.toString();
-			document.getElementById("price").innerHTML = price.toString();
+            document.getElementById("nums").innerHTML = nums.toString();
+            if(LanJsBridge.userLevel() == "user"){
+                document.getElementById("price").innerHTML = price.toString();
+            }else{
+                document.getElementById("price").innerHTML = "将从您的续费套餐扣除";
+            }
 		}
 	</script>
 </head>
@@ -74,5 +82,13 @@
 		</div>
 	</section>
 </body>
+<script>
+    function updateDisplay(a, b){
+        if(LanJsBridge.userLevel() == "user"){
+            document.getElementById("price").innerHTML = "168";
+        }else{
+            document.getElementById("price").innerHTML = "将从您的续费套餐扣除";
+        }
+    }
 </script>
 </html>
