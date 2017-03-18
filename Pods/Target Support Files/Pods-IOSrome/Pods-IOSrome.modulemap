@@ -1,0 +1,6 @@
+framework module Pods_IOSrome {
+  umbrella header "Pods-IOSrome-umbrella.h"
+
+  export *
+  module * { export * }
+}

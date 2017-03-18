@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75140F1481829908E26D010C /* Pods_IOSrome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBCA9995AC79E724CA52E78 /* Pods_IOSrome.framework */; };
 		C40BE6AF1DF51DA900F6C200 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE6AE1DF51DA900F6C200 /* RegisterViewController.swift */; };
 		C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BE6B01DF51DC700F6C200 /* SellViewController.swift */; };
 		C40BE6B31DF660AA00F6C200 /* UserCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40BE6B21DF660AA00F6C200 /* UserCenter.storyboard */; };
@@ -264,6 +265,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94BC0067FF0020D643393921 /* Pods-IOSrome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSrome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSrome/Pods-IOSrome.debug.xcconfig"; sourceTree = "<group>"; };
+		B597045A8D7C8EBAD17F4B74 /* Pods-IOSrome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSrome.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSrome/Pods-IOSrome.release.xcconfig"; sourceTree = "<group>"; };
 		C40BE6AE1DF51DA900F6C200 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C40BE6B01DF51DC700F6C200 /* SellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SellViewController.swift; sourceTree = "<group>"; };
 		C40BE6B21DF660AA00F6C200 /* UserCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserCenter.storyboard; sourceTree = "<group>"; };
@@ -526,6 +529,7 @@
 		DCB045201DDF40280014D479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCB045231DDF40280014D479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCB045251DDF40280014D479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFBCA9995AC79E724CA52E78 /* Pods_IOSrome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSrome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -539,12 +543,22 @@
 				C40BE71A1DF86F6900F6C200 /* CoreTelephony.framework in Frameworks */,
 				C40BE7181DF86F6300F6C200 /* libsqlite3.tbd in Frameworks */,
 				C40BE7161DF86F5D00F6C200 /* libstdc++.tbd in Frameworks */,
+				75140F1481829908E26D010C /* Pods_IOSrome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B3AEC172C4C965427AFECC6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94BC0067FF0020D643393921 /* Pods-IOSrome.debug.xcconfig */,
+				B597045A8D7C8EBAD17F4B74 /* Pods-IOSrome.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C40BE7141DF86F5D00F6C200 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +567,7 @@
 				C40BE7191DF86F6900F6C200 /* CoreTelephony.framework */,
 				C40BE7171DF86F6300F6C200 /* libsqlite3.tbd */,
 				C40BE7151DF86F5D00F6C200 /* libstdc++.tbd */,
+				EFBCA9995AC79E724CA52E78 /* Pods_IOSrome.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1104,6 +1119,7 @@
 				DCB045151DDF40280014D479 /* IOSrome */,
 				DCB045141DDF40280014D479 /* Products */,
 				C40BE7141DF86F5D00F6C200 /* Frameworks */,
+				2B3AEC172C4C965427AFECC6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1136,9 +1152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCB045281DDF40280014D479 /* Build configuration list for PBXNativeTarget "IOSrome" */;
 			buildPhases = (
+				8C140D73FF286ACFF22DB0DB /* [CP] Check Pods Manifest.lock */,
 				DCB0450F1DDF40280014D479 /* Sources */,
 				DCB045101DDF40280014D479 /* Frameworks */,
 				DCB045111DDF40280014D479 /* Resources */,
+				23AF00B3312A7C3E00291465 /* [CP] Embed Pods Frameworks */,
+				AE8319D21321241A88653FED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1386,6 +1405,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23AF00B3312A7C3E00291465 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOSrome/Pods-IOSrome-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C140D73FF286ACFF22DB0DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AE8319D21321241A88653FED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOSrome/Pods-IOSrome-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DCB0450F1DDF40280014D479 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1572,6 +1639,7 @@
 		};
 		DCB045291DDF40280014D479 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94BC0067FF0020D643393921 /* Pods-IOSrome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1601,6 +1669,7 @@
 		};
 		DCB0452A1DDF40280014D479 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B597045A8D7C8EBAD17F4B74 /* Pods-IOSrome.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

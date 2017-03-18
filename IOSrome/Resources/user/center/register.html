@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>小牛快淘</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta content="telephone=no, address=no" name="format-detection">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<!-- rem设置 -->
+	<script type="text/javascript">
+		var scale = 1 / devicePixelRatio;
+		document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+	</script>
+	<style>
+		html {height: 100%;	-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%}
+		body {
+			font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+			height: 100%;	margin: 0;padding: 0;
+			color: #3d3d3d;	font-size: .14rem;background: #f7f7f7;}
+		#people{
+			width: 0.5rem;height: 0.54rem;
+			position: absolute;left: 0.7rem;	top: 0.28rem;
+			background: url(images/touxiang.png) no-repeat;
+			background-size: 100% auto;}
+		#password{
+			width: 0.5rem;height: 0.54rem;
+			position: absolute;left: 0.7rem;	top: 0.28rem;
+			background: url(images/suo.png) no-repeat;
+			background-size: 100% auto;
+		}
+		a,a:active,a:hover {outline: 0;color: #969696;background-color: transparent}
+		img {border: 0}
+		button {text-transform: none;-webkit-appearance: button;
+			cursor: pointer
+		}
+		button[disabled],
+		html input[disabled] {
+			cursor: default
+		}
+		button::-moz-focus-inner,
+		input::-moz-focus-inner {
+			border: 0;padding: 0}
+		.border {
+			width: 90%;
+			margin: 0 auto;
+			position: relative;
+		}
+		input {
+			width: 66%;
+			border-width: 0;
+			font-size: .32rem;
+			line-height: .4rem;
+			padding: .35rem .43rem .35rem 1.1rem;
+			border-radius: 5px;
+			border: 1px solid #c9c9c9;
+			-webkit-appearance: none;
+			overflow: hidden;
+		};
+		*,*:after,*:before {-webkit-box-sizing: border-box;
+			box-sizing: border-box}
+		img {
+			vertical-align: middle;
+			-webkit-user-select: none;
+			user-select: none;
+			-webkit-touch-callout: none}
+		a,img {outline: 0;-webkit-tap-highlight-color: rgba(0, 0, 0, 0)}
+		a,a:hover,a:active {text-decoration: none}
+		.fl {float: left}.fr {float: right}
+		section {	padding-bottom: 1rem}
+		.con {
+			margin-top: .5rem;
+			color: #3d3d3d;
+			font-size: .32rem;
+			text-align: center;
+			padding-bottom: .8rem;
+			padding-top: .65rem	}
+		.marginBottom {margin-bottom: 1.7rem;line-height: .5rem}
+		.btn03 {width: 80%;	background: #fe9901;border: 0;	height: .8rem;line-height: .8rem;	margin: 0.45rem auto .2rem;	border-radius: 5px;	color: #fff;	font-size: .36rem}
+		.alert {
+			width: 100%;height: 100%;
+			background: rgba(0, 0, 0, .5);
+			position: fixed;left: 0;top: 0;z-index: 99;display: none}
+		.alert01 {
+			width: 90%;
+			margin: 2.5rem auto 0;
+			padding: .1rem 0 .8rem;
+			background: #fff;
+			text-align: center;
+			border-radius: 10px;
+			overflow: hidden
+		}
+		.btn04 {
+			width: 80%;
+			background: #fe9901;
+			border: 0;
+			height: .8rem;
+			font-size: .36rem;
+			line-height: .8rem;
+			border-radius: 10px;
+			color: #fff;
+			margin: .1rem auto}
+		.disBlock {display: block}
+		.form-group {text-align: center; font-size: 0.34rem;width: 75%;margin: .6rem auto; color:#fe9901;}
+		.font30 {font-size: .32rem;}
+	</style>
+</head>
+
+<body>
+	<!-- 布局 -->
+	<section>
+		<div class="con">
+			<div class="border">
+					<input type="number" placeholder="请输入您的手机号">
+					<div id="people"></div>
+			</div>
+			<div class="border">
+					<input type="number" placeholder="6-12位数字或字母">
+					<div id="password"></div>
+			</div>
+
+			<button class="btn03">注&nbsp;册</button>
+			<br>
+			<a href="#" class="font30" style="display:block; width:80%;margin:0 auto; text-align:right;">遇到问题？</a>
+		</div>
+	</section>
+	<!-- 弹窗 -->
+	<div class="alert">
+		<div class="alert01">
+			<div class="form-group" style="font-size:0.38rem;line-height:0.38rem">
+				<span style="vertical-align: bottom;">提示</span>
+				<img src="images/tishi.png" alt="" style="width:0.38rem; height:0.38rem;vertical-align: bottom;">
+			</div>
+			<div class="form-group" style="text-align:justify">关注XX微信公众号，在线提问，7*24小时为您解答。</div>
+			<button class="btn04">确&nbsp;定</button>
+		</div>
+	</div>
+
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+	$(function() {
+		$(".btn03").on('click', function(event) {
+			$(".alert").addClass('disBlock');
+		});
+		$(".btn04").on('click', function(event) {
+			$(".alert").removeClass('disBlock');
+		});
+	})
+</script>
+</html>
