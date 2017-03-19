@@ -13,7 +13,6 @@ function callBack(html, url){
 	document.getElementById("introimg").src = jo.image;
     if(showIt){
         document.getElementById("selllink").href = "huitao:http://pub.alimama.com/promo/item/channel/index.htm?q="+encodeURIComponent(jo.url)+"&channel=qqhd";
-        `(${html}f)`
     }else{
         document.getElementById("selllink").href = "lanalert:您不是VIP不能使用推广功能";
     }
