@@ -53,7 +53,7 @@ function updateGeneralBrokerageItem(memberId){
 
 function updateGeneralBrokerageCallBack(htmlText, url){
     try{
-        var obj = JSON.parse(htmlText);
+        var obj = eval('('+htmlText+')');
         if(obj.data.head.status == "NORESULT"){
             document.getElementById("genbrorate").innerHTML="0%";
             document.getElementById("days30sell").innerHTML="0";
@@ -108,7 +108,7 @@ function updateQueqiaoBrokerageItem(goodId){
 }
 
 function updateQueqiaoBrokerageCallBack(htmlText, url){
-    var obj = JSON.parse(htmlText);
+    var obj = eval('('+htmlText+')');
     if(obj.data.head.status == "NORESULT"){
         //document.getElementById("queqiaotitle").innerHTML="没有鹊桥佣金";
         document.getElementById("queqiaorate").innerHTML = "0%";

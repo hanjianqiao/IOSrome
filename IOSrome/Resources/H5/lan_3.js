@@ -5,7 +5,7 @@ function get(name){
 }
 
 function callBack(html, url){
-	var obj = JSON.parse(html);
+	var obj = eval('('+html+')');
 	var ja = obj.message;
 	var jo = ja[0];
 	document.getElementById("intro").innerHTML = jo.title;
@@ -20,6 +20,6 @@ function callBack(html, url){
 }
 function doWork(q, isVip){
     showIt = isVip;
-	//LanJsBridge.getDataFromUrl("https://user.hanjianqiao.cn:30002/query?id="+get('id'), "callBack")
-	LanJsBridge.getDataFromUrl("http://user.hanjianqiao.cn:7010/query?id="+q, "callBack")
+	//LanJsBridge.getDataFromUrl("https://user.vsusvip.com:30002/query?id="+get('id'), "callBack")
+	LanJsBridge.getDataFromUrl("http://shop.vsusvip.com:7010/query?id="+q, "callBack")
 }

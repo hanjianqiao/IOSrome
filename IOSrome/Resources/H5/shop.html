@@ -32,7 +32,7 @@
          -->
         <!-- classify nav -->
 		<nav class="flex classify-nav">
-			<a href="?catalog=0" class="active">
+			<a href="?activity=5" class="active">
 				<span>推荐</span>
 			</a>
 			<a href="?catalog=1">
@@ -147,7 +147,8 @@
         if(catalog == null) catalog = '0';
         var activity = get('activity');
         if(activity == null) activity = '0';
-        LanJsBridge.getDataFromUrl("http://user.hanjianqiao.cn:7010/search?catalog="+catalog+"&activity="+activity+"&offset="+nowLoad+"&limit="+limit, "callBack")
+        if(activity == '0' && catalog == '0') activity = '5';
+        LanJsBridge.getDataFromUrl("http://shop.vsusvip.com:7010/search?catalog="+catalog+"&activity="+activity+"&offset="+nowLoad+"&limit="+limit, "callBack")
     }
 </script>
 <script type="text/javascript" src="lan_0.js"></script>

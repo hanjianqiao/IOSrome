@@ -24,7 +24,7 @@ class AppStatus {
     let wechatAPPID:String = "wxb4ba3c02aa476ea1"
     let wechatPayKey:String = "a462b76e7436e98e0ed6e13c64b4fd1c"
     
-    let version:Int = 4
+    var version:Int = 8
     
     var isLoggedIn:Bool
     var userID:String
@@ -290,17 +290,17 @@ class VipInfo{
 }
 
 class UserServer{
-    let register_url:String = "https://user.hanjianqiao.cn:10000/register"
-    let charge_url:String = "https://user.hanjianqiao.cn:10000/charge"
-    let query_url:String = "https://user.hanjianqiao.cn:10000/query"
-    let login_url:String = "https://user.hanjianqiao.cn:10000/login"
-    let up2vip_url:String = "https://user.hanjianqiao.cn:10000/up2vip"
-    let extendvip_url:String = "https://user.hanjianqiao.cn:10000/extendvip"
-    let extendagent_url:String = "https://user.hanjianqiao.cn:10000/extendagent"
-    let newMessageCheck_url:String = "http://user.hanjianqiao.cn:30000/check"
+    let register_url:String = "https://user.vsusvip.com:10000/register"
+    let charge_url:String = "https://user.vsusvip.com:10000/charge"
+    let query_url:String = "https://user.vsusvip.com:10000/query"
+    let login_url:String = "https://user.vsusvip.com:10000/login"
+    let up2vip_url:String = "https://user.vsusvip.com:10000/up2vip"
+    let extendvip_url:String = "https://user.vsusvip.com:10000/extendvip"
+    let extendagent_url:String = "https://user.vsusvip.com:10000/extendagent"
+    let newMessageCheck_url:String = "http://user.vsusvip.com:30000/check"
 }
 
 class ContentServer{
-    let versionCheckURL:String = "http://user.hanjianqiao.cn:13420/check"
+    let versionCheckURL:String = "http://user.vsusvip.com:13420/ios"
     
 }

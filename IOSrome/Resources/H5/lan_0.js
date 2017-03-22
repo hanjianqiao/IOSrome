@@ -53,10 +53,11 @@ function callBack(html, url){
 
 function doWork(isVip){
     showIt = isVip;
-	//LanJsBridge.getDataFromUrl("https://user.hanjianqiao.cn:30002/search?key="+get('catalog'), "callBack")
+	//LanJsBridge.getDataFromUrl("https://user.vsusvip.com:30002/search?key="+get('catalog'), "callBack")
     var catalog = get('catalog');
     if(catalog == null) catalog = '0';
     var activity = get('activity');
     if(activity == null) activity = '0';
-	LanJsBridge.getDataFromUrl("http://user.hanjianqiao.cn:7010/search?catalog="+catalog+"&activity="+activity, "callBack")
+    if(activity == '0' && catalog == '0') activity = '5';
+	LanJsBridge.getDataFromUrl("http://shop.vsusvip.com:7010/search?catalog="+catalog+"&activity="+activity, "callBack")
 }

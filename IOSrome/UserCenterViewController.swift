@@ -76,6 +76,7 @@ class UserCenterViewController: UIViewController {
             
             let newVersion:Int = Int(json?["message"] as! String)!
             
+            print("Current version is \(AppStatus.sharedInstance.version) and new version is \(newVersion)")
             if( newVersion > AppStatus.sharedInstance.version){
                 print(json?["message"] ?? "")
                 let alert = UIAlertController (title: "更新提示：为了更好的使用体验，请重新下载安装最新版本，下载地址请关注“小牛快淘”微信公众号，回复“最新版本”即可。", message: ""

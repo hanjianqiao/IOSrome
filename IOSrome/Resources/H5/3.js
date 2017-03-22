@@ -9,5 +9,5 @@ function callBack(html, url){
     document.getElementById("tea").innerHTML=ja.team_total;
 }
 function updateDisplay(userId, password){
-	LanJsBridge.getDataFromUrl("https://user.hanjianqiao.cn:10000/query?id="+userId+"&pwd="+password, "callBack")
+	LanJsBridge.getDataFromUrl("https://user.vsusvip.com:10000/query?id="+userId+"&pwd="+password, "callBack")
 }
