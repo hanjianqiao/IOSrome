@@ -67,6 +67,7 @@ function updateGeneralBrokerageCallBack(htmlText, url){
         if(obj.data.head.status == "NORESULT"){
             document.getElementById("genbrorate").innerHTML="0%";
             document.getElementById("days30sell").innerHTML="0";
+            document.getElementById("givebro").innerHTML = "0";
             document.getElementById("plantitle").innerHTML="没有计划";
         }else{
             var dataList = obj.data.pageList[0];
@@ -83,6 +84,7 @@ function updateGeneralBrokerageCallBack(htmlText, url){
     }catch(err){
         document.getElementById("genbrorate").innerHTML="0%";
         document.getElementById("days30sell").innerHTML="0";
+        document.getElementById("givebro").innerHTML = "0";
         document.getElementById("plantitle").innerHTML="没有计划";
     }
 }
