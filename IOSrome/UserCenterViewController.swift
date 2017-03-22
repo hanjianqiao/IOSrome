@@ -17,24 +17,26 @@ class UserCenterViewController: UIViewController {
     @IBOutlet weak var unReadNoti: UILabel!
     
     @objc func updateDisplay(notification: NSNotification){
-        //do stuff
-        if(AppStatus.sharedInstance.isLoggedIn == false){
-            logoutButton.isHidden = true
-            userNameButton.setTitle("点击登陆会淘账号", for: UIControlState.normal)
-            userIconButton.setImage(UIImage(named: "unlogged.png"), for: UIControlState.normal)
-        }else{
-            logoutButton.isHidden = false
-            userNameButton.setTitle(AppStatus.sharedInstance.userInfo.userId, for: UIControlState.normal)
-            userIconButton.setImage(UIImage(named: "Mine_head.png"), for: UIControlState.normal)
-        }
-        if(notification.userInfo != nil){
-            let str = notification.userInfo?[AnyHashable("isThere")] as! Bool
-            print(str)
-            
-            if(str == false){
-                self.unReadNoti.text = ""
+        OperationQueue.main.addOperation {
+            //do stuff
+            if(AppStatus.sharedInstance.isLoggedIn == false){
+                self.logoutButton.isHidden = true
+                self.userNameButton.setTitle("点击登陆会淘账号", for: UIControlState.normal)
+                self.userIconButton.setImage(UIImage(named: "unlogged.png"), for: UIControlState.normal)
             }else{
-                self.unReadNoti.text = "（新消息）"
+                self.logoutButton.isHidden = false
+                self.userNameButton.setTitle(AppStatus.sharedInstance.userInfo.userId, for: UIControlState.normal)
+                self.userIconButton.setImage(UIImage(named: "Mine_head.png"), for: UIControlState.normal)
+            }
+            if(notification.userInfo != nil){
+                let str = notification.userInfo?[AnyHashable("isThere")] as! Bool
+                print(str)
+                
+                if(str == false){
+                    self.unReadNoti.text = ""
+                }else{
+                    self.unReadNoti.text = "（新消息）"
+                }
             }
         }
     }
@@ -86,6 +88,81 @@ class UserCenterViewController: UIViewController {
             }
         }
         task.resume()
+        
+        let defaults = UserDefaults.standard
+        let shouldLogin = defaults.string(forKey: defaultsKeys.savedLogin)
+        print(shouldLogin ?? "nil")
+        if(shouldLogin != nil && shouldLogin == "yes"){
+            let queue = OperationQueue()
+            queue.addOperation() {
+                // do something in the background
+                var request = URLRequest(url: URL(string: AppStatus.sharedInstance.userServer.login_url)!)
+                request.httpMethod = "POST"
+                let uuid = UUID().uuidString
+                let postString = "{\"user_id\":\"" +
+                    defaults.string(forKey: defaultsKeys.username)! + "\",\"password\":\"" +
+                    defaults.string(forKey: defaultsKeys.passwd)! + "\",\"uuid\":\"" +
+                    uuid + "\"}"
+                request.httpBody = postString.data(using: .utf8)
+                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                let task2 = URLSession.shared.dataTask(with: request) { data, response, error in
+                    guard let data = data, error == nil else {               // check for fundamental networking error
+                        print("error=\(error)")
+                        return
+                    }
+                    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                        print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                        print("response = \(response)")
+                        return
+                    }
+                    
+                    let responseString = String(data: data, encoding: .utf8)
+                    
+                    if(responseString == nil){
+                        return
+                    }
+                    let json = JsonTools.convertToDictionary(text: responseString!)
+                    
+                    if(json == nil){
+                        return
+                    }
+                    if(json?["status"] as! String == "ok"){
+                        let infodata = json?["data"] as! [String:AnyObject]
+                        AppStatus.sharedInstance.userInfo.userId = infodata["user_id"] as! String
+                        AppStatus.sharedInstance.userInfo.password = defaults.string(forKey: defaultsKeys.passwd)!
+                        AppStatus.sharedInstance.userInfo.inviter = infodata["inviter"] as! String
+                        AppStatus.sharedInstance.userInfo.invitation = infodata["code"] as! String
+                        AppStatus.sharedInstance.vipInfo.endYear = Int(infodata["expire_year"] as! String)!
+                        AppStatus.sharedInstance.vipInfo.endMonth = Int(infodata["expire_month"] as! String)!
+                        AppStatus.sharedInstance.vipInfo.endDay = Int(infodata["expire_day"] as! String)!
+                        AppStatus.sharedInstance.userInfo.level = infodata["level"] as! String
+                        AppStatus.sharedInstance.userInfo.balance = infodata["balance"] as! String
+                        AppStatus.sharedInstance.isLoggedIn = true
+                        let date = Date()
+                        let calendar = Calendar.current
+                        let comp = calendar.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+                        let A = comp.year! > AppStatus.sharedInstance.vipInfo.endYear
+                        let AE = comp.year! == AppStatus.sharedInstance.vipInfo.endYear
+                        let B = comp.month! > AppStatus.sharedInstance.vipInfo.endMonth
+                        let BE = comp.month! == AppStatus.sharedInstance.vipInfo.endMonth
+                        let C = comp.day! > AppStatus.sharedInstance.vipInfo.endDay
+                        if((A) || (AE && B) || (AE && BE && C)){
+                            AppStatus.sharedInstance.isVip = false
+                        }else{
+                            AppStatus.sharedInstance.isVip = true
+                        }
+                        self.tabBarController?.tabBar.items?[0].isEnabled = true
+                        self.tabBarController?.tabBar.items?[1].isEnabled = true
+                        self.tabBarController?.tabBar.items?[2].isEnabled = true
+                        self.tabBarController?.tabBar.items?[3].isEnabled = true
+                        
+                        NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
+                        
+                    }
+                }
+                task2.resume()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -137,6 +214,8 @@ class UserCenterViewController: UIViewController {
         self.tabBarController?.tabBar.items?[2].isEnabled = false
         self.tabBarController?.tabBar.items?[3].isEnabled = true
         self.tabBarController?.selectedIndex = 3
+        let defaults = UserDefaults.standard
+        defaults.setValue("no", forKey: defaultsKeys.savedLogin)
     }
     
     func notLoggedInMessage(){

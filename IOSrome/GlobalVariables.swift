@@ -11,6 +11,7 @@ import Foundation
 struct defaultsKeys {
     static let username = "UserName"
     static let passwd = "Password"
+    static let savedLogin = "savedLogin"
 }
 
 class AppStatus {

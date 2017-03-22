@@ -204,6 +204,9 @@ class LoginViewController: UIViewController {
                             self.tabBarController?.tabBar.items?[1].isEnabled = true
                             self.tabBarController?.tabBar.items?[2].isEnabled = true
                             self.tabBarController?.tabBar.items?[3].isEnabled = true
+                            
+                            let defaults = UserDefaults.standard
+                            defaults.setValue("yes", forKey: defaultsKeys.savedLogin)
                             _ = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-2] as! UserCenterViewController
                             NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
                             _ = self.navigationController?.popViewController(animated: true)
