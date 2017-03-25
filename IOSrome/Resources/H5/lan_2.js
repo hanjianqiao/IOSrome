@@ -41,7 +41,13 @@ function callBack(html, url){
         }
         LanJsBridge.callInMain("lastStage0", "");
     }else{
-        LanJsBridge.callInMain("lastStage1", "");
+        if(query_type == '0'){
+            nowLoad = -20;
+            query_type = '1';
+            loadMore();
+        }else{
+            LanJsBridge.callInMain("lastStage1", "");
+        }
     }
 }
 

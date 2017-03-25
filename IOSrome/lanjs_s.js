@@ -45,8 +45,7 @@ function updateGeneralBrokerageItemCallBack(htmlText, url){
                 }
             }
             innerText += "</td><td style=\"color:#fe2641\">" + rate + "%</td><td>";
-            innerText += "<a href=http://pub.alimama.com/myunion.htm?#!/promo/self/campaign?campaignId=";
-            innerText += jo.campaignId + "&shopkeeperId=" + jo.shopKeeperId + ">";
+            innerText += "<a href=\"http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"\"";
             innerText += "<button class=\"btn_02\">申请计划</button></a></td>";
             var item = document.createElement("tr");
             item.innerHTML = innerText;
