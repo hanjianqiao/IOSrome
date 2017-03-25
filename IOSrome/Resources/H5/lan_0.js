@@ -2,7 +2,7 @@ var target = document.getElementsByClassName('product-list')[0];
 var shouIt = false;
 
 var str0 = '<a href="ios:showDetail:'
-var str1 = '"><i>领券<br>减'
+var str1 = '"><i>券减<br>'
 var str2 = '</i><span class="money02">佣金'
 var str3 = '%</span><img src="'
 var str4 = '" alt=""><h4>'
