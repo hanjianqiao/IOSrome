@@ -52,7 +52,7 @@ function updateGeneralBrokerageItemCallBack(htmlText, url){
             document.getElementById("plantable").appendChild(item);
         }
     }catch(err){
-        document.getElementById("plantitle").innerHTML = "请<a href=ios:showTaobaoDetail:http://www.alimama.com/ style=\"color:red\"><b>登陆</b></a>后查看详情";
+        document.getElementById("plantitle").innerHTML = "请<a href=loginalimama:show style=\"color:red\"><b>登陆</b></a>后查看详情";
     }
 }
 

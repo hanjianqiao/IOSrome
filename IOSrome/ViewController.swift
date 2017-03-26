@@ -176,10 +176,6 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         
         self.tabBarController?.selectedIndex = 0;
     }
-    func showGuide(){
-        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "guide"))! as! TaoTutorialViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         print("webview is : \(webView.request?.url?.absoluteString) Will loading \(request.url?.absoluteString)")

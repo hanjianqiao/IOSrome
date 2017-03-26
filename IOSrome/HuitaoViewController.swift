@@ -83,7 +83,10 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
         //webView.scrollView.setZoomScale(0.1, animated: true)
         //webView.stringByEvaluatingJavaScript(from: "doWork()")
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        webView.reload()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -118,6 +121,10 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
                 , preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            return false
+        } else if (request.url?.absoluteString.hasPrefix("loginalimama"))!{
+            let vc = (self.storyboard?.instantiateViewController(withIdentifier: "alimama"))! as! TaobaoAlimama
+            self.navigationController?.pushViewController(vc, animated: true)
             return false
         }
         return true

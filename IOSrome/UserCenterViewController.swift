@@ -294,6 +294,14 @@ class UserCenterViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
+    @IBAction func toolkit(_ sender: UIButton) {
+        if(AppStatus.sharedInstance.isLoggedIn == false){
+            notLoggedInMessage()
+            return
+        }
+        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "toolkit"))! as UIViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     /*
     // MARK: - Navigation
 

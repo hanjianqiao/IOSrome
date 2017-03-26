@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="1942.5" y="-720.42253521126759"/>
         </scene>
-        <!--Tao Tutorial View Controller-->
+        <!--Taobao Alimama-->
         <scene sceneID="mzv-dX-1Nr">
             <objects>
-                <viewController storyboardIdentifier="guide" id="f3O-LW-muP" customClass="TaoTutorialViewController" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="alimama" id="f3O-LW-muP" customClass="TaobaoAlimama" customModule="IOSrome" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fxz-Kh-BQJ"/>
                         <viewControllerLayoutGuide type="bottom" id="XCx-PN-il5"/>
@@ -109,6 +109,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dhQ-uY-SbZ">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="8Xm-1o-fUm" id="Ovb-jQ-Zns"/>
                     </connections>
@@ -126,7 +129,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="3hK-tj-AgW" kind="relationship" relationship="rootViewController" id="RFf-el-vhf"/>
+                        <segue destination="3hK-tj-AgW" kind="relationship" relationship="rootViewController" id="6GE-GY-27F"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9M3-WB-KtJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
