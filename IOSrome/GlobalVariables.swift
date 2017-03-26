@@ -12,6 +12,7 @@ struct defaultsKeys {
     static let username = "UserName"
     static let passwd = "Password"
     static let savedLogin = "savedLogin"
+    static let alimama_cookie = "alimamaCookie"
 }
 
 class AppStatus {

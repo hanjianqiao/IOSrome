@@ -22,6 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         WXApi.registerApp(AppStatus.sharedInstance.wechatAPPID);
         AppStatus.sharedInstance.periodCheck()
+        let ud: UserDefaults = UserDefaults.standard
+        let data: NSData? = ud.object(forKey: "cookie") as? NSData
+        if let cookie = data {
+            let datas: NSArray? = NSKeyedUnarchiver.unarchiveObject(with: cookie as Data) as? NSArray
+            if let cookies = datas {
+                for c in cookies as! [HTTPCookie] {
+                    HTTPCookieStorage.shared.setCookie(c)
+                }
+            }
+        }
         sleep(1)
         return true
     }
@@ -49,6 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        let cookieJar: HTTPCookieStorage = HTTPCookieStorage.shared
+        let data: NSData = NSKeyedArchiver.archivedData(withRootObject: cookieJar.cookies ?? "") as NSData
+        let ud: UserDefaults = UserDefaults.standard
+        ud.set(data, forKey: "cookie")
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
@@ -64,6 +78,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+        let cookieJar: HTTPCookieStorage = HTTPCookieStorage.shared
+        let data: NSData = NSKeyedArchiver.archivedData(withRootObject: cookieJar.cookies ?? "") as NSData
+        let ud: UserDefaults = UserDefaults.standard
+        ud.set(data, forKey: "cookie")
     }
 
     // MARK: - Core Data stack
