@@ -46,8 +46,6 @@
 		C4612E931E063CD500B79331 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E911E063CD500B79331 /* SWXMLHash.swift */; };
 		C4612E941E063CD500B79331 /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E921E063CD500B79331 /* SWXMLHash+TypeConversion.swift */; };
 		C4612E961E08D91B00B79331 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E951E08D91A00B79331 /* ShopDetailViewController.swift */; };
-		C49AA6481E8802C300438F9E /* ToolkitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49AA6471E8802C300438F9E /* ToolkitViewController.swift */; };
-		C49AA64A1E881BC900438F9E /* autofill.js in Resources */ = {isa = PBXBuildFile; fileRef = C49AA6491E881BC900438F9E /* autofill.js */; };
 		C4A576E01E4BF74F00E3812D /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A576DF1E4BF74F00E3812D /* WelcomViewController.swift */; };
 		C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */; };
 		C4BB410F1DFC724300B01055 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB410E1DFC724300B01055 /* MainTabBarController.swift */; };
@@ -331,8 +329,6 @@
 		C4612E911E063CD500B79331 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWXMLHash.swift; path = Support/SWXMLHash/SWXMLHash.swift; sourceTree = "<group>"; };
 		C4612E921E063CD500B79331 /* SWXMLHash+TypeConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SWXMLHash+TypeConversion.swift"; path = "Support/SWXMLHash/SWXMLHash+TypeConversion.swift"; sourceTree = "<group>"; };
 		C4612E951E08D91A00B79331 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
-		C49AA6471E8802C300438F9E /* ToolkitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolkitViewController.swift; sourceTree = "<group>"; };
-		C49AA6491E881BC900438F9E /* autofill.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = autofill.js; sourceTree = "<group>"; };
 		C4A576DF1E4BF74F00E3812D /* WelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
 		C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportNavigationController.swift; sourceTree = "<group>"; };
 		C4BB410E1DFC724300B01055 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -635,7 +631,6 @@
 				C422A3B01E1CEA2100AA8589 /* InvitaListDetailViewController.swift */,
 				C4460E441E2954DD0000F2C3 /* MoneyViewController.swift */,
 				C43AFE411E756A4900593398 /* GeneralWebViewController.swift */,
-				C49AA6471E8802C300438F9E /* ToolkitViewController.swift */,
 			);
 			name = user;
 			sourceTree = "<group>";
@@ -740,7 +735,6 @@
 			children = (
 				C4BB41581DFD832A00B01055 /* lanjs_s.js */,
 				C41D80091E122BB500E4F019 /* get_item_detail.js */,
-				C49AA6491E881BC900438F9E /* autofill.js */,
 			);
 			name = js;
 			sourceTree = "<group>";
@@ -1248,7 +1242,6 @@
 				C4BCA65B1E67A4D8007E552A /* Report.storyboard in Resources */,
 				C4CCCBF81E7D6D2100F5687F /* logo.png in Resources */,
 				C4CCCC261E7D6D2100F5687F /* touxiang.png in Resources */,
-				C49AA64A1E881BC900438F9E /* autofill.js in Resources */,
 				C4CCCE381E7D6D3F00F5687F /* 我的图标@2x.png in Resources */,
 				C4CCCC141E7D6D2100F5687F /* register-success.html in Resources */,
 				C4CCCBCC1E7D6D2100F5687F /* guide.css in Resources */,
@@ -1474,7 +1467,6 @@
 				C4A576E01E4BF74F00E3812D /* WelcomViewController.swift in Sources */,
 				C45F7A901E68875000450551 /* TaobaoAlimama.swift in Sources */,
 				C4612E8A1E03B34300B79331 /* TaobaoNavigationController.swift in Sources */,
-				C49AA6481E8802C300438F9E /* ToolkitViewController.swift in Sources */,
 				C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */,
 				C4DA4E211E5865E4008A5975 /* INSPersistentContainer.swift in Sources */,
 				C4612E811E01445B00B79331 /* VIPDetailViewController.swift in Sources */,

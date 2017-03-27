@@ -11,18 +11,11 @@ import JavaScriptCore
 
 class TaobaoAlimama: UIViewController, UIWebViewDelegate {
     
-    var jsString: String?
     @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        do{
-            let filePath = Bundle.main.path(forResource: "autofill", ofType: "js")
-            try jsString = String(contentsOfFile: filePath!)
-        }catch let err as NSError{
-            print(err)
-        }
 
         webView.scalesPageToFit = true
         webView.delegate = self
@@ -37,27 +30,7 @@ class TaobaoAlimama: UIViewController, UIWebViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    var jsContext: JSContext?
-    @IBAction func fill(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        let alimama_username = defaults.string(forKey: defaultsKeys.alimama_username)
-        if(alimama_username != nil){
-            UIPasteboard.general.string = alimama_username!;
-        }else{
-            UIPasteboard.general.string = ""
-        }
-    }
 
-    @IBAction func copyPassword(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        let alimama_password = defaults.string(forKey: defaultsKeys.alimama_password)
-        if(alimama_password != nil){
-            UIPasteboard.general.string = alimama_password!;
-        }else{
-            UIPasteboard.general.string = ""
-        }
-    }
     /*
     // MARK: - Navigation
 

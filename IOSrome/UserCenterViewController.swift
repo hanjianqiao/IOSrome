@@ -27,10 +27,6 @@ class UserCenterViewController: UIViewController {
                 self.logoutButton.isHidden = false
                 self.userNameButton.setTitle(AppStatus.sharedInstance.userInfo.userId, for: UIControlState.normal)
                 self.userIconButton.setImage(UIImage(named: "Mine_head.png"), for: UIControlState.normal)
-                self.tabBarController?.tabBar.items?[0].isEnabled = true
-                self.tabBarController?.tabBar.items?[1].isEnabled = true
-                self.tabBarController?.tabBar.items?[2].isEnabled = true
-                self.tabBarController?.tabBar.items?[3].isEnabled = true
             }
             if(notification.userInfo != nil){
                 let str = notification.userInfo?[AnyHashable("isThere")] as! Bool
@@ -294,14 +290,6 @@ class UserCenterViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    @IBAction func toolkit(_ sender: UIButton) {
-        if(AppStatus.sharedInstance.isLoggedIn == false){
-            notLoggedInMessage()
-            return
-        }
-        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "toolkit"))! as UIViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
     /*
     // MARK: - Navigation
 
