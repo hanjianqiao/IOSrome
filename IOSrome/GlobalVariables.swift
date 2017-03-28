@@ -120,7 +120,7 @@ class AppStatus {
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {               // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 let responseString = String(data: data, encoding: .utf8)!
@@ -156,7 +156,7 @@ class AppStatus {
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {               // check for fundamental networking error
-                    print("error=\(error)")
+                    print("error=\(String(describing: error))")
                     return
                 }
                 let responseString = String(data: data, encoding: .utf8)!

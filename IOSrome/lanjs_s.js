@@ -45,7 +45,7 @@ function updateGeneralBrokerageItemCallBack(htmlText, url){
                 }
             }
             innerText += "</td><td style=\"color:#fe2641\">" + rate + "%</td><td>";
-            innerText += "<a href=\"http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"\"";
+            innerText += "<a href=\"http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&yxjh=-1\"";
             innerText += "<button class=\"btn_02\">申请计划</button></a></td>";
             var item = document.createElement("tr");
             item.innerHTML = innerText;
@@ -57,7 +57,7 @@ function updateGeneralBrokerageItemCallBack(htmlText, url){
 }
 
 function updateGeneralBrokerageItem(memberId){
-    LanJsBridge.getDataFromUrl("http://pub.alimama.com/shopdetail/campaigns.json?oriMemberId="+memberId, "updateGeneralBrokerageItemCallBack");
+    LanJsBridge.getDataFromUrlUpdateInMain("http://pub.alimama.com/shopdetail/campaigns.json?oriMemberId="+memberId, "updateGeneralBrokerageItemCallBack");
 }
 
 function updateGeneralBrokerageCallBack(htmlText, url){
@@ -131,7 +131,7 @@ function updateQueqiaoBrokerageCallBack(htmlText, url){
     }catch (err){
         document.getElementById("queqiaorate").innerHTML = (showIt?"0%":"??%");
     }
-    document.getElementById("genlick").href = (showIt ? ((jo.eventRate || jo.eventRate == '0') ? ("http://pub.alimama.com/promo/item/channel/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&channel=qqhd") : ("http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid)) : "");
+    document.getElementById("genlick").href = (showIt ? ((jo.eventRate || jo.eventRate == '0') ? ("http://pub.alimama.com/promo/item/channel/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&channel=qqhd&yxjh=-1") : ("http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&yxjh=-1")) : "");
     try {
         if(showIt){
             updateQueqiaoBrokerageItem(goodid);
@@ -143,7 +143,7 @@ function updateQueqiaoBrokerageCallBack(htmlText, url){
 }
 
 function updateQueqiaoBrokerage(){
-    LanJsBridge.getDataFromUrl("http://pub.alimama.com/items/search.json?q=https://item.taobao.com/item.htm?id="+goodid+"&perPageSize=50", "updateQueqiaoBrokerageCallBack")
+    LanJsBridge.getDataFromUrlUpdateInMain("http://pub.alimama.com/items/search.json?q=https://item.taobao.com/item.htm?id="+goodid+"&perPageSize=50", "updateQueqiaoBrokerageCallBack")
 }
 
 // Taobao Coupon
@@ -176,7 +176,7 @@ function updateTaobaoCouponItemCallBack(htmlText, url){
 }
 
 function updateTaobaoCouponItem(sellerId, activityId){
-    LanJsBridge.getDataFromUrl("http://shop.m.taobao.com/shop/coupon.htm?seller_id="+sellerId+"&activity_id="+activityId, "updateTaobaoCouponItemCallBack");
+    LanJsBridge.getDataFromUrlUpdateInMain("http://shop.m.taobao.com/shop/coupon.htm?seller_id="+sellerId+"&activity_id="+activityId, "updateTaobaoCouponItemCallBack");
 }
 
 function updateTaobaoCouponCallBack(htmlText, url){
@@ -201,7 +201,7 @@ function updateTaobaoCouponCallBack(htmlText, url){
 }
 
 function updateTaobaoCoupon(){
-    LanJsBridge.getDataFromUrl("https://cart.taobao.com/json/GetPriceVolume.do?sellerId="+userid, "updateTaobaoCouponCallBack");
+    LanJsBridge.getDataFromUrlUpdateInMain("https://cart.taobao.com/json/GetPriceVolume.do?sellerId="+userid, "updateTaobaoCouponCallBack");
 }
 
 // Taokezhushou Coupon
@@ -229,7 +229,7 @@ function updateTKZSCouponItemCallBack(htmlText, url){
 }
 
 function updateTKZSCouponItem(sellerId, activityId){
-    LanJsBridge.getDataFromUrl("http://shop.m.taobao.com/shop/coupon.htm?seller_id="+sellerId+"&activity_id="+activityId, "updateTKZSCouponItemCallBack");
+    LanJsBridge.getDataFromUrlUpdateInMain("http://shop.m.taobao.com/shop/coupon.htm?seller_id="+sellerId+"&activity_id="+activityId, "updateTKZSCouponItemCallBack");
 }
 
 function updateTKZSCouponCallBack(htmlText, url){
@@ -246,8 +246,8 @@ function updateTKZSCouponCallBack(htmlText, url){
 }
 
 function updateTKZSCoupon(){
-    LanJsBridge.getDataFromUrl("http://zhushou3.taokezhushou.com/api/v1/getdata?itemid="+goodid+"&version=3.5.2", "callBackNull");
-    LanJsBridge.getDataFromUrl("http://zhushou3.taokezhushou.com/api/v1/coupons_base/"+userid+"?item_id="+goodid, "updateTKZSCouponCallBack");
+    LanJsBridge.getDataFromUrlUpdateInMain("http://zhushou3.taokezhushou.com/api/v1/getdata?itemid="+goodid+"&version=3.5.2", "callBackNull");
+    LanJsBridge.getDataFromUrlUpdateInMain("http://zhushou3.taokezhushou.com/api/v1/coupons_base/"+userid+"?item_id="+goodid, "updateTKZSCouponCallBack");
 }
 
 

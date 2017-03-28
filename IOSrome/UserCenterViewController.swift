@@ -57,12 +57,12 @@ class UserCenterViewController: UIViewController {
         let request = URLRequest(url: URL(string: AppStatus.sharedInstance.contentServer.versionCheckURL)!)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {               // check for fundamental networking error
-                print("error=\(error)")
+                print("error=\(String(describing: error))")
                 return
             }
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
+                print("response = \(String(describing: response))")
                 return
             }
             
@@ -71,12 +71,24 @@ class UserCenterViewController: UIViewController {
             if(responseString == nil){
                 return
             }
+            print(responseString ?? "")
             let json = JsonTools.convertToDictionary(text: responseString!)
             if(json == nil){
                 return
             }
             
-            let newVersion:Int = Int(json?["message"] as! String)!
+            let newVersion:Int = Int(json!["message"] as! String)!
+            let minVersion = json!["min"]
+            if(minVersion != nil){
+                let minVersionInt:Int = Int(minVersion as! String)!
+                if(AppStatus.sharedInstance.version < minVersionInt){
+                    let alert = UIAlertController (title: "紧急提示：本版本存在严重问题，请重新下载安装最新版本，下载地址请关注“小牛快淘”微信公众号，回复“最新版本”即可。", message: ""
+                        , preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in exit(0);}))
+                    self.present(alert, animated: true, completion: nil)
+
+                }
+            }
             
             print("Current version is \(AppStatus.sharedInstance.version) and new version is \(newVersion)")
             if( newVersion > AppStatus.sharedInstance.version){
@@ -107,12 +119,12 @@ class UserCenterViewController: UIViewController {
                 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
                 let task2 = URLSession.shared.dataTask(with: request) { data, response, error in
                     guard let data = data, error == nil else {               // check for fundamental networking error
-                        print("error=\(error)")
+                        print("error=\(String(describing: error))")
                         return
                     }
                     if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                         print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                        print("response = \(response)")
+                        print("response = \(String(describing: response))")
                         return
                     }
                     

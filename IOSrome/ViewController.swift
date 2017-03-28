@@ -101,7 +101,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     func webViewDidStartLoad(_ webView: UIWebView) {
-        print("Starting...\(webView.request?.url?.absoluteString)")
+        print("Starting...\(String(describing: webView.request?.url?.absoluteString))")
     }
     
     /**
@@ -133,7 +133,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        print("Finished...\(webView.request?.url?.absoluteString)")
+        print("Finished...\(String(describing: webView.request?.url?.absoluteString))")
     }
     /**
      ** Other functions
@@ -178,7 +178,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        print("webview is : \(webView.request?.url?.absoluteString) Will loading \(request.url?.absoluteString)")
+        print("webview is : \(String(describing: webView.request?.url?.absoluteString)) Will loading \(String(describing: request.url?.absoluteString))")
         if(request.url?.absoluteString.hasPrefix("ios"))!{
             let url:String = (request.url?.absoluteString)!
             let range = url.range(of: ":")
