@@ -21,7 +21,7 @@ class TaobaoAlimama: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         webView.isOpaque = false
         webView.backgroundColor = UIColor.white
-        webView.loadRequest( URLRequest(url: URL(string: "http://alimama.com/")!) )
+        webView.loadRequest( URLRequest(url: URL(string: "https://login.m.taobao.com/login.htm?redirectURL=http%3A%2F%2Fwww.alimama.com&loginFrom=wap_alimama")!) )
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {
         //print(webView.request?.url?.absoluteString)
