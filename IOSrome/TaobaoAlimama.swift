@@ -21,7 +21,7 @@ class TaobaoAlimama: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         webView.isOpaque = false
         webView.backgroundColor = UIColor.white
-        webView.loadRequest( URLRequest(url: URL(string: "https://login.m.taobao.com/login.htm?redirectURL=http%3A%2F%2Fwww.alimama.com&loginFrom=wap_alimama")!) )
+        webView.loadRequest( URLRequest(url: URL(string: "https://login.taobao.com/member/login.jhtml?style=mini&newMini2=true&css_style=alimama&from=alimama&redirectURL=http%253A%252F%252Fwww.alimama.com&full_redirect=true&disableQuickLogin=true")!) )
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {
         //print(webView.request?.url?.absoluteString)
@@ -30,7 +30,17 @@ class TaobaoAlimama: UIViewController, UIWebViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        print("Alilogin: reloading \(String(describing: request.url?.absoluteString))")
+        if((request.url?.absoluteString.hasPrefix("https://login.m.taobao.com"))! || (request.url?.absoluteString.hasPrefix("https://login.taobao.com"))! ||  (request.url?.absoluteString.hasPrefix("https://www.alimama.com/"))! ||  (request.url?.absoluteString.hasPrefix("http://www.alimama.com/"))! || (request.url?.absoluteString.hasPrefix("https://login.m.taobao.com"))!){
+                    return true
+        }else if((request.url?.absoluteString.hasPrefix("http://pub.alimama.com"))!){
+            webView.loadRequest(URLRequest(url: URL(string:"http://www.alimama.com/")!))
+            return false
+        }
+        return false
+        
+    }
     /*
     // MARK: - Navigation
 
