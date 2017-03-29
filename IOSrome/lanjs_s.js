@@ -246,8 +246,7 @@ function updateTKZSCouponCallBack(htmlText, url){
 }
 
 function updateTKZSCoupon(){
-    LanJsBridge.getDataFromUrlUpdateInMain("http://zhushou3.taokezhushou.com/api/v1/getdata?itemid="+goodid+"&version=3.5.2", "callBackNull");
-    LanJsBridge.getDataFromUrlUpdateInMain("http://zhushou3.taokezhushou.com/api/v1/coupons_base/"+userid+"?item_id="+goodid, "updateTKZSCouponCallBack");
+    LanJsBridge.getDataFromUrl("http://zhushou3.taokezhushou.com/api/v1/getdata?itemid="+goodid+"&version=3.5.2", "callBackNull");
 }
 
 
@@ -259,6 +258,7 @@ function imgAutoFit(a, b){
 }
 
 function callBackNull(htmlString, url){
+    LanJsBridge.getDataFromUrlUpdateInMain("http://zhushou3.taokezhushou.com/api/v1/coupons_base/"+userid+"?item_id="+goodid, "updateTKZSCouponCallBack");
 }
 
 function callBackShowAlert(htmlString, url){
