@@ -12,7 +12,8 @@ class UserNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("user navi started")
         // Do any additional setup after loading the view.
         let UserViewController = UIStoryboard(name: "UserCenter", bundle: nil).instantiateInitialViewController() as UIViewController!
         let vcArray = [UserViewController]

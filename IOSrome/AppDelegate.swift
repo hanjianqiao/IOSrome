@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let version = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
             AppStatus.sharedInstance.version = Int(version)!
         }
-        WXApi.registerApp(AppStatus.sharedInstance.wechatAPPID);
         AppStatus.sharedInstance.periodCheck()
         let ud: UserDefaults = UserDefaults.standard
         let data: NSData? = ud.object(forKey: "cookie") as? NSData
@@ -28,28 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let datas: NSArray? = NSKeyedUnarchiver.unarchiveObject(with: cookie as Data) as? NSArray
             if let cookies = datas {
                 for c in cookies as! [HTTPCookie] {
+                    //print("cookie \(String(describing:c))")
                     HTTPCookieStorage.shared.setCookie(c)
                 }
             }
         }
         sleep(1)
         return true
-    }
-    
-    func onResp(resp: BaseResp!) {
-        print("resp")
-        //var strTitle = "支付结果"
-        var strMsg = "(resp.errCode)"
-        if resp.isKind(of: PayResp.self) {
-            switch resp.errCode {
-            case WXSuccess.rawValue:
-                strMsg = "pay success"
-            default:
-                strMsg = "支付失败，请您重新支付!"
-                print("retcode = \(resp.errCode), retstr =\(resp.errStr)")
-            }
-        }
-        print(strMsg)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

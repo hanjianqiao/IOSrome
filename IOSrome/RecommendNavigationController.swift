@@ -12,7 +12,8 @@ class RecommendNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("Rec navi started")
         // Do any additional setup after loading the view.
         let UserViewController = UIStoryboard(name: "Recommend", bundle: nil).instantiateInitialViewController() as UIViewController!
         let vcArray = [UserViewController]

@@ -12,7 +12,7 @@ class TaobaoNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Taobao navi started")
         // Do any additional setup after loading the view.
         let UserViewController = UIStoryboard(name: "Taobao", bundle: nil).instantiateInitialViewController() as UIViewController!
         let vcArray = [UserViewController]

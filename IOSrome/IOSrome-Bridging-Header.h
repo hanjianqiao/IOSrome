@@ -4,9 +4,6 @@
 
 #import "CustomeObject.h"
 
-#import "WXApi.h"
-#import "WXApiObject.h"
-
 #import <CommonCrypto/CommonCrypto.h>
 
 #include "sqlite3.h"

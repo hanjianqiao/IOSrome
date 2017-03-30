@@ -10,6 +10,8 @@ import Foundation
 
 import JavaScriptCore
 
+import UIKit
+
 @objc protocol SwiftJavaScriptDelegate: JSExport{
     func notValidUrl()
     func test1(_ para: String ) -> String

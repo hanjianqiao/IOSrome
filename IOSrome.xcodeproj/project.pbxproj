@@ -43,21 +43,13 @@
 		C4612E8A1E03B34300B79331 /* TaobaoNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E891E03B34300B79331 /* TaobaoNavigationController.swift */; };
 		C4612E8C1E03B35C00B79331 /* RecommendNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E8B1E03B35C00B79331 /* RecommendNavigationController.swift */; };
 		C4612E8E1E03B36E00B79331 /* SelfchooseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E8D1E03B36E00B79331 /* SelfchooseNavigationController.swift */; };
-		C4612E931E063CD500B79331 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E911E063CD500B79331 /* SWXMLHash.swift */; };
-		C4612E941E063CD500B79331 /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E921E063CD500B79331 /* SWXMLHash+TypeConversion.swift */; };
 		C4612E961E08D91B00B79331 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E951E08D91A00B79331 /* ShopDetailViewController.swift */; };
 		C4A576E01E4BF74F00E3812D /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A576DF1E4BF74F00E3812D /* WelcomViewController.swift */; };
-		C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */; };
 		C4BB410F1DFC724300B01055 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB410E1DFC724300B01055 /* MainTabBarController.swift */; };
 		C4BB41511DFD23C000B01055 /* SelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41501DFD23C000B01055 /* SelfViewController.swift */; };
 		C4BB41531DFD328800B01055 /* StartRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41521DFD328800B01055 /* StartRegisterViewController.swift */; };
 		C4BB41571DFD7EB100B01055 /* HuitaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */; };
 		C4BB41591DFD832A00B01055 /* lanjs_s.js in Resources */ = {isa = PBXBuildFile; fileRef = C4BB41581DFD832A00B01055 /* lanjs_s.js */; };
-		C4BCA65B1E67A4D8007E552A /* Report.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4BCA6561E67A4D8007E552A /* Report.storyboard */; };
-		C4BCA65C1E67A4D8007E552A /* ReportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA6571E67A4D8007E552A /* ReportDetailViewController.swift */; };
-		C4BCA65D1E67A4D8007E552A /* ReportListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA6581E67A4D8007E552A /* ReportListTableViewController.swift */; };
-		C4BCA65E1E67A4D8007E552A /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA6591E67A4D8007E552A /* ReportTableViewCell.swift */; };
-		C4BCA65F1E67A4D8007E552A /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BCA65A1E67A4D8007E552A /* ReportViewController.swift */; };
 		C4BCA6721E67A56C007E552A /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C4BCA66F1E67A56C007E552A /* libWeChatSDK.a */; };
 		C4C655BD1E65E6C400F240DD /* TaobaoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C655BC1E65E6C400F240DD /* TaobaoDetailViewController.swift */; };
 		C4C655BF1E65E99D00F240DD /* TaobaoDetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C655BE1E65E99D00F240DD /* TaobaoDetailViewController2.swift */; };
@@ -274,7 +266,6 @@
 		C4DA4E211E5865E4008A5975 /* INSPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA4E1D1E5865E4008A5975 /* INSPersistentContainer.swift */; };
 		C4DA4E221E5865E4008A5975 /* INSPersistentStoreDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA4E1E1E5865E4008A5975 /* INSPersistentStoreDescription.swift */; };
 		C4DA4E231E5865E4008A5975 /* NSManagedObjectContext+iOS10Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DA4E1F1E5865E4008A5975 /* NSManagedObjectContext+iOS10Additions.swift */; };
-		C4E242681E2CB40700A948E9 /* SqlConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E242671E2CB40700A948E9 /* SqlConnector.swift */; };
 		C4E3AABA1E010C0100564EC3 /* SwiftJavascriptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E3AAB91E010C0100564EC3 /* SwiftJavascriptBridge.swift */; };
 		C4EE467F1E08EB3E00E5D0E3 /* String+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EE467E1E08EB3E00E5D0E3 /* String+MD5.swift */; };
 		C4EE46821E08EE6800E5D0E3 /* JsonTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EE46811E08EE6800E5D0E3 /* JsonTools.swift */; };
@@ -325,22 +316,13 @@
 		C4612E891E03B34300B79331 /* TaobaoNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaobaoNavigationController.swift; sourceTree = "<group>"; };
 		C4612E8B1E03B35C00B79331 /* RecommendNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendNavigationController.swift; sourceTree = "<group>"; };
 		C4612E8D1E03B36E00B79331 /* SelfchooseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfchooseNavigationController.swift; sourceTree = "<group>"; };
-		C4612E901E063CD500B79331 /* SWXMLHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWXMLHash.h; path = Support/SWXMLHash/SWXMLHash.h; sourceTree = "<group>"; };
-		C4612E911E063CD500B79331 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWXMLHash.swift; path = Support/SWXMLHash/SWXMLHash.swift; sourceTree = "<group>"; };
-		C4612E921E063CD500B79331 /* SWXMLHash+TypeConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SWXMLHash+TypeConversion.swift"; path = "Support/SWXMLHash/SWXMLHash+TypeConversion.swift"; sourceTree = "<group>"; };
 		C4612E951E08D91A00B79331 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		C4A576DF1E4BF74F00E3812D /* WelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
-		C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportNavigationController.swift; sourceTree = "<group>"; };
 		C4BB410E1DFC724300B01055 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C4BB41501DFD23C000B01055 /* SelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfViewController.swift; sourceTree = "<group>"; };
 		C4BB41521DFD328800B01055 /* StartRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartRegisterViewController.swift; sourceTree = "<group>"; };
 		C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuitaoViewController.swift; sourceTree = "<group>"; };
 		C4BB41581DFD832A00B01055 /* lanjs_s.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = lanjs_s.js; sourceTree = "<group>"; };
-		C4BCA6561E67A4D8007E552A /* Report.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Report.storyboard; sourceTree = "<group>"; };
-		C4BCA6571E67A4D8007E552A /* ReportDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDetailViewController.swift; sourceTree = "<group>"; };
-		C4BCA6581E67A4D8007E552A /* ReportListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportListTableViewController.swift; sourceTree = "<group>"; };
-		C4BCA6591E67A4D8007E552A /* ReportTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
-		C4BCA65A1E67A4D8007E552A /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		C4BCA66F1E67A56C007E552A /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		C4BCA6701E67A56C007E552A /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		C4BCA6711E67A56C007E552A /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
@@ -559,7 +541,6 @@
 		C4DA4E1D1E5865E4008A5975 /* INSPersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = INSPersistentContainer.swift; path = Support/INSPersistentContainer/INSPersistentContainer.swift; sourceTree = "<group>"; };
 		C4DA4E1E1E5865E4008A5975 /* INSPersistentStoreDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = INSPersistentStoreDescription.swift; path = Support/INSPersistentContainer/INSPersistentStoreDescription.swift; sourceTree = "<group>"; };
 		C4DA4E1F1E5865E4008A5975 /* NSManagedObjectContext+iOS10Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+iOS10Additions.swift"; path = "Support/INSPersistentContainer/NSManagedObjectContext+iOS10Additions.swift"; sourceTree = "<group>"; };
-		C4E242671E2CB40700A948E9 /* SqlConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SqlConnector.swift; sourceTree = "<group>"; };
 		C4E3AAB91E010C0100564EC3 /* SwiftJavascriptBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJavascriptBridge.swift; sourceTree = "<group>"; };
 		C4EE467E1E08EB3E00E5D0E3 /* String+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+MD5.swift"; sourceTree = "<group>"; };
 		C4EE46811E08EE6800E5D0E3 /* JsonTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonTools.swift; sourceTree = "<group>"; };
@@ -645,7 +626,6 @@
 		C40BE72C1DF9B1B100F6C200 /* main */ = {
 			isa = PBXGroup;
 			children = (
-				C4BCA6551E67A435007E552A /* report */,
 				DCB045161DDF40280014D479 /* AppDelegate.swift */,
 				DCB045221DDF40280014D479 /* LaunchScreen.storyboard */,
 				DCB0451A1DDF40280014D479 /* Main.storyboard */,
@@ -654,7 +634,6 @@
 				C4612E891E03B34300B79331 /* TaobaoNavigationController.swift */,
 				C4612E8B1E03B35C00B79331 /* RecommendNavigationController.swift */,
 				C4612E8D1E03B36E00B79331 /* SelfchooseNavigationController.swift */,
-				C4BB41081DFBC96A00B01055 /* ReportNavigationController.swift */,
 				C40BE72D1DF9B1BF00F6C200 /* taobao */,
 				C40BE72E1DF9B1D000F6C200 /* market */,
 				C4BB414F1DFD23A000B01055 /* selfchoose */,
@@ -704,10 +683,8 @@
 				C41D80081E122B9300E4F019 /* js */,
 				C4EE46801E08EE5300E5D0E3 /* json */,
 				C4EE467D1E08EB2D00E5D0E3 /* extension */,
-				C4612E8F1E063CC500B79331 /* xml */,
 				C4E3AAB81E010BE200564EC3 /* communication */,
 				C40BE7311DF9B24F00F6C200 /* oc */,
-				C4E242671E2CB40700A948E9 /* SqlConnector.swift */,
 			);
 			name = support;
 			sourceTree = "<group>";
@@ -739,16 +716,6 @@
 			name = js;
 			sourceTree = "<group>";
 		};
-		C4612E8F1E063CC500B79331 /* xml */ = {
-			isa = PBXGroup;
-			children = (
-				C4612E901E063CD500B79331 /* SWXMLHash.h */,
-				C4612E911E063CD500B79331 /* SWXMLHash.swift */,
-				C4612E921E063CD500B79331 /* SWXMLHash+TypeConversion.swift */,
-			);
-			name = xml;
-			sourceTree = "<group>";
-		};
 		C4BB414F1DFD23A000B01055 /* selfchoose */ = {
 			isa = PBXGroup;
 			children = (
@@ -759,18 +726,6 @@
 				C4C655BE1E65E99D00F240DD /* TaobaoDetailViewController2.swift */,
 			);
 			name = selfchoose;
-			sourceTree = "<group>";
-		};
-		C4BCA6551E67A435007E552A /* report */ = {
-			isa = PBXGroup;
-			children = (
-				C4BCA6561E67A4D8007E552A /* Report.storyboard */,
-				C4BCA6571E67A4D8007E552A /* ReportDetailViewController.swift */,
-				C4BCA6581E67A4D8007E552A /* ReportListTableViewController.swift */,
-				C4BCA6591E67A4D8007E552A /* ReportTableViewCell.swift */,
-				C4BCA65A1E67A4D8007E552A /* ReportViewController.swift */,
-			);
-			name = report;
 			sourceTree = "<group>";
 		};
 		C4BCA66E1E67A56C007E552A /* WeChatSDK */ = {
@@ -1239,7 +1194,6 @@
 				C4CCCC0E1E7D6D2100F5687F /* pay-success.html in Resources */,
 				C4CCCC1F1E7D6D2100F5687F /* suo.png in Resources */,
 				C4CCCBC01E7D6D2100F5687F /* agent-pay.html in Resources */,
-				C4BCA65B1E67A4D8007E552A /* Report.storyboard in Resources */,
 				C4CCCBF81E7D6D2100F5687F /* logo.png in Resources */,
 				C4CCCC261E7D6D2100F5687F /* touxiang.png in Resources */,
 				C4CCCE381E7D6D3F00F5687F /* 我的图标@2x.png in Resources */,
@@ -1470,7 +1424,6 @@
 				C40BE7481DFA521B00F6C200 /* GlobalVariables.swift in Sources */,
 				C4DA4E211E5865E4008A5975 /* INSPersistentContainer.swift in Sources */,
 				C4612E811E01445B00B79331 /* VIPDetailViewController.swift in Sources */,
-				C4BB41091DFBC96A00B01055 /* ReportNavigationController.swift in Sources */,
 				C45F7A8E1E6885F500450551 /* ShopTutorialViewController.swift in Sources */,
 				C4BB41511DFD23C000B01055 /* SelfViewController.swift in Sources */,
 				C4DA4E221E5865E4008A5975 /* INSPersistentStoreDescription.swift in Sources */,
@@ -1479,19 +1432,14 @@
 				C422A3AD1E1CE9B200AA8589 /* InvitationViewController.swift in Sources */,
 				C4DA4E201E5865E4008A5975 /* INSDataStackContainer.swift in Sources */,
 				C44564511E28A541000E5F36 /* huitaoShopViewController.swift in Sources */,
-				C4BCA65C1E67A4D8007E552A /* ReportDetailViewController.swift in Sources */,
 				C43AFE421E756A4900593398 /* GeneralWebViewController.swift in Sources */,
 				C41D800C1E1431CA00E4F019 /* SelfDetailViewController.swift in Sources */,
-				C4BCA65E1E67A4D8007E552A /* ReportTableViewCell.swift in Sources */,
-				C4BCA65D1E67A4D8007E552A /* ReportListTableViewController.swift in Sources */,
-				C4612E931E063CD500B79331 /* SWXMLHash.swift in Sources */,
 				C4612E961E08D91B00B79331 /* ShopDetailViewController.swift in Sources */,
 				C4C655BD1E65E6C400F240DD /* TaobaoDetailViewController.swift in Sources */,
 				C422A3AB1E1CE96100AA8589 /* TutorialViewController.swift in Sources */,
 				C4460E451E2954DD0000F2C3 /* MoneyViewController.swift in Sources */,
 				C4612E8E1E03B36E00B79331 /* SelfchooseNavigationController.swift in Sources */,
 				C40BE6B11DF51DC700F6C200 /* SellViewController.swift in Sources */,
-				C4BCA65F1E67A4D8007E552A /* ReportViewController.swift in Sources */,
 				C4C655BF1E65E99D00F240DD /* TaobaoDetailViewController2.swift in Sources */,
 				C422A3B11E1CEA2100AA8589 /* InvitaListDetailViewController.swift in Sources */,
 				C40BE7351DF9C34000F6C200 /* UserNavigationController.swift in Sources */,
@@ -1500,11 +1448,9 @@
 				C4BB410F1DFC724300B01055 /* MainTabBarController.swift in Sources */,
 				DCB045191DDF40280014D479 /* ViewController.swift in Sources */,
 				C445644F1E289D8B000E5F36 /* SelfMainViewController.swift in Sources */,
-				C4612E941E063CD500B79331 /* SWXMLHash+TypeConversion.swift in Sources */,
 				C4DA4E231E5865E4008A5975 /* NSManagedObjectContext+iOS10Additions.swift in Sources */,
 				DCB045171DDF40280014D479 /* AppDelegate.swift in Sources */,
 				C422A3A71E1CE81200AA8589 /* SystemMessageViewController.swift in Sources */,
-				C4E242681E2CB40700A948E9 /* SqlConnector.swift in Sources */,
 				C4EE467F1E08EB3E00E5D0E3 /* String+MD5.swift in Sources */,
 				C44630B31DEDD96E0052E83F /* OCFunction.m in Sources */,
 			);

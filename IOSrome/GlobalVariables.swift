@@ -38,52 +38,6 @@ class AppStatus {
     var vipInfo:VipInfo
     var userInfo:UserInfo
     
-    var db:SQLiteConnect? = nil
-    func init_db(){
-        // 資料庫檔案的路徑
-        let sqlitePath = NSHomeDirectory() + "/Documents/sqlite3.db"
-        
-        // 印出儲存檔案的位置
-        print(sqlitePath)
-        
-        // SQLite 資料庫
-        db = SQLiteConnect(path: sqlitePath)!
-        
-        if let mydb = db {
-            
-            // create table
-            _ = mydb.createTable(tableName: "students", columnsInfo: [
-                "id integer primary key autoincrement",
-                "name text",
-                "height double"])
-            
-            // insert
-            _ = mydb.insert(
-                tableName: "students", rowInfo:
-                ["name":"'大強'","height":"178.2"])
-            
-            // select
-            let statement = mydb.fetch(
-                tableName: "students", cond: "1 == 1", order: nil)
-            while sqlite3_step(statement) == SQLITE_ROW{
-                let id = sqlite3_column_int(statement, 0)
-                let name = String(cString: sqlite3_column_text(statement, 1))
-                let height = sqlite3_column_double(statement, 2)
-                print("\(id). \(name) 身高： \(height)")
-            }
-            sqlite3_finalize(statement)
-            
-            // update
-            _ = mydb.update(
-                tableName: "students", 
-                cond: "id = 1", 
-                rowInfo: ["name":"'小強'","height":"176.8"])
-            
-            // delete
-            _ = mydb.delete(tableName: "students", cond: "id = 5")
-            
-        }
-    }
     init(){
         isLoggedIn = false
         userID = ""
@@ -94,7 +48,6 @@ class AppStatus {
         contentServer = ContentServer()
         vipInfo = VipInfo()
         userInfo = UserInfo()
-        //init_db()
     }
     func logout(){
         isLoggedIn = false

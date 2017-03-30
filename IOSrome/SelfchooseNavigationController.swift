@@ -12,7 +12,8 @@ class SelfchooseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("Self navi started")
         // Do any additional setup after loading the view.
         let UserViewController = UIStoryboard(name: "Selfchoose", bundle: nil).instantiateInitialViewController() as UIViewController!
         let vcArray = [UserViewController]
