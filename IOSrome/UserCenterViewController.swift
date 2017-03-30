@@ -40,7 +40,191 @@ class UserCenterViewController: UIViewController {
             }
         }
     }
+    
+    private func versionCheck(){
+        let queue = OperationQueue()
+        queue.addOperation {
+            if let url = URL(string: AppStatus.sharedInstance.contentServer.versionCheckURL){
+                let request = URLRequest(url: url)
+                let task = URLSession.shared.dataTask(with: request) {
+                    data, response, error in
+                    guard let data = data, error == nil else {               // check for fundamental networking error
+                        OperationQueue.main.addOperation {
+                            let alert = UIAlertController (title: "版本检测失败", message: ""
+                                , preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in
+                                self.autologin()}))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                        return
+                    }
+                    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                        OperationQueue.main.addOperation {
+                            let alert = UIAlertController (title: "版本检测服务异常", message: ""
+                                , preferredStyle: UIAlertControllerStyle.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in
+                                self.autologin()}))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                        return
+                    }
+                    
+                    if let responseString = String(data: data, encoding: .utf8){
+                        print(responseString)
+                        if let json = JsonTools.convertToDictionary(text: responseString){
+                            if let minVersion = json["min"]{
+                                if let minVersionInt:Int = Int(minVersion as! String){
+                                    if(AppStatus.sharedInstance.version < minVersionInt){
+                                        OperationQueue.main.addOperation {
+                                            let alert = UIAlertController (title: "紧急提示：本版本存在严重问题，请重新下载安装最新版本，下载地址请关注“小牛快淘”微信公众号，回复“最新版本”即可。", message: ""
+                                                , preferredStyle: UIAlertControllerStyle.alert)
+                                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in exit(0)}))
+                                            self.present(alert, animated: true, completion: nil)
+                                        }
+                                    }
+                                }
+                            }
+                            if let newVersion:Int = Int(json["message"] as! String){
+                                print("Current version is \(AppStatus.sharedInstance.version) and new version is \(newVersion)")
+                                if( newVersion > AppStatus.sharedInstance.version){
+                                    OperationQueue.main.addOperation {
+                                        let alert = UIAlertController (title: "更新提示：为了更好的使用体验，请重新下载安装最新版本，下载地址请关注“小牛快淘”微信公众号，回复“最新版本”即可。", message: ""
+                                            , preferredStyle: UIAlertControllerStyle.alert)
+                                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in
+                                            self.autologin()}))
+                                        self.present(alert, animated: true, completion: nil)
+                                    }
+                                }else{
+                                    self.autologin()
+                                }
+                            }
+                        }
+                    }
+                }
+                task.resume()
+            }
+        }
+    }
 
+    private func autologin(){
+        let defaults = UserDefaults.standard
+        let shouldLogin = defaults.string(forKey: defaultsKeys.savedLogin)
+        if(shouldLogin != nil && shouldLogin == "yes"){
+            let alertLogging = UIAlertController (title: "正在登录...", message: "", preferredStyle: UIAlertControllerStyle.alert)
+            OperationQueue.main.addOperation {
+                self.present(alertLogging, animated: true, completion: {
+                    // do something in the background
+                    var request = URLRequest(url: URL(string: AppStatus.sharedInstance.userServer.login_url)!)
+                    request.httpMethod = "POST"
+                    let uuid = UUID().uuidString
+                    let postString = "{\"user_id\":\"" +
+                        defaults.string(forKey: defaultsKeys.username)! + "\",\"password\":\"" +
+                        defaults.string(forKey: defaultsKeys.passwd)! + "\",\"uuid\":\"" +
+                        uuid + "\"}"
+                    request.httpBody = postString.data(using: .utf8)
+                    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+                    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                        guard let data = data, error == nil else {               // check for fundamental networking error
+                            print("error=\(String(describing: error))")
+                            alertLogging.dismiss(animated: true, completion:{
+                                OperationQueue.main.addOperation {
+                                    let alert = UIAlertController (title: "网络异常", message: "请重新登录"
+                                        , preferredStyle: UIAlertControllerStyle.alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                                    self.present(alert, animated: true, completion: nil)
+                                }
+                            })
+                            return
+                        }
+                        if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                            print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                            print("response = \(String(describing: response))")
+                            alertLogging.dismiss(animated: true, completion:{
+                                OperationQueue.main.addOperation {
+                                    let alert = UIAlertController (title: "服务器状态异常", message: "请重新登录"
+                                        , preferredStyle: UIAlertControllerStyle.alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                                    self.present(alert, animated: true, completion: nil)
+                                }
+                            })
+                            return
+                        }
+                        
+                        let responseString = String(data: data, encoding: .utf8)
+                        
+                        if(responseString == nil){
+                            alertLogging.dismiss(animated: true, completion:{
+                                OperationQueue.main.addOperation {
+                                    let alert = UIAlertController (title: "服务器返回异常", message: "请重新尝试"
+                                        , preferredStyle: UIAlertControllerStyle.alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                                    self.present(alert, animated: true, completion: nil)
+                                }
+                            })
+                            return
+                        }
+                        let json = JsonTools.convertToDictionary(text: responseString!)
+                        
+                        if(json == nil){
+                            alertLogging.dismiss(animated: true, completion:{
+                                OperationQueue.main.addOperation {
+                                    let alert = UIAlertController (title: "服务器数据异常", message: "请重新尝试"
+                                        , preferredStyle: UIAlertControllerStyle.alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                                    self.present(alert, animated: true, completion: nil)
+                                }
+                            })
+                            return
+                        }
+                        
+                        OperationQueue.main.addOperation {
+                            alertLogging.dismiss(animated: true, completion:{
+                                if(json?["status"] as! String == "ok"){
+                                    let infodata = json?["data"] as! [String:AnyObject]
+                                    AppStatus.sharedInstance.userInfo.userId = infodata["user_id"] as! String
+                                    AppStatus.sharedInstance.userInfo.password = defaults.string(forKey: defaultsKeys.passwd)!
+                                    AppStatus.sharedInstance.userInfo.inviter = infodata["inviter"] as! String
+                                    AppStatus.sharedInstance.userInfo.invitation = infodata["code"] as! String
+                                    AppStatus.sharedInstance.vipInfo.endYear = Int(infodata["expire_year"] as! String)!
+                                    AppStatus.sharedInstance.vipInfo.endMonth = Int(infodata["expire_month"] as! String)!
+                                    AppStatus.sharedInstance.vipInfo.endDay = Int(infodata["expire_day"] as! String)!
+                                    AppStatus.sharedInstance.userInfo.level = infodata["level"] as! String
+                                    AppStatus.sharedInstance.userInfo.balance = infodata["balance"] as! String
+                                    AppStatus.sharedInstance.isLoggedIn = true
+                                    let date = Date()
+                                    let calendar = Calendar.current
+                                    let comp = calendar.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
+                                    let A = comp.year! > AppStatus.sharedInstance.vipInfo.endYear
+                                    let AE = comp.year! == AppStatus.sharedInstance.vipInfo.endYear
+                                    let B = comp.month! > AppStatus.sharedInstance.vipInfo.endMonth
+                                    let BE = comp.month! == AppStatus.sharedInstance.vipInfo.endMonth
+                                    let C = comp.day! > AppStatus.sharedInstance.vipInfo.endDay
+                                    if((A) || (AE && B) || (AE && BE && C)){
+                                        AppStatus.sharedInstance.isVip = false
+                                    }else{
+                                        AppStatus.sharedInstance.isVip = true
+                                    }
+                                    self.tabBarController?.tabBar.items?[0].isEnabled = true
+                                    self.tabBarController?.tabBar.items?[1].isEnabled = true
+                                    self.tabBarController?.tabBar.items?[2].isEnabled = true
+                                    self.tabBarController?.tabBar.items?[3].isEnabled = true
+                                    NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
+                                }else{
+                                    alertLogging.dismiss(animated: true, completion: nil)
+                                    let alert = UIAlertController (title: "登陆结果", message: json?["message"] as? String
+                                        , preferredStyle: UIAlertControllerStyle.alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                                    self.present(alert, animated: true, completion: nil)
+                                }
+                            })
+                        }
+                    }
+                    task.resume()
+                })
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,6 +236,7 @@ class UserCenterViewController: UIViewController {
             name: NSNotification.Name(rawValue: "update"),
             object: nil)
         NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: ["isThere":false])
+        versionCheck()
     }
 
     override func didReceiveMemoryWarning() {
