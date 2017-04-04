@@ -70,6 +70,10 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
             let startIndex = url.index(after: (range?.lowerBound)!)
             let dataStr:String = (request.url?.absoluteString.substring(from: startIndex))!
             UIPasteboard.general.string = dataStr;
+            let alert = UIAlertController (title: "已复制链接", message: UIPasteboard.general.string
+                , preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return false
         } else if (request.url?.absoluteString.hasPrefix("huitao"))!{
             let url:String = (request.url?.absoluteString)!

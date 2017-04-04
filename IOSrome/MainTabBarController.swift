@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +18,12 @@ class MainTabBarController: UITabBarController {
         self.tabBar.items?[1].isEnabled = false
         self.tabBar.items?[2].isEnabled = false
         self.tabBar.items?[3].isEnabled = true
-        self.tabBar.items?[0].tag = 0;
+        self.tabBar.items?[0].tag = 0
         self.tabBar.items?[1].tag = 1
         self.tabBar.items?[2].tag = 2
         self.tabBar.items?[3].tag = 3
         self.selectedIndex = 3
+        self.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +41,57 @@ class MainTabBarController: UITabBarController {
     }
     
 
+    func tabBarController(_ tabBarController: UITabBarController,
+                                   shouldSelect viewController: UIViewController) -> Bool{
+        print("gonna select tag:\(viewController.tabBarItem.tag)")
+        switch(viewController.tabBarItem.tag){
+        case 0:
+            if(AppStatus.sharedInstance.isVip == false){
+                OperationQueue.main.addOperation {
+                    let alert = UIAlertController (title: "你不是VIP,无法使用查询功能", message: ""
+                        , preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                return false
+            }
+            break
+        case 1:
+            if(AppStatus.sharedInstance.isVip == false){
+                OperationQueue.main.addOperation {
+                    let alert = UIAlertController (title: "您不是VIP，无法使用推荐商城", message: ""
+                        , preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                return false
+            }
+            break
+        case 2:
+            if(AppStatus.sharedInstance.isVip == false){
+                OperationQueue.main.addOperation {
+                    let alert = UIAlertController (title: "您不是VIP，无法使用自选商城", message: ""
+                        , preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                return false
+            }
+            if(AppStatus.sharedInstance.upisVip == false){
+                OperationQueue.main.addOperation {
+                    let alert = UIAlertController (title: "您的上级："+AppStatus.sharedInstance.parentInfo.username+"不是VIP，无法使用自选商城", message: ""
+                        , preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                return false
+            }
+            break
+        default:
+            break
+        }
+        return true
+    }
     /*
     // MARK: - Navigation
 

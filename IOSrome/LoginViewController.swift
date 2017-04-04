@@ -183,6 +183,10 @@ class LoginViewController: UIViewController {
                             AppStatus.sharedInstance.vipInfo.endYear = Int(infodata["expire_year"] as! String)!
                             AppStatus.sharedInstance.vipInfo.endMonth = Int(infodata["expire_month"] as! String)!
                             AppStatus.sharedInstance.vipInfo.endDay = Int(infodata["expire_day"] as! String)!
+                            AppStatus.sharedInstance.parentInfo.username = infodata["parent"] as! String
+                            AppStatus.sharedInstance.parentInfo.endYear = Int(infodata["uexpire_year"] as! String)!
+                            AppStatus.sharedInstance.parentInfo.endMonth = Int(infodata["uexpire_month"] as! String)!
+                            AppStatus.sharedInstance.parentInfo.endDay = Int(infodata["uexpire_day"] as! String)!
                             AppStatus.sharedInstance.userInfo.level = infodata["level"] as! String
                             AppStatus.sharedInstance.userInfo.balance = infodata["balance"] as! String
                             
@@ -199,6 +203,16 @@ class LoginViewController: UIViewController {
                                 AppStatus.sharedInstance.isVip = false
                             }else{
                                 AppStatus.sharedInstance.isVip = true
+                            }
+                            let UA = comp.year! > AppStatus.sharedInstance.parentInfo.endYear
+                            let UAE = comp.year! == AppStatus.sharedInstance.parentInfo.endYear
+                            let UB = comp.month! > AppStatus.sharedInstance.parentInfo.endMonth
+                            let UBE = comp.month! == AppStatus.sharedInstance.parentInfo.endMonth
+                            let UC = comp.day! > AppStatus.sharedInstance.parentInfo.endDay
+                            if((UA) || (UAE && UB) || (UAE && UBE && UC)){
+                                AppStatus.sharedInstance.upisVip = false
+                            }else{
+                                AppStatus.sharedInstance.upisVip = true
                             }
                             self.tabBarController?.tabBar.items?[0].isEnabled = true
                             self.tabBarController?.tabBar.items?[1].isEnabled = true
