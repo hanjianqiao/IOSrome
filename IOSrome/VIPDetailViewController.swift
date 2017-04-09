@@ -155,6 +155,7 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
                                     self.webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
                                 }
                             }))
+                            AppStatus.sharedInstance.update()
                             self.present(alert, animated: true, completion: nil)
                         }else{
                             let alert = UIAlertController (title: "购买请求失败", message:  json["message"] as? String
