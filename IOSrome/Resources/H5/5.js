@@ -12,7 +12,7 @@ function callBack(html, url){
 	    att.value = 'bill01';
 	    item.setAttributeNode(att);
 	    item.innerHTML = str0+message[i].action+str1+message[i].amount+str2+message[i].date+str3;
-	    target.appendChild(item);
+        target.insertBefore(item, target.childNodes[0])
 	}
 }
 function updateDisplay(userId, password, messageId){
