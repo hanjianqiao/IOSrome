@@ -1,6 +1,7 @@
 var str = '<a href="ios:showDetail:'
 var end = '"><div class="fl mr20"><img src="icon03.png" alt=""></div><div class="fl"><p>'
-var end1 = '</p><span>立即查看</span></div></a>';
+var end1 = '</p><span>'
+var end2 = '</span></div><span style="float:right;color:#00c30e">立即查看</span></a>';
 var target;
 var nowLoad = 0;
 var uid;
@@ -23,7 +24,7 @@ function callBack(html, url){
             var att = document.createAttribute('class');
             att.value = 'bill01';
             item.setAttributeNode(att);
-            item.innerHTML = str+message[i].id+end+message[i].title+end1;
+            item.innerHTML = str+message[i].id+end+message[i].title+end1+message[i].date+end2;
             target.appendChild(item);
         }
         LanJsBridge.callInMain("lastStage0", "");
