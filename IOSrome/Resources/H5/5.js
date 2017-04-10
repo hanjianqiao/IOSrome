@@ -19,13 +19,13 @@ function callBack(html, url){
     var obj = eval('('+html+')');
     var message = obj.message;
     if(message.length > 0){
-        for(var i = 0; i < message.length; i++){
+        for(var i = message.length-1; i >= 0; i--){
             var item = document.createElement('li');
             var att = document.createAttribute('class');
             att.value = 'bill01';
             item.setAttributeNode(att);
             item.innerHTML = str0+message[i].action+str1+message[i].amount+str2+message[i].date+str3;
-            target.insertBefore(item, target.childNodes[0])
+            target.appendChild(item)
         }
         LanJsBridge.callInMain("lastStage0", "");
     }else{
