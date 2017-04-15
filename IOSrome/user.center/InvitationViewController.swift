@@ -21,19 +21,12 @@ class InvitationViewController: UIViewController, UIWebViewDelegate {
          *
          */
         //let serverUrlString = AppStatus.sharedInstance.server.address + AppStatus.sharedInstance.server.port + AppStatus.sharedInstance.path.selfchoose
-        var serverUrlString:String
-        print("user level: \(AppStatus.sharedInstance.userInfo.level)")
-        if(AppStatus.sharedInstance.userInfo.level == "user" || AppStatus.sharedInstance.userInfo.level == "vip"){
-            serverUrlString = "agent-before"
-        }else{
-            serverUrlString = "agent"
-        }
         webView.scalesPageToFit = true
         //webView.loadRequest(request)
         webView.delegate = self
         webView.isOpaque = false
         webView.backgroundColor = UIColor.white
-        if let path = Bundle.main.path(forResource: serverUrlString, ofType: "html") {
+        if let path = Bundle.main.path(forResource: "agent-before", ofType: "html") {
             webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
         }
     }
