@@ -1,61 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<title>小牛快淘</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta content="telephone=no, address=no" name="format-detection">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<link rel="stylesheet" href="vip02.css">
-	<!-- rem设置 -->
-	<script type="text/javascript">
-        function updateDisplay(userId, password){}
-		var scale = 1 / devicePixelRatio;
-		document.querySelector('meta[name="viewport"]').setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
-		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
-	</script>
-</head>
-
-<body>
-	<!-- 布局 -->
-	<section>
-		<div class="vip01">
-			<p>小牛快淘，我们始终坚持勤恳苦干，最低价面向会员、最大化回报代理，充满感恩之心，在这个大家庭里，和大家一起进步，一起成长！</p>
-			<p class="color000">①会员邀请奖励</p>
-			<p>加入代理时，可以按不同级别的价格一次性“进货”，赚销售利润，以“金牌代理”为例，代理价是88元，成功邀请会员加入后，会获得198元的全部奖励，利润高达118元。</p>
-			<p>如此让人兴奋的好项目，又能帮客户省钱又能自己赚钱，而且客户会比你更主动的情况下，邀请会员加入岂不是太简单！</p>
-			<p>每天三个，月入轻松过万！</p>
-			<p class="color000">②会员续费奖励</p>
-			<p>不光有一次性的会员邀请奖励，更有长期的续费奖励！每月坐等收钱，岂不是美哉~</p>
-			<p>加入代理后，同样可以按不同级别的价格一次性购买续费次数，再以“金牌代理”为例，代理价39元，会员成功续费后，获得89元的全部奖励，每人每月50元！</p>
-			<p>假设每天3个，一月接近100人，第二个月每人续费后就有5000元续费奖励！</p>
-			<p>而且第二个月邀请的人数又会倍增，月入三万很实在！</p>
-
-			<p class="color000">③发展代理奖励</p>
-			<p>代理可以发展各自的代理团队，赚拿货差价的利润，再以“金牌代理”为例，代理价是88元，假如招一名入门的银牌代理，代理价是138元，单次利润50元，10次就是580元的利润，而且随着代理商的不断发展、不断升级，后期的利润越来越大。</p>
-			<p>这两年微商界中频频出现的90后百万富婆、千万富翁就是随着代理团队不断发展和壮大而来。</p>
-			<p>随着会员，忠实会员，转化代理的不断增长，月入十万不是梦！</p>
-
-			<p class="color000">④团队奖励<span class="color79">（正在完善，暂不开放）</span></p>
-			<p>您的直接邀请会员，和他们所邀请的会员，将整体划分为一个团队。
-			</p>
-			<p>(如：您邀请了会员A，会员A邀请了B/C/D，那么 A/B/C/D四个人，就属于你的团队成员）
-			</p>
-			<p>当您的团队总人数达到100/500/2000/5000/10000人的时候，所有团队成员每成功推广一单指定商品，您将会获得0.2元/0.5元/0.7元/0.8元/0.9元现金奖励。
-			</p>
-			<p>(如：您团队总人数满1000后，一天内，平均每人成功推广一单指定商品，那么您将得到1000*0.5= 500元现金奖励。)
-			</p>
-			<p class="mb01">目前此功能核心系统已经完成开发，正在完善细节及测试，暂不开放，预计3个月内正式实行。</p>
-			<span class="color79">所有内容解释权归小牛快淘所有</span>
-			<a href="vip03.html">
-				<div class="btn-box">
-					<button class="btn01">返回</button>
-				</div>
-			</a>
-		</div>
-	</section>
-</body>
-
+    
+    <head>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+                <meta content="telephone=no, address=no" name="format-detection">
+                    <meta name="apple-mobile-web-app-capable" content="yes">
+                        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                            <link rel="stylesheet" href="vip02.css">
+                                <title>介绍会员</title>
+                                <!-- rem设置 -->
+                                <script type="text/javascript">
+                                    var docEl = document.documentElement,
+                                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+                                    var clientWidth = docEl.clientWidth;
+                                    if (clientWidth) {
+                                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                                    }
+                                </script>
+                                </head>
+    
+    <body>
+        <!-- 布局 -->
+        <section>
+            <div class="vip01">
+                <p class="color000" style="font-size:0.38rem;font-weight:bold">【介绍会员】</p>
+                <p class="color000 fontB">1、会员：</p>
+                <p>介绍会员，直接提成<span class="red">140</span>元。</p>
+                <p class="color000 fontB">2、代理：</p>
+                <p>在会员基础上，增加团队提成<span class="red">30</span>元。
+                <p>比如：A介绍B，B介绍C，C介绍D，D介绍E....等等。</p>
+                <p>那么B/C/D/E...都属于A的团队，团队每增加一名新的会员，A都可以提成<span class="red">30</span>元。</p>
+                <p>但是，提成优先给归属关系最近的代理。</p>
+                <p>假设当E介绍了F，那么当E/D/C/B都不是代理，只有A是代理时，30元提成发给A。</p>
+                <p>但如果E/D/C/B其中有代理，以归属关系近的优先。只给归属关系最近的代理，不能重复。</p>
+                <p style="margin-top:0.25rem"><span class="fontB">代理要求：</span>当月介绍3名会员。</p>
+                <p>满3名后，返还这3名的代理提成。</p>
+                <p style="margin-top:0.25rem"><span class="fontB">代理考核：</span>每月至少招募3名会员。如当月未完成，下月起撤销。</p>
+                <p class="color000 fontB">3、金牌代理：</p>
+                <p>在会员和代理基础上，增加团队提成<span class="red">10</span>元。</p>
+                <p>规则与代理相同。</p>
+                <p><span class="fontB">金牌代理要求：</span></p>
+                <p>①当月介绍5名会员，并发展1名代理。</p>
+                <p>②当月介绍10名会员。</p>
+                <p>满足任意一个即可。</p>
+                <p><span class="fontB">金牌代理考核：</span>每月至少招募5名会员。如当月未完成，下月起撤销。</p>
+                <hr>
+                <p class="color000" style="font-size:0.38rem;font-weight:bold">【会员续费】</p>
+                <p class="color000 fontB">1、会员：</p>
+                <p>介绍会员，直接提成<span class="red">50</span>元。</p>
+                <p class="color000 fontB">2、代理：</p>
+                <p>在会员基础上，增加团队提成<span class="red">18</span>元。</p>
+                <p>规则与代理相同。</p>
+                <p class="color000 fontB">3、金牌代理：</p>
+                <p>在会员和代理基础上，增加团队提成<span class="red">10</span>元。</p>
+                <p>规则与代理相同。</p>
+                <p class="font02 pt02">首月开通&emsp;&emsp;<span class="red">298</span>元</p>
+                <p class="font02">每月续费&emsp;&emsp;<span class="red">138</span>元</p>
+                <div class="btn-box">
+                    <a href="vip03.html">
+                        <button class="btn01">返回</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </body>
+    
 </html>
