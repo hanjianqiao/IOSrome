@@ -198,6 +198,13 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
                 webView.loadRequest(URLRequest(url:URL(string:newUrl)!))
                 return false;
             }
+        }else if(webView.request?.url != nil && (webView.request?.url?.absoluteString.hasPrefix("http://c.b6wq.com"))!){
+            if(request.url?.absoluteString.hasPrefix("taobao:"))!{
+                let para:[String] = (request.url?.absoluteString.components(separatedBy: ":"))!
+                let newUrl:String = "https:"+para[1];
+                webView.loadRequest(URLRequest(url:URL(string:newUrl)!))
+                return false;
+            }
         }
         return true
         
