@@ -191,20 +191,14 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
                 self.webView.loadRequest(URLRequest(url:URL(string:"https://s.m.taobao.com/h5"+method)!))
             }
             return false
-        }else if(webView.request?.url != nil && (webView.request?.url?.absoluteString.hasPrefix("http://c.b1wt.com"))!){
-            if(request.url?.absoluteString.hasPrefix("taobao:"))!{
+        }else if(request.url?.absoluteString.hasPrefix("taobao:"))!{
+            if(webView.request?.url != nil && (!(webView.request?.url?.absoluteString.hasPrefix("http://h5.m.taobao.com/awp/core/detail.htm?"))!)
+                 && (!(webView.request?.url?.absoluteString.hasPrefix("https://item.taobao.com/item.htm?id="))!)){
                 let para:[String] = (request.url?.absoluteString.components(separatedBy: ":"))!
                 let newUrl:String = "https:"+para[1];
                 webView.loadRequest(URLRequest(url:URL(string:newUrl)!))
-                return false;
             }
-        }else if(webView.request?.url != nil && (webView.request?.url?.absoluteString.hasPrefix("http://c.b6wq.com"))!){
-            if(request.url?.absoluteString.hasPrefix("taobao:"))!{
-                let para:[String] = (request.url?.absoluteString.components(separatedBy: ":"))!
-                let newUrl:String = "https:"+para[1];
-                webView.loadRequest(URLRequest(url:URL(string:newUrl)!))
-                return false;
-            }
+            return false;
         }
         return true
         
