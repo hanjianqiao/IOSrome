@@ -12,6 +12,7 @@ import JavaScriptCore
 class TaobaoAlimama: UIViewController, UIWebViewDelegate {
     
     @IBOutlet weak var webView: UIWebView!
+    var target:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +22,7 @@ class TaobaoAlimama: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         webView.isOpaque = false
         webView.backgroundColor = UIColor.white
-        webView.loadRequest( URLRequest(url: URL(string: "https://login.taobao.com/member/login.jhtml?style=mini&newMini2=true&css_style=alimama&from=alimama&redirectURL=http%253A%252F%252Fwww.alimama.com&full_redirect=true&disableQuickLogin=true")!) )
+        webView.loadRequest( URLRequest(url: URL(string: target)!) )
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {
         //print(webView.request?.url?.absoluteString)
@@ -32,7 +33,7 @@ class TaobaoAlimama: UIViewController, UIWebViewDelegate {
     }
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         print("Alilogin: reloading \(String(describing: request.url?.absoluteString))")
-        if((request.url?.absoluteString.hasPrefix("https://login.m.taobao.com"))! || (request.url?.absoluteString.hasPrefix("https://login.taobao.com"))! ||  (request.url?.absoluteString.hasPrefix("https://www.alimama.com/"))! ||  (request.url?.absoluteString.hasPrefix("http://www.alimama.com/"))! || (request.url?.absoluteString.hasPrefix("https://login.m.taobao.com"))!){
+        if((request.url?.absoluteString.hasPrefix("https://login.m.taobao.com"))! || (request.url?.absoluteString.hasPrefix("https://login.taobao.com"))! ||  (request.url?.absoluteString.hasPrefix("https://www.alimama.com/"))! ||  (request.url?.absoluteString.hasPrefix("http://www.alimama.com/"))! ||  (request.url?.absoluteString.hasPrefix("https://ynuf.aliapp.org/la.htm"))! || (request.url?.absoluteString.hasPrefix("http://h5.m.taobao.com/mlapp/mytaobao.html"))! || (request.url?.absoluteString.hasPrefix("https://login.m.taobao.com"))!){
                     return true
         }else if((request.url?.absoluteString.hasPrefix("http://pub.alimama.com"))!){
             webView.loadRequest(URLRequest(url: URL(string:"http://www.alimama.com/")!))

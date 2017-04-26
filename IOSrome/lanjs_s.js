@@ -189,14 +189,24 @@ function updateTaobaoCouponCallBack(htmlText, url){
         }
         for(var i = 0; i < ja.length; i++){
             var activityId = ja[i].id;
-            updateTaobaoCouponItem(userid, activityId);
+            var innerText = "";
+            innerText += "<td>"+ja[i].condition+"</td><td>";
+            innerText += ja[i].timeRange;
+            innerText += "</td><td>";
+            if(showIt){
+                innerText += "<button class=\"btn_02\" onclick=setClipboard(\"http://shop.m.taobao.com/shop/coupon.htm?seller_id=" + userid +"&activity_id=" + activityId + "\")>点击复制</button>";
+            }else{
+                innerText += "<button class=\"btn_02\">VIP可复制</button>";
+            }
+            innerText += "</td>";
+            var item = document.createElement("tr");
+            item.innerHTML = innerText;
+            document.getElementById("coupontable").appendChild(item);
+            //updateTaobaoCouponItem(userid, activityId);
         }
     }
     else{
-        //document.getElementById("lantaotic").innerHTML="<caption>登陆查看优惠券</caption><tr style=\"background: #fe2641; color:#fff;\"><th>优惠券</th><th>使用时间</th><th>手机券</th></tr>";
-        //var item = document.createElement("tr");
-        //item.innerHTML = "请登陆";
-        //document.getElementById("coupontable").appendChild(item);
+        document.getElementById("coupontitle").innerHTML="<a href=logintaobao:show style=\"color:red\"><b>登陆淘宝</b></a>获取更多优惠信息";
     }
 }
 
@@ -232,6 +242,35 @@ function updateTKZSCouponItem(sellerId, activityId){
     LanJsBridge.getDataFromUrlUpdateInMain("http://shop.m.taobao.com/shop/coupon.htm?seller_id="+sellerId+"&activity_id="+activityId, "updateTKZSCouponItemCallBack");
 }
 
+
+function updateTKZSCoupon2ItemCallBack(htmlText, url){
+    var obj = eval('('+htmlText+')');
+    var ja = obj.result;
+    var start = ja.startFee;
+    var amount = ja.amount;
+    var innerText = "";
+    innerText += "<td>";
+    htmlText = htmlText.substring(htmlText.indexOf("coupon-info"), htmlText.indexOf("立刻领用"));
+    innerText += "满"+start+"减"+amount;
+    innerText += "</td><td>";
+    innerText += ja.effectiveEndTime;
+    innerText += "</td><td>";
+    if(showIt){
+        innerText += "<button class=\"btn_02\" onclick=setClipboard(\"http://shop.m.taobao.com/shop/coupon.htm?seller_id=" + userid +"&activity_id=" + url.substring(url.indexOf("activityId=")+11, url.length) + "\")>点击复制</button>";
+    }else{
+        innerText += "<button class=\"btn_02\">VIP可复制</button>";
+    }
+    innerText += "</td>";
+    var item = document.createElement("tr");
+    item.innerHTML = innerText;
+    document.getElementById("coupontable").appendChild(item);
+}
+
+function updateTKZSCoupon2Item(sellerId, activityId){
+    LanJsBridge.getDataFromUrlUpdateInMain("https://uland.taobao.com/cp/coupon?"+"itemId="+goodid+"&activityId="+activityId, "updateTKZSCoupon2ItemCallBack");
+}
+
+
 function updateTKZSCouponCallBack(htmlText, url){
     var obj = eval('('+htmlText+')');
     var ja = obj.data;
@@ -241,7 +280,7 @@ function updateTKZSCouponCallBack(htmlText, url){
     }
     for(var i = 0; i < ja.length; i++){
         var activityId = ja[i].activity_id;
-        updateTKZSCouponItem(userid, activityId);
+        updateTKZSCoupon2Item(userid, activityId);
     }
 }
 
@@ -258,7 +297,7 @@ function imgAutoFit(a, b){
 }
 
 function callBackNull(htmlString, url){
-    LanJsBridge.getDataFromUrlUpdateInMain("http://zhushou3.taokezhushou.com/api/v1/coupons_base/"+userid+"?item_id="+goodid, "updateTKZSCouponCallBack");
+    LanJsBridge.getDataFromUrl("http://zhushou3.taokezhushou.com/api/v1/coupons_base/"+userid+"?item_id="+goodid, "updateTKZSCouponCallBack");
 }
 
 function callBackShowAlert(htmlString, url){
