@@ -67,9 +67,9 @@ import UIKit
     }
     
     internal func setClipBoard(_ string: String) {
-        //print("set clipboart: \(string)")
+        print("set clipboart: \(string)")
         UIPasteboard.general.string = string;
-        let alert = UIAlertController (title: "已复制", message: string
+        let alert = UIAlertController (title: "已复制", message: string.removingPercentEncoding
             , preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
         OperationQueue.main.addOperation {

@@ -68,7 +68,7 @@ class ShopDetailViewController: UIViewController, UIWebViewDelegate {
             let url:String = (request.url?.absoluteString)!
             let range = url.range(of: ":")
             let startIndex = url.index(after: (range?.lowerBound)!)
-            let dataStr:String = (request.url?.absoluteString.substring(from: startIndex))!
+            let dataStr:String = (request.url?.absoluteString.substring(from: startIndex))!.removingPercentEncoding!
             UIPasteboard.general.string = dataStr;
             let alert = UIAlertController (title: "已复制链接", message: UIPasteboard.general.string
                 , preferredStyle: UIAlertControllerStyle.alert)
