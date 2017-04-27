@@ -12,11 +12,11 @@ function callBack(html, url){
 	document.getElementById("sells").innerHTML = jo.sell;
 	document.getElementById("introimg").src = jo.image;
     if(jo.tb_token && jo.tb_token != ''){
-        document.getElementById("copylink").href = "clipboard:"+jo.tb_token;
+        document.getElementById("copytoken").href = "clipboard:"+jo.tb_token;
+    }else{
+        document.getElementById("copytoken").href = "alert:nothing";
     }
-    else{
-        document.getElementById("copylink").href = "clipboard:"+jo.url;
-    }
+    document.getElementById("copylink").href = "clipboard:"+jo.url;
 	document.getElementById("taodetail").href = "ios:showTaobaoDetail:"+jo.url;
 }
 function doWork(q){

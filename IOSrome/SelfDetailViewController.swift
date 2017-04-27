@@ -67,7 +67,13 @@ class SelfDetailViewController: UIViewController, UIWebViewDelegate {
             let startIndex = url.index(after: (range?.lowerBound)!)
             let dataStr:String = (request.url?.absoluteString.substring(from: startIndex))!.removingPercentEncoding!
             UIPasteboard.general.string = dataStr;
-            let alert = UIAlertController (title: "已复制链接", message: UIPasteboard.general.string
+            let alert = UIAlertController (title: "已复制", message: UIPasteboard.general.string
+                , preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        } else if (request.url?.absoluteString.hasPrefix("alert"))!{
+            let alert = UIAlertController (title: "没有淘口令", message: ""
                 , preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)

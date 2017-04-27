@@ -26,8 +26,18 @@ import UIKit
     func getCookie(_ name:String, _ forUrl:String) -> String
     func callInMain(_ function:String, _ para:String)
     func userLevel() -> String
+    func showAlert(_ title:String, _ body:String)
 }
 @objc class SwiftJavaScriptModel: NSObject, SwiftJavaScriptDelegate, URLSessionDelegate{
+    func showAlert(_ title: String, _ body: String) {
+        let alert = UIAlertController (title: title.removingPercentEncoding, message: body.removingPercentEncoding
+            , preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        OperationQueue.main.addOperation {
+            self.controller?.present(alert, animated: true, completion: nil)
+        }
+    }
+
 
     internal func userLevel() -> String {
         return AppStatus.sharedInstance.userInfo.level;

@@ -9,14 +9,14 @@ function callBack(html, url){
 	var ja = obj.message;
 	var jo = ja[0];
 	document.getElementById("intro").innerHTML = jo.title;
-	document.getElementById("price").innerHTML = jo.price;
-	document.getElementById("introimg").src = jo.image;
+    document.getElementById("price").innerHTML = jo.price;
+    document.getElementById("introimg").src = jo.image;
     if(jo.tb_token && jo.tb_token != ''){
-        document.getElementById("selllink").href = "clipboard:"+jo.tb_token;
+        document.getElementById("copytoken").href = "clipboard:"+jo.tb_token;
+    }else{
+        document.getElementById("copytoken").href = "alert:nothing";
     }
-    else{
-        document.getElementById("selllink").href = "clipboard:"+jo.url;
-    }
+    document.getElementById("selllink").href = "clipboard:"+jo.url;
 	document.getElementById("taodetail").href = "ios:showTaobaoDetail:"+jo.url;
 }
 function doWork(q, isVip){
