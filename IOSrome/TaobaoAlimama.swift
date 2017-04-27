@@ -42,15 +42,16 @@ class TaobaoAlimama: UIViewController, UIWebViewDelegate {
     }
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         print("Alilogin: reloading \(String(describing: request.url?.absoluteString))")
-        if((request.url?.absoluteString.hasPrefix("https://login.m.taobao.com"))! || (request.url?.absoluteString.hasPrefix("https://login.taobao.com"))! ||  (request.url?.absoluteString.hasPrefix("https://www.alimama.com/"))! ||  (request.url?.absoluteString.hasPrefix("http://www.alimama.com/"))! ||  (request.url?.absoluteString.hasPrefix("https://ynuf.aliapp.org/la.htm"))! || (request.url?.absoluteString.hasPrefix("http://h5.m.taobao.com/mlapp/mytaobao.html"))! || (request.url?.absoluteString.hasPrefix("https://login.m.taobao.com"))!){
-                    return true
-        }else if((request.url?.absoluteString.hasPrefix("http://pub.alimama.com"))!){
-            webView.loadRequest(URLRequest(url: URL(string:"http://www.alimama.com/")!))
-            return false
-        }else if((request.url?.absoluteString.hasPrefix("file"))!){
-            return true
-        }
-        return false
+//        if((request.url?.absoluteString.hasPrefix("https://login.m.taobao.com"))! || (request.url?.absoluteString.hasPrefix("https://login.taobao.com"))! ||  (request.url?.absoluteString.hasPrefix("https://www.alimama.com/"))! ||  (request.url?.absoluteString.hasPrefix("http://www.alimama.com/"))! ||  (request.url?.absoluteString.hasPrefix("https://ynuf.aliapp.org/la.htm"))! || (request.url?.absoluteString.hasPrefix("http://h5.m.taobao.com/mlapp/mytaobao.html"))! || (request.url?.absoluteString.hasPrefix("https://login.m.taobao.com"))!){
+//                    return true
+//        }else if((request.url?.absoluteString.hasPrefix("http://pub.alimama.com"))!){
+//            webView.loadRequest(URLRequest(url: URL(string:"http://www.alimama.com/")!))
+//            return false
+//        }else if((request.url?.absoluteString.hasPrefix("file"))!){
+//            return true
+//        }
+//        return false
+        return true
         
     }
     /*

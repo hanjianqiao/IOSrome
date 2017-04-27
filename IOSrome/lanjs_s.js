@@ -288,6 +288,31 @@ function updateTKZSCoupon(){
     LanJsBridge.getDataFromUrl("http://zhushou3.taokezhushou.com/api/v1/getdata?itemid="+goodid+"&version=3.5.2", "callBackNull");
 }
 
+// Dataoke coupon
+function callBackgetDataokeInfo(htmlText, url){
+    str0 = htmlText.substring(htmlText.indexOf('activity_id=')+12, htmlText.length);
+    str0 = str0.substring(0, str0.indexOf('"'));
+    LanJsBridge.getDataFromUrlUpdateInMain("https://uland.taobao.com/cp/coupon?"+"itemId="+goodid+"&activityId="+str0, "updateTKZSCoupon2ItemCallBack");
+}
+
+function getDataokeInfo(dtkid){
+    LanJsBridge.getDataFromUrl("http://www.dataoke.com/gettpl?gid="+dtkid, "callBackgetDataokeInfo");
+}
+
+function callBackDataoke(htmlText, url){
+    if(htmlText.indexOf('goods-items_') > 0 && htmlText.indexOf('data_goodsid') > 0){
+        dataokeid = htmlText.substring(htmlText.indexOf('goods-items_')+12, htmlText.indexOf('data_goodsid')-2);
+        getDataokeInfo(dataokeid);
+    }
+}
+
+function updateDataokeCouponTwice(){
+    LanJsBridge.getDataFromUrlWithRefer("http://www.dataoke.com/search/?keywords="+goodid+"&xuan=spid", "http://www.dataoke.com/search/?keywords="+goodid+"&xuan=spid", "callBackDataoke");
+}
+
+function updateDataokeCoupon(){
+    LanJsBridge.getDataFromUrlWithRefer("http://www.dataoke.com/search/?keywords="+goodid+"&xuan=spid", "http://www.dataoke.com/search/?keywords="+goodid+"&xuan=spid", "updateDataokeCouponTwice");
+}
 
 function imgAutoFit(a, b){
     WebViewJavaScriptBridge1.test0();
@@ -296,6 +321,8 @@ function imgAutoFit(a, b){
     return b;
 }
 
+function callBackNothing(htmlString, url){
+}
 function callBackNull(htmlString, url){
     LanJsBridge.getDataFromUrl("http://zhushou3.taokezhushou.com/api/v1/coupons_base/"+userid+"?item_id="+goodid, "updateTKZSCouponCallBack");
 }
@@ -319,6 +346,7 @@ function doWork(srcUrl, showit){
     updateQueqiaoBrokerage();
     updateTaobaoCoupon();
     updateTKZSCoupon();
+    updateDataokeCoupon();
     return 'success'
 }
 
