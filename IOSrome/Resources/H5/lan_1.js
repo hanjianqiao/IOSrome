@@ -11,7 +11,12 @@ function callBack(html, url){
 	document.getElementById("price").innerHTML = jo.price;
 	document.getElementById("sells").innerHTML = jo.sell;
 	document.getElementById("introimg").src = jo.image;
-	document.getElementById("copylink").href = "clipboard:"+jo.url;
+    if(jo.tb_token && jo.tb_token != ''){
+        document.getElementById("copylink").href = "clipboard:"+jo.tb_token;
+    }
+    else{
+        document.getElementById("copylink").href = "clipboard:"+jo.url;
+    }
 	document.getElementById("taodetail").href = "ios:showTaobaoDetail:"+jo.url;
 }
 function doWork(q){

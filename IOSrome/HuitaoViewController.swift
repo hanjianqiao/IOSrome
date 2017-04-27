@@ -126,7 +126,7 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
             return false
         } else if (request.url?.absoluteString.hasPrefix("loginalimama"))!{
             let vc = (self.storyboard?.instantiateViewController(withIdentifier: "alimama"))! as! TaobaoAlimama
-            vc.target = "https://login.taobao.com/member/login.jhtml?style=mini&newMini2=true&css_style=alimama&from=alimama&redirectURL=http%253A%252F%252Fwww.alimama.com&full_redirect=true&disableQuickLogin=true"
+            vc.target = "file:fate_login_alimama:html"
             self.navigationController?.pushViewController(vc, animated: true)
             return false
         } else if (request.url?.absoluteString.hasPrefix("logintaobao"))!{

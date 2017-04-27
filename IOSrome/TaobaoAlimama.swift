@@ -22,7 +22,16 @@ class TaobaoAlimama: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         webView.isOpaque = false
         webView.backgroundColor = UIColor.white
-        webView.loadRequest( URLRequest(url: URL(string: target)!) )
+        if(target.hasPrefix("http")){
+            webView.loadRequest( URLRequest(url: URL(string: target)!) )
+        }else if(target.hasPrefix("file")){
+            let parameters:[String] = target.components(separatedBy: ":")
+            if let path = Bundle.main.path(forResource: parameters[1], ofType: parameters[2]) {
+                webView.loadRequest( URLRequest(url: URL(fileURLWithPath: path)) )
+            }
+        }else{
+            webView.loadRequest( URLRequest(url: URL(string: target)!))
+        }
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {
         //print(webView.request?.url?.absoluteString)
@@ -38,6 +47,8 @@ class TaobaoAlimama: UIViewController, UIWebViewDelegate {
         }else if((request.url?.absoluteString.hasPrefix("http://pub.alimama.com"))!){
             webView.loadRequest(URLRequest(url: URL(string:"http://www.alimama.com/")!))
             return false
+        }else if((request.url?.absoluteString.hasPrefix("file"))!){
+            return true
         }
         return false
         

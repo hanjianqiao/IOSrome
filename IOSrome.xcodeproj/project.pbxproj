@@ -29,6 +29,7 @@
 		C422A3AD1E1CE9B200AA8589 /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422A3AC1E1CE9B200AA8589 /* InvitationViewController.swift */; };
 		C422A3AF1E1CE9E400AA8589 /* InvitationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422A3AE1E1CE9E400AA8589 /* InvitationListViewController.swift */; };
 		C422A3B11E1CEA2100AA8589 /* InvitaListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422A3B01E1CEA2100AA8589 /* InvitaListDetailViewController.swift */; };
+		C42A45EE1EB1957600544FC1 /* fate_login_alimama.html in Resources */ = {isa = PBXBuildFile; fileRef = C42A45ED1EB1957600544FC1 /* fate_login_alimama.html */; };
 		C43AFE421E756A4900593398 /* GeneralWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AFE411E756A4900593398 /* GeneralWebViewController.swift */; };
 		C445644F1E289D8B000E5F36 /* SelfMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C445644E1E289D8B000E5F36 /* SelfMainViewController.swift */; };
 		C44564511E28A541000E5F36 /* huitaoShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44564501E28A541000E5F36 /* huitaoShopViewController.swift */; };
@@ -300,6 +301,7 @@
 		C422A3AC1E1CE9B200AA8589 /* InvitationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InvitationViewController.swift; path = user.center/InvitationViewController.swift; sourceTree = "<group>"; };
 		C422A3AE1E1CE9E400AA8589 /* InvitationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InvitationListViewController.swift; path = user.center/InvitationListViewController.swift; sourceTree = "<group>"; };
 		C422A3B01E1CEA2100AA8589 /* InvitaListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InvitaListDetailViewController.swift; path = user.center/InvitaListDetailViewController.swift; sourceTree = "<group>"; };
+		C42A45ED1EB1957600544FC1 /* fate_login_alimama.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = fate_login_alimama.html; sourceTree = "<group>"; };
 		C43AFE411E756A4900593398 /* GeneralWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralWebViewController.swift; sourceTree = "<group>"; };
 		C445644E1E289D8B000E5F36 /* SelfMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfMainViewController.swift; sourceTree = "<group>"; };
 		C44564501E28A541000E5F36 /* huitaoShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = huitaoShopViewController.swift; sourceTree = "<group>"; };
@@ -750,6 +752,7 @@
 		C4CCCB341E7D6D2100F5687F /* H5 */ = {
 			isa = PBXGroup;
 			children = (
+				C42A45ED1EB1957600544FC1 /* fate_login_alimama.html */,
 				C4CCCB351E7D6D2100F5687F /* 0.js */,
 				C4CCCB361E7D6D2100F5687F /* 1.js */,
 				C4CCCB371E7D6D2100F5687F /* 2.js */,
@@ -1274,6 +1277,7 @@
 				C4CCCBDE1E7D6D2100F5687F /* iconc02.png in Resources */,
 				C4CCCE5B1E7D6D3F00F5687F /* 刷新@3x.png in Resources */,
 				C4CCCE801E7D6D3F00F5687F /* 邀请码@3x.png in Resources */,
+				C42A45EE1EB1957600544FC1 /* fate_login_alimama.html in Resources */,
 				C4CCCE351E7D6D3F00F5687F /* 商城焦点@2x.png in Resources */,
 				C4CCCBDB1E7D6D2100F5687F /* icon_main_taobao0.png in Resources */,
 				C4CCCC0A1E7D6D2100F5687F /* newimg04.jpg in Resources */,
