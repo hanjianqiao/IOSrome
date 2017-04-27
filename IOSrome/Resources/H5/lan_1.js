@@ -14,7 +14,7 @@ function callBack(html, url){
     if(jo.tb_token && jo.tb_token != ''){
         document.getElementById("copytoken").href = "clipboard:"+jo.tb_token;
     }else{
-        document.getElementById("copytoken").href = "alert:nothing";
+        document.getElementById("btn_cptoken").innerHTML = "没有口令";
     }
     document.getElementById("copylink").href = "clipboard:"+jo.url;
 	document.getElementById("taodetail").href = "ios:showTaobaoDetail:"+jo.url;
