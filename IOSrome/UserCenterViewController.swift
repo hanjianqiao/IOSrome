@@ -73,10 +73,14 @@ class UserCenterViewController: UIViewController {
                         print(responseString)
                         if let json = JsonTools.convertToDictionary(text: responseString){
                             if let minVersion = json["min"]{
+                                var updateInfo = "为了更好的使用体验。下载地址请关注“小牛快淘”微信公众号，回复“最新版本”即可。"
+                                if let upinfo = json["upinfo"]{
+                                    updateInfo = upinfo as! String
+                                }
                                 if let minVersionInt:Int = Int(minVersion as! String){
                                     if(AppStatus.sharedInstance.version < minVersionInt){
                                         OperationQueue.main.addOperation {
-                                            let alert = UIAlertController (title: "紧急提示：本版本存在严重问题，请重新下载安装最新版本，下载地址请关注“小牛快淘”微信公众号，回复“最新版本”即可。", message: ""
+                                            let alert = UIAlertController (title: updateInfo, message: ""
                                                 , preferredStyle: UIAlertControllerStyle.alert)
                                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(UIAlertAction)->Void in exit(0)}))
                                             self.present(alert, animated: true, completion: nil)
