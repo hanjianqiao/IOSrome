@@ -96,6 +96,7 @@ class AppStatus {
             }
             task.resume()
         }
+        update()
         let when = DispatchTime.now() + 60 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             self.periodCheck()
@@ -140,7 +141,7 @@ class AppStatus {
                     let AE = comp.year! == AppStatus.sharedInstance.vipInfo.endYear
                     let B = comp.month! > AppStatus.sharedInstance.vipInfo.endMonth
                     let BE = comp.month! == AppStatus.sharedInstance.vipInfo.endMonth
-                    let C = comp.day! > AppStatus.sharedInstance.vipInfo.endDay
+                    let C = comp.day! >= AppStatus.sharedInstance.vipInfo.endDay
                     if((A) || (AE && B) || (AE && BE && C)){
                         AppStatus.sharedInstance.isVip = false
                     }else{
@@ -150,13 +151,14 @@ class AppStatus {
                     let UAE = comp.year! == AppStatus.sharedInstance.parentInfo.endYear
                     let UB = comp.month! > AppStatus.sharedInstance.parentInfo.endMonth
                     let UBE = comp.month! == AppStatus.sharedInstance.parentInfo.endMonth
-                    let UC = comp.day! > AppStatus.sharedInstance.parentInfo.endDay
+                    let UC = comp.day! >= AppStatus.sharedInstance.parentInfo.endDay
                     if((UA) || (UAE && UB) || (UAE && UBE && UC)){
                         AppStatus.sharedInstance.upisVip = false
                     }else{
                         AppStatus.sharedInstance.upisVip = true
                     }
                     NotificationCenter.default.post(name: Notification.Name("update"), object: self, userInfo: nil)
+                    print("up is VIP: \(AppStatus.sharedInstance.upisVip), You are VIP: \(AppStatus.sharedInstance.isVip)")
                 }
             }
             task.resume()
@@ -297,7 +299,7 @@ class UserServer{
     let register_url:String = "https://user.vsusvip.com:10000/register"
     let charge_url:String = "https://user.vsusvip.com:10000/charge"
     let query_url:String = "https://user.vsusvip.com:10000/query"
-    let login_url:String = "https://user.vsusvip.com:10000/login0"
+    let login_url:String = "https://user.vsusvip.com:10000/login1"
     let up2vip_url:String = "https://user.vsusvip.com:10000/up2vip"
     let extendvip_url:String = "https://user.vsusvip.com:10000/extendvip"
     let extendagent_url:String = "https://user.vsusvip.com:10000/extendagent"

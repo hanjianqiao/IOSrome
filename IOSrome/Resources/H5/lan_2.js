@@ -54,5 +54,5 @@ function callBack(html, url){
 function doWork(q){
     searchKey = q;
 	target = document.getElementsByClassName('product-list')[0];
-	LanJsBridge.getDataFromUrl("http://self.vsusvip.com:7008/search"+q, "callBack")
+	LanJsBridge.getDataFromUrl("http://self.vsusvip.com:7080/search"+q, "callBack")
 }

@@ -83,7 +83,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             let AE = comp.year! == AppStatus.sharedInstance.vipInfo.endYear
             let B = comp.month! > AppStatus.sharedInstance.vipInfo.endMonth
             let BE = comp.month! == AppStatus.sharedInstance.vipInfo.endMonth
-            let C = comp.day! > AppStatus.sharedInstance.vipInfo.endDay
+            let C = comp.day! >= AppStatus.sharedInstance.vipInfo.endDay
             if((A) || (AE && B) || (AE && BE && C)){
                 AppStatus.sharedInstance.isVip = false
             }else{

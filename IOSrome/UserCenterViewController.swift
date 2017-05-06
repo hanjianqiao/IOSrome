@@ -209,7 +209,7 @@ class UserCenterViewController: UIViewController {
                                         let AE = comp.year! == AppStatus.sharedInstance.vipInfo.endYear
                                         let B = comp.month! > AppStatus.sharedInstance.vipInfo.endMonth
                                         let BE = comp.month! == AppStatus.sharedInstance.vipInfo.endMonth
-                                        let C = comp.day! > AppStatus.sharedInstance.vipInfo.endDay
+                                        let C = comp.day! >= AppStatus.sharedInstance.vipInfo.endDay
                                         if((A) || (AE && B) || (AE && BE && C)){
                                             AppStatus.sharedInstance.isVip = false
                                         }else{
@@ -219,7 +219,7 @@ class UserCenterViewController: UIViewController {
                                         let UAE = comp.year! == AppStatus.sharedInstance.parentInfo.endYear
                                         let UB = comp.month! > AppStatus.sharedInstance.parentInfo.endMonth
                                         let UBE = comp.month! == AppStatus.sharedInstance.parentInfo.endMonth
-                                        let UC = comp.day! > AppStatus.sharedInstance.parentInfo.endDay
+                                        let UC = comp.day! >= AppStatus.sharedInstance.parentInfo.endDay
                                         if((UA) || (UAE && UB) || (UAE && UBE && UC)){
                                             AppStatus.sharedInstance.upisVip = false
                                         }else{
@@ -342,7 +342,7 @@ class UserCenterViewController: UIViewController {
             let AE = comp.year! == AppStatus.sharedInstance.vipInfo.endYear
             let B = comp.month! > AppStatus.sharedInstance.vipInfo.endMonth
             let BE = comp.month! == AppStatus.sharedInstance.vipInfo.endMonth
-            let C = comp.day! > AppStatus.sharedInstance.vipInfo.endDay
+            let C = comp.day! >= AppStatus.sharedInstance.vipInfo.endDay
             if((A) || (AE && B) || (AE && BE && C)){
                 AppStatus.sharedInstance.isVip = false
             }else{
