@@ -176,7 +176,18 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         
         self.tabBarController?.selectedIndex = 0;
     }
-    
+    func matches(for regex: String, in text: String) -> [String] {
+        
+        do {
+            let regex = try NSRegularExpression(pattern: regex)
+            let nsString = text as NSString
+            let results = regex.matches(in: text, range: NSRange(location: 0, length: nsString.length))
+            return results.map { nsString.substring(with: $0.range)}
+        } catch let error {
+            print("invalid regex: \(error.localizedDescription)")
+            return []
+        }
+    }
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         print("webview is : \(String(describing: webView.request?.url?.absoluteString)) Will loading \(String(describing: request.url?.absoluteString))")
         if(request.url?.absoluteString.hasPrefix("ios"))!{
@@ -185,8 +196,19 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             let startIndex = url.index(after: (range?.lowerBound)!)
             let method:String = (request.url?.absoluteString.substring(from: startIndex))!
             let targetStr = method.substring(from:(method.range(of: "?q=")?.upperBound)!)
-            if((targetStr.removingPercentEncoding?.lowercased().hasPrefix("http://"))! || (targetStr.removingPercentEncoding?.lowercased().hasPrefix("https://"))!){
-                self.webView.loadRequest(URLRequest(url:URL(string:targetStr.removingPercentEncoding!)!))
+            let decodedTarget = targetStr.removingPercentEncoding!
+            if((decodedTarget.hasPrefix("http://")) || (decodedTarget.hasPrefix("https://"))){
+                let pre = matches(for: "http.+\\?", in: decodedTarget)
+                let post = matches(for: "id=\\d+", in: decodedTarget)
+                if(pre.count == 0 || post.count == 0){
+                    let alert = UIAlertController (title: "不正确的商品地址", message: ""
+                        , preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return false
+                }
+                let newTarget = pre[0] + post[0]
+                self.webView.loadRequest(URLRequest(url:URL(string:newTarget)!))
             }else{
                 self.webView.loadRequest(URLRequest(url:URL(string:"https://s.m.taobao.com/h5"+method)!))
             }
