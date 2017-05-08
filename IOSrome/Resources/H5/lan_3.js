@@ -11,11 +11,7 @@ function callBack(html, url){
 	document.getElementById("intro").innerHTML = jo.title;
     document.getElementById("price").innerHTML = jo.price;
     document.getElementById("introimg").src = jo.image;
-    if(jo.tb_token && jo.tb_token != ''){
-        document.getElementById("copytoken").href = "clipboard:"+jo.tb_token;
-    }else{
-        document.getElementById("btn_cptoken").innerHTML = "没有口令";
-    }
+    document.getElementById("copytitle").href = "clipboard:"+jo.title;
     document.getElementById("selllink").href = "clipboard:"+jo.url;
 	document.getElementById("taodetail").href = "ios:showTaobaoDetail:"+jo.url;
 }
