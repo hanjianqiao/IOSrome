@@ -1,6 +1,12 @@
 var goodid, userid, shopid, tbtoken;
 var showIt;
 
+function decodeHtml(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
+
 function RegexItem(f, c, b) {
     try {
         var a = c.exec(f);
@@ -248,6 +254,10 @@ function updateTKZSCoupon2ItemCallBack(htmlText, url){
     var ja = obj.result;
     var start = ja.startFee;
     var amount = ja.amount;
+    var status = ja.retStatus;
+    if(status != 0){
+        return;
+    }
     var innerText = "";
     innerText += "<td>";
     htmlText = htmlText.substring(htmlText.indexOf("coupon-info"), htmlText.indexOf("立刻领用"));
@@ -314,6 +324,46 @@ function updateDataokeCoupon(){
     LanJsBridge.getDataFromUrlWithRefer("http://www.dataoke.com/search/?keywords="+goodid+"&xuan=spid", "http://www.dataoke.com/search/?keywords="+goodid+"&xuan=spid", "updateDataokeCouponTwice");
 }
 
+// Qingtaoke coupon
+function updateQingtaokeCouponCallback(htmlText, url){
+    try{
+        var obj = eval('('+htmlText+')');
+        var ja = obj.data;
+        for(var i = 0; i < ja.length; i++){
+            var jo = ja[i];
+            var innerText = "";
+            innerText += "<td>";
+            if(jo.applyAmount == '0' && jo.amount == '0'){
+                innerText += "优惠券";
+            }else{
+                innerText += "满"+jo.applyAmount+"可减"+jo.amount;
+            }
+            innerText += "</td><td>";
+            if(showIt){
+                innerText += "<a href=webpage:"+"https://market.m.taobao.com/apps/aliyx/coupon/detail.html?wh_weex=true&activityId=" + jo.activityId +"&sellerId=" + jo.sellerId+" style=\"color:red\"><b>请点击查看优惠券详情</b></a>";
+            }else{
+                innerText += "<button class=\"btn_02\">VIP可复制</button>";
+            }
+            innerText += "</td><td>";
+            if(showIt){
+                innerText += "<button class=\"btn_02\" onclick=setClipboard(\"https://market.m.taobao.com/apps/aliyx/coupon/detail.html?wh_weex=true&activityId=" + jo.activityId +"&sellerId=" + jo.sellerId + "\")>点击复制</button>";
+            }else{
+                innerText += "<button class=\"btn_02\">VIP可复制</button>";
+            }
+            innerText += "</td>";
+            var item = document.createElement("tr");
+            item.innerHTML = innerText;
+            document.getElementById("coupontable").appendChild(item);
+        }
+    }catch(e){
+    }
+    
+}
+
+function updateQingtaokeCoupon(){
+    LanJsBridge.getDataFromUrl("http://www.qingtaoke.com/api/UserPlan/UserCouponList?sid="+userid+"&gid="+goodid, "updateQingtaokeCouponCallback")
+}
+
 function imgAutoFit(a, b){
     WebViewJavaScriptBridge1.test0();
     WebViewJavaScriptBridge1.test1('a');
@@ -347,6 +397,7 @@ function doWork(srcUrl, showit){
     updateTaobaoCoupon();
     updateTKZSCoupon();
     updateDataokeCoupon();
+    updateQingtaokeCoupon();
     return 'success'
 }
 

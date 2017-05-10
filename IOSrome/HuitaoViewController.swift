@@ -134,6 +134,15 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
             vc.target = "https://login.m.taobao.com/login.htm"
             self.navigationController?.pushViewController(vc, animated: true)
             return false
+        } else if (request.url?.absoluteString.hasPrefix("webpage"))!{
+            let url:String = (request.url?.absoluteString)!
+            print("webpage: \(url)")
+            let parameters:[String] = url.components(separatedBy: ":")
+            let vc = (self.storyboard?.instantiateViewController(withIdentifier: "webpage"))! as! WebPageViewController
+            vc.target = parameters[1]+":"+parameters[2];
+            print("webpage target: \(vc.target)")
+            self.navigationController?.pushViewController(vc, animated: true)
+            return false
         }
         return true
         

@@ -46,6 +46,7 @@
 		C4612E8E1E03B36E00B79331 /* SelfchooseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E8D1E03B36E00B79331 /* SelfchooseNavigationController.swift */; };
 		C4612E961E08D91B00B79331 /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4612E951E08D91A00B79331 /* ShopDetailViewController.swift */; };
 		C4A576E01E4BF74F00E3812D /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A576DF1E4BF74F00E3812D /* WelcomViewController.swift */; };
+		C4B521221EC21D5100C0CC73 /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B521211EC21D5100C0CC73 /* WebPageViewController.swift */; };
 		C4BB410F1DFC724300B01055 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB410E1DFC724300B01055 /* MainTabBarController.swift */; };
 		C4BB41511DFD23C000B01055 /* SelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41501DFD23C000B01055 /* SelfViewController.swift */; };
 		C4BB41531DFD328800B01055 /* StartRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB41521DFD328800B01055 /* StartRegisterViewController.swift */; };
@@ -320,6 +321,7 @@
 		C4612E8D1E03B36E00B79331 /* SelfchooseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfchooseNavigationController.swift; sourceTree = "<group>"; };
 		C4612E951E08D91A00B79331 /* ShopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		C4A576DF1E4BF74F00E3812D /* WelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
+		C4B521211EC21D5100C0CC73 /* WebPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPageViewController.swift; sourceTree = "<group>"; };
 		C4BB410E1DFC724300B01055 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C4BB41501DFD23C000B01055 /* SelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfViewController.swift; sourceTree = "<group>"; };
 		C4BB41521DFD328800B01055 /* StartRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartRegisterViewController.swift; sourceTree = "<group>"; };
@@ -652,6 +654,7 @@
 				C4BB41561DFD7EB100B01055 /* HuitaoViewController.swift */,
 				C4A576DF1E4BF74F00E3812D /* WelcomViewController.swift */,
 				C45F7A8F1E68875000450551 /* TaobaoAlimama.swift */,
+				C4B521211EC21D5100C0CC73 /* WebPageViewController.swift */,
 			);
 			name = taobao;
 			sourceTree = "<group>";
@@ -1434,6 +1437,7 @@
 				C4EE46821E08EE6800E5D0E3 /* JsonTools.swift in Sources */,
 				C422A3AF1E1CE9E400AA8589 /* InvitationListViewController.swift in Sources */,
 				C422A3AD1E1CE9B200AA8589 /* InvitationViewController.swift in Sources */,
+				C4B521221EC21D5100C0CC73 /* WebPageViewController.swift in Sources */,
 				C4DA4E201E5865E4008A5975 /* INSDataStackContainer.swift in Sources */,
 				C44564511E28A541000E5F36 /* huitaoShopViewController.swift in Sources */,
 				C43AFE421E756A4900593398 /* GeneralWebViewController.swift in Sources */,
