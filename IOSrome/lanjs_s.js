@@ -35,30 +35,27 @@ var tkRate;
 function updateGeneralBrokerageItemCallBack(htmlText, url){
     try{
         var obj = eval('('+htmlText+')');
-        var ja = obj.data.campaignList;
-        for(var i = 0; i < ja.length; i++){
-            var innerText = "";
-            var jo = ja[i];
-            innerText += "<td>" + jo.campaignName + "</td><td>" + (jo.properties == "3" ? "是" : "否");
-            rate = '';
-            if(jo.campaignId == '0'){
-                rate = tkRate;
-            }else{
-                try{
-                    rate = spTkRates[jo.campaignId];
-                }catch(e){
-                    break;
+        try{
+            var ja = obj.data.campaignList;
+            for(var i = 0; i < ja.length; i++){
+                var innerText = "";
+                var jo = ja[i];
+                innerText += "<td>" + jo.campaignName + "</td><td>" + (jo.properties == "3" ? "是" : "否");
+                if(jo.campaignId == '0'){
+                    innerText += "</td><td style=\"color:#fe2641\">" + tkRate + "%</td><td>";
+                }else{
+                    innerText += "</td><td id=\"camp_"+jo.campaignId+"\" style=\"color:#fe2641\">" + jo.avgCommissionToString + "</td><td>";
                 }
+                //innerText += "<a href=\"http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&yxjh=-1\"";
+                innerText += "<a href=\"http://pub.alimama.com/myunion.htm?#!/promo/self/campaign?campaignId="+jo.campaignId+"&shopkeeperId="+jo.shopKeeperId+"&userNumberId="+userid+"\"";
+                innerText += "<button class=\"btn_02\">申请计划</button></a></td>";
+                var item = document.createElement("tr");
+                item.innerHTML = innerText;
+                document.getElementById("plantable").appendChild(item);
             }
-            innerText += "</td><td style=\"color:#fe2641\">" + rate + "%</td><td>";
-            innerText += "<a href=\"http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&yxjh=-1\"";
-            innerText += "<button class=\"btn_02\">申请计划</button></a></td>";
-            var item = document.createElement("tr");
-            item.innerHTML = innerText;
-            document.getElementById("plantable").appendChild(item);
-        }
+        }catch(err){}
     }catch(err){
-        document.getElementById("plantitle").innerHTML = "请<a href=loginalimama:show style=\"color:red\"><b>登陆</b></a>后查看详情";
+        document.getElementById("plantitle").innerHTML = "请<a href=loginalimama:show style=\"color:red\"><b>登陆</b></a>后查看详情<br>若您已登陆，则访问受限，请稍后再试。";
     }
 }
 

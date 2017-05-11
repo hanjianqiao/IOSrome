@@ -16,6 +16,7 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
     var jsString: String?
     var targetUrl: String?
     var jsContext: JSContext?
+    var needReload: Bool = false
 
     @IBAction func copyToken(_ sender: UIBarButtonItem) {
         let function = jsContext?.objectForKeyedSubscript("copyToken")
@@ -86,7 +87,10 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        webView.reload()
+        if(needReload){
+            needReload = false
+            webView.reload()
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -127,11 +131,13 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
         } else if (request.url?.absoluteString.hasPrefix("loginalimama"))!{
             let vc = (self.storyboard?.instantiateViewController(withIdentifier: "alimama"))! as! TaobaoAlimama
             vc.target = "http://shop.vsusvip.com:3123/fate_login_alimama.html"
+            needReload = true
             self.navigationController?.pushViewController(vc, animated: true)
             return false
         } else if (request.url?.absoluteString.hasPrefix("logintaobao"))!{
             let vc = (self.storyboard?.instantiateViewController(withIdentifier: "alimama"))! as! TaobaoAlimama
             vc.target = "https://login.m.taobao.com/login.htm"
+            needReload = true
             self.navigationController?.pushViewController(vc, animated: true)
             return false
         } else if (request.url?.absoluteString.hasPrefix("webpage"))!{
