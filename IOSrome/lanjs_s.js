@@ -80,6 +80,20 @@ function updateGeneralBrokerageCallBack(htmlText, url){
             spTkRates = dataList.tkSpecialCampaignIdRateMap;
             tkRate = dataList.tkRate;
             if(showIt){
+                try{
+                    var innerText = "";
+                    innerText += "<td>";
+                    innerText += dataList.couponInfo;
+                    innerText += "</td><td>";
+                    innerText += dataList.couponEffectiveEndTime;
+                    innerText += "</td><td>";
+                    innerText += "后台推广可见";
+                    innerText += "</td>";
+                    var item = document.createElement("tr");
+                    item.innerHTML = innerText;
+                    document.getElementById("coupontable").appendChild(item);
+                }catch(err){
+                }
                 updateGeneralBrokerageItem(dataList.sellerId);
             }
         }
