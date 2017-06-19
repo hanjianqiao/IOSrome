@@ -423,7 +423,7 @@ function copyToken(any){
                 break;
             }
         }
-    }else if(location.href.startsWith('http://pub.alimama.com/promo/search')){
+    }else if(location.href.startsWith('http://pub.alimama.com/promo')){
         var tokens = document.getElementsByClassName("code-wrap-s");
         var tokenl = document.getElementsByClassName("code-wrap-l");
         for(var i = 0; i < tokens.length; i++){
