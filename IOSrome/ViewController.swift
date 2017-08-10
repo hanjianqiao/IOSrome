@@ -49,7 +49,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     @IBAction func homeButton(_ sender: UIButton) {
-        let url:URL = URL(string: "http://www.alimama.com")!
+        let url:URL = URL(string: AppStatus.sharedInstance.contentServer.alimamaUrl)!
         let request:URLRequest = URLRequest(url: url)
         webView.loadRequest(request)
     }

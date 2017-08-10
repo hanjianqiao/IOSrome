@@ -190,6 +190,10 @@ class LoginViewController: UIViewController {
                             AppStatus.sharedInstance.userInfo.level = infodata["level"] as! String
                             AppStatus.sharedInstance.userInfo.balance = infodata["balance"] as! String
                             
+                            if ((infodata["alimamaurl"]) != nil){
+                                AppStatus.sharedInstance.contentServer.alimamaUrl = infodata["alimamaurl"] as! String
+                            }
+
                             AppStatus.sharedInstance.isLoggedIn = true
                             let date = Date()
                             let calendar = Calendar.current

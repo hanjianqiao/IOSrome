@@ -308,5 +308,5 @@ class UserServer{
 
 class ContentServer{
     let versionCheckURL:String = "http://user.vsusvip.com:13420/ios"
-    
+    var alimamaUrl:String = "http://pub.alimama.com"
 }
