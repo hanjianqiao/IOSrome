@@ -21,10 +21,33 @@ function callBack(html, url){
     if(message.length > 0){
         for(var i = message.length-1; i >= 0; i--){
             var item = document.createElement('li');
-            var att = document.createAttribute('class');
-            att.value = 'bill01';
-            item.setAttributeNode(att);
-            item.innerHTML = str0+message[i].action+str1+message[i].amount+str2+message[i].date+str3;
+            item.className = 'bill01';
+
+            var topDiv = document.createElement('div');
+            topDiv.className = 'top';
+            var spanAction = document.createElement('span');
+            spanAction.className = 'fl top-left';
+            spanAction.innerHTML = message[i].action;
+            var spanAmount = document.createElement('span');
+            spanAmount.className = 'fr green';
+            spanAmount.innerHTML = message[i].amount;
+            topDiv.appendChild(spanAction);
+            topDiv.appendChild(spanAmount);
+            
+            var btmDiv = document.createElement('div');
+            btmDiv.className = 'btm';
+            var spanDate = document.createElement('span');
+            spanDate.className = 'fl mr03';
+            spanDate.innerHTML = message[i].date;
+            var spanStatus = document.createElement('span');
+            spanStatus.className = 'fr';
+            spanStatus.innerHTML = '成功';
+            btmDiv.appendChild(spanDate);
+            btmDiv.appendChild(spanStatus);
+            
+            item.appendChild(topDiv);
+            item.appendChild(btmDiv);
+            
             target.appendChild(item)
         }
         LanJsBridge.callInMain("lastStage0", "");
