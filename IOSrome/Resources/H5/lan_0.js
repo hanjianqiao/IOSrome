@@ -41,7 +41,33 @@ function callBack(html, url){
 		    item.className = 'product-item';
             var outA = document.createElement('a');
             outA.href = 'ios:showDetail:' + jo.good_id;
-            outA.innerHTML = str0 + jo.good_id + str1 + jo.off + str2 + (showIt?jo. rate:'?') + str3 + jo.image + str4 + jo.title + str5 + jo.price + str6 + jo.sell + str7;
+            var coponI = document.createElement('i');
+            coponI.innerHTML = '券减' + jo.off;
+            var rateSpan = document.createElement('span');
+            rateSpan.className = 'money02'
+            rateSpan.innerHTML = '佣金' + (showIt?jo. rate:'?') + '%';
+            var img = document.createElement('img');
+            img.src = jo.image;
+            img.alt = jo.title;
+            var title = document.createElement('h4');
+            title.innerHTML = jo.title;
+            var priceDiv = document.createElement('div');
+            priceDiv.className = 'clearfix price';
+            var price = document.createElement('strong');
+            price.innerHTML = '￥' + jo.price;
+            var small = document.createElement('small');
+            small.innerHTML = '售出';
+            var sold = document.createElement('em');
+            small.appendChild(sold);
+            sold.innerHTML = jo.sell + '件';
+            priceDiv.appendChild(price);
+            priceDiv.appendChild(small);
+            
+            outA.appendChild(coponI);
+            outA.appendChild(rateSpan);
+            outA.appendChild(img);
+            outA.appendChild(title);
+            outA.appendChild(priceDiv);
             item.appendChild(outA);
 		    target.appendChild(item);
         }
