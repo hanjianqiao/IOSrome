@@ -1,7 +1,3 @@
-var str0 = '<div class="top"><span class="fl top-left">';
-var str1 = '</span><span class="fr green">';
-var str2 = '</span></div><div class="btm"><span class="fl mr03">';
-var str3 = '</span><span class="fr">成功</span>';
 var target;
 var nowLoad = 0;
 var uid;

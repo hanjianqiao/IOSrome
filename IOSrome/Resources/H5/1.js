@@ -44,7 +44,8 @@ function callBack(html, url){
             divTitle.appendChild(date);
             
             var check = document.createElement('span');
-            check.style = 'float:right;color:#00c30e';
+            check.style.float = 'right';
+            check.style.color = '#00c30e';
             check.innerHTML = '立即查看';
             
             
