@@ -51,7 +51,7 @@ class SelfDetailViewController: UIViewController, UIWebViewDelegate {
             let url:String = (request.url?.absoluteString)!
             let range = url.range(of: ":")
             let startIndex = url.index(after: (range?.lowerBound)!)
-            let method:String = String(describing: request.url?.absoluteString[startIndex...])
+            let method:String = String(describing: (request.url?.absoluteString[startIndex...])!)
             let parameters:[String] = method.components(separatedBy: ":")
             let selector:Selector = NSSelectorFromString(parameters[0])
             taoDetail = parameters[1]+":"+parameters[2]
@@ -65,7 +65,7 @@ class SelfDetailViewController: UIViewController, UIWebViewDelegate {
             let url:String = (request.url?.absoluteString)!
             let range = url.range(of: ":")
             let startIndex = url.index(after: (range?.lowerBound)!)
-            let dataStr:String = String(describing: request.url?.absoluteString[startIndex...]).removingPercentEncoding!
+            let dataStr:String = String(describing: (request.url?.absoluteString[startIndex...])!).removingPercentEncoding!
             UIPasteboard.general.string = dataStr;
             let alert = UIAlertController (title: "已复制", message: UIPasteboard.general.string
                 , preferredStyle: UIAlertControllerStyle.alert)
