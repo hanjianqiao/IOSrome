@@ -1,15 +1,6 @@
 var target = document.getElementsByClassName('product-list')[0];
 var shouIt = false;
 
-var str0 = '<a href="ios:showDetail:'
-var str1 = '"><i>券减<br>'
-var str2 = '</i><span class="money02">佣金'
-var str3 = '%</span><img src="'
-var str4 = '" alt=""><h4>'
-var str5 = '</h4><div class="clearfix price"><strong>￥'
-var str6 = '</strong><small>售出<em>'
-var str7 = '</em>件</small></div></a>';
-
 function get(name){
     if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search)){
         var ret = decodeURIComponent(name[1]);

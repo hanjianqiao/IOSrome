@@ -47,13 +47,17 @@ class SelfViewController: UIViewController, UIWebViewDelegate {
             let url:String = (request.url?.absoluteString)!
             let range = url.range(of: ":")
             let startIndex = url.index(after: (range?.lowerBound)!)
-            let method:String = String(describing: request.url?.absoluteString[startIndex...])
+            let method:String = String(describing: (request.url?.absoluteString[startIndex...])!)
             let parameters:[String] = method.components(separatedBy: ":")
-            let selector:Selector = NSSelectorFromString(parameters[0])
+            print(parameters[0])
             id = parameters[1]
-            if self.responds(to: selector){
-                let control: UIControl = UIControl()
-                control.sendAction(selector, to: self, for: nil)
+            switch parameters[0]{
+            case "showDetail":
+                print(parameters[0])
+                showDetail()
+                break
+            default:
+                print("Error parameter")
             }
             NSLog("IOS call")
             return false

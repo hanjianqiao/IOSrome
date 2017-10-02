@@ -2,14 +2,6 @@
 var target;
 var searchKey;
 
-var str0 = '<a href="ios:showDetail:'
-var str1 = '"><img src="'
-var str2 = '" alt="Here is the image"></a><a href="ios:showDetail:'
-var str3 = '"><h4>'
-var str4 = '</h4></a><div class="clearfix price"><span>￥'
-var str5 = '</span><em>月销<i>'
-var str6 = '</i>件</em></div>';
-
 function get(name){
    if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
       return decodeURIComponent(name[1]);
@@ -31,13 +23,33 @@ function callBack(html, url){
 
     if(ja.length > 0){
 		for(var i = 0; i < ja.length; i++){
-			var jo = ja[i];
-		    var item = document.createElement('div');
-		    var att = document.createAttribute('class');
-		    att.value = 'product-item';
-		    item.setAttributeNode(att);
-		    item.innerHTML = str0 + jo.good_id + str1 + jo.image + str2 + jo. good_id + str3 + jo.title + str4 + jo.price + str5 + jo.sell + str6;
-		    target.appendChild(item);
+            var jo = ja[i];
+            var item = document.createElement('div');
+            item.className = 'product-item';
+            var outA = document.createElement('a');
+            outA.href = 'ios:showDetail:' + jo.good_id;
+            var img = document.createElement('img');
+            img.src = jo.image;
+            img.alt = jo.title;
+            var title = document.createElement('h4');
+            title.innerHTML = jo.title;
+            var priceDiv = document.createElement('div');
+            priceDiv.className = 'clearfix price';
+            var price = document.createElement('strong');
+            price.innerHTML = '￥' + jo.price;
+            var small = document.createElement('small');
+            small.innerHTML = '售出';
+            var sold = document.createElement('em');
+            small.appendChild(sold);
+            sold.innerHTML = jo.sell + '件';
+            priceDiv.appendChild(price);
+            priceDiv.appendChild(small);
+            
+            outA.appendChild(img);
+            outA.appendChild(title);
+            outA.appendChild(priceDiv);
+            item.appendChild(outA);
+            target.appendChild(item);
         }
         LanJsBridge.callInMain("lastStage0", "");
     }else{
