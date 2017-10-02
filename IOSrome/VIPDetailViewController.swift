@@ -198,7 +198,7 @@ class VIPDetailViewController: UIViewController, UIWebViewDelegate {
             let url:String = (request.url?.absoluteString)!
             let range = url.range(of: ":")
             let startIndex = url.index(after: (range?.lowerBound)!)
-            let method:String = (request.url?.absoluteString.substring(from: startIndex))!
+            let method:String = String(describing: request.url?.absoluteString[startIndex...])
             let alert = UIAlertController (title: "登陆结果", message: method.removingPercentEncoding
                 , preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))

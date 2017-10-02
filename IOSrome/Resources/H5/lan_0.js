@@ -6,7 +6,7 @@ var str1 = '"><i>券减<br>'
 var str2 = '</i><span class="money02">佣金'
 var str3 = '%</span><img src="'
 var str4 = '" alt=""><h4>'
-var str5 = '</h4></a><div class="clearfix price"><strong>￥'
+var str5 = '</h4><div class="clearfix price"><strong>￥'
 var str6 = '</strong><small>售出<em>'
 var str7 = '</em>件</small></div></a>';
 
@@ -38,10 +38,11 @@ function callBack(html, url){
 		for(var i = 0; i < ja.length; i++){
 			var jo = ja[i];
 		    var item = document.createElement('div');
-		    var att = document.createAttribute('class');
-		    att.value = 'product-item';
-		    item.setAttributeNode(att);
-            item.innerHTML = str0 + jo.good_id + str1 + jo.off + str2 + (showIt?jo. rate:'?') + str3 + jo.image + str4 + jo.title + str5 + jo.price + str6 + jo.sell + str7;
+		    item.className = 'product-item';
+            var outA = document.createElement('a');
+            outA.href = 'ios:showDetail:' + jo.good_id;
+            outA.innerHTML = str0 + jo.good_id + str1 + jo.off + str2 + (showIt?jo. rate:'?') + str3 + jo.image + str4 + jo.title + str5 + jo.price + str6 + jo.sell + str7;
+            item.appendChild(outA);
 		    target.appendChild(item);
         }
         LanJsBridge.callInMain("lastStage0", "");

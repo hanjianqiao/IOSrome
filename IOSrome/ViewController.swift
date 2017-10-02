@@ -110,19 +110,22 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        //print("Webview fail with error \(error)");
+        print("Webview fail with error \(error)");
         var str = String(describing: error)
-        str = str.substring(from: (str.range(of: "NSErrorFailingURLStringKey=")?.upperBound)!)
-        str = str.substring(to: (str.range(of: ",")?.lowerBound)!)
+        let index = str.index(after: (str.range(of: "NSErrorFailingURLStringKey=")?.upperBound)!)
+        str = String(describing: str[index...])
+        let index2 = str.index(after: (str.range(of: ",")?.lowerBound)!)
+        str = String(describing: str[...index2])
         let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
             if(self.needReload){
                 print("reloading...\(str)")
-                let url:URL = URL(string: str)!
-                let request:URLRequest = URLRequest(url: url)
-                self.needReload = false
-                webView.loadRequest(request)
+                if let url:URL = URL(string: str){
+                    let request:URLRequest = URLRequest(url: url)
+                    self.needReload = false
+                    webView.loadRequest(request)
+                }
             }
         }
     }
@@ -194,8 +197,15 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             let url:String = (request.url?.absoluteString)!
             let range = url.range(of: ":")
             let startIndex = url.index(after: (range?.lowerBound)!)
-            let method:String = (request.url?.absoluteString.substring(from: startIndex))!
-            let targetStr = method.substring(from:(method.range(of: "?q=")?.upperBound)!)
+            let method:String! = String(describing: (request.url?.absoluteString[startIndex...])!)
+            let upbond:String.Index! = method.range(of: "?q=")?.upperBound
+            var targetStr: String!
+            if (upbond < method.endIndex){
+                let index = method.index(after: upbond!)
+                targetStr = String(describing: method[index...])
+            }else{
+                targetStr = ""
+            }
             let decodedTarget = targetStr.removingPercentEncoding!
             if((decodedTarget.hasPrefix("http://")) || (decodedTarget.hasPrefix("https://"))){
                 let pre = matches(for: "http.+\\?", in: decodedTarget)

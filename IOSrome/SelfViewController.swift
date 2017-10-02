@@ -47,7 +47,7 @@ class SelfViewController: UIViewController, UIWebViewDelegate {
             let url:String = (request.url?.absoluteString)!
             let range = url.range(of: ":")
             let startIndex = url.index(after: (range?.lowerBound)!)
-            let method:String = (request.url?.absoluteString.substring(from: startIndex))!
+            let method:String = String(describing: request.url?.absoluteString[startIndex...])
             let parameters:[String] = method.components(separatedBy: ":")
             let selector:Selector = NSSelectorFromString(parameters[0])
             id = parameters[1]
@@ -61,7 +61,7 @@ class SelfViewController: UIViewController, UIWebViewDelegate {
             let url:String = (request.url?.absoluteString)!
             let range = url.range(of: ":")
             let startIndex = url.index(after: (range?.lowerBound)!)
-            let method:String = (request.url?.absoluteString.substring(from: startIndex))!
+            let method:String = String(describing: request.url?.absoluteString[startIndex...])
             let alert = UIAlertController (title: "提示", message: method.removingPercentEncoding
                 , preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
