@@ -6,5 +6,4 @@ target 'IOSrome' do
   use_frameworks!
 
   # Pods for IOSrome
-  pod 'SwiftSocket'
 end
