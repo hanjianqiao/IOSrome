@@ -198,7 +198,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             let range = url.range(of: ":")
             let startIndex = url.index(after: (range?.lowerBound)!)
             let method:String! = String(describing: (request.url?.absoluteString[startIndex...])!)
-            let upbond:String.Index! = method.range(of: "?q=")?.upperBound
+            let upbond:String.Index! = method.range(of: "?q")?.upperBound
             var targetStr: String!
             if (upbond < method.endIndex){
                 let index = method.index(after: upbond!)
@@ -206,6 +206,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             }else{
                 targetStr = ""
             }
+            print(targetStr.removingPercentEncoding)
             let decodedTarget = targetStr.removingPercentEncoding!
             if((decodedTarget.hasPrefix("http://")) || (decodedTarget.hasPrefix("https://"))){
                 let pre = matches(for: "http.+\\?", in: decodedTarget)
