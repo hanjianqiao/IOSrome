@@ -63,6 +63,34 @@ function updateGeneralBrokerageItem(memberId){
     LanJsBridge.getDataFromUrlUpdateInMain("http://pub.alimama.com/shopdetail/campaigns.json?oriMemberId="+memberId, "updateGeneralBrokerageItemCallBack");
 }
 
+
+function updateGeneralBrokerageItem2CallBack(htmlText, url){
+    try{
+        var obj = eval('('+htmlText+')');
+        try{
+            var ja = obj.data;
+            for(var i = 0; i < ja.length; i++){
+                var innerText = "";
+                var jo = ja[i];
+                innerText += "<td>" + jo.CampaignName+ "</td><td>" + jo.Properties;
+                    innerText += "</td><td id=\"camp_"+jo.CampaignID+"\" style=\"color:#fe2641\">" + jo.commissionRate + "</td><td>";
+                //innerText += "<a href=\"http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&yxjh=-1\"";
+                innerText += "<a href=\"http://pub.alimama.com/myunion.htm?#!/promo/self/campaign?campaignId="+jo.CampaignID+"&shopkeeperId="+jo.ShopKeeperID+"&userNumberId="+userid+"\"";
+                innerText += "<button class=\"btn_02\">申请计划</button></a></td>";
+                var item = document.createElement("tr");
+                item.innerHTML = innerText;
+                document.getElementById("plantable").appendChild(item);
+            }
+        }catch(err){}
+    }catch(err){
+        document.getElementById("plantitle").innerHTML = "请<a href=loginalimama:show style=\"color:red\"><b>登陆</b></a>后查看详情<br>若您已登陆，则访问受限，请稍后再试。";
+    }
+}
+
+function updateGeneralBrokerageItem2(goodId){
+    LanJsBridge.getDataFromUrlUpdateInMain("http://pub.alimama.com/pubauc/getCommonCampaignByItemId.json?itemId="+goodId, "updateGeneralBrokerageItem2CallBack");
+}
+
 function updateGeneralBrokerageCallBack(htmlText, url){
     try{
         var obj = eval('('+htmlText+')');
@@ -94,7 +122,8 @@ function updateGeneralBrokerageCallBack(htmlText, url){
                     document.getElementById("coupontable").appendChild(item);
                 }catch(err){
                 }
-                updateGeneralBrokerageItem(dataList.sellerId);
+                //updateGeneralBrokerageItem(dataList.sellerId);
+                updateGeneralBrokerageItem2(goodid);
             }
         }
     }catch(err){

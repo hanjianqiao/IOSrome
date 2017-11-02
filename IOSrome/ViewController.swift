@@ -206,7 +206,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
             }else{
                 targetStr = ""
             }
-            print(targetStr.removingPercentEncoding)
+            //print(targetStr.removingPercentEncoding)
             let decodedTarget = targetStr.removingPercentEncoding!
             if((decodedTarget.hasPrefix("http://")) || (decodedTarget.hasPrefix("https://"))){
                 let pre = matches(for: "http.+\\?", in: decodedTarget)
