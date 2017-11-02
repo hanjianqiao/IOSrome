@@ -73,7 +73,7 @@ function updateGeneralBrokerageItem2CallBack(htmlText, url){
                 var innerText = "";
                 var jo = ja[i];
                 innerText += "<td>" + jo.CampaignName+ "</td><td>" + jo.Properties;
-                    innerText += "</td><td id=\"camp_"+jo.CampaignID+"\" style=\"color:#fe2641\">" + jo.commissionRate + "</td><td>";
+                    innerText += "</td><td id=\"camp_"+jo.CampaignID+"\" style=\"color:#fe2641\">" + jo.commissionRate + "%</td><td>";
                 //innerText += "<a href=\"http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&yxjh=-1\"";
                 innerText += "<a href=\"http://pub.alimama.com/myunion.htm?#!/promo/self/campaign?campaignId="+jo.CampaignID+"&shopkeeperId="+jo.ShopKeeperID+"&userNumberId="+userid+"\"";
                 innerText += "<button class=\"btn_02\">申请计划</button></a></td>";
