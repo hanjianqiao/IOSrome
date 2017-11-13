@@ -263,7 +263,7 @@ import UIKit
     }
     
     internal func getDataFromUrlUpdateInMain(_ urlString: String, _ callBack: String){
-        print("get url from: \(urlString)")
+        print("get url update in main from: \(urlString)")
         let processed:String = urlString.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
         let url:URL = URL(string: processed)!
         var html: String? = nil
@@ -287,7 +287,13 @@ import UIKit
                 return
             }
             let res = response as! HTTPURLResponse
-            let enct:String = res.allHeaderFields["Content-Type"]! as! String
+            print("start...")
+            print(res.allHeaderFields)
+            let enctOri = res.allHeaderFields["Content-Type"]
+            var enct:String = "UTF-8"
+            if(enctOri != nil){
+                enct = enctOri as! String
+            }
             //print(enct)
             if(enct.contains("GBK") || enct.contains("gbk")){
                 let cfEnc = CFStringEncodings.GB_18030_2000
