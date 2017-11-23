@@ -22,6 +22,7 @@ class TaobaoAlimama: UIViewController, UIWebViewDelegate {
         webView.delegate = self
         webView.isOpaque = false
         webView.backgroundColor = UIColor.white
+        UserDefaults.standard.register(defaults: ["UserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/601.5.17 (KHTML, like Gecko) Version/9.1 Safari/601.5.17"])
         if(target.hasPrefix("http")){
             webView.loadRequest( URLRequest(url: URL(string: target)!) )
         }else if(target.hasPrefix("file")){

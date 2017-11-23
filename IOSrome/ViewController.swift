@@ -49,9 +49,14 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
      **
      **/
     @IBAction func homeButton(_ sender: UIButton) {
+        /*
         let url:URL = URL(string: AppStatus.sharedInstance.contentServer.alimamaUrl)!
         let request:URLRequest = URLRequest(url: url)
         webView.loadRequest(request)
+        */
+        let vc = (self.storyboard?.instantiateViewController(withIdentifier: "alimama"))! as! TaobaoAlimama
+        vc.target = AppStatus.sharedInstance.contentServer.alimamaUrl
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction func taobaoButton(_ sender: UIButton) {
         if let path = Bundle.main.path(forResource: "index", ofType: "html") {
