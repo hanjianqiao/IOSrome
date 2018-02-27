@@ -166,7 +166,14 @@ import UIKit
                 return
             }
             let res = response as! HTTPURLResponse
-            let enct:String = res.allHeaderFields["Content-Type"]! as! String
+            //print("start...")
+            //print(res.allHeaderFields)
+            let enctOri = res.allHeaderFields["Content-Type"]
+            var enct:String = "UTF-8"
+            if(enctOri != nil){
+                print("NIL content-type")
+                enct = enctOri as! String
+            }
             //print(enct)
             if(enct.contains("GBK") || enct.contains("gbk")){
                 let cfEnc = CFStringEncodings.GB_18030_2000
@@ -186,12 +193,12 @@ import UIKit
             }
             if let headerFields = res.allHeaderFields as? [String: String] {
                 let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: (response?.url!)!)
-                print("\(String(describing: response?.url!)) cookie's \(cookies)")
+                //print("\(String(describing: response?.url!)) cookie's \(cookies)")
                 for cookie in cookies{
                     HTTPCookieStorage.shared.setCookie(cookie)
                 }
             }
-            print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
+            //print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
             //print("get url from: \(urlString)")
             let function = self.jsContext?.objectForKeyedSubscript(callBack)
             _ = function?.call(withArguments: [html ?? "", urlString])
@@ -252,7 +259,7 @@ import UIKit
                 }
             }
 
-            print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
+            //print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
             //print("get url from: \(urlString)")
             let function = self.jsContext?.objectForKeyedSubscript(callBack)
             _ = function?.call(withArguments: [html ?? "", urlString])
@@ -287,11 +294,12 @@ import UIKit
                 return
             }
             let res = response as! HTTPURLResponse
-            print("start...")
-            print(res.allHeaderFields)
+            //print("start...")
+            //print(res.allHeaderFields)
             let enctOri = res.allHeaderFields["Content-Type"]
             var enct:String = "UTF-8"
             if(enctOri != nil){
+                print("NIL content-type in main")
                 enct = enctOri as! String
             }
             //print(enct)
@@ -312,7 +320,7 @@ import UIKit
                 print("Unsolved encoding type: \(enct)")
             }
             
-            print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
+            //print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
             //print("get url from: \(urlString)")
             OperationQueue.main.addOperation {
                 let function = self.jsContext?.objectForKeyedSubscript(callBack)
