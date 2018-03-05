@@ -122,8 +122,8 @@ function updateGeneralBrokerageCallBack(htmlText, url){
                     document.getElementById("coupontable").appendChild(item);
                 }catch(err){
                 }
-                //updateGeneralBrokerageItem(dataList.sellerId);
-                updateGeneralBrokerageItem2(goodid);
+                updateGeneralBrokerageItem(dataList.sellerId);
+                //updateGeneralBrokerageItem2(goodid);
             }
         }
     }catch(err){
