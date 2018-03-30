@@ -113,7 +113,13 @@ import UIKit
                 return
             }
             let res = response as! HTTPURLResponse
-            let enct:String = res.allHeaderFields["Content-Type"]! as! String
+            //let enct:String = res.allHeaderFields["Content-Type"]! as! String
+            let enctOri = res.allHeaderFields["Content-Type"]
+            var enct:String = "UTF-8"
+            if(enctOri != nil){
+                print("NIL content-type in main")
+                enct = enctOri as! String
+            }
             //print(enct)
             if(enct.contains("GBK") || enct.contains("gbk")){
                 let cfEnc = CFStringEncodings.GB_18030_2000
@@ -232,7 +238,13 @@ import UIKit
                 return
             }
             let res = response as! HTTPURLResponse
-            let enct:String = res.allHeaderFields["Content-Type"]! as! String
+            //let enct:String = res.allHeaderFields["Content-Type"]! as! String
+            let enctOri = res.allHeaderFields["Content-Type"]
+            var enct:String = "UTF-8"
+            if(enctOri != nil){
+                print("NIL content-type in main")
+                enct = enctOri as! String
+            }
             //print(enct)
             if(enct.contains("GBK") || enct.contains("gbk")){
                 let cfEnc = CFStringEncodings.GB_18030_2000
