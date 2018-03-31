@@ -97,8 +97,9 @@ import UIKit
         var request:URLRequest = URLRequest(url: url)
         
         // set up the session
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
+        //let config = URLSessionConfiguration.default
+        //let session = URLSession(configuration: config)
+        let session = URLSession.shared
         
         //request.addValue("textml,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8", forHTTPHeaderField: "Accept")
         //request.addValue("gzip, deflate, sdch", forHTTPHeaderField: "Accept-Encoding")
@@ -139,7 +140,7 @@ import UIKit
         task.resume()
         _ = semaphore.wait(timeout: .distantFuture)
         
-        //print("get url from: \(urlString) -> \(html!)")
+        print("get url from getDataFromUrlSynch: \(urlString) -> \(html!)")
         
         let function = jsContext?.objectForKeyedSubscript(callBack)
         _ = function?.call(withArguments: [html ?? "", urlString])
@@ -156,8 +157,9 @@ import UIKit
         var request:URLRequest = URLRequest(url: url)
         
         // set up the session
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
+        //let config = URLSessionConfiguration.default
+        //let session = URLSession(configuration: config)
+        let session = URLSession.shared
         
         //request.addValue("textml,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8", forHTTPHeaderField: "Accept")
         //request.addValue("gzip, deflate, sdch", forHTTPHeaderField: "Accept-Encoding")
@@ -222,8 +224,9 @@ import UIKit
         var request:URLRequest = URLRequest(url: url)
         
         // set up the session
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
+        //let config = URLSessionConfiguration.default
+        //let session = URLSession(configuration: config)
+        let session = URLSession.shared
         
         //request.addValue("textml,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8", forHTTPHeaderField: "Accept")
         //request.addValue("gzip, deflate, sdch", forHTTPHeaderField: "Accept-Encoding")
@@ -282,7 +285,7 @@ import UIKit
     }
     
     internal func getDataFromUrlUpdateInMain(_ urlString: String, _ callBack: String){
-        print("get url update in main from: \(urlString)")
+        //print("get url update in main from: \(urlString)")
         let processed:String = urlString.addingPercentEncoding( withAllowedCharacters: NSCharacterSet.urlQueryAllowed)!
         let url:URL = URL(string: processed)!
         var html: String? = nil
@@ -290,8 +293,9 @@ import UIKit
         var request:URLRequest = URLRequest(url: url)
         
         // set up the session
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
+        //let config = URLSessionConfiguration.default
+        //let session = URLSession(configuration: config)
+        let session = URLSession.shared
         
         //request.addValue("textml,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8", forHTTPHeaderField: "Accept")
         //request.addValue("gzip, deflate, sdch", forHTTPHeaderField: "Accept-Encoding")
@@ -332,7 +336,7 @@ import UIKit
                 print("Unsolved encoding type: \(enct)")
             }
             
-            //print("get url from: \(urlString) -> \(html!), call back is \(callBack)")
+            //print("get url update in main from: \(urlString) -> \(String(describing: html)), call back is \(callBack)")
             //print("get url from: \(urlString)")
             OperationQueue.main.addOperation {
                 let function = self.jsContext?.objectForKeyedSubscript(callBack)

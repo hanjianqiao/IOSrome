@@ -91,10 +91,24 @@ function updateGeneralBrokerageItem2(goodId){
     LanJsBridge.getDataFromUrlUpdateInMain("http://pub.alimama.com/pubauc/getCommonCampaignByItemId.json?itemId="+goodId, "updateGeneralBrokerageItem2CallBack");
 }
 
+function alimamaCheckCallBack(htmlText, url){
+    try{
+        var obj = eval('('+htmlText+')');
+        if(obj.url){
+            document.getElementById("alimamacheck").href = obj.url;
+        }
+    }catch(e){
+        document.getElementById("alimamacheck").href = url;
+    }
+}
+
 function updateGeneralBrokerageCallBack(htmlText, url){
     try{
         var obj = eval('('+htmlText+')');
-        if(obj.data.head.status == "NORESULT"){
+        if(obj.url){
+            document.getElementById("alimamacheck").style.display = "block";
+            LanJsBridge.getDataFromUrlUpdateInMain(obj.url, "alimamaCheckCallBack");
+        }else if(obj.data.head.status == "NORESULT"){
             document.getElementById("genbrorate").innerHTML="0%";
             document.getElementById("days30sell").innerHTML="0";
             document.getElementById("givebro").innerHTML = "0";
@@ -165,27 +179,29 @@ function updateQueqiaoBrokerageItem(goodId){
 }
 
 function updateQueqiaoBrokerageCallBack(htmlText, url){
-    var obj = eval('('+htmlText+')');
-    if(obj.data.head.status == "NORESULT"){
-        //document.getElementById("queqiaotitle").innerHTML="没有鹊桥佣金";
-        document.getElementById("queqiaorate").innerHTML = "0%";
-        return;
-    }
-    var jo = obj.data.pageList[0];
     try{
-        document.getElementById("queqiaorate").innerHTML = (showIt ? (jo.eventRate ? jo.eventRate : "0") : "??")+"%";
-    }catch (err){
-        document.getElementById("queqiaorate").innerHTML = (showIt?"0%":"??%");
-    }
-    document.getElementById("genlick").href = (showIt ? ((jo.eventRate || jo.eventRate == '0') ? ("http://pub.alimama.com/promo/item/channel/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&channel=qqhd&yxjh=-1") : ("http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&yxjh=-1")) : "");
-    try {
-        if(showIt){
-            updateQueqiaoBrokerageItem(goodid);
+        var obj = eval('('+htmlText+')');
+        if(obj.data.head.status == "NORESULT"){
+            //document.getElementById("queqiaotitle").innerHTML="没有鹊桥佣金";
+            document.getElementById("queqiaorate").innerHTML = "0%";
+            return;
         }
-    }catch (err){
-        //alert(err.message);
-        document.getElementById("queqiaotitle").innerHTML="没有鹊桥佣金";
-    }
+        var jo = obj.data.pageList[0];
+        try{
+            document.getElementById("queqiaorate").innerHTML = (showIt ? (jo.eventRate ? jo.eventRate : "0") : "??")+"%";
+        }catch (err){
+            document.getElementById("queqiaorate").innerHTML = (showIt?"0%":"??%");
+        }
+        document.getElementById("genlick").href = (showIt ? ((jo.eventRate || jo.eventRate == '0') ? ("http://pub.alimama.com/promo/item/channel/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&channel=qqhd&yxjh=-1") : ("http://pub.alimama.com/promo/search/index.htm?q=https%3A%2F%2Fitem.taobao.com%2Fitem.htm%3Fid%3D"+ goodid+"&yxjh=-1")) : "");
+        try {
+            if(showIt){
+                updateQueqiaoBrokerageItem(goodid);
+            }
+        }catch (err){
+            //alert(err.message);
+            document.getElementById("queqiaotitle").innerHTML="没有鹊桥佣金";
+        }
+    }catch(e){}
 }
 
 function updateQueqiaoBrokerage(){
@@ -326,16 +342,18 @@ function updateTKZSCoupon2Item(sellerId, activityId){
 
 
 function updateTKZSCouponCallBack(htmlText, url){
-    var obj = eval('('+htmlText+')');
-    var ja = obj.dataList;
-    if(Object.keys(ja).length == 0){
-        //document.getElementById("lanTKZtic").innerHTML="<caption>没有优惠券</caption><tr style=\"background: #fe2641; color:#fff;\"><th>优惠券</th><th>使用时间</th><th>手机券</th></tr>";
-        return;
-    }
-    for(var i = 0; i < ja.length; i++){
-        var activityId = ja[i].activityId;
-        updateTKZSCoupon2Item(userid, activityId);
-    }
+    try{
+        var obj = eval('('+htmlText+')');
+        var ja = obj.dataList;
+        if(Object.keys(ja).length == 0){
+            //document.getElementById("lanTKZtic").innerHTML="<caption>没有优惠券</caption><tr style=\"background: #fe2641; color:#fff;\"><th>优惠券</th><th>使用时间</th><th>手机券</th></tr>";
+            return;
+        }
+        for(var i = 0; i < ja.length; i++){
+            var activityId = ja[i].activityId;
+            updateTKZSCoupon2Item(userid, activityId);
+        }
+    }catch(e){}
 }
 
 function updateTKZSCoupon(){
