@@ -62,9 +62,11 @@ function callBack(html, url){
             item.appendChild(outA);
 		    target.appendChild(item);
         }
-        LanJsBridge.callInMain("lastStage0", "");
+        //LanJsBridge.callInMain("lastStage0", "");
+        lastStage0();
     }else{
-        LanJsBridge.callInMain("lastStage1", "");
+        //LanJsBridge.callInMain("lastStage1", "");
+        lastStage1();
 
     }
 }
@@ -77,5 +79,5 @@ function doWork(isVip){
     var activity = get('activity');
     if(activity == null) activity = '0';
     if(activity == '0' && catalog == '0') activity = '5';
-	LanJsBridge.getDataFromUrl("http://shop.vsusvip.com:7011/search?catalog="+catalog+"&activity="+activity, "callBack")
+	LanJsBridge.getDataFromUrlUpdateInMain("http://shop.vsusvip.com:7011/search?catalog="+catalog+"&activity="+activity, "callBack")
 }

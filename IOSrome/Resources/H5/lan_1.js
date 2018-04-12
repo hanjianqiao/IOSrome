@@ -16,5 +16,5 @@ function callBack(html, url){
 	document.getElementById("taodetail").href = "ios:showTaobaoDetail:"+jo.url;
 }
 function doWork(q){
-	LanJsBridge.getDataFromUrl("http://self.vsusvip.com:7080/query"+q, "callBack")
+	LanJsBridge.getDataFromUrlUpdateInMain("http://self.vsusvip.com:7080/query"+q, "callBack")
 }

@@ -63,7 +63,7 @@ class SystemMessageViewController: UIViewController, UIWebViewDelegate {
         jsContext = (webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext)
         let model = SwiftJavaScriptModel()
         model.controller = self
-        jsContext?.setObject(model, forKeyedSubscript: "LanJsBridge" as (NSCopying & NSObjectProtocol)!)
+        jsContext?.setObject(model, forKeyedSubscript: "LanJsBridge" as (NSCopying & NSObjectProtocol)?)
         model.jsContext = jsContext
         jsContext?.exceptionHandler = {
             (context, exception) in

@@ -62,7 +62,7 @@
         function loadMore(){
             var limit = 20;
             nowLoad = nowLoad+limit;
-            LanJsBridge.getDataFromUrl("http://self.vsusvip.com:7080/search"+searchKey+"&offset="+nowLoad+"&limit="+limit+"&query_type="+query_type, "callBack")
+            LanJsBridge.getDataFromUrlUpdateInMain("http://self.vsusvip.com:7080/search"+searchKey+"&offset="+nowLoad+"&limit="+limit+"&query_type="+query_type, "callBack")
         }
     </script>
     <script type="text/javascript" src="lan_2.js"></script>

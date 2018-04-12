@@ -338,10 +338,14 @@ import UIKit
             
             //print("get url update in main from: \(urlString) -> \(String(describing: html)), call back is \(callBack)")
             //print("get url from: \(urlString)")
-            OperationQueue.main.addOperation {
+            DispatchQueue.main.async {
                 let function = self.jsContext?.objectForKeyedSubscript(callBack)
                 _ = function?.call(withArguments: [html ?? "", urlString])
             }
+            //OperationQueue.main.addOperation {
+            //    let function = self.jsContext?.objectForKeyedSubscript(callBack)
+            //    _ = function?.call(withArguments: [html ?? "", urlString])
+            //}
             //semaphore.signal()
         })
         task.resume()

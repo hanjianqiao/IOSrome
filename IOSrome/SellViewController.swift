@@ -48,6 +48,7 @@ class SellViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        print("SelfViewController webView")
         if(request.url?.absoluteString.hasPrefix("ios"))!{
             let url:String = (request.url?.absoluteString)!
             print("shop: load \(url)")
@@ -96,10 +97,11 @@ class SellViewController: UIViewController, UIWebViewDelegate {
     
     var jsContext: JSContext?
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        print("SelfViewController webViewDidFinishLoad")
         jsContext = (webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext)
         let model = SwiftJavaScriptModel()
         model.controller = self
-        jsContext?.setObject(model, forKeyedSubscript: "LanJsBridge" as (NSCopying & NSObjectProtocol)!)
+        jsContext?.setObject(model, forKeyedSubscript: "LanJsBridge" as (NSCopying & NSObjectProtocol)?)
         model.jsContext = jsContext
         jsContext?.exceptionHandler = {
             (context, exception) in

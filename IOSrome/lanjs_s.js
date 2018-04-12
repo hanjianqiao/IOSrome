@@ -242,8 +242,8 @@ function updateTaobaoCouponItem(sellerId, activityId){
 }
 
 function updateTaobaoCouponCallBack(htmlText, url){
-    if(htmlText[2] == "{"){
-        try{
+    try{
+        if(htmlText[2] == "{"){
             var obj = eval('('+htmlText+')');
             var ja = obj.priceVolumes;
             if(Object.keys(ja).length == 0){
@@ -267,11 +267,12 @@ function updateTaobaoCouponCallBack(htmlText, url){
                 document.getElementById("coupontable").appendChild(item);
                 //updateTaobaoCouponItem(userid, activityId);
             }
-        }catch(e){
-            
         }
-    }
-    else{
+        else{
+            document.getElementById("coupontitle").innerHTML="<a href=logintaobao:show style=\"color:red\"><b>登陆淘宝</b></a>获取更多优惠信息";
+        }
+        
+    }catch(e){
         document.getElementById("coupontitle").innerHTML="<a href=logintaobao:show style=\"color:red\"><b>登陆淘宝</b></a>获取更多优惠信息";
     }
 }
@@ -310,30 +311,32 @@ function updateTKZSCouponItem(sellerId, activityId){
 
 
 function updateTKZSCoupon2ItemCallBack(htmlText, url){
-    var obj = eval('('+htmlText+')');
-    var ja = obj.result;
-    var start = ja.startFee;
-    var amount = ja.amount;
-    var status = ja.retStatus;
-    if(status != 0){
-        return;
-    }
-    var innerText = "";
-    innerText += "<td>";
-    htmlText = htmlText.substring(htmlText.indexOf("coupon-info"), htmlText.indexOf("立刻领用"));
-    innerText += "满"+start+"减"+amount;
-    innerText += "</td><td>";
-    innerText += ja.effectiveEndTime;
-    innerText += "</td><td>";
-    if(showIt){
-        innerText += "<button class=\"btn_02\" onclick=setClipboard(\"http://shop.m.taobao.com/shop/coupon.htm?seller_id=" + userid +"&activity_id=" + url.substring(url.indexOf("activityId=")+11, url.length) + "\")>点击复制</button>";
-    }else{
-        innerText += "<button class=\"btn_02\">VIP可复制</button>";
-    }
-    innerText += "</td>";
-    var item = document.createElement("tr");
-    item.innerHTML = innerText;
-    document.getElementById("coupontable").appendChild(item);
+    try{
+        var obj = eval('('+htmlText+')');
+        var ja = obj.result;
+        var start = ja.startFee;
+        var amount = ja.amount;
+        var status = ja.retStatus;
+        if(status != 0){
+            return;
+        }
+        var innerText = "";
+        innerText += "<td>";
+        htmlText = htmlText.substring(htmlText.indexOf("coupon-info"), htmlText.indexOf("立刻领用"));
+        innerText += "满"+start+"减"+amount;
+        innerText += "</td><td>";
+        innerText += ja.effectiveEndTime;
+        innerText += "</td><td>";
+        if(showIt){
+            innerText += "<button class=\"btn_02\" onclick=setClipboard(\"http://shop.m.taobao.com/shop/coupon.htm?seller_id=" + userid +"&activity_id=" + url.substring(url.indexOf("activityId=")+11, url.length) + "\")>点击复制</button>";
+        }else{
+            innerText += "<button class=\"btn_02\">VIP可复制</button>";
+        }
+        innerText += "</td>";
+        var item = document.createElement("tr");
+        item.innerHTML = innerText;
+        document.getElementById("coupontable").appendChild(item);
+    }catch(e){}
 }
 
 function updateTKZSCoupon2Item(sellerId, activityId){

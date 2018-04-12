@@ -14,7 +14,7 @@ class TaobaoNavigationController: UINavigationController {
         super.viewDidLoad()
         print("Taobao navi started")
         // Do any additional setup after loading the view.
-        let UserViewController = UIStoryboard(name: "Taobao", bundle: nil).instantiateInitialViewController() as UIViewController!
+        let UserViewController = UIStoryboard(name: "Taobao", bundle: nil).instantiateInitialViewController() as UIViewController?
         let vcArray = [UserViewController]
         self.viewControllers = vcArray as! [UIViewController]
     }
