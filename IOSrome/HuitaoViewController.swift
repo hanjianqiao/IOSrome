@@ -62,8 +62,15 @@ class HuitaoViewController: UIViewController, UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
+
+        print("huitao finish load: \(String(describing: webView.request?.url?.absoluteURL.absoluteString))")
+
+        if(webView.request?.url?.absoluteURL.absoluteString.starts(with: "http"))!{
+            return
+        }
+
         webView.stringByEvaluatingJavaScript(from: jsString!)
- 
+
         jsContext = (webView.value(forKeyPath: "documentView.webView.mainFrame.javaScriptContext") as! JSContext)
         let model = SwiftJavaScriptModel()
         model.controller = self
