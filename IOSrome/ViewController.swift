@@ -98,6 +98,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate  
         let vc = (self.storyboard?.instantiateViewController(withIdentifier: "huitaoyixia"))! as! HuitaoViewController
         let strUrl:String = (webView.request?.url?.absoluteString)!
         vc.targetUrl = strUrl
+        print("huitao url is \(strUrl)")
         self.navigationController?.pushViewController(vc, animated: true)
     }
     /**
